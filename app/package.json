@@ -4,7 +4,7 @@
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "1.0.0",
   "bugs": {
-    "url": "https://github.com/elkulo/Portfolio/issues"
+    "url": "https://github.com/elkulo/elkulo.github.io/issues"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
@@ -60,7 +60,7 @@
     "prettier": "^2.2.1",
     "react-test-renderer": "^17.0.1"
   },
-  "homepage": "https://github.com/elkulo",
+  "homepage": "https://elkulo.github.io/",
   "keywords": [
     "gatsby"
   ],
@@ -68,7 +68,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elkulo/Portfolio"
+    "url": "git+https://github.com/elkulo/elkulo.github.io"
   },
   "scripts": {
     "clean:gatsby": "gatsby clean",

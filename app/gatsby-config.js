@@ -3,7 +3,8 @@ const activeEnv =
 require("dotenv").config({ path: `.env.${activeEnv}` })
 
 module.exports = {
-  pathPrefix: "/Portfolio",
+  // Github pages へ npm gh-pages　でデプロイするRepository
+  pathPrefix: "/elkulo.github.io",
   siteMetadata: {
     title: `el.kulo`,
     author: {
@@ -11,7 +12,7 @@ module.exports = {
       summary: `Frontend Developer.`,
     },
     description: `Portfolio.`,
-    siteUrl: `https://elkulo.github.io/Portfolio`,
+    siteUrl: `https://elkulo.github.io/`,
     social: {
       instagram: `el.kulo`,
     },
@@ -69,7 +70,7 @@ module.exports = {
       options: {
         name: `el.kulo`,
         short_name: `el.kulo`,
-        start_url: `https://elkulo.github.io/Portfolio`,
+        start_url: `https://elkulo.github.io/`,
         background_color: `#ffffff`,
         theme_color: `#551240`,
         display: `minimal-ui`,
