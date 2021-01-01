@@ -1,12 +1,30 @@
 # elkulo.github.io
 
-### Git Clone
+## Public Site
+
+https://elkulo.github.io/
+
+### Build and Deploy
 
 ~~~
-git clone https://github.com/elkulo/elkulo.github.io.git .
+cd app
+npm run build
+npm run deploy
 ~~~
 
-### Git Install
+.env.production が必要
+
+### Github Clone
+
+~~~
+git clone https://github.com/elkulo/elkulo.github.io.git elkulo.github.io
+cd elkulo.github.io
+cd npm install
+~~~
+
+env.development.txt を .env.development にリネーム
+
+### Github First Install
 
 ~~~
 git init
