@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test renders correctly 1`] = `
+<div
+  className="site page-home"
+>
+  <div
+    className="site__sidebar"
+  >
+    <header
+      className="site-header site-header--sidebar"
+    >
+      <div
+        className="wrap"
+      >
+        <div
+          className="site-header__container"
+        >
+          <div
+            className="site-header__container--primary"
+          >
+            <div
+              className="site-branding"
+            >
+              <h1
+                className="site-branding__title site-title"
+              >
+                My Title
+              </h1>
+            </div>
+          </div>
+          <div
+            className="site-header__container--secondary"
+          >
+            <div
+              className="navigation-drawer"
+            >
+              <button
+                className="navigation-drawer__button"
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <nav
+          className="main-navigation"
+        >
+          <div
+            className="menu-avatar"
+          >
+            <div
+              className="menu-avatar__item"
+            >
+              <img
+                alt=""
+                src="test-file-stub"
+              />
+            </div>
+          </div>
+          <ul
+            className="menu-list"
+          >
+            <li
+              className="menu-list__item menu-list__item--home"
+            >
+              <a
+                href="/"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"
+                  />
+                </svg>
+                Home
+              </a>
+            </li>
+            <li
+              className="menu-list__item menu-list__item--about"
+            >
+              <a
+                href="/about"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                  />
+                </svg>
+                About
+              </a>
+            </li>
+            <li
+              className="menu-list__item menu-list__item--product"
+            >
+              <a
+                href="/product"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12-8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-4 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm4-4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-4-4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-4-4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                  />
+                </svg>
+                Product
+              </a>
+            </li>
+            <li
+              className="menu-list__item menu-list__item--contact"
+            >
+              <a
+                href="/contact"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+                  />
+                </svg>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </div>
+  <div
+    className="site__content"
+  >
+    <div
+      className="site__content--effect"
+    >
+      <main
+        className="site-main"
+      />
+    </div>
+  </div>
+</div>
+`;

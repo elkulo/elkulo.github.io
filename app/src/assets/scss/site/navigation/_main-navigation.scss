@@ -1,0 +1,105 @@
+/*--------------------------------------------------------------
+## Main Navigation
+--------------------------------------------------------------*/
+
+.main-navigation {
+
+  .menu-avatar {
+    margin: ($size__spacing-unit * 5) auto 0;
+
+    &__item {
+      position: relative;
+      margin: auto;
+      width: 60%;
+      padding-bottom: 60%;
+      box-shadow: 0 0 5px #000;
+      border-radius: 100%;
+      overflow: hidden;
+
+      > img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .menu-list {
+    list-style: none;
+    margin: ($size__spacing-unit * 2) auto 0;
+    padding: 0;
+
+    &__item {
+      width: 100%;
+      margin: ($size__spacing-unit / 4) 0;
+      padding: 0;
+
+      &--home {
+      }
+      &--about {
+      }
+      &--product {
+      }
+      &--contact {
+      }
+
+      a {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: ($size__spacing-unit / 3) $size__spacing-unit;
+        border-bottom: solid 1px #444;
+        color: #bbb;
+        box-shadow: none;
+        min-height: 40px;
+        font-size: $font__size-lg;
+
+        @include media(mobile) {
+          font-size: $font__size-md;
+        }
+
+        &:hover,
+        &:focus {
+          background: rgba(255, 255, 255, 0.03);
+        }
+      }
+
+      .icon {
+        padding: 0;
+        margin: 0;
+        color: inherit;
+      }
+    }
+  }
+}
+
+.navigation-drawer {
+  &__button {
+    display: inline-block;
+    padding: 0 ($size__spacing-unit / 2);
+    margin-left: ($size__spacing-unit / -1.5);
+    border-right: solid 1px currentColor;
+    color: inherit;
+    border-radius: 0;
+    background: none;
+
+    @include media(desktop) {
+      margin-left: ($size__spacing-unit / -4);
+    }
+
+    &:hover,
+    &:focus {
+      background: none;
+    }
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+/**
+ * [命名規則] BEMによるSass(SCSS)
+ * 
+ * 例1: .block__element--modifier
+ * 例2: .block__block__ul__li
+ */
+
+/* 1.SCSS Config */
+
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/* 2.Normalize */
+
+@import "bootstrap/normalize";
+
+/* 3.Typography */
+
+@import "typography/typography";
+
+/* 4.Elements */
+
+@import "elements/elements";
+
+/* 5.Forms */
+
+@import "forms/forms";
+
+/* 6.Blocks */
+
+@import "blocks/blocks";
+
+/* 7.Layout */
+
+@import "layout/layout";
+
+/* 8.Site */
+
+@import "site/site";

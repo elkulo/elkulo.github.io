@@ -1,0 +1,143 @@
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+require("dotenv").config({ path: `.env.${activeEnv}` })
+
+module.exports = {
+  pathPrefix: "/Portfolio",
+  siteMetadata: {
+    title: `el.kulo`,
+    author: {
+      name: `A.Sudo`,
+      summary: `Frontend Developer.`,
+    },
+    description: `Portfolio.`,
+    siteUrl: `https://elkulo.github.io/Portfolio`,
+    social: {
+      instagram: `el.kulo`,
+    },
+  },
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/pages`,
+        name: `pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              quality: 80,
+              linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+        ],
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        //trackingId: `ADD YOUR TRACKING ID HERE`,
+      },
+    },
+    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `el.kulo`,
+        short_name: `el.kulo`,
+        start_url: `https://elkulo.github.io/Portfolio`,
+        background_color: `#ffffff`,
+        theme_color: `#551240`,
+        display: `minimal-ui`,
+        icon: `src/assets/icon/application-icon.png`,
+      },
+    },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    `gatsby-plugin-offline`,
+
+    // Api Server
+    {
+      resolve: "gatsby-source-apiserver",
+      options: {
+        // GraphQLで参照prefix: internal__ の場合 allInternalPosts のInternal箇所
+        typePrefix: "internal__",
+
+        // GraphQLで参照prefix: posts の場合 allInternalPosts のPosts箇所
+        name: `posts`,
+
+        // 取得先のURL(env変数)
+        url: `${process.env.API_URL}?key=${process.env.API_KEY}`,
+
+        // Apiの配列のルートになっているキー: {"data": [{},{},{}]}
+        entityLevel: `data`,
+
+        // HTTPメソッド
+        method: "get",
+
+        // リクエストヘッダー
+        headers: {
+          "Content-Type": "application/json",
+        },
+        verboseOutput: true, // For debugging purposes
+      },
+    },
+
+    // Sitemap XML
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/thanks`],
+      },
+    },
+
+    // Sass(SCSS)
+    `gatsby-plugin-sass`,
+
+    // Material UI
+    `gatsby-plugin-material-ui`,
+
+    // Google Fonts
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Noto+Serif+JP`,
+          `200,400,600,900`, // font weights
+        ],
+        display: "swap",
+      },
+    },
+  ],
+}
