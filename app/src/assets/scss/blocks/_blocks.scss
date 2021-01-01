@@ -1,0 +1,80 @@
+/* !Block styles */
+
+.alignwide {
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+
+	@include media(tablet) {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.alignfull {
+	position: relative;
+	left: -#{$size__spacing-unit };
+	width: calc( 100% + (2 * #{$size__spacing-unit}));
+	max-width: calc( 100% + (2 * #{$size__spacing-unit}));
+	clear: both;
+
+	@include media(tablet) {
+		margin-top: calc(2 * #{$size__spacing-unit});
+		margin-bottom: calc(2 * #{$size__spacing-unit});
+		left: calc( -12.5% - 75px );
+		width: calc( 125% + 150px );
+		max-width: calc( 125% + 150px );
+	}
+}
+
+.alignleft {
+	/*rtl:ignore*/
+	float: left;
+	max-width: calc(5 * (100vw / 12));
+	margin-top: 0;
+	margin-left: 0;
+	/*rtl:ignore*/
+	margin-right: $size__spacing-unit;
+
+	@include media(tablet) {
+		max-width: calc(4 * (100vw / 12));
+		/*rtl:ignore*/
+		margin-right: calc(2 * #{$size__spacing-unit});
+	}
+}
+
+.alignright {
+	/*rtl:ignore*/
+	float: right;
+	max-width: calc(5 * (100vw / 12));
+	margin-top: 0;
+	margin-right: 0;
+	/*rtl:ignore*/
+	margin-left: $size__spacing-unit;
+
+	@include media(tablet) {
+		max-width: calc(4 * (100vw / 12));
+		margin-right: 0;
+		/*rtl:ignore*/
+		margin-left: calc(2 * #{$size__spacing-unit});
+	}
+}
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+
+	@include postContentMaxWidth();
+
+	@include media(tablet) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+/* Accessibility */
+
+@import 'accessibility';
+
+/* Clearings */
+
+@import 'clearings';

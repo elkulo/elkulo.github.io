@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test renders correctly 1`] = `
+<footer
+  className="site-footer site-footer--sidebar"
+>
+  <div
+    className="site-footer__powered"
+  >
+    <h2
+      className="site-footer__powered__title"
+    >
+      POWERED
+    </h2>
+    <ul
+      className="site-footer__powered__ul"
+    >
+      <li
+        className="site-footer__powered__ul__li"
+      >
+        <img
+          alt="Node.js"
+          src="test-file-stub"
+        />
+        <div>
+          Node.js
+        </div>
+      </li>
+      <li
+        className="site-footer__powered__ul__li"
+      >
+        <img
+          alt="React.js"
+          src="test-file-stub"
+        />
+        <div>
+          React.js
+        </div>
+      </li>
+      <li
+        className="site-footer__powered__ul__li"
+      >
+        <img
+          alt="Gatsby.js"
+          src="test-file-stub"
+        />
+        <div>
+          Gatsby.js
+        </div>
+      </li>
+      <li
+        className="site-footer__powered__ul__li"
+      >
+        <img
+          alt="GraphQL"
+          src="test-file-stub"
+        />
+        <div>
+          GraphQL
+        </div>
+      </li>
+      <li
+        className="site-footer__powered__ul__li"
+      >
+        <img
+          alt="Github"
+          src="test-file-stub"
+        />
+        <div>
+          Github
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="site-footer__info"
+  >
+    © 2019 - 
+    2020
+     
+    My Title
+    , Built with 
+     
+    <a
+      href="https://www.gatsbyjs.org"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Gatsby
+    </a>
+     
+    and React.
+  </div>
+</footer>
+`;

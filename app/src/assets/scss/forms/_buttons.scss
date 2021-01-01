@@ -1,0 +1,46 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	@include button-transition;
+	background: $color__background-button;
+	border-radius: 5px;
+	box-sizing: border-box;
+	color: $color__text-button;
+	font-weight: 400;
+	line-height: 1;
+	padding: ($size__spacing-unit * 0.76) $size__spacing-unit;
+	text-decoration: none;
+	vertical-align: bottom;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset, 0 0 0 2px rgba(0, 0, 0, 0.2);
+
+	&:hover {
+		background: $color__background-button-hover;
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset, 0 0 0 2px rgba(0, 0, 0, 0.2);
+	}
+
+	&:visited {
+		color: $color__text-button;
+		text-decoration: none;
+	}
+
+	&:focus {
+		background: $color__background-button-hover;
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset, 0 0 0 2px rgba(0, 0, 0, 0.2);
+		outline: thin dotted;
+		outline-offset: -4px;
+	}
+}

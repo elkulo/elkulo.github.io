@@ -1,0 +1,84 @@
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+
+  /**
+  &--sidebar {}
+  &--content {}
+  */
+
+  &__powered {
+    margin: ($size__spacing-unit * 3) 0 0;
+    text-align: center;
+
+    &__title {
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      font-size: $font__size-md;
+      margin: 0 0 ($size__spacing-unit * 2);
+
+      &::before,
+      &::after {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 1px;
+        margin: 0 0.5em;
+        top: 50%;
+        background: currentColor;
+      }
+      &::before {
+        right: 100%;
+      }
+      &::after {
+        left: 100%;
+      }
+    }
+
+    &__ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 400px;
+      padding: 0;
+      margin: 0 auto;
+
+      &__li {
+        flex-basis: calc(20% - #{$size__spacing-unit});
+        max-width: calc(20% - #{$size__spacing-unit});
+        margin: ($size__spacing-unit / 2) 0;
+        padding: 0;
+        font-size: $font__size-xs;
+        white-space: nowrap;
+        color: $color__text-light;
+
+        img {
+          max-width: 40px;
+          height: auto;
+          vertical-align: bottom;
+          margin: 0 auto ($size__spacing-unit / 4);
+        }
+      }
+    }
+  }
+
+  &__info {
+    margin: ($size__spacing-unit * 3) auto;
+    color: $color__text-light;
+    text-align: center;
+
+    > a {
+      color: inherit;
+
+      &:hover {
+        text-decoration: none;
+        color: $color__link;
+      }
+    }
+  }
+}
