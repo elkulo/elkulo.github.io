@@ -20,12 +20,14 @@ input[type="submit"] {
 	border-radius: 5px;
 	box-sizing: border-box;
 	color: $color__text-button;
-	font-weight: 400;
+	font-weight: 600;
+	font-size: 1.125em;
 	line-height: 1;
 	padding: ($size__spacing-unit * 0.76) $size__spacing-unit;
 	text-decoration: none;
 	vertical-align: bottom;
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset, 0 0 0 2px rgba(0, 0, 0, 0.2);
+	text-shadow: 0 0 5px #000;
 
 	&:hover {
 		background: $color__background-button-hover;

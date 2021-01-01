@@ -2,13 +2,16 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import SEO from "components/seo"
 import BackToIcon from "@material-ui/icons/KeyboardBackspace"
+import BackgroundImage from "assets/images/background/bg-404.jpg"
 
 const style = {
   container: {
     display: `flex`,
     alignItems: `center`,
     minHeight: `100vh`,
-    background: `#e2eadf`,
+    backgroundImage: `url(${BackgroundImage})`,
+    backgroundSize: `cover`,
+    color: `#eee`,
     fontSize: `10px`, // 基準
   },
   wrap: {
@@ -17,8 +20,8 @@ const style = {
     fontSize: `calc(100% + (1vw * 2.625))`, // 倍率
   },
   branding: {
-    fontSize: `0.75em`,
-    fontWeight: `900`,
+    fontSize: `0.875em`,
+    fontWeight: `600`,
     margin: `0`,
     padding: `0`,
   },
@@ -26,15 +29,15 @@ const style = {
     letterSpacing: `-0.02em`,
     fontSize: `2em`,
     fontWeight: `900`,
-    color: `#4cbd9b`,
+    color: `#61d4e4`,
     margin: `0`,
   },
   subTitle: {
-    fontSize: `0.75em`,
+    fontSize: `0.875em`,
     fontWeight: `600`,
   },
   content: {
-    fontSize: `0.625em`,
+    fontSize: `0.75em`,
     fontWeight: `300`,
   },
 }
@@ -54,18 +57,21 @@ const NotFoundPage = ({ data }) => {
     <div style={style.container}>
       <SEO title={pageTitle} />
       <div style={style.wrap}>
-        <p style={style.branding}>{siteTitle}</p>
+        <p style={style.branding}>Oops...</p>
         <h1 style={style.mainTitle}>404 File not found</h1>
         <p style={style.subTitle}>指定されたページが存在しません。</p>
         <div style={style.content}>
           <p>
-            大変申し訳ございませんが、お探しのページは削除されたか、
+            お探しのページは削除されたか、
             <br />
             アドレスが間違っている可能性があります。
           </p>
-          <BackToIcon style={{ fontSize: `1em`, color: `#4cbd9b` }} />
-          <Link to="/" style={{ fontSize: `1em`, color: `#4cbd9b` }}>
-            ホームに戻る
+          <BackToIcon style={{ fontSize: `0.75em`, color: `#b6bdf2` }} />{" "}
+          <Link
+            to="/"
+            style={{ fontSize: `0.875em`, color: `#b6bdf2`, boxShadow: `none` }}
+          >
+            {siteTitle} のホームに戻る
           </Link>
         </div>
       </div>

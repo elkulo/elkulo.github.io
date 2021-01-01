@@ -33,7 +33,7 @@ module.exports = {
           summary: "",
         },
         social: {
-          instagram: "",
+          github: "",
         },
       },
     },

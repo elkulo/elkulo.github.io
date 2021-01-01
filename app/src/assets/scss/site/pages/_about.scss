@@ -23,8 +23,11 @@
 }
 
 .about-primary {
-  margin: ($size__spacing-unit * 2) 0 0;
-  width: calc(100% - #{$size__spacing-unit * 3});
+  margin: ($size__spacing-unit * 2) auto 0;
+
+  @include media(desktop) {
+    width: calc(100% - #{$size__spacing-unit * 3});
+  }
 
   &__header {
   }
@@ -34,10 +37,9 @@
 }
 
 .about-secondary {
-  width: calc(100% - #{$size__spacing-unit * 3});
   height: calc(100vh - #{$size__spacing-unit * 4});
   margin: ($size__spacing-unit * 5) auto;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
 
   img {
@@ -47,6 +49,7 @@
   }
 
   @include media(desktop) {
+    width: calc(100% - #{$size__spacing-unit * 3});
     margin: ($size__spacing-unit * 2) 0 ($size__spacing-unit * 2) auto;
   }
 }
