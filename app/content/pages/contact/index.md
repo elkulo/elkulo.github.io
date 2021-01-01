@@ -2,7 +2,7 @@
 title: Contact
 description: お問い合わせはこちら
 date: "2020.04.30"
-picture: "./salty_egg.jpg"
+picture: "./big_sur.jpg"
 form_title: Googleフォーム
 form_url: "https://forms.gle/Ra9gNBircfwg2umm9"
 ---

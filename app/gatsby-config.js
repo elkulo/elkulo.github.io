@@ -9,12 +9,12 @@ module.exports = {
     title: `el.kulo`,
     author: {
       name: `A.Sudo`,
-      summary: `Frontend Developer.`,
+      summary: `Front-end web developer.`,
     },
     description: `Portfolio.`,
     siteUrl: `https://elkulo.github.io/`,
     social: {
-      instagram: `el.kulo`,
+      github: `elkulo`,
     },
   },
   plugins: [

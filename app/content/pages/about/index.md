@@ -2,7 +2,7 @@
 title: About
 description: "Profile Page"
 date: "2020.12.30"
-name: A.S
+name: A.Sudo
 ---
 
 This is my first post on my new fake blog! How exciting!

@@ -26,7 +26,7 @@ const Bio = () => {
             summary
           }
           social {
-            instagram
+            github
           }
         }
       }
@@ -56,14 +56,16 @@ const Bio = () => {
         }}
       />
       <p style={{ marginBottom: 0 }}>
-        Written by <strong>{author.name}</strong> {author.summary}
+        <strong>{author.name}</strong>
+        {" - "}
+        <small style={{ display: "inline-block" }}>{author.summary}</small>
         <br />
         <a
-          href={`https://www.instagram.com/${social.instagram}`}
+          href={`https://github.com/${social.github}`}
           target="_blank"
           rel="noopener noreferrer"
         >
-          &rarr; Follow me on Instagram
+          &rarr; Follow me on Github
         </a>
       </p>
     </div>
