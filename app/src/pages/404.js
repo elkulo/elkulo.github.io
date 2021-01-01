@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import SEO from "../components/seo"
+import SEO from "components/seo"
 import BackToIcon from "@material-ui/icons/KeyboardBackspace"
 
 const style = {

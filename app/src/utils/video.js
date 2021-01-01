@@ -69,6 +69,7 @@ class Video extends Component {
         autoPlay={true}
         loop={true}
         muted={true}
+        playsInline={true}
         disablePictureInPicture={true}
         poster={thumbnail}
         ref={this.videoRef}
