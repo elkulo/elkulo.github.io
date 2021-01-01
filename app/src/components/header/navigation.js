@@ -5,7 +5,7 @@ import HomeIcon from "@material-ui/icons/Home"
 import AboutIcon from "@material-ui/icons/Person"
 import ProductIcon from "@material-ui/icons/Grain"
 import ContactIcon from "@material-ui/icons/Send"
-import thumbnail from "../../assets/videos/landscape.jpg"
+import thumbnail from "assets/videos/landscape/landscape.jpg"
 
 const useStyles = makeStyles({
   itemColor: {

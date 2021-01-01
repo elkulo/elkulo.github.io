@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import ProductTemplate from "../templates/product-template"
+import Layout from "components/layout"
+import SEO from "components/seo"
+import ProductTemplate from "templates/product-template"
 
 /**
  * プロダクトインデックス

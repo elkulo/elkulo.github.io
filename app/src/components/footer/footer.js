@@ -6,7 +6,7 @@ import {
   GraphQLIcon,
   GatsbyIcon,
   GitHubIcon,
-} from "../../assets/images/image"
+} from "assets/images/image"
 
 /**
  * フッター

@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import MediaQuery from "react-responsive"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "components/layout"
+import SEO from "components/seo"
 import { StickyContainer, Sticky } from "react-sticky"
-import thumbnail from "../assets/videos/landscape.jpg"
+import thumbnail from "assets/videos/landscape/landscape.jpg"
 
 /**
  * アバウトページ

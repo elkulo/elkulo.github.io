@@ -1,13 +1,15 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import Footer from "../components/footer/footer"
-import SEO from "../components/seo"
-import NavigationDrawer from "../utils/NavigationDrawer"
+import Layout from "components/layout"
+import Footer from "components/footer/footer"
+import SEO from "components/seo"
+import NavigationDrawer from "utils/NavigationDrawer"
 import OpenIcon from "@material-ui/icons/Notes"
-import MP4 from "../assets/videos/landscape.mp4"
-import thumbnail from "../assets/videos/landscape.jpg"
-import Video from "../utils/Video"
+import Video from "utils/Video"
+import {
+  landscapeMP4 as MP4,
+  landscapeJPG as thumbnail,
+} from "assets/videos/video"
 
 /**
  * インデックス

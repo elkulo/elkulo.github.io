@@ -185,3 +185,24 @@ exports.sourceNodes = async ({
     }
   })
 }
+
+// ディレクトリのエイリアスのパス作成
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        assets: path.resolve(__dirname, "src/assets"),
+        components: path.resolve(__dirname, "src/components"),
+        pages: path.resolve(__dirname, "src/pages"),
+        templates: path.resolve(__dirname, "src/templates"),
+        utils: path.resolve(__dirname, "src/utils"),
+      },
+    },
+  })
+}
