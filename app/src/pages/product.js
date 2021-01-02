@@ -11,7 +11,7 @@ import ProductTemplate from "templates/product-template"
  * @returns
  */
 const ProductIndex = ({ data, location }) => {
-  const pageTitle = "Product"
+  const pageTitle = "PRODUCT"
 
   return (
     <Layout location={location} title={pageTitle} isPageType="Product">

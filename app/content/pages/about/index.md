@@ -1,5 +1,5 @@
 ---
-title: About
+title: ABOUT
 description: "Profile Page"
 date: "2020.12.30"
 name: A.Sudo

@@ -19,7 +19,7 @@ class AboutPage extends Component {
       location: props.location,
       post: props.data.markdownRemark,
       postContent: props.data.markdownRemark.frontmatter,
-      pageTitle: "About",
+      pageTitle: "ABOUT",
     }
     this._addObserve = this._addObserve.bind(this)
     this.observerApi = ""
@@ -74,7 +74,9 @@ class AboutPage extends Component {
                 <div className="about__container--primary">
                   <div className="about-primary">
                     <header className="about-primary__header">
-                      <h2 className="about-primary__header__title">About</h2>
+                      <h2 className="about-primary__header__title">
+                        {postContent.title}
+                      </h2>
                       <div className="about-primary__header__meta">
                         <h3 className="about-primary__header__meta__name">
                           {postContent.name}
@@ -146,6 +148,7 @@ export const pageQuery = graphql`
   query {
     markdownRemark(fileAbsolutePath: { regex: "//about/index.md/" }) {
       frontmatter {
+        title
         name
         date
       }
