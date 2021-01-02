@@ -38,6 +38,10 @@
     width: 100%;
     text-align: center;
     color: #fff;
+
+    p {
+      margin-bottom: $size__spacing-unit;
+    }
   }
 
   &__bg {

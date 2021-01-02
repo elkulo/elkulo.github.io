@@ -88,7 +88,7 @@
       text-align: center;
 
       @include media(tablet) {
-        margin: ($size__spacing-unit / 4) 0 $size__spacing-unit;
+        margin: ($size__spacing-unit * 2) 0 0;
       }
 
       &__ul {
@@ -128,7 +128,9 @@
     &__description {
       margin: $size__spacing-unit auto 0;
       text-align: center;
+      font-family: $font__heading;
       font-size: $font__size-sm;
+      font-weight: 600;
       color: rgb(151, 135, 45);
 
       a {

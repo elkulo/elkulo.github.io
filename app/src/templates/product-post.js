@@ -179,6 +179,7 @@ class ProductPostTemplate extends Component {
                                 key={_image_index}
                               >
                                 <button
+                                  className="entry-primary__attachments__attachment__link"
                                   onClick={() => this.handleClick(_image_index)}
                                 >
                                   <Image src={_image_src} />
