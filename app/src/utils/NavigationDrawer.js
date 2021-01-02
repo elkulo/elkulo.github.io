@@ -10,7 +10,10 @@ import EventListener from "react-event-listener"
 class NavigationDrawer extends Component {
   constructor(props) {
     super(props)
-    this.state = { timer: 0 }
+    this.state = {
+      windowWidth: 0,
+      timer: 0,
+    }
   }
 
   /**
@@ -20,6 +23,16 @@ class NavigationDrawer extends Component {
    */
   componentDidMount() {
     this._onDrawer("hidden")
+
+    // ウィンド幅の初期値
+    const wrapperWidth = document.querySelector("#gatsby-focus-wrapper")
+      ? document.querySelector("#gatsby-focus-wrapper").clientWidth
+      : this.state.windowWidth
+    if (this.state.windowWidth !== wrapperWidth) {
+      this.setState({
+        windowWidth: wrapperWidth,
+      })
+    }
   }
 
   /**
@@ -40,11 +53,19 @@ class NavigationDrawer extends Component {
     if (this.state.timer > 0) {
       clearTimeout(this.state.timer)
     }
-    this.setState({
-      timer: setTimeout(() => {
-        this._onDrawer("hidden")
-      }, 100),
-    })
+
+    // ウィンド幅が変更された場合
+    const wrapperWidth = document.querySelector("#gatsby-focus-wrapper")
+      ? document.querySelector("#gatsby-focus-wrapper").clientWidth
+      : this.state.windowWidth
+    if (this.state.windowWidth !== wrapperWidth) {
+      this.setState({
+        windowWidth: wrapperWidth,
+        timer: setTimeout(() => {
+          this._onDrawer("hidden")
+        }, 100),
+      })
+    }
   }
 
   /**
