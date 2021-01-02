@@ -40,8 +40,8 @@ body {
     z-index: 3;
     overflow: hidden;
     background: {
-      //image: url("../images/background/bg@2x.jpg");
-      size: (400px / 3);
+      image: url("../images/background/bg@2x.jpg");
+      size: (400px / 2);
       color: #fff;
     }
     transition: transform 200ms ease-out;

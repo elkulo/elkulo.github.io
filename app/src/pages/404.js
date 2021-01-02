@@ -10,9 +10,11 @@ const style = {
     alignItems: `center`,
     minHeight: `100vh`,
     backgroundImage: `url(${BackgroundImage})`,
+    backgroundPosition: `30% 50%`,
     backgroundSize: `cover`,
     color: `#eee`,
     fontSize: `10px`, // 基準
+    textShadow: `0 0 1px #000`,
   },
   wrap: {
     paddingLeft: `1em`,
@@ -37,8 +39,8 @@ const style = {
     fontWeight: `600`,
   },
   content: {
-    fontSize: `0.75em`,
-    fontWeight: `300`,
+    fontSize: `0.675em`,
+    fontWeight: `400`,
   },
 }
 
