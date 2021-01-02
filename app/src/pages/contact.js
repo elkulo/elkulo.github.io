@@ -11,7 +11,7 @@ import SEO from "components/seo"
  * @returns DOM
  */
 const ContactPage = ({ data, location }) => {
-  const pageTitle = "contact"
+  const pageTitle = "CONTACT"
 
   const post = data.markdownRemark
   const postContent = post.frontmatter

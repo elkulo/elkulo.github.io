@@ -16,25 +16,25 @@ const useStyles = makeStyles({
 const naviList = [
   {
     ident: encodeURI("home"),
-    name: "Home",
+    name: "HOME",
     url: "/",
     icon: () => <HomeIcon />,
   },
   {
     ident: encodeURI("about"),
-    name: "About",
+    name: "ABOUT",
     url: "/about",
     icon: () => <AboutIcon />,
   },
   {
     ident: encodeURI("product"),
-    name: "Product",
+    name: "PRODUCT",
     url: "/product",
     icon: () => <ProductIcon />,
   },
   {
     ident: encodeURI("contact"),
-    name: "Contact",
+    name: "CONTACT",
     url: "/contact",
     icon: () => <ContactIcon />,
   },

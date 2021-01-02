@@ -45,13 +45,13 @@ const style = {
 }
 
 /**
- * 404 not found.
+ * 404 NOT FOUND.
  *
  * @param {*} { data }
  * @returns DOM
  */
 const NotFoundPage = ({ data }) => {
-  const pageTitle = "404 File not found"
+  const pageTitle = "404 NOT FOUND"
 
   const siteTitle = data.site.siteMetadata.title
 
@@ -60,7 +60,7 @@ const NotFoundPage = ({ data }) => {
       <SEO title={pageTitle} />
       <div style={style.wrap}>
         <p style={style.branding}>Oops...</p>
-        <h1 style={style.mainTitle}>404 File not found</h1>
+        <h1 style={style.mainTitle}>404 NOT FOUND</h1>
         <p style={style.subTitle}>指定されたページが存在しません。</p>
         <div style={style.content}>
           <p>

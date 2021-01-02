@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: CONTACT
 description: お問い合わせはこちら
 date: "2020.04.30"
 picture: "./big_sur.jpg"
