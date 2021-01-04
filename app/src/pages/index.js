@@ -53,19 +53,19 @@ const IndexPage = ({ location }) => {
                   <ul className="home__header__navi__ul">
                     <li className="home__header__navi__ul__li">
                       <Link to="/about">
-                        <span>About</span>
+                        <span>ABOUT</span>
                       </Link>
                     </li>
                     <li className="home__header__navi__ul__li">
                       <Link to="/product">
-                        <span>Product</span>
+                        <span>PRODUCT</span>
                       </Link>
                     </li>
                   </ul>
                 </nav>
                 <div className="home__header__description">
                   <p>
-                    <Link to="/contact">Contact us.</Link>
+                    <Link to="/contact">Contact us here.</Link>
                   </p>
                 </div>
               </header>
