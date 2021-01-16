@@ -18,7 +18,7 @@ npm run deploy
 
 ~~~
 git clone https://github.com/elkulo/elkulo.github.io.git elkulo.github.io
-cd elkulo.github.io
+cd elkulo.github.io/app
 cd npm install
 ~~~
 
