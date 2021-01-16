@@ -79,7 +79,11 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           name: `google-site-verification`,
-          content: `itK-piZsN25_MPc8s1-rZS5OXKBZ1FqndxC39BEFumg`,
+          content: `itK-piZsN25_MPc8s1-rZS5OXKBZ1FqndxC39BEFumg`, // Google Search Console
+        },
+        {
+          name: `robots`,
+          content: `noindex,nofollow`, // 一時的に非公開
         },
       ].concat(meta)}
     />
