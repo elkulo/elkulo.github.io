@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Navigation from "./navigation"
+import Navigation from "../navigation/main-navigation"
 import NavigationDrawer from "utils/NavigationDrawer"
 import OpenIcon from "@material-ui/icons/Notes"
 import CloseIcon from "@material-ui/icons/Close"
