@@ -1,6 +1,60 @@
 import React from "react"
 import Header from "./header/header"
 import Footer from "./footer/footer"
+import {
+  TransitionGroup,
+  Transition as ReactTransition,
+} from "react-transition-group"
+
+const timeout = 380
+const getTransitionStyles = {
+  typeA: {
+    // マウント開始時
+    entering: {
+      transition: `padding ${timeout}ms ease-out, opacity ${
+        timeout * 2
+      }ms ease-out`,
+      opacity: 0,
+      paddingTop: `10px`,
+    },
+    // マウント完了時
+    entered: {
+      transition: `padding ${timeout}ms ease-out, opacity ${
+        timeout * 2
+      }ms ease-out`,
+      opacity: 1,
+      paddingTop: `0px`,
+    },
+    // アンマウント開始時
+    exiting: {
+      transition: `opacity ${timeout * 2}ms ease-out`,
+      opacity: 0,
+      paddingTop: `0px`,
+    },
+    // アンマウント完了時
+    exited: {
+      opacity: 0,
+      paddingTop: `10px`,
+    },
+  },
+  typeB: {
+    entering: {
+      transition: `opacity ${timeout * 2}ms ease-out`,
+      opacity: 0,
+    },
+    entered: {
+      transition: `opacity ${timeout * 2}ms ease-out`,
+      opacity: 1,
+    },
+    exiting: {
+      transition: `opacity ${timeout * 2}ms ease-out`,
+      opacity: 0,
+    },
+    exited: {
+      opacity: 0,
+    },
+  },
+}
 
 /**
  * レイアウト
@@ -60,7 +114,26 @@ const Layout = ({
               children={children}
               position="content"
             />
-            <main className="site-main">{children}</main>
+            <TransitionGroup>
+              <ReactTransition
+                key={location.pathname}
+                appear={true}
+                timeout={{
+                  enter: timeout,
+                  exit: timeout,
+                }}
+              >
+                {(status) => (
+                  <div
+                    style={{
+                      ...getTransitionStyles.typeA[status],
+                    }}
+                  >
+                    <main className="site-main">{children}</main>
+                  </div>
+                )}
+              </ReactTransition>
+            </TransitionGroup>
             <Footer position="content" />
           </div>
         </div>
@@ -69,19 +142,38 @@ const Layout = ({
   } else {
     return (
       <div className={classss}>
-        <div className="site__sidebar">
-          <Header
-            location={location}
-            title={title}
-            children={children}
-            position="sidebar"
-          />
-        </div>
-        <div className="site__content">
-          <div className="site__content--effect">
-            <main className="site-main">{children}</main>
-          </div>
-        </div>
+        <TransitionGroup>
+          <ReactTransition
+            key={location.pathname}
+            appear={true}
+            timeout={{
+              enter: timeout,
+              exit: timeout,
+            }}
+          >
+            {(status) => (
+              <div
+                style={{
+                  ...getTransitionStyles.typeB[status],
+                }}
+              >
+                <div className="site__sidebar">
+                  <Header
+                    location={location}
+                    title={title}
+                    children={children}
+                    position="sidebar"
+                  />
+                </div>
+                <div className="site__content">
+                  <div className="site__content--effect">
+                    <main className="site-main">{children}</main>
+                  </div>
+                </div>
+              </div>
+            )}
+          </ReactTransition>
+        </TransitionGroup>
       </div>
     )
   }
