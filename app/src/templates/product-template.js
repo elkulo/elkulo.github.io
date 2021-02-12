@@ -2,6 +2,41 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 import Image from "utils/Image"
 import PreviewIcon from "@material-ui/icons/Panorama"
+import {
+  TransitionGroup,
+  Transition as ReactTransition,
+} from "react-transition-group"
+
+const timeout = 380
+const getTransitionStyles = {
+  // マウント開始時
+  entering: {
+    transition: `padding ${timeout}ms ease-out, opacity ${
+      timeout * 2
+    }ms ease-out`,
+    opacity: 0,
+    paddingTop: `20px`,
+  },
+  // マウント完了時
+  entered: {
+    transition: `padding ${timeout}ms ease-out, opacity ${
+      timeout * 2
+    }ms ease-out`,
+    opacity: 1,
+    paddingTop: `0px`,
+  },
+  // アンマウント開始時
+  exiting: {
+    transition: `opacity ${timeout * 2}ms ease-out`,
+    opacity: 0,
+    paddingTop: `0px`,
+  },
+  // アンマウント完了時
+  exited: {
+    opacity: 0,
+    paddingTop: `10px`,
+  },
+}
 
 /**
  * プロダクトのテンプレート
@@ -86,39 +121,63 @@ class ProductTemplate extends Component {
 
               return (
                 <section className="entry" key={post.id}>
-                  <div className="entry__feature">
-                    <Link to={`/product/${post.alternative_id}`}>
-                      <Image src={post.attachment[0]} alt={title} />
-                      <span className="entry__feature__link">
-                        <span className="entry__feature__link__inner">
-                          <PreviewIcon />
-                          <br />
-                          Permalink
-                        </span>
-                      </span>
-                    </Link>
-                  </div>
-                  <header className="entry__header">
-                    <h3 className="entry__header__title">
-                      <Link to={`/product/${post.alternative_id}`}>
-                        {title}
-                      </Link>
-                    </h3>
-                    <div className="entry__header__meta">
-                      Updated: {post.updated}
-                    </div>
-                  </header>
-                  <div className="entry__tags">
-                    {post.tag.map((_tag_name, _tag_index) => {
-                      return (
-                        <span className="entry__tags__tag" key={_tag_index}>
-                          <Link to={`/product/tag/${encodeURI(_tag_name)}`}>
-                            {_tag_name}
-                          </Link>
-                        </span>
-                      )
-                    })}
-                  </div>
+                  <TransitionGroup>
+                    <ReactTransition
+                      key={post.id}
+                      appear={true}
+                      timeout={{
+                        enter: timeout,
+                        exit: timeout,
+                      }}
+                    >
+                      {(status) => (
+                        <div
+                          style={{
+                            ...getTransitionStyles[status],
+                          }}
+                        >
+                          <div className="entry__feature">
+                            <Link to={`/product/${post.alternative_id}`}>
+                              <Image src={post.attachment[0]} alt={title} />
+                              <span className="entry__feature__link">
+                                <span className="entry__feature__link__inner">
+                                  <PreviewIcon />
+                                  <br />
+                                  Permalink
+                                </span>
+                              </span>
+                            </Link>
+                          </div>
+                          <header className="entry__header">
+                            <h3 className="entry__header__title">
+                              <Link to={`/product/${post.alternative_id}`}>
+                                {title}
+                              </Link>
+                            </h3>
+                            <div className="entry__header__meta">
+                              Updated: {post.updated}
+                            </div>
+                          </header>
+                          <div className="entry__tags">
+                            {post.tag.map((_tag_name, _tag_index) => {
+                              return (
+                                <span
+                                  className="entry__tags__tag"
+                                  key={_tag_index}
+                                >
+                                  <Link
+                                    to={`/product/tag/${encodeURI(_tag_name)}`}
+                                  >
+                                    {_tag_name}
+                                  </Link>
+                                </span>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </ReactTransition>
+                  </TransitionGroup>
                 </section>
               )
             })}
