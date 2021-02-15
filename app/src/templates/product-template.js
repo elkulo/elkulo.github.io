@@ -11,23 +11,23 @@ const timeout = 380
 const getTransitionStyles = {
   // マウント開始時
   entering: {
-    transition: `padding ${timeout}ms ease-out, opacity ${
+    transition: `padding ${timeout}ms ease-out ${timeout}ms, opacity ${
       timeout * 2
-    }ms ease-out`,
+    }ms ease-out ${timeout}ms`,
     opacity: 0,
-    paddingTop: `20px`,
+    paddingTop: `10px`,
   },
   // マウント完了時
   entered: {
-    transition: `padding ${timeout}ms ease-out, opacity ${
+    transition: `padding ${timeout}ms ease-out ${timeout}ms, opacity ${
       timeout * 2
-    }ms ease-out`,
+    }ms ease-out ${timeout}ms`,
     opacity: 1,
     paddingTop: `0px`,
   },
   // アンマウント開始時
   exiting: {
-    transition: `opacity ${timeout * 2}ms ease-out`,
+    transition: `opacity ${timeout * 2}ms ease-out ${timeout}ms`,
     opacity: 0,
     paddingTop: `0px`,
   },
