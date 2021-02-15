@@ -11,5 +11,4 @@ const vhMaxFix = () => {
   const maxvh = window.innerHeight
   document.documentElement.style.setProperty("--maxvh", `${maxvh}px`)
 }
-window.addEventListener("resize", vhMaxFix, false)
-window.addEventListener("load", vhMaxFix, false)
+document.addEventListener("DOMContentLoaded", vhMaxFix, false)
