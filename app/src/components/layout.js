@@ -11,30 +11,30 @@ const getTransitionStyles = {
   typeA: {
     // マウント開始時
     entering: {
-      transition: `padding ${timeout}ms ease-out, opacity ${
+      transition: `transform ${timeout}ms ease-out, opacity ${
         timeout * 2
       }ms ease-out`,
       opacity: 0,
-      paddingTop: `10px`,
+      transform: `translate(0px, 10px)`,
     },
     // マウント完了時
     entered: {
-      transition: `padding ${timeout}ms ease-out, opacity ${
+      transition: `transform ${timeout}ms ease-out, opacity ${
         timeout * 2
       }ms ease-out`,
       opacity: 1,
-      paddingTop: `0px`,
+      transform: `translate(0px, 0px)`,
     },
     // アンマウント開始時
     exiting: {
       transition: `opacity ${timeout * 2}ms ease-out`,
       opacity: 0,
-      paddingTop: `0px`,
+      transform: `translate(0px, 0px)`,
     },
     // アンマウント完了時
     exited: {
       opacity: 0,
-      paddingTop: `10px`,
+      transform: `translate(0, 10px)`,
     },
   },
   typeB: {
@@ -134,7 +134,7 @@ const Layout = ({
                 )}
               </ReactTransition>
             </TransitionGroup>
-            <Footer position="content" />
+            <Footer location={location} position="content" />
           </div>
         </div>
       </div>

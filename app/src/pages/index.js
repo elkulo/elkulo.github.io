@@ -69,7 +69,7 @@ const IndexPage = ({ location }) => {
                   </p>
                 </div>
               </header>
-              <Footer position="sidebar" />
+              <Footer location={location} position="sidebar" />
             </div>
           </div>
           <div className="home__split--right">

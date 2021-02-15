@@ -5,3 +5,11 @@ import "typeface-merriweather"
 // Global CSS
 import "prismjs/themes/prism.css"
 import "assets/scss/style.scss"
+
+// 100vh Fix
+const vhMaxFix = () => {
+  const maxvh = window.innerHeight
+  document.documentElement.style.setProperty("--maxvh", `${maxvh}px`)
+}
+window.addEventListener("resize", vhMaxFix, false)
+window.addEventListener("load", vhMaxFix, false)

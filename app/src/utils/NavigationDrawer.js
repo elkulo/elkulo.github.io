@@ -25,8 +25,8 @@ class NavigationDrawer extends Component {
     this._onDrawer("hidden")
 
     // ウィンド幅の初期値
-    const wrapperWidth = document.querySelector("#gatsby-focus-wrapper")
-      ? document.querySelector("#gatsby-focus-wrapper").clientWidth
+    const wrapperWidth = document.querySelector("#___gatsby")
+      ? document.querySelector("#___gatsby").clientWidth
       : this.state.windowWidth
     if (this.state.windowWidth !== wrapperWidth) {
       this.setState({
@@ -55,8 +55,8 @@ class NavigationDrawer extends Component {
     }
 
     // ウィンド幅が変更された場合
-    const wrapperWidth = document.querySelector("#gatsby-focus-wrapper")
-      ? document.querySelector("#gatsby-focus-wrapper").clientWidth
+    const wrapperWidth = document.querySelector("#___gatsby")
+      ? document.querySelector("#___gatsby").clientWidth
       : this.state.windowWidth
     if (this.state.windowWidth !== wrapperWidth) {
       this.setState({

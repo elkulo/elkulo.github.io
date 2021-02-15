@@ -8,6 +8,7 @@
       display: flex;
       flex-direction: row;
       min-height: 100vh;
+      min-height: var(--maxvh, 100vh);
     }
 
     &--left {
@@ -45,6 +46,7 @@
         box-sizing: border-box;
         width: 100%;
         height: 100vh;
+        height: var(--maxvh, 100vh);
 
         @include media(tablet) {
           height: 100%;
