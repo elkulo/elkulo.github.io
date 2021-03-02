@@ -69,23 +69,23 @@ class NavigationDrawer extends Component {
   }
 
   /**
-   * body要素にクラスの付け替え
+   * root要素にクラスの付け替え
    *
    * @param {string} [type="toggle"]
    * @memberof NavigationDrawer
    */
   _onDrawer(type = "toggle") {
-    const $body = document.body
+    const $root = document.querySelector("#___gatsby")
 
     switch (type) {
       case "visible":
-        $body.classList.add("body__drawer--visible")
+        $root.classList.add("root__drawer--visible")
         break
       case "hidden":
-        $body.classList.remove("body__drawer--visible")
+        $root.classList.remove("root__drawer--visible")
         break
       default:
-        $body.classList.toggle("body__drawer--visible")
+        $root.classList.toggle("root__drawer--visible")
     }
   }
 

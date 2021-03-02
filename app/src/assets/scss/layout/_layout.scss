@@ -1,9 +1,6 @@
 /*--------------------------------------------------------------
 ## Leyout
 --------------------------------------------------------------*/
-body {
-  overflow-x: hidden;
-}
 
 .site {
   position: relative;
@@ -11,6 +8,11 @@ body {
   min-height: 100vh;
   min-height: var(--maxvh, 100vh);
   height: 100%;
+  width: 100%;
+
+  .root__drawer--visible & {
+    overflow-x: hidden;
+  }
 
   &__sidebar {
     display: none;
@@ -32,7 +34,7 @@ body {
       width: $sidebar_width;
     }
 
-    .body__drawer--visible & {
+    .root__drawer--visible & {
       display: block;
     }
   }
@@ -40,7 +42,6 @@ body {
   &__content {
     position: relative;
     z-index: 3;
-    overflow: hidden;
     background: {
       image: url("../images/background/bg@2x.jpg");
       size: (400px / 2);
@@ -52,7 +53,8 @@ body {
       background: $color__background-body;
     }
 
-    .body__drawer--visible & {
+    .root__drawer--visible & {
+      overflow: hidden;
       transform: translate(100%, 0);
 
       @include media(mobile) {
@@ -61,7 +63,7 @@ body {
     }
 
     /** ブラーエフェクト */
-    &--effect {
+    &__effect {
       position: relative;
       background: inherit;
       width: 100%;
@@ -70,7 +72,7 @@ body {
       min-height: var(--maxvh, 100vh);
       transition: filter 200ms ease-out, -webkit-filter 200ms ease-out;
 
-      .body__drawer--visible & {
+      .root__drawer--visible & {
         pointer-events: none;
         filter: blur(5px);
         transform: translate(0);
@@ -95,7 +97,7 @@ body {
           background: rgba(0, 0, 0, 0.1);
         }
 
-        .body__drawer--visible & {
+        .root__drawer--visible & {
           opacity: 1;
           z-index: 10;
         }
@@ -110,14 +112,21 @@ body {
   margin: 0 $size__spacing-unit;
 
   @include media(tablet) {
-    margin: 0 ($size__spacing-unit * 4);
+    max-width: $size__site-tablet-content;
+    margin: 0 auto;
 
     .site__sidebar & {
+      max-width: 100%;
       margin: 0 $size__spacing-unit;
     }
   }
 
-  .full-width & {
+  @include media(tablet) {
+    max-width: $size__site-desktop-content;
+  }
+
+  &--full & {
+    max-width: 100%;
     margin: 0;
   }
 }
