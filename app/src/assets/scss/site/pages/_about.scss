@@ -49,7 +49,10 @@
   }
 
   @include media(desktop) {
-    width: calc(100% - #{$size__spacing-unit * 3});
-    margin: ($size__spacing-unit * 2) 0 ($size__spacing-unit * 2) auto;
+    position: sticky;
+    top: ($size__spacing-unit * 2);
+    left: 0;
+    width: 100%;
+    margin: ($size__spacing-unit * 2) 0;
   }
 }

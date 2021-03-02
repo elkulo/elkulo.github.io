@@ -13,7 +13,7 @@ import {
 } from "react-transition-group"
 
 // アニメーション初期値
-const timeout = 380 * 2
+const timeout = 750
 let getTransitionStyles = {}
 
 /**
@@ -42,23 +42,19 @@ const Footer = ({ location, position }) => {
     getTransitionStyles = {
       // マウント開始時
       entering: {
-        transition: `padding ${timeout}ms ease-out ${timeout}ms, opacity ${
-          timeout * 2
-        }ms ease-out ${timeout}ms`,
+        transition: `padding ${timeout}ms ease-out, opacity ${timeout}ms ease-out`,
         opacity: 0,
         paddingTop: `10px`,
       },
       // マウント完了時
       entered: {
-        transition: `padding ${timeout}ms ease-out ${timeout}ms, opacity ${
-          timeout * 2
-        }ms ease-out ${timeout}ms`,
+        transition: `padding ${timeout}ms ease-out, opacity ${timeout}ms ease-out`,
         opacity: 1,
         paddingTop: `0px`,
       },
       // アンマウント開始時
       exiting: {
-        transition: `opacity ${timeout * 2}ms ease-out ${timeout}ms`,
+        transition: `opacity ${timeout}ms ease-out`,
         opacity: 0,
         paddingTop: `0px`,
       },

@@ -6,29 +6,21 @@ import {
   Transition as ReactTransition,
 } from "react-transition-group"
 
-const timeout = 380
+const timeout = 500
 const getTransitionStyles = {
   typeA: {
     // マウント開始時
     entering: {
-      transition: `transform ${timeout}ms ease-out, opacity ${
-        timeout * 2
-      }ms ease-out`,
-      opacity: 0,
-      transform: `translate(0px, 10px)`,
-    },
-    // マウント完了時
-    entered: {
-      transition: `transform ${timeout}ms ease-out, opacity ${
-        timeout * 2
-      }ms ease-out`,
+      transition: `transform ${timeout}ms ease-out, opacity ${timeout}ms ease-out`,
       opacity: 1,
       transform: `translate(0px, 0px)`,
     },
+    // マウント完了時 スタイルリセット
+    entered: {},
     // アンマウント開始時
     exiting: {
-      transition: `opacity ${timeout * 2}ms ease-out`,
-      opacity: 0,
+      transition: `opacity ${timeout}ms ease-out`,
+      opacity: 1,
       transform: `translate(0px, 0px)`,
     },
     // アンマウント完了時
@@ -39,16 +31,13 @@ const getTransitionStyles = {
   },
   typeB: {
     entering: {
-      transition: `opacity ${timeout * 2}ms ease-out`,
-      opacity: 0,
-    },
-    entered: {
-      transition: `opacity ${timeout * 2}ms ease-out`,
+      transition: `opacity ${timeout}ms ease-out`,
       opacity: 1,
     },
+    entered: {},
     exiting: {
-      transition: `opacity ${timeout * 2}ms ease-out`,
-      opacity: 0,
+      transition: `opacity ${timeout}ms ease-out`,
+      opacity: 1,
     },
     exited: {
       opacity: 0,
@@ -107,7 +96,7 @@ const Layout = ({
           />
         </div>
         <div className="site__content">
-          <div className="site__content--effect">
+          <div className="site__content__effect">
             <Header
               location={location}
               title={title}
@@ -166,7 +155,7 @@ const Layout = ({
                   />
                 </div>
                 <div className="site__content">
-                  <div className="site__content--effect">
+                  <div className="site__content__effect">
                     <main className="site-main">{children}</main>
                   </div>
                 </div>
