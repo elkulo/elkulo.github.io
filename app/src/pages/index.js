@@ -38,8 +38,8 @@ const IndexPage = ({ location }) => {
       <SEO />
       <div className="home">
         <article className="home__split">
-          <div className="home__split--left">
-            <div className="home__split--left__inner">
+          <div className="home__split__left">
+            <div className="home__split__left__inner">
               <header className="home__header">
                 <NavigationDrawer visibility="toggle">
                   <OpenIcon />
@@ -72,8 +72,8 @@ const IndexPage = ({ location }) => {
               <Footer location={location} position="sidebar" />
             </div>
           </div>
-          <div className="home__split--right">
-            <div className="home__split--right__inner">
+          <div className="home__split__right">
+            <div className="home__split__right__inner">
               <section className="home__content">
                 <NavigationDrawer visibility="toggle">
                   <OpenIcon />

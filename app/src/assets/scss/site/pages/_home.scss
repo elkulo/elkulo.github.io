@@ -11,7 +11,7 @@
       min-height: var(--maxvh, 100vh);
     }
 
-    &--left {
+    &__left {
       @include media(tablet) {
         flex: 1;
         min-width: 33.33%;
@@ -38,7 +38,7 @@
       }
     }
 
-    &--right {
+    &__right {
       flex: 1;
       min-width: 66.66%;
 

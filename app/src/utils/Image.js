@@ -3,7 +3,7 @@ import GatsbyImage from "gatsby-image/withIEPolyfill"
 import { StaticQuery, graphql } from "gatsby"
 
 // 画像のURLを引数に取る
-export default ({ src, alt }) => (
+const Image = ({ src, alt }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -40,3 +40,4 @@ export default ({ src, alt }) => (
     }}
   />
 )
+export default Image

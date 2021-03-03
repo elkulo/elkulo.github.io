@@ -41,7 +41,7 @@ class ProductPostTemplate extends Component {
           <div className="wrap">
             <article className="entry">
               <div className="entry__container">
-                <div className="entry__container--primary">
+                <div className="entry__container__primary">
                   <div className="entry-primary">
                     <div className="entry-primary__categories">
                       <div className="entry-primary__categories__return">
@@ -192,7 +192,7 @@ class ProductPostTemplate extends Component {
                     </MediaQuery>
                   </div>
                 </div>
-                <div className="entry__container--secondary">
+                <div className="entry__container__secondary">
                   <div className="entry-secondary">
                     <div className="entry-secondary__feature">
                       <Image src={feature} alt={post.title} />

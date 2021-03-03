@@ -4,13 +4,10 @@
 
 .site-footer {
 
-  /**
-  &--sidebar {}
-  &--content {}
-  */
+  padding: ($size__spacing-unit * 5) 0;
 
   &__powered {
-    margin: ($size__spacing-unit * 3) 0 0;
+    margin: 0 auto;
     text-align: center;
     font-family: $font__heading;
 
@@ -40,7 +37,7 @@
       }
     }
 
-    &__ul {
+    &__list {
       box-sizing: border-box;
       list-style: none;
       display: flex;
@@ -49,7 +46,7 @@
       padding: 0 $size__spacing-unit;
       margin: 0 auto;
 
-      &__li {
+      &__item {
         flex-basis: calc(20% - #{$size__spacing-unit});
         max-width: calc(20% - #{$size__spacing-unit});
         margin: ($size__spacing-unit / 2) 0 0;
@@ -71,7 +68,7 @@
   }
 
   &__info {
-    margin: ($size__spacing-unit * 3) auto;
+    margin: ($size__spacing-unit * 3) auto 0;
     color: $color__text-light;
     text-align: center;
     font-family: $font__heading;
