@@ -246,7 +246,7 @@
         justify-content: center;
       }
 
-      &--primary {
+      &__primary {
         background: #fff;
 
         @include media(tablet) {
@@ -254,7 +254,7 @@
           max-width: 400px;
         }
       }
-      &--secondary {
+      &__secondary {
         border-top: solid 1px #f1f1f1;
         background: rgba(255, 255, 255, 0.5);
 

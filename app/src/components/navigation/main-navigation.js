@@ -51,19 +51,22 @@ export default function Navigation(props) {
 
   return (
     <nav className="main-navigation">
-      <div className="menu-avatar">
-        <div className="menu-avatar__item">
+      <div className="main-navigation__avatar">
+        <div className="main-navigation__avatar__item">
           <img src={thumbnail} alt="" />
         </div>
       </div>
-      <ul className="menu-list">
+      <ul className="main-navigation__list">
         {naviList.map((navi) => (
           <li
             key={navi.ident}
-            className={`menu-list__item menu-list__item--${navi.ident}`}
+            className={`main-navigation__list__item main-navigation__list__item--${navi.ident}`}
           >
             <Link to={navi.url}>
-              <navi.icon className="icon" classes={classes.itemColor} />
+              <navi.icon
+                className="main-navigation__list__item__icon"
+                classes={classes.itemColor}
+              />
               {navi.name}
             </Link>
           </li>

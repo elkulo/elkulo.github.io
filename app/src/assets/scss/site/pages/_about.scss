@@ -7,13 +7,13 @@
       display: flex;
       justify-content: space-between;
 
-      &--primary {
+      &__primary {
         order: 2;
         flex-basis: calc(50% - #{$size__spacing-unit * 1.5});
         max-width: calc(50% - #{$size__spacing-unit * 1.5});
       }
 
-      &--secondary {
+      &__secondary {
         order: 1;
         flex-basis: calc(50% - #{$size__spacing-unit * 1.5});
         max-width: calc(50% - #{$size__spacing-unit * 1.5});

@@ -54,12 +54,12 @@ const Header = ({ location = window.location, title, children, position }) => {
     <header className={`site-header ${classes}`}>
       <div className="wrap">
         <div className="site-header__container">
-          <div className="site-header__container--primary">
+          <div className="site-header__container__primary">
             <div className="site-branding">{branding}</div>
           </div>
           {/* サイドバーポジションの場合 */}
           {position === "sidebar" && (
-            <div className="site-header__container--secondary">
+            <div className="site-header__container__secondary">
               <NavigationDrawer visibility="toggle">
                 <CloseIcon />
               </NavigationDrawer>
@@ -67,7 +67,7 @@ const Header = ({ location = window.location, title, children, position }) => {
           )}
           {/* コンテンツポジションの場合 */}
           {position === "content" && (
-            <div className="site-header__container--secondary">
+            <div className="site-header__container__secondary">
               <NavigationDrawer visibility="toggle">
                 <OpenIcon />
               </NavigationDrawer>

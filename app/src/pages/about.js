@@ -68,7 +68,7 @@ class AboutPage extends Component {
         <article className="about">
           <div className="wrap">
             <div className="about__container">
-              <div className="about__container--primary">
+              <div className="about__container__primary">
                 <div className="about-primary">
                   <header className="about-primary__header">
                     <h2 className="about-primary__header__title">
@@ -87,7 +87,7 @@ class AboutPage extends Component {
                   />
                 </div>
               </div>
-              <div className="about__container--secondary">
+              <div className="about__container__secondary">
                 <div className="about-secondary">
                   <img src={thumbnail} alt="" />
                 </div>

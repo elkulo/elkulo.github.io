@@ -92,24 +92,24 @@ const Footer = ({ location, position }) => {
             >
               <div className="site-footer__powered">
                 <h2 className="site-footer__powered__title">POWERED</h2>
-                <ul className="site-footer__powered__ul">
-                  <li className="site-footer__powered__ul__li">
+                <ul className="site-footer__powered__list">
+                  <li className="site-footer__powered__list__item">
                     <img src={NodeIcon} alt="Node.js" />
                     <div>Node.js</div>
                   </li>
-                  <li className="site-footer__powered__ul__li">
+                  <li className="site-footer__powered__list__item">
                     <img src={ReactIcon} alt="React.js" />
                     <div>React.js</div>
                   </li>
-                  <li className="site-footer__powered__ul__li">
+                  <li className="site-footer__powered__list__item">
                     <img src={GatsbyIcon} alt="Gatsby.js" />
                     <div>Gatsby.js</div>
                   </li>
-                  <li className="site-footer__powered__ul__li">
+                  <li className="site-footer__powered__list__item">
                     <img src={GraphQLIcon} alt="GraphQL" />
                     <div>GraphQL</div>
                   </li>
-                  <li className="site-footer__powered__ul__li">
+                  <li className="site-footer__powered__list__item">
                     <img src={GitHubIcon} alt="Github" />
                     <div>Github</div>
                   </li>
