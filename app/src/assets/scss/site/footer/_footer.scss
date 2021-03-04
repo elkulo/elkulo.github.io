@@ -4,7 +4,15 @@
 
 .site-footer {
 
-  padding: ($size__spacing-unit * 5) 0;
+  // Home
+  &--sidebar {
+    padding: ($size__spacing-unit * 3) 0;
+  }
+
+  // Other page
+  &--content {
+    padding: ($size__spacing-unit * 5) 0;
+  }
 
   &__powered {
     margin: 0 auto;
