@@ -8,7 +8,7 @@ import {
 
 const timeout = 500
 const getTransitionStyles = {
-  typeA: {
+  pageStyle: {
     // マウント開始時
     entering: {
       transition: `transform ${timeout}ms ease-out, opacity ${timeout}ms ease-out`,
@@ -20,7 +20,7 @@ const getTransitionStyles = {
     // アンマウント開始時
     exiting: {
       transition: `opacity ${timeout}ms ease-out`,
-      opacity: 1,
+      opacity: 0,
       transform: `translate(0px, 0px)`,
     },
     // アンマウント完了時
@@ -29,7 +29,7 @@ const getTransitionStyles = {
       transform: `translate(0, 10px)`,
     },
   },
-  typeB: {
+  homeStyle: {
     entering: {
       transition: `opacity ${timeout}ms ease-out`,
       opacity: 1,
@@ -37,7 +37,7 @@ const getTransitionStyles = {
     entered: {},
     exiting: {
       transition: `opacity ${timeout}ms ease-out`,
-      opacity: 1,
+      opacity: 0,
     },
     exited: {
       opacity: 0,
@@ -115,7 +115,7 @@ const Layout = ({
                 {(status) => (
                   <div
                     style={{
-                      ...getTransitionStyles.typeA[status],
+                      ...getTransitionStyles.pageStyle[status],
                     }}
                   >
                     <main className="site-main">{children}</main>
@@ -143,7 +143,7 @@ const Layout = ({
             {(status) => (
               <div
                 style={{
-                  ...getTransitionStyles.typeB[status],
+                  ...getTransitionStyles.homeStyle[status],
                 }}
               >
                 <div className="site__sidebar">

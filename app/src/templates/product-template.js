@@ -11,7 +11,6 @@ const timeout = 500
 const getTransitionStyles = {
   // マウント開始時
   entering: {
-    transition: `padding ${timeout}ms ease-out, opacity ${timeout}ms ease-out`,
     opacity: 0,
     paddingTop: `10px`,
   },
