@@ -1,4 +1,8 @@
-// custom typefaces
+// Global JSX
+import React from "react"
+import PreLoaded from "components/pre-loaded"
+
+// Custom Typefaces
 import "typeface-montserrat"
 import "typeface-merriweather"
 
@@ -7,8 +11,14 @@ import "prismjs/themes/prism.css"
 import "assets/scss/style.scss"
 
 // 100vh Fix
-const vhMaxFix = () => {
-  const maxvh = window.innerHeight
-  document.documentElement.style.setProperty("--maxvh", `${maxvh}px`)
-}
-window.addEventListener("load", vhMaxFix, false)
+window.addEventListener(
+  "load",
+  () => {
+    const maxvh = window.innerHeight
+    document.documentElement.style.setProperty("--maxvh", `${maxvh}px`)
+  },
+  false
+)
+
+// Loading...
+export const wrapRootElement = ({ element }) => <PreLoaded>{element}</PreLoaded>
