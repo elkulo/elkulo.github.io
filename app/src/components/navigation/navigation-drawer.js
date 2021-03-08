@@ -36,15 +36,6 @@ class NavigationDrawer extends Component {
   }
 
   /**
-   * マウント解除でリセット
-   *
-   * @memberof NavigationDrawer
-   */
-  //componentWillUnmount() {
-  // this._onDrawer("hidden")
-  //}
-
-  /**
    * リサイズイベント
    *
    * @memberof NavigationDrawer

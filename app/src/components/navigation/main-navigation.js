@@ -43,10 +43,10 @@ const naviList = [
 /**
  * ナビゲーション
  *
- * @export Navigation
- * @returns Navigation
+ * @export MainNavigation
+ * @returns MainNavigation
  */
-export default function Navigation(props) {
+export default function MainNavigation(props) {
   const classes = useStyles()
 
   return (

@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Layout from "components/layout"
 import Footer from "components/footer/footer"
 import SEO from "components/seo"
-import NavigationDrawer from "utils/NavigationDrawer"
+import NavigationDrawer from "components/navigation/navigation-drawer"
 import OpenIcon from "@material-ui/icons/Notes"
 import Video from "utils/Video"
 import {

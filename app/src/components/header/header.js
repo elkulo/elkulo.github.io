@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Navigation from "../navigation/main-navigation"
-import NavigationDrawer from "utils/NavigationDrawer"
+import MainNavigation from "../navigation/main-navigation"
+import NavigationDrawer from "../navigation/navigation-drawer"
 import OpenIcon from "@material-ui/icons/Notes"
 import CloseIcon from "@material-ui/icons/Close"
 
@@ -75,7 +75,7 @@ const Header = ({ location = window.location, title, children, position }) => {
           )}
         </div>
         {/* サイドバーポジションの場合 */}
-        {position === "sidebar" && <Navigation />}
+        {position === "sidebar" && <MainNavigation />}
       </div>
     </header>
   )
