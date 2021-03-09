@@ -34,10 +34,10 @@ const LinearProgressWithLabel = (props) => {
       alignItems="center"
       width="100%"
     >
-      <Box width="100%" maxWidth={350} mr={1} ml={1}>
+      <Box width="100%" maxWidth={350} ml={1}>
         <LinearProgress variant="determinate" {...props} />
       </Box>
-      <Box minWidth={35}>
+      <Box minWidth={40} textAlign="right" mr={1}>
         <Typography variant="body2" color="textSecondary">{`${Math.round(
           props.value
         )}%`}</Typography>

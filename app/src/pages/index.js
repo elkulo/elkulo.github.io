@@ -84,7 +84,7 @@ const IndexPage = ({ location }) => {
                   </p>
                 </div>
                 <div className="home__content__eyecatch">
-                  <h2 className="home__content__eyecatch__title">Portfolio.</h2>
+                  <h2 className="home__content__eyecatch__title">Portfolio</h2>
                   <Video src={MP4} thumbnail={thumbnail} alt="" />
                 </div>
               </section>
