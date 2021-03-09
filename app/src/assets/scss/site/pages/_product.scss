@@ -2,6 +2,9 @@
 ## Archives
 --------------------------------------------------------------*/
 .product {
+
+  margin: 0 0 ($size__spacing-unit * 2);
+
   &__categories {
     display: flex;
     list-style: none;

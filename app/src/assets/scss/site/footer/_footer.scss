@@ -11,7 +11,7 @@
 
   // Other page
   &--content {
-    padding: ($size__spacing-unit * 5) 0;
+    padding: ($size__spacing-unit * 3) 0 ($size__spacing-unit * 5);
   }
 
   &__powered {
@@ -65,9 +65,9 @@
         color: $color__text-light;
 
         img {
-          width: 100%;
+          width: auto;
           max-width: 40px;
-          height: auto;
+          height: 40px;
           vertical-align: bottom;
           margin: 0 auto ($size__spacing-unit / 4);
         }
