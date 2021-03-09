@@ -99,11 +99,11 @@ const Footer = ({ location, position }) => {
                   </li>
                   <li className="site-footer__powered__list__item">
                     <img src={ReactIcon} alt="React.js" />
-                    <div>React.js</div>
+                    <div>React</div>
                   </li>
                   <li className="site-footer__powered__list__item">
                     <img src={GatsbyIcon} alt="Gatsby.js" />
-                    <div>Gatsby.js</div>
+                    <div>Gatsby</div>
                   </li>
                   <li className="site-footer__powered__list__item">
                     <img src={GraphQLIcon} alt="GraphQL" />
