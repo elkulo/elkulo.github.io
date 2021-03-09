@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react"
-import Backdrop from "@material-ui/core/Backdrop"
 import { makeStyles } from "@material-ui/core/styles"
-import LinearProgress from "@material-ui/core/LinearProgress"
-import Typography from "@material-ui/core/Typography"
-import Box from "@material-ui/core/Box"
+import { NoSsr, Typography, Box, LinearProgress } from "@material-ui/core"
 
-// モーダル背景
-const useStyles = makeStyles((theme) => ({
-  backdrop: {
-    zIndex: theme.zIndex.drawer + 1,
+// ロードスタイル
+const useStyles = makeStyles(() => ({
+  root: {
+    display: `grid`,
+    justifyItems: `center`,
+    alignItems: `center`,
     color: `#333`,
     background: `#fff`,
-  },
-  root: {
-    width: `100%`,
+    width: `100vw`,
+    height: document.documentElement.style.getPropertyValue("--maxvh")
+      ? document.documentElement.style.getPropertyValue("--maxvh")
+      : `100vh`,
   },
   buffer: {
     background: `#ddd`,
@@ -25,17 +25,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-// モーダルフェード設定
-const transition = {
-  appear: 0, // マウント直後
-  enter: 0, // 表示中
-  exit: 600, // close後
-}
-
 // ローリングバー
 const LinearProgressWithLabel = (props) => {
   return (
-    <Box display="flex" justifyContent="center" alignItems="center">
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      width="100%"
+    >
       <Box width="100%" maxWidth={350} mr={1} ml={1}>
         <LinearProgress variant="determinate" {...props} />
       </Box>
@@ -51,9 +49,12 @@ const LinearProgressWithLabel = (props) => {
 // ロード中
 const PreLoaded = ({ children }) => {
   const classes = useStyles()
-  const [isModalOpen, setOpen] = useState(true)
+
+  // ローディングの状態
+  const [isLoaded, setLoaded] = useState(false)
   const removeModal = () => {
-    setOpen(false)
+    // DOM更新
+    setLoaded(() => true)
   }
 
   // 擬似ロード画面
@@ -74,14 +75,12 @@ const PreLoaded = ({ children }) => {
     }
   }, [])
 
-  return (
-    <>
-      <div variant="outlined">{children}</div>
-      <Backdrop
-        className={classes.backdrop}
-        open={isModalOpen}
-        transitionDuration={transition}
-      >
+  // SSRは対象外
+  if (isLoaded) {
+    return <NoSsr>{children}</NoSsr>
+  } else {
+    return (
+      <NoSsr>
         <div className={classes.root}>
           <LinearProgressWithLabel
             value={progress}
@@ -91,8 +90,8 @@ const PreLoaded = ({ children }) => {
             }}
           />
         </div>
-      </Backdrop>
-    </>
-  )
+      </NoSsr>
+    )
+  }
 }
 export default PreLoaded

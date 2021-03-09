@@ -5,7 +5,7 @@ import BackToIcon from "@material-ui/icons/KeyboardBackspace"
 import BackgroundImage from "assets/images/background/bg-404.jpg"
 
 const style = {
-  container: {
+  root: {
     display: `flex`,
     alignItems: `center`,
     minHeight: `100vh`,
@@ -56,7 +56,7 @@ const NotFoundPage = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
-    <div style={style.container}>
+    <div style={style.root}>
       <SEO title={pageTitle} />
       <div style={style.wrap}>
         <p style={style.branding}>Oops...</p>
