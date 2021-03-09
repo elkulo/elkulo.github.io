@@ -20,5 +20,5 @@ window.addEventListener(
   false
 )
 
-// Loading...
+// 全体をまとめる
 export const wrapRootElement = ({ element }) => <PreLoaded>{element}</PreLoaded>
