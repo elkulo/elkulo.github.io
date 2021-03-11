@@ -8,7 +8,7 @@ const style = {
   root: {
     display: `flex`,
     alignItems: `center`,
-    minHeight: `100vh`,
+    minHeight: `var(--maxvh, 100vh)`,
     backgroundImage: `url(${BackgroundImage})`,
     backgroundPosition: `30% 50%`,
     backgroundSize: `cover`,

@@ -176,7 +176,7 @@ class ProductTemplate extends Component {
                 </section>
               )
             })}
-            {posts_per_page * paged <= max_posts && (
+            {posts_per_page * paged < max_posts && (
               <div className="product__entries__more">
                 <button
                   onClick={this.handleClick}
