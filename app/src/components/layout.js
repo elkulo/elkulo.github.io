@@ -114,9 +114,12 @@ const Layout = ({
               >
                 {(status) => (
                   <div
-                    style={{
-                      ...getTransitionStyles.pageStyle[status],
-                    }}
+                    style={
+                      /* Product以外で適用 */
+                      isPageType !== "Product"
+                        ? { ...getTransitionStyles.pageStyle[status] }
+                        : {}
+                    }
                   >
                     <main className="site-main">{children}</main>
                   </div>

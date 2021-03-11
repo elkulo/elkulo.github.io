@@ -11,7 +11,7 @@ class NavigationDrawer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      windowWidth: 0,
+      rootWidth: 0,
       timer: 0,
     }
   }
@@ -27,10 +27,10 @@ class NavigationDrawer extends Component {
     // ウィンド幅の初期値
     const wrapperWidth = document.querySelector("#___gatsby")
       ? document.querySelector("#___gatsby").clientWidth
-      : this.state.windowWidth
-    if (this.state.windowWidth !== wrapperWidth) {
+      : this.state.rootWidth
+    if (this.state.rootWidth !== wrapperWidth) {
       this.setState({
-        windowWidth: wrapperWidth,
+        rootWidth: wrapperWidth,
       })
     }
   }
@@ -48,10 +48,10 @@ class NavigationDrawer extends Component {
     // ウィンド幅が変更された場合
     const wrapperWidth = document.querySelector("#___gatsby")
       ? document.querySelector("#___gatsby").clientWidth
-      : this.state.windowWidth
-    if (this.state.windowWidth !== wrapperWidth) {
+      : this.state.rootWidth
+    if (this.state.rootWidth !== wrapperWidth) {
       this.setState({
-        windowWidth: wrapperWidth,
+        rootWidth: wrapperWidth,
         timer: setTimeout(() => {
           this._onDrawer("hidden")
         }, 100),
