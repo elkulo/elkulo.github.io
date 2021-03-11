@@ -24,6 +24,8 @@ const SEO = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
+            robots
+            verification
           }
         }
       }
@@ -78,12 +80,12 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
         {
-          name: `google-site-verification`,
-          content: `itK-piZsN25_MPc8s1-rZS5OXKBZ1FqndxC39BEFumg`, // Google Search Console
+          name: `robots`,
+          content: site.siteMetadata.robots, // 非公開サイト
         },
         {
-          name: `robots`,
-          content: `noindex,nofollow`, // 一時的に非公開
+          name: `google-site-verification`,
+          content: site.siteMetadata.verification, // Google Search Console
         },
       ].concat(meta)}
     />

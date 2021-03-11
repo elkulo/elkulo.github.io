@@ -171,7 +171,6 @@
 
     &__branding {
       margin: $size__spacing-unit;
-      padding: ($size__spacing-unit / 4) 0;
       text-align: center;
 
       @include media(tablet) {
@@ -179,7 +178,10 @@
       }
 
       &__title {
-        font-size: $font__size-lg;
+        margin: 0;
+        padding: 0;
+        line-height: 1.2;
+        font-size: 2rem;
       }
     }
 

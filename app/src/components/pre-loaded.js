@@ -79,7 +79,7 @@ const PreLoaded = ({ children }) => {
           }
           return prevProgress + 1
         })
-      }, 30)
+      }, 20)
       return () => {
         clearInterval(timer)
       }
