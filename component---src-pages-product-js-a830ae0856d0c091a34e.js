@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{Cdlu:function(t,e,a){"use strict";a.r(e);var n=a("q1tI"),i=a.n(n),c=a("Bl7J"),o=a("vrFN"),r=a("QAtT");e.default=function(t){var e=t.data,a=t.location;return i.a.createElement(c.a,{location:a,title:"PRODUCT",isPageType:"Product"},i.a.createElement(o.a,{title:"PRODUCT"}),i.a.createElement(r.a,{data:e,title:"PRODUCT",isProductType:"index"}))}}}]);
+//# sourceMappingURL=component---src-pages-product-js-a830ae0856d0c091a34e.js.map
