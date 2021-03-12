@@ -1,6 +1,6 @@
 import React from "react"
-import Header from "./header/header"
-import Footer from "./footer/footer"
+import Header from "./header/site-header"
+import Footer from "./footer/site-footer"
 import {
   TransitionGroup,
   Transition as ReactTransition,

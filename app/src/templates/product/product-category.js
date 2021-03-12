@@ -4,33 +4,24 @@ import Layout from "components/layout"
 import SEO from "components/seo"
 import ProductTemplate from "./product-template"
 
-/**
- * プロダクトタグ
- *
- * @param {*} { data, location }
- * @returns
- */
-const ProductTagIndex = ({ data, location }) => {
-  // ページタイトル
-  let pageTitle
+const ProductCategoryIndex = ({ data, location }) => {
+  let pageTitle = decodeURI(location.pathname.split("/").slice(-1)[0])
   if (location.pathname.slice(-1) === "/") {
     pageTitle = decodeURI(location.pathname.split("/").slice(-2)[0])
-  } else {
-    pageTitle = decodeURI(location.pathname.split("/").slice(-1)[0])
   }
 
   return (
     <Layout location={location} title={pageTitle} isPageType="Product">
       <SEO title={pageTitle} />
-      <ProductTemplate data={data} title={pageTitle} isProductType="tag" />
+      <ProductTemplate data={data} title={pageTitle} isProductType="category" />
     </Layout>
   )
 }
 
-export default ProductTagIndex
+export default ProductCategoryIndex
 
 export const pageQuery = graphql`
-  query TagPostBySlug($slug: String!) {
+  query CategoryPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -40,7 +31,7 @@ export const pageQuery = graphql`
       distinct(field: category)
     }
     allPost: allInternalPosts(
-      filter: { tag: { eq: $slug } }
+      filter: { category: { eq: $slug } }
       sort: { order: DESC, fields: fields___post_id }
     ) {
       edges {

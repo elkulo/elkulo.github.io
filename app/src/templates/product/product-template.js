@@ -6,6 +6,7 @@ import {
   TransitionGroup,
   Transition as ReactTransition,
 } from "react-transition-group"
+import styles from "./product.module.scss"
 
 const timeout = 500
 const getTransitionStyles = {
@@ -72,25 +73,31 @@ class ProductTemplate extends Component {
 
     // アーカイブタイプの判別
     let current =
-      isProductType === "index" || isProductType === "tag" ? "current" : ""
+      isProductType === "index" || isProductType === "tag"
+        ? styles.product__categories__category__current
+        : ""
 
     return (
-      <div className="product">
+      <div className={styles.product}>
         <div className="wrap">
-          <ul className="product__categories">
-            <li className="product__categories__category" key="ALL">
-              <Link className={current} to={`/product`}>
-                ALL
-              </Link>
+          <ul className={styles.product__categories}>
+            <li
+              className={`${styles.product__categories__category} ${current}`}
+              key="ALL"
+            >
+              <Link to={`/product`}>ALL</Link>
             </li>
             {categories.map((_cat_name, _cat_index) => {
-              current = pageTitle === _cat_name ? "current" : ""
+              current =
+                pageTitle === _cat_name
+                  ? styles.product__categories__category__current
+                  : ""
               return (
-                <li className="product__categories__category" key={_cat_index}>
-                  <Link
-                    className={current}
-                    to={`/product/category/${encodeURI(_cat_name)}`}
-                  >
+                <li
+                  className={`${styles.product__categories__category} ${current}`}
+                  key={_cat_index}
+                >
+                  <Link to={`/product/category/${encodeURI(_cat_name)}`}>
                     {_cat_name}
                   </Link>
                 </li>
@@ -99,12 +106,12 @@ class ProductTemplate extends Component {
           </ul>
 
           {isProductType === "tag" && (
-            <div className="product__tag">
-              <h2 className="product__tag__title">{pageTitle}</h2>
+            <div className={styles.product__tag}>
+              <h2 className={styles.product__tag__title}>{pageTitle}</h2>
             </div>
           )}
 
-          <article className="product__entries">
+          <article className={styles.product__entries}>
             {posts.map(({ node }, i) => {
               const post = node
               const title = post.title || post.alternative_id
@@ -115,7 +122,10 @@ class ProductTemplate extends Component {
               }
 
               return (
-                <section className="entry" key={post.id}>
+                <section
+                  className={styles.product__entries__entry}
+                  key={post.id}
+                >
                   <TransitionGroup>
                     <ReactTransition
                       key={post.id}
@@ -131,11 +141,21 @@ class ProductTemplate extends Component {
                             ...getTransitionStyles[status],
                           }}
                         >
-                          <div className="entry__feature">
+                          <div
+                            className={styles.product__entries__entry__feature}
+                          >
                             <Link to={`/product/${post.alternative_id}`}>
                               <Image src={post.attachment[0]} alt={title} />
-                              <span className="entry__feature__link">
-                                <span className="entry__feature__link__inner">
+                              <span
+                                className={
+                                  styles.product__entries__entry__feature__link
+                                }
+                              >
+                                <span
+                                  className={
+                                    styles.product__entries__entry__feature__link__inner
+                                  }
+                                >
                                   <PreviewIcon />
                                   <br />
                                   Permalink
@@ -143,21 +163,33 @@ class ProductTemplate extends Component {
                               </span>
                             </Link>
                           </div>
-                          <header className="entry__header">
-                            <h3 className="entry__header__title">
+                          <header
+                            className={styles.product__entries__entry__header}
+                          >
+                            <h3
+                              className={
+                                styles.product__entries__entry__header__title
+                              }
+                            >
                               <Link to={`/product/${post.alternative_id}`}>
                                 {title}
                               </Link>
                             </h3>
-                            <div className="entry__header__meta">
+                            <div
+                              className={
+                                styles.product__entries__entry__header__meta
+                              }
+                            >
                               Updated: {post.updated}
                             </div>
                           </header>
-                          <div className="entry__tags">
+                          <div className={styles.product__entries__entry__tags}>
                             {post.tag.map((_tag_name, _tag_index) => {
                               return (
                                 <span
-                                  className="entry__tags__tag"
+                                  className={
+                                    styles.product__entries__entry__tags__tag
+                                  }
                                   key={_tag_index}
                                 >
                                   <Link
@@ -177,10 +209,10 @@ class ProductTemplate extends Component {
               )
             })}
             {posts_per_page * paged < max_posts && (
-              <div className="product__entries__more">
+              <div className={styles.product__entries__more}>
                 <button
                   onClick={this.handleClick}
-                  className="button product__entries__more__button"
+                  className={`${styles.product__entries__more__button} button`}
                 >
                   もっと見る
                 </button>

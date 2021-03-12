@@ -10,7 +10,7 @@
   height: 100%;
   width: 100%;
 
-  .root__drawer--visible & {
+  .root-drawer--visible & {
     overflow-x: hidden;
   }
 
@@ -34,7 +34,7 @@
       width: $sidebar_width;
     }
 
-    .root__drawer--visible & {
+    .root-drawer--visible & {
       display: block;
     }
   }
@@ -43,7 +43,7 @@
     position: relative;
     z-index: 3;
     background: {
-      image: url("../images/background/bg@2x.jpg");
+      image: url("../assets/images/background/bg@2x.jpg");
       size: (400px / 2);
       color: #fff;
     }
@@ -53,7 +53,7 @@
       background: $color__background-body;
     }
 
-    .root__drawer--visible & {
+    .root-drawer--visible & {
       overflow: hidden;
       transform: translate(100%, 0);
 
@@ -62,7 +62,7 @@
       }
     }
 
-    /** ブラーエフェクト */
+    // ブラーエフェクト
     &__effect {
       position: relative;
       background: inherit;
@@ -72,7 +72,7 @@
       min-height: var(--maxvh, 100vh);
       transition: filter 200ms ease-out, -webkit-filter 200ms ease-out;
 
-      .root__drawer--visible & {
+      .root-drawer--visible & {
         pointer-events: none;
         filter: blur(5px);
         transform: translate(0);
@@ -97,7 +97,7 @@
           background: rgba(0, 0, 0, 0.1);
         }
 
-        .root__drawer--visible & {
+        .root-drawer--visible & {
           opacity: 1;
           z-index: 10;
         }

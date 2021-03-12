@@ -4,6 +4,7 @@ import MainNavigation from "../navigation/main-navigation"
 import NavigationDrawer from "../navigation/navigation-drawer"
 import OpenIcon from "@material-ui/icons/Notes"
 import CloseIcon from "@material-ui/icons/Close"
+import styles from "./site-header.module.scss"
 
 /**
  * ヘッダー
@@ -25,14 +26,6 @@ const Header = ({ location = window.location, title, children, position }) => {
     `
   )
 
-  // CSSクラスの付け替え
-  let classes
-  if (position === "content") {
-    classes = `site-header--content`
-  } else {
-    classes = `site-header--sidebar`
-  }
-
   const siteTitle = site.siteMetadata.title
 
   const rootPath = `${__PATH_PREFIX__}/`
@@ -41,25 +34,27 @@ const Header = ({ location = window.location, title, children, position }) => {
 
   // ルートかつサイドバーポジションのみ<h1>
   if (location.pathname === rootPath && position === "sidebar") {
-    branding = <h1 className="site-branding__title site-title">{siteTitle}</h1>
+    branding = (
+      <h1 className={`${styles.branding__title} site-title`}>{siteTitle}</h1>
+    )
   } else {
     branding = (
-      <p className="site-branding__title site-title">
+      <p className={`${styles.branding__title} site-title`}>
         <Link to={`/`}>{siteTitle}</Link>
       </p>
     )
   }
 
   return (
-    <header className={`site-header ${classes}`}>
+    <header className="site-header">
       <div className="wrap">
-        <div className="site-header__container">
-          <div className="site-header__container__primary">
-            <div className="site-branding">{branding}</div>
+        <div className={styles.container}>
+          <div className={styles.container__primary}>
+            <div className={styles.branding}>{branding}</div>
           </div>
           {/* サイドバーポジションの場合 */}
           {position === "sidebar" && (
-            <div className="site-header__container__secondary">
+            <div className={styles.container__secondary}>
               <NavigationDrawer visibility="toggle">
                 <CloseIcon />
               </NavigationDrawer>
@@ -67,7 +62,7 @@ const Header = ({ location = window.location, title, children, position }) => {
           )}
           {/* コンテンツポジションの場合 */}
           {position === "content" && (
-            <div className="site-header__container__secondary">
+            <div className={styles.container__secondary}>
               <NavigationDrawer visibility="toggle">
                 <OpenIcon />
               </NavigationDrawer>
