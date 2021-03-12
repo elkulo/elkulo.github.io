@@ -63,30 +63,30 @@ const Layout = ({
   let hasHeader = true
 
   // CSSクラスの付与
-  let classss = `site `
+  let siteStyled = `site `
   switch (isPageType) {
     case "About":
-      classss = classss + "page-about"
+      siteStyled = `${siteStyled} page-about`
       break
     case "Contact":
-      classss = classss + "page-contact"
+      siteStyled = `${siteStyled} page-contact`
       break
     case "Product":
-      classss = classss + "page-product"
+      siteStyled = `${siteStyled} page-product`
       break
     case "ProductPost":
-      classss = classss + "page-product-post"
+      siteStyled = `${siteStyled} page-product-post`
       break
     default:
       if (location.pathname === rootPath) {
-        classss = classss + "page-home"
+        siteStyled = `${siteStyled} page-home`
         hasHeader = false
       }
   }
 
   if (hasHeader) {
     return (
-      <div className={classss}>
+      <div className={siteStyled}>
         <div className="site__sidebar">
           <Header
             location={location}
@@ -96,7 +96,7 @@ const Layout = ({
           />
         </div>
         <div className="site__content">
-          <div className="site__content__effect">
+          <div className="site__content__in">
             <Header
               location={location}
               title={title}
@@ -133,7 +133,7 @@ const Layout = ({
     )
   } else {
     return (
-      <div className={classss}>
+      <div className={siteStyled}>
         <TransitionGroup>
           <ReactTransition
             key={location.pathname}
@@ -158,7 +158,7 @@ const Layout = ({
                   />
                 </div>
                 <div className="site__content">
-                  <div className="site__content__effect">
+                  <div className="site__content__in">
                     <main className="site-main">{children}</main>
                   </div>
                 </div>
