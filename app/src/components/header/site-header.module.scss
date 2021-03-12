@@ -1,6 +1,13 @@
 @import "../../styles/variables-site/variables-site";
 @import "../../styles/mixins/mixins-master";
 
+.sidebar {
+  @include clearfix("before");
+  @include clearfix("after");
+  max-width: 100%;
+  margin: 0 $size__spacing-unit;
+}
+
 .container {
   position: relative;
 

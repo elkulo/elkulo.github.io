@@ -75,6 +75,11 @@ class NavigationDrawer extends Component {
         break
       case "hidden":
         $root.classList.remove("root-drawer--visible")
+        $root.classList.add("root-drawer--visible--end")
+        setTimeout(
+          () => $root.classList.remove("root-drawer--visible--end"),
+          200
+        )
         break
       default:
         $root.classList.toggle("root-drawer--visible")

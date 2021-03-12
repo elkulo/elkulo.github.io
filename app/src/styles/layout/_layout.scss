@@ -10,8 +10,9 @@
   height: 100%;
   width: 100%;
 
-  .root-drawer--visible & {
-    overflow-x: hidden;
+  .root-drawer--visible &,
+  .root-drawer--visible--end & {
+      overflow-x: hidden;
   }
 
   &__sidebar {
@@ -63,7 +64,7 @@
     }
 
     // ブラーエフェクト
-    &__effect {
+    &__in {
       position: relative;
       background: inherit;
       width: 100%;
@@ -103,30 +104,5 @@
         }
       }
     }
-  }
-}
-
-.wrap {
-  @include clearfix("before");
-  @include clearfix("after");
-  margin: 0 $size__spacing-unit;
-
-  @include media(tablet) {
-    max-width: $size__site-tablet-content;
-    margin: 0 auto;
-
-    .site__sidebar & {
-      max-width: 100%;
-      margin: 0 $size__spacing-unit;
-    }
-  }
-
-  @include media(tablet) {
-    max-width: $size__site-desktop-content;
-  }
-
-  &--full & {
-    max-width: 100%;
-    margin: 0;
   }
 }

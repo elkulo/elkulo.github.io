@@ -5,6 +5,7 @@ import NavigationDrawer from "../navigation/navigation-drawer"
 import OpenIcon from "@material-ui/icons/Notes"
 import CloseIcon from "@material-ui/icons/Close"
 import styles from "./site-header.module.scss"
+import Wrapper from "utils/Wrapper"
 
 /**
  * ヘッダー
@@ -47,31 +48,35 @@ const Header = ({ location = window.location, title, children, position }) => {
 
   return (
     <header className="site-header">
-      <div className="wrap">
-        <div className={styles.container}>
-          <div className={styles.container__primary}>
-            <div className={styles.branding}>{branding}</div>
-          </div>
-          {/* サイドバーポジションの場合 */}
-          {position === "sidebar" && (
+      {position === "sidebar" && (
+        <div className={styles.sidebar}>
+          <div className={styles.container}>
+            <div className={styles.container__primary}>
+              <div className={styles.branding}>{branding}</div>
+            </div>
             <div className={styles.container__secondary}>
-              <NavigationDrawer visibility="toggle">
+              <NavigationDrawer visibility="hidden">
                 <CloseIcon />
               </NavigationDrawer>
             </div>
-          )}
-          {/* コンテンツポジションの場合 */}
-          {position === "content" && (
+          </div>
+          <MainNavigation />
+        </div>
+      )}
+      {position === "content" && (
+        <Wrapper>
+          <div className={styles.container}>
+            <div className={styles.container__primary}>
+              <div className={styles.branding}>{branding}</div>
+            </div>
             <div className={styles.container__secondary}>
               <NavigationDrawer visibility="toggle">
                 <OpenIcon />
               </NavigationDrawer>
             </div>
-          )}
-        </div>
-        {/* サイドバーポジションの場合 */}
-        {position === "sidebar" && <MainNavigation />}
-      </div>
+          </div>
+        </Wrapper>
+      )}
     </header>
   )
 }
