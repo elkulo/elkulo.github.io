@@ -1,0 +1,27 @@
+@import "../../styles/variables-site/variables-site";
+@import "../../styles/mixins/mixins-master";
+
+.button {
+  display: inline-block;
+  padding: 0 ($size__spacing-unit / 2);
+  margin-left: ($size__spacing-unit / -1.125);
+  border-right: solid 1px currentColor;
+  color: inherit;
+  border-radius: 0;
+  background: none;
+
+  @include media(desktop) {
+    margin-left: ($size__spacing-unit / -4);
+  }
+
+  &:hover,
+  &:focus {
+    background: none;
+  }
+
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 2rem;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import EventListener from "react-event-listener"
+import styles from "./navigation-drawer.module.scss"
 
 /**
  * ナビゲーションのコンポーネント
@@ -70,13 +71,13 @@ class NavigationDrawer extends Component {
 
     switch (type) {
       case "visible":
-        $root.classList.add("root__drawer--visible")
+        $root.classList.add("root-drawer--visible")
         break
       case "hidden":
-        $root.classList.remove("root__drawer--visible")
+        $root.classList.remove("root-drawer--visible")
         break
       default:
-        $root.classList.toggle("root__drawer--visible")
+        $root.classList.toggle("root-drawer--visible")
     }
   }
 
@@ -93,7 +94,7 @@ class NavigationDrawer extends Component {
       <div className="navigation-drawer">
         <EventListener target="window" onResize={() => this._onResize()} />
         <button
-          className="navigation-drawer__button"
+          className={styles.button}
           onClick={() => this._onDrawer(visibility)}
         >
           {children}

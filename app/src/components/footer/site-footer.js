@@ -11,6 +11,7 @@ import {
   TransitionGroup,
   Transition as ReactTransition,
 } from "react-transition-group"
+import styles from "./site-footer.module.scss"
 
 // アニメーション初期値
 const timeout = 750
@@ -35,9 +36,9 @@ const Footer = ({ location, position }) => {
     `
   )
 
-  let classes
+  let footerStyled
   if (position === "content") {
-    classes = `site-footer--content`
+    footerStyled = styles.content
 
     getTransitionStyles = {
       // マウント開始時
@@ -65,7 +66,7 @@ const Footer = ({ location, position }) => {
       },
     }
   } else {
-    classes = `site-footer--sidebar`
+    footerStyled = styles.sidebar
 
     // サイドバーの場合はアニメーションをリセット
     getTransitionStyles = {}
@@ -74,7 +75,7 @@ const Footer = ({ location, position }) => {
   const siteTitle = site.siteMetadata.title
 
   return (
-    <footer className={`site-footer ${classes}`}>
+    <footer className={`site-footer ${footerStyled}`}>
       <TransitionGroup>
         <ReactTransition
           key={location.pathname}
@@ -90,32 +91,32 @@ const Footer = ({ location, position }) => {
                 ...getTransitionStyles[status],
               }}
             >
-              <div className="site-footer__powered">
-                <h2 className="site-footer__powered__title">POWERED</h2>
-                <ul className="site-footer__powered__list">
-                  <li className="site-footer__powered__list__item">
+              <div className={styles.powered}>
+                <h2 className={styles.powered__title}>POWERED</h2>
+                <ul className={styles.powered__list}>
+                  <li className={styles.powered__list__item}>
                     <img src={NodeIcon} alt="Node.js" />
                     <div>Node.js</div>
                   </li>
-                  <li className="site-footer__powered__list__item">
+                  <li className={styles.powered__list__item}>
                     <img src={ReactIcon} alt="React.js" />
                     <div>React</div>
                   </li>
-                  <li className="site-footer__powered__list__item">
+                  <li className={styles.powered__list__item}>
                     <img src={GatsbyIcon} alt="Gatsby.js" />
                     <div>Gatsby</div>
                   </li>
-                  <li className="site-footer__powered__list__item">
+                  <li className={styles.powered__list__item}>
                     <img src={GraphQLIcon} alt="GraphQL" />
                     <div>GraphQL</div>
                   </li>
-                  <li className="site-footer__powered__list__item">
+                  <li className={styles.powered__list__item}>
                     <img src={GitHubIcon} alt="Github" />
                     <div>Github</div>
                   </li>
                 </ul>
               </div>
-              <div className="site-footer__info">
+              <div className={styles.info}>
                 © 2019 - {new Date().getFullYear()} {siteTitle}, Built with{" "}
                 {` `}
                 <a

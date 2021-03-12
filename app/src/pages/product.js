@@ -2,25 +2,14 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "components/layout"
 import SEO from "components/seo"
-import ProductTemplate from "templates/product-template"
+import ProductTemplate from "templates/product/product-template"
 
-/**
- * プロダクトインデックス
- *
- * @param {*} { data, location }
- * @returns
- */
-const ProductIndex = ({ data, location }) => {
-  const pageTitle = "PRODUCT"
-
-  return (
-    <Layout location={location} title={pageTitle} isPageType="Product">
-      <SEO title={pageTitle} />
-      <ProductTemplate data={data} title={pageTitle} isProductType="index" />
-    </Layout>
-  )
-}
-
+const ProductIndex = ({ data, location }) => (
+  <Layout location={location} title="PRODUCT" isPageType="Product">
+    <SEO title="PRODUCT" />
+    <ProductTemplate data={data} title="PRODUCT" isProductType="index" />
+  </Layout>
+)
 export default ProductIndex
 
 export const pageQuery = graphql`

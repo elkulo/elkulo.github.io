@@ -6,6 +6,7 @@ import SEO from "components/seo"
 import Image from "utils/Image"
 import MediaQuery from "react-responsive"
 import LinkIcon from "@material-ui/icons/InsertLink"
+import styles from "./product.module.scss"
 
 /**
  *　プロダクトシングルページ
@@ -13,7 +14,7 @@ import LinkIcon from "@material-ui/icons/InsertLink"
  * @class ProductPostTemplate
  * @extends {Component}
  */
-class ProductPostTemplate extends Component {
+class ProductSingleTemplate extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -37,14 +38,16 @@ class ProductPostTemplate extends Component {
     return (
       <Layout location={location} title={post.title} isPageType="ProductPost">
         <SEO title={post.title} description={post.content} />
-        <div className="product-post">
+        <div className={styles.single}>
           <div className="wrap">
-            <article className="entry">
-              <div className="entry__container">
-                <div className="entry__container__primary">
-                  <div className="entry-primary">
-                    <div className="entry-primary__categories">
-                      <div className="entry-primary__categories__return">
+            <article className={styles.single__entry}>
+              <div className={styles.single__entry__container}>
+                <div className={styles.single__entry__container__primary}>
+                  <div className={styles.single__primary}>
+                    <div className={styles.single__primary__categories}>
+                      <div
+                        className={styles.single__primary__categories__return}
+                      >
                         <Link to={`/product`} className="button">
                           ← リストへ戻る
                         </Link>
@@ -53,7 +56,9 @@ class ProductPostTemplate extends Component {
                       {post.category.map((_cat_name, _cat_index) => {
                         return (
                           <div
-                            className="entry-primary__categories__category"
+                            className={
+                              styles.single__primary__categories__category
+                            }
                             key={_cat_index}
                           >
                             <Link
@@ -66,25 +71,31 @@ class ProductPostTemplate extends Component {
                       })}
                     </div>
 
-                    <header className="entry-primary__header">
-                      <h1 className="entry-primary__header__title">
+                    <header className={styles.single__primary__header}>
+                      <h1 className={styles.single__primary__header__title}>
                         {!post.link && post.title}
                         {post.link && (
                           <a
                             href={post.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="entry-primary__header__title__link"
+                            className={
+                              styles.single__primary__header__title__link
+                            }
                           >
                             {post.title}
                             <LinkIcon />
                           </a>
                         )}
                       </h1>
-                      <div className="entry-primary__header__meta">
+                      <div className={styles.single__primary__header__meta}>
                         Update: {post.updated}
                         {post.link && (
-                          <span className="entry-primary__header__meta__preview">
+                          <span
+                            className={
+                              styles.single__primary__header__meta__preview
+                            }
+                          >
                             Preview:
                             <a
                               href={post.link}
@@ -99,21 +110,25 @@ class ProductPostTemplate extends Component {
                     </header>
 
                     <div
-                      className="entry-primary__content"
+                      className={styles.single__primary__content}
                       dangerouslySetInnerHTML={{ __html: post.content }}
                     />
 
                     <MediaQuery query="(min-width: 768px)">
                       {1 < post.attachment.length && (
-                        <div className="entry-primary__attachments">
+                        <div className={styles.single__primary__attachments}>
                           {post.attachment.map((_image_src, _image_index) => {
                             return (
                               <div
-                                className="entry-primary__attachments__attachment"
+                                className={
+                                  styles.single__primary__attachments__attachment
+                                }
                                 key={_image_index}
                               >
                                 <button
-                                  className="entry-primary__attachments__attachment__link"
+                                  className={
+                                    styles.single__primary__attachments__attachment__link
+                                  }
                                   onClick={() => this.handleClick(_image_index)}
                                 >
                                   <Image src={_image_src} />
@@ -125,11 +140,11 @@ class ProductPostTemplate extends Component {
                       )}
                     </MediaQuery>
 
-                    <div className="entry-primary__tags">
+                    <div className={styles.single__primary__tags}>
                       {post.tag.map((_tag_name, _tag_index) => {
                         return (
                           <div
-                            className="entry-primary__tags__tag"
+                            className={styles.single__primary__tags__tag}
                             key={_tag_index}
                           >
                             <Link to={`/product/tag/${encodeURI(_tag_name)}`}>
@@ -140,9 +155,9 @@ class ProductPostTemplate extends Component {
                       })}
                     </div>
 
-                    <nav className="entry-primary__navi">
-                      <ul className="entry-primary__navi__ul">
-                        <li className="entry-primary__navi__ul__li">
+                    <nav className={styles.single__primary__navi}>
+                      <ul className={styles.single__primary__navi__ul}>
+                        <li className={styles.single__primary__navi__ul__li}>
                           {next && (
                             <Link
                               to={`/product/${next.alternative_id}`}
@@ -152,7 +167,7 @@ class ProductPostTemplate extends Component {
                             </Link>
                           )}
                         </li>
-                        <li className="entry-primary__navi__ul__li">
+                        <li className={styles.single__primary__navi__ul__li}>
                           {previous && (
                             <Link
                               to={`/product/${previous.alternative_id}`}
@@ -165,21 +180,25 @@ class ProductPostTemplate extends Component {
                       </ul>
                     </nav>
 
-                    <footer className="entry-primary__footer">
+                    <footer className={styles.single__primary__footer}>
                       <Bio />
                     </footer>
 
                     <MediaQuery query="(max-width: 767px)">
                       {1 < post.attachment.length && (
-                        <div className="entry-primary__attachments">
+                        <div className={styles.single__primary__attachments}>
                           {post.attachment.map((_image_src, _image_index) => {
                             return (
                               <div
-                                className="entry-primary__attachments__attachment"
+                                className={
+                                  styles.single__primary__attachments__attachment
+                                }
                                 key={_image_index}
                               >
                                 <button
-                                  className="entry-primary__attachments__attachment__link"
+                                  className={
+                                    styles.single__primary__attachments__attachment__link
+                                  }
                                   onClick={() => this.handleClick(_image_index)}
                                 >
                                   <Image src={_image_src} />
@@ -192,9 +211,9 @@ class ProductPostTemplate extends Component {
                     </MediaQuery>
                   </div>
                 </div>
-                <div className="entry__container__secondary">
-                  <div className="entry-secondary">
-                    <div className="entry-secondary__feature">
+                <div className={styles.single__entry__container__secondary}>
+                  <div className={styles.single__secondary}>
+                    <div className={styles.single__secondary__feature}>
                       <Image src={feature} alt={post.title} />
                     </div>
                   </div>
@@ -208,7 +227,7 @@ class ProductPostTemplate extends Component {
   }
 }
 
-export default ProductPostTemplate
+export default ProductSingleTemplate
 
 export const pageQuery = graphql`
   query ProductPostBySlug($slug: String!) {

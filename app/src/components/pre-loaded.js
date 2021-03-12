@@ -68,7 +68,7 @@ const PreLoaded = ({ children }) => {
   // 擬似ロード画面
   const [progress, setProgress] = useState(0)
   useEffect(() => {
-    if (window.location.pathname === "/") {
+    if (window.location.pathname === `${__PATH_PREFIX__}/`) {
       // ロード中
       const timer = setInterval(() => {
         setProgress((prevProgress) => {
@@ -95,7 +95,7 @@ const PreLoaded = ({ children }) => {
   return (
     <NoSsr>
       {isLoaded && <>{children}</>}
-      {window.location.pathname === "/" && (
+      {window.location.pathname === `${__PATH_PREFIX__}/` && (
         <Backdrop
           className={classes.backdrop}
           open={fadeOn}

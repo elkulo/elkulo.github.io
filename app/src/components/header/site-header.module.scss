@@ -1,0 +1,27 @@
+@import "../../styles/variables-site/variables-site";
+@import "../../styles/mixins/mixins-master";
+
+.container {
+  position: relative;
+
+  &__primary {
+    margin: $size__spacing-unit 0 0;
+    text-align: center;
+  }
+  &__secondary {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.branding {
+  text-align: center;
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    font-size: 2rem;
+  }
+}

@@ -6,6 +6,7 @@ import AboutIcon from "@material-ui/icons/Person"
 import ProductIcon from "@material-ui/icons/Grain"
 import ContactIcon from "@material-ui/icons/Send"
 import thumbnail from "assets/videos/landscape/landscape.jpg"
+import styles from "./main-navigation.module.scss"
 
 const useStyles = makeStyles({
   itemColor: {
@@ -51,20 +52,17 @@ export default function MainNavigation(props) {
 
   return (
     <nav className="main-navigation">
-      <div className="main-navigation__avatar">
-        <div className="main-navigation__avatar__item">
+      <div className={styles.avatar}>
+        <div className={styles.avatar__item}>
           <img src={thumbnail} alt="" />
         </div>
       </div>
-      <ul className="main-navigation__list">
+      <ul className={styles.list}>
         {naviList.map((navi) => (
-          <li
-            key={navi.ident}
-            className={`main-navigation__list__item main-navigation__list__item--${navi.ident}`}
-          >
+          <li key={navi.ident} className={styles.list__item}>
             <Link to={navi.url}>
               <navi.icon
-                className="main-navigation__list__item__icon"
+                className={styles.list__item__icon}
                 classes={classes.itemColor}
               />
               {navi.name}

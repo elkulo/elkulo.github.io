@@ -8,7 +8,7 @@ import "typeface-merriweather"
 
 // Global CSS
 import "prismjs/themes/prism.css"
-import "assets/scss/style.scss"
+import "styles/global.scss"
 
 // 100vh Fix
 const addMaxVhFix = () =>
