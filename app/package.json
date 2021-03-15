@@ -71,7 +71,7 @@
     "url": "git+https://github.com/elkulo/elkulo.github.io"
   },
   "scripts": {
-    "update:minor": "ncu --target minor -u",
+    "update:v2": "ncu --target minor -u && npm install",
     "clean:gatsby": "gatsby clean",
     "clean:package": "rm -rf node_modules package-lock.json",
     "start": "npm run develop",
