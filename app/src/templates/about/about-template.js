@@ -57,8 +57,8 @@ class AboutTamplate extends Component {
       <article className="about">
         <div className={styles.container}>
           <Wrapper>
-            <div className={styles.layput}>
-              <div className={styles.layput__primary}>
+            <div className={styles.layout}>
+              <div className={styles.layout__primary}>
                 <div className={styles.primary}>
                   <header className={styles.primary__header}>
                     <h2 className={styles.primary__header__title}>
@@ -77,7 +77,7 @@ class AboutTamplate extends Component {
                   />
                 </div>
               </div>
-              <div className={styles.layput__secondary}>
+              <div className={styles.layout__secondary}>
                 <div id="about-sticky" className={styles.secondary}>
                   <img src={thumbnail} alt="" />
                 </div>

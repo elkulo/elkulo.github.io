@@ -15,9 +15,9 @@ const HomeTemplate = ({ date, location }) => {
 
   return (
     <div className="home">
-      <article className={styles.layout}>
-        <div className={styles.layout__left}>
-          <div className={styles.layout__left__in}>
+      <article className={styles.splitLayout}>
+        <div className={styles.splitLayout__left}>
+          <div className={styles.splitLayout__left__in}>
             <header className={styles.header}>
               <div className={styles.header__drawer}>
                 <NavigationDrawer visibility="toggle">
@@ -52,8 +52,8 @@ const HomeTemplate = ({ date, location }) => {
             <Footer location={location} position="sidebar" />
           </div>
         </div>
-        <div className={styles.layout__right}>
-          <div className={styles.layout__right__in}>
+        <div className={styles.splitLayout__right}>
+          <div className={styles.splitLayout__right__in}>
             <section className={styles.content}>
               <div className={styles.content__drawer}>
                 <NavigationDrawer visibility="toggle">

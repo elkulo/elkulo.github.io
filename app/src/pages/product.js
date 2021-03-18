@@ -1,13 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "components/layout"
+import Layout from "components/layout/layout"
 import SEO from "components/seo"
-import ProductTemplate from "templates/product/product-template"
+import ProductIndexTemplate from "templates/product/product-templates/index-template"
 
 const ProductIndex = ({ data, location }) => (
   <Layout location={location} title="PRODUCT" isPageType="Product">
     <SEO title="PRODUCT" />
-    <ProductTemplate data={data} title="PRODUCT" isProductType="index" />
+    <ProductIndexTemplate data={data} title="PRODUCT" isProductType="index" />
   </Layout>
 )
 export default ProductIndex

@@ -1,6 +1,5 @@
-/*--------------------------------------------------------------
-## Leyout
---------------------------------------------------------------*/
+@import "../../styles/variables-site/variables-site";
+@import "../../styles/mixins/mixins-master";
 
 .site {
   position: relative;
@@ -10,9 +9,9 @@
   height: 100%;
   width: 100%;
 
-  .root-drawer--visible &,
-  .root-drawer--visible--end & {
-      overflow-x: hidden;
+  :global(.root-drawer--visible) &,
+  :global(.root-drawer--visible--end) & {
+    overflow-x: hidden;
   }
 
   &__sidebar {
@@ -35,7 +34,7 @@
       width: $sidebar_width;
     }
 
-    .root-drawer--visible & {
+    :global(.root-drawer--visible) & {
       display: block;
     }
   }
@@ -44,7 +43,7 @@
     position: relative;
     z-index: 3;
     background: {
-      image: url("../assets/images/background/bg@2x.jpg");
+      image: url("../../assets/images/background/bg@2x.jpg");
       size: (400px / 2);
       color: #fff;
     }
@@ -54,7 +53,7 @@
       background: $color__background-body;
     }
 
-    .root-drawer--visible & {
+    :global(.root-drawer--visible) & {
       overflow: hidden;
       transform: translate(100%, 0);
 
@@ -73,7 +72,7 @@
       min-height: var(--maxvh, 100vh);
       transition: filter 200ms ease-out, -webkit-filter 200ms ease-out;
 
-      .root-drawer--visible & {
+      :global(.root-drawer--visible) & {
         pointer-events: none;
         filter: blur(5px);
         transform: translate(0);
@@ -98,7 +97,7 @@
           background: rgba(0, 0, 0, 0.1);
         }
 
-        .root-drawer--visible & {
+        :global(.root-drawer--visible) & {
           opacity: 1;
           z-index: 10;
         }

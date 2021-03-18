@@ -35,12 +35,10 @@ const Header = ({ location = window.location, title, children, position }) => {
 
   // ルートかつサイドバーポジションのみ<h1>
   if (location.pathname === rootPath && position === "sidebar") {
-    branding = (
-      <h1 className={`${styles.branding__title} site-title`}>{siteTitle}</h1>
-    )
+    branding = <h1 className={styles.branding__title}>{siteTitle}</h1>
   } else {
     branding = (
-      <p className={`${styles.branding__title} site-title`}>
+      <p className={styles.branding__title}>
         <Link to={`/`}>{siteTitle}</Link>
       </p>
     )

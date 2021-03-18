@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "components/layout"
+import Layout from "components/layout/layout"
 import SEO from "components/seo"
-import ProductTemplate from "./product-template"
+import ProductIndexTemplate from "./product-templates/index-template"
 
 const ProductTagIndex = ({ data, location }) => {
   let pageTitle = decodeURI(location.pathname.split("/").slice(-1)[0])
@@ -13,7 +13,7 @@ const ProductTagIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={pageTitle} isPageType="Product">
       <SEO title={pageTitle} />
-      <ProductTemplate data={data} title={pageTitle} isProductType="tag" />
+      <ProductIndexTemplate data={data} title={pageTitle} isProductType="tag" />
     </Layout>
   )
 }

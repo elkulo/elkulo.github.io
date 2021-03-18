@@ -1,14 +1,15 @@
 import React from "react"
-import Header from "./header/site-header"
-import Footer from "./footer/site-footer"
+import Header from "../header/site-header"
+import Footer from "../footer/site-footer"
 import {
   TransitionGroup,
   Transition as ReactTransition,
 } from "react-transition-group"
+import styles from "./layout.module.scss"
 
 const timeout = 500
 const getTransitionStyles = {
-  pageStyle: {
+  moveStyle: {
     // マウント開始時
     entering: {
       transition: `transform ${timeout}ms ease-out, opacity ${timeout}ms ease-out`,
@@ -29,7 +30,7 @@ const getTransitionStyles = {
       transform: `translate(0, 10px)`,
     },
   },
-  homeStyle: {
+  fadeStyle: {
     entering: {
       transition: `opacity ${timeout}ms ease-out`,
       opacity: 1,
@@ -57,37 +58,18 @@ const Layout = ({
   children,
   isPageType,
 }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-
-  // 可変サイズ
-  let hasHeader = true
-
   // CSSクラスの付与
-  let siteStyled = `site `
-  switch (isPageType) {
-    case "About":
-      siteStyled = `${siteStyled} page-about`
-      break
-    case "Contact":
-      siteStyled = `${siteStyled} page-contact`
-      break
-    case "Product":
-      siteStyled = `${siteStyled} page-product`
-      break
-    case "ProductPost":
-      siteStyled = `${siteStyled} page-product-post`
-      break
-    default:
-      if (location.pathname === rootPath) {
-        siteStyled = `${siteStyled} page-home`
-        hasHeader = false
-      }
+  let siteStyled = styles.site
+  let hasHeader = true
+  if (location.pathname === `${__PATH_PREFIX__}/`) {
+    siteStyled = `${siteStyled} ${styles.pageHome}`
+    hasHeader = false
   }
 
   if (hasHeader) {
     return (
       <div className={siteStyled}>
-        <div className="site__sidebar">
+        <div className={styles.site__sidebar}>
           <Header
             location={location}
             title={title}
@@ -95,8 +77,8 @@ const Layout = ({
             position="sidebar"
           />
         </div>
-        <div className="site__content">
-          <div className="site__content__in">
+        <div className={styles.site__content}>
+          <div className={styles.site__content__in}>
             <Header
               location={location}
               title={title}
@@ -116,12 +98,12 @@ const Layout = ({
                   <div
                     style={
                       /* Product以外で適用 */
-                      isPageType !== "Product"
-                        ? { ...getTransitionStyles.pageStyle[status] }
-                        : {}
+                      isPageType === "Product"
+                        ? {}
+                        : { ...getTransitionStyles.moveStyle[status] }
                     }
                   >
-                    <main className="site-main">{children}</main>
+                    <main>{children}</main>
                   </div>
                 )}
               </ReactTransition>
@@ -146,10 +128,10 @@ const Layout = ({
             {(status) => (
               <div
                 style={{
-                  ...getTransitionStyles.homeStyle[status],
+                  ...getTransitionStyles.fadeStyle[status],
                 }}
               >
-                <div className="site__sidebar">
+                <div className={styles.site__sidebar}>
                   <Header
                     location={location}
                     title={title}
@@ -157,9 +139,9 @@ const Layout = ({
                     position="sidebar"
                   />
                 </div>
-                <div className="site__content">
-                  <div className="site__content__in">
-                    <main className="site-main">{children}</main>
+                <div className={styles.site__content}>
+                  <div className={styles.site__content__in}>
+                    <main>{children}</main>
                   </div>
                 </div>
               </div>
