@@ -5,7 +5,7 @@
     margin: $size__spacing-unit 0 0;
 }
 
-.layput {
+.layout {
     @include media(desktop) {
         display: flex;
         justify-content: space-between;
