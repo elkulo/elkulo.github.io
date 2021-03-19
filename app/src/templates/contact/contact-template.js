@@ -10,9 +10,9 @@ const ContactTemplate = ({ post, postContent }) => {
         <Wrapper>
           <div className={styles.primary}>
             <header className={styles.primary__header}>
-              <h2 className={styles.primary__header__title}>
+              <h1 className={styles.primary__header__title}>
                 {postContent.title}
-              </h2>
+              </h1>
             </header>
             <div className={styles.primary__content}>
               <p>{postContent.description}</p>

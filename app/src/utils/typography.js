@@ -1,17 +1,17 @@
-import { default as TypographyFont } from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
+import * as TypographyPreset from "typography"
 
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
+const Typography = new TypographyPreset({
+  googleFonts: [
+    {
+      name: "Noto Sans JP",
+      styles: ["500", "700", "900"],
     },
-  }
-}
-
-delete Wordpress2016.googleFonts
-
-const Typography = new TypographyFont(Wordpress2016)
+    {
+      name: "Roboto",
+      styles: ["300", "400", "500", "700"],
+    },
+  ],
+})
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
@@ -19,6 +19,5 @@ if (process.env.NODE_ENV !== `production`) {
 }
 
 export default Typography
-
 export const rhythm = Typography.rhythm
 export const scale = Typography.scale

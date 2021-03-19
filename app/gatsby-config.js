@@ -130,17 +130,5 @@ module.exports = {
 
     // Material UI
     `gatsby-plugin-material-ui`,
-
-    // Google Fonts
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Noto+Serif+JP`,
-          `200,400,600,900`, // font weights
-        ],
-        display: "swap",
-      },
-    },
   ],
 }
