@@ -1,7 +1,0 @@
-/*
-    object-assign
-    (c) Sindre Sorhus
-    @license MIT
-    */
-
-/*! npm.im/object-fit-images 3.2.4 */
