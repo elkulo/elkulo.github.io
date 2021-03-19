@@ -3,6 +3,15 @@
 
 .container {
     margin: $size__spacing-unit 0 0;
+
+    &__header {
+        &__title {
+            margin-bottom: 0;
+            font-size: $font__size-md;
+            text-align: center;
+            color: #555;
+        }
+    }
 }
 
 .layout {
@@ -58,5 +67,37 @@
 
     &:last-child {
         margin-bottom: 0;
+    }
+}
+
+.md-editor {
+    h2 {
+        font-size: $font__size-xxl;
+        font-weight: 700;
+        font-family: $font__body;
+        color: transparent;
+        background: linear-gradient(45deg, #3e6bfc, #9f51fb);
+        background-clip: text;
+        margin-top: 5rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    h3 {
+        margin-top: 2rem;
+        font-family: $font__heading;
+        font-weight: 900;
+        font-size: 1rem;
+    }
+
+    h4 {
+        margin-top: 3rem;
+    }
+
+    h3 + ul,
+    h3 + ol {
+        margin-top: -0.5em;
     }
 }

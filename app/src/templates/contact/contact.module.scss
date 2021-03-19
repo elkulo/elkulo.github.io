@@ -66,7 +66,6 @@
         box-sizing: border-box;
         padding-left: $size__spacing-unit;
         border-left: solid 1px currentColor;
-        font-size: $font__size-sm;
 
         @include media(mobile) {
             margin-left: 20%;

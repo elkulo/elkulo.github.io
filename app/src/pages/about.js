@@ -20,8 +20,6 @@ export const pageQuery = graphql`
     markdownRemark(fileAbsolutePath: { regex: "//about/index.md/" }) {
       frontmatter {
         title
-        name
-        date
       }
       excerpt
       html

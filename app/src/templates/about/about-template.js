@@ -57,22 +57,16 @@ class AboutTamplate extends Component {
       <article className="about">
         <div className={styles.container}>
           <Wrapper>
+            <header className={styles.container__header}>
+              <h1 className={styles.container__header__title}>
+                {postContent.title}
+              </h1>
+            </header>
             <div className={styles.layout}>
               <div className={styles.layout__primary}>
                 <div className={styles.primary}>
-                  <header className={styles.primary__header}>
-                    <h2 className={styles.primary__header__title}>
-                      {postContent.title}
-                    </h2>
-                    <div className={styles.primary__header__meta}>
-                      <h3 className={styles.primary__header__meta__name}>
-                        {postContent.name}
-                      </h3>
-                      <p>update: {postContent.date}</p>
-                    </div>
-                  </header>
                   <section
-                    className={styles.primary__content}
+                    className={styles.mdEditor}
                     dangerouslySetInnerHTML={{ __html: post.html }}
                   />
                 </div>
@@ -83,9 +77,6 @@ class AboutTamplate extends Component {
                 </div>
               </div>
             </div>
-            <section className={styles.section}>
-              <div style={{ height: "600px", background: "#eee" }}>TEST</div>
-            </section>
             <section className={styles.section}>
               <div style={{ height: "600px", background: "#eee" }}>TEST</div>
             </section>
