@@ -3,7 +3,7 @@ import * as TypographyPreset from "typography"
 const Typography = new TypographyPreset({
   googleFonts: [
     {
-      name: "Noto Sans JP",
+      name: "Noto Serif JP",
       styles: ["500", "700", "900"],
     },
     {
