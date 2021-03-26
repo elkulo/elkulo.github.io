@@ -113,16 +113,17 @@
                     display: block;
                     padding: ($size__spacing-unit / 4) 0;
                     border: solid 1px #989898;
-                    color: #ccc;
                     text-align: center;
                     font-family: $font__heading;
                     font-weight: 600;
+                    color: #ccc;
+                    background: #111;
                     @include button-transition();
 
                     &:hover,
                     &:focus {
-                        background: rgb(151, 135, 45);
-                        border-color: rgb(151, 135, 45);
+                        background: #97872d;
+                        border-color: #97872d;
                     }
                 }
             }
