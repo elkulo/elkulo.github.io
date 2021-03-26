@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import EventListener from "react-event-listener"
 import styles from "./navigation-drawer.module.scss"
 
 /**
@@ -37,7 +36,7 @@ class NavigationDrawer extends Component {
   }
 
   /**
-   * リサイズイベント
+   * リサイズイベント: 未使用
    *
    * @memberof NavigationDrawer
    */
@@ -97,7 +96,6 @@ class NavigationDrawer extends Component {
 
     return (
       <div className="navigation-drawer">
-        <EventListener target="window" onResize={() => this._onResize()} />
         <button
           className={styles.button}
           onClick={() => this._onDrawer(visibility)}
