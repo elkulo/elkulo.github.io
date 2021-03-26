@@ -150,8 +150,8 @@ class ProductSingleTemplate extends Component {
                   </div>
 
                   <nav className={styles.single__primary__navi}>
-                    <ul className={styles.single__primary__navi__ul}>
-                      <li className={styles.single__primary__navi__ul__li}>
+                    <ul className={styles.single__primary__navi__list}>
+                      <li className={styles.single__primary__navi__list__item}>
                         {next && (
                           <Link
                             to={`/product/${next.alternative_id}`}
@@ -161,7 +161,7 @@ class ProductSingleTemplate extends Component {
                           </Link>
                         )}
                       </li>
-                      <li className={styles.single__primary__navi__ul__li}>
+                      <li className={styles.single__primary__navi__list__item}>
                         {previous && (
                           <Link
                             to={`/product/${previous.alternative_id}`}

@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
     color: "#f1f1f1",
+    background: "#111", // 指定なしだとError:parts is null
   },
   buffer: {
     background: `#555`,
