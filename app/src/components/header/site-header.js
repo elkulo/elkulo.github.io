@@ -5,15 +5,15 @@ import NavigationDrawer from "../navigation/navigation-drawer"
 import OpenIcon from "@material-ui/icons/Notes"
 import CloseIcon from "@material-ui/icons/Close"
 import styles from "./site-header.module.scss"
-import Wrapper from "utils/Wrapper"
+import Wrap from "utils/Wrap"
 
 /**
  * ヘッダー
  *
- * @param {*} { location, title, children }
+ * @param {*} { location, position }
  * @returns Header DOM
  */
-const Header = ({ location = window.location, title, children, position }) => {
+const Header = ({ location = window.location, position }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -62,7 +62,7 @@ const Header = ({ location = window.location, title, children, position }) => {
         </div>
       )}
       {position === "content" && (
-        <Wrapper>
+        <Wrap>
           <div className={styles.container}>
             <div className={styles.container__primary}>
               <div className={styles.branding}>{branding}</div>
@@ -73,7 +73,7 @@ const Header = ({ location = window.location, title, children, position }) => {
               </NavigationDrawer>
             </div>
           </div>
-        </Wrapper>
+        </Wrap>
       )}
     </header>
   )

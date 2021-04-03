@@ -5,7 +5,7 @@ import SEO from "components/seo"
 import ProductIndexTemplate from "templates/product/product-templates/index-template"
 
 const ProductIndex = ({ data, location }) => (
-  <Layout location={location} title="PRODUCT" isPageType="Product">
+  <Layout location={location} isPageType="Product">
     <SEO title="PRODUCT" />
     <ProductIndexTemplate data={data} title="PRODUCT" isProductType="index" />
   </Layout>

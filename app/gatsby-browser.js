@@ -11,12 +11,12 @@ import "prismjs/themes/prism.css"
 import "styles/global.scss"
 
 // 100vh Fix
-const addMaxVhFix = () =>
+const Fix100vh = () =>
   document.documentElement.style.setProperty(
     "--maxvh",
     `${window.innerHeight}px`
   )
-addMaxVhFix()
+Fix100vh()
 
 // 全体をまとめる
 export const wrapRootElement = ({ element }) => <PreLoaded>{element}</PreLoaded>

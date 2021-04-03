@@ -49,15 +49,10 @@ const getTransitionStyles = {
 /**
  * レイアウト
  *
- * @param {*} { location, title, children, isPageType }
+ * @param {*} { location, children, isPageType }
  * @returns ReactDOM
  */
-const Layout = ({
-  location = window.location,
-  title,
-  children,
-  isPageType,
-}) => {
+const Layout = ({ location = window.location, children, isPageType }) => {
   // CSSクラスの付与
   let siteStyled = styles.site
   let hasHeader = true
@@ -70,21 +65,11 @@ const Layout = ({
     return (
       <div className={siteStyled}>
         <div className={styles.site__sidebar}>
-          <Header
-            location={location}
-            title={title}
-            children={children}
-            position="sidebar"
-          />
+          <Header location={location} position="sidebar" />
         </div>
         <div className={styles.site__content}>
           <div className={styles.site__content__in}>
-            <Header
-              location={location}
-              title={title}
-              children={children}
-              position="content"
-            />
+            <Header location={location} position="content" />
             <TransitionGroup>
               <ReactTransition
                 key={location.pathname}
@@ -132,12 +117,7 @@ const Layout = ({
                 }}
               >
                 <div className={styles.site__sidebar}>
-                  <Header
-                    location={location}
-                    title={title}
-                    children={children}
-                    position="sidebar"
-                  />
+                  <Header location={location} position="sidebar" />
                 </div>
                 <div className={styles.site__content}>
                   <div className={styles.site__content__in}>
