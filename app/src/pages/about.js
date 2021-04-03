@@ -5,7 +5,7 @@ import SEO from "components/seo"
 import AboutTemplate from "templates/about/about-template"
 
 const AboutPage = ({ data, location }) => (
-  <Layout location={location} title="ABOUT" isPageType="About">
+  <Layout location={location} isPageType="About">
     <SEO title="ABOUT" />
     <AboutTemplate
       post={data.markdownRemark}

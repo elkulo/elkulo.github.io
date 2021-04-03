@@ -7,7 +7,7 @@ import {
   Transition as ReactTransition,
 } from "react-transition-group"
 import styles from "../product.module.scss"
-import Wrapper from "utils/Wrapper"
+import Wrap from "utils/Wrap"
 
 const timeout = 500
 const getTransitionStyles = {
@@ -80,7 +80,7 @@ class ProductTemplate extends Component {
 
     return (
       <div className={styles.product}>
-        <Wrapper>
+        <Wrap>
           <ul className={styles.product__categories}>
             <li
               className={`${styles.product__categories__category} ${current}`}
@@ -220,7 +220,7 @@ class ProductTemplate extends Component {
               </div>
             )}
           </article>
-        </Wrapper>
+        </Wrap>
       </div>
     )
   }

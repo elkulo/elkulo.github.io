@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import thumbnail from "assets/videos/landscape/landscape.jpg"
 import styles from "./about.module.scss"
-import Wrapper from "utils/Wrapper"
+import Wrap from "utils/Wrap"
 
 class AboutTamplate extends Component {
   constructor(props) {
@@ -56,7 +56,7 @@ class AboutTamplate extends Component {
     return (
       <article className="about">
         <div className={styles.container}>
-          <Wrapper>
+          <Wrap>
             <header className={styles.container__header}>
               <h1 className={styles.container__header__title}>
                 {postContent.title}
@@ -83,7 +83,7 @@ class AboutTamplate extends Component {
             <section className={styles.section}>
               <div style={{ height: "600px", background: "#eee" }}>TEST</div>
             </section>
-          </Wrapper>
+          </Wrap>
         </div>
       </article>
     )

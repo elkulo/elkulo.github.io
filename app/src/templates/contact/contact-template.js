@@ -1,13 +1,13 @@
 import React from "react"
 import Image from "gatsby-image"
 import styles from "./contact.module.scss"
-import Wrapper from "utils/Wrapper"
+import Wrap from "utils/Wrap"
 
 const ContactTemplate = ({ post, postContent }) => {
   return (
     <article className="contact">
       <div className={styles.container}>
-        <Wrapper>
+        <Wrap>
           <div className={styles.primary}>
             <header className={styles.primary__header}>
               <h1 className={styles.primary__header__title}>
@@ -37,7 +37,7 @@ const ContactTemplate = ({ post, postContent }) => {
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
           </div>
-        </Wrapper>
+        </Wrap>
       </div>
     </article>
   )

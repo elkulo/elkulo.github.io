@@ -5,7 +5,7 @@ import Image from "utils/Image"
 import MediaQuery from "react-responsive"
 import LinkIcon from "@material-ui/icons/InsertLink"
 import styles from "../product.module.scss"
-import Wrapper from "utils/Wrapper"
+import Wrap from "utils/Wrap"
 
 /**
  *　プロダクトシングルページ
@@ -35,7 +35,7 @@ class ProductSingleTemplate extends Component {
 
     return (
       <div className={styles.single}>
-        <Wrapper>
+        <Wrap>
           <article className={styles.single__entry}>
             <div className={styles.single__entry__container}>
               <div className={styles.single__entry__container__primary}>
@@ -214,7 +214,7 @@ class ProductSingleTemplate extends Component {
               </div>
             </div>
           </article>
-        </Wrapper>
+        </Wrap>
       </div>
     )
   }

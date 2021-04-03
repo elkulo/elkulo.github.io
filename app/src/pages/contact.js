@@ -5,7 +5,7 @@ import SEO from "components/seo"
 import ContactTemplate from "templates/contact/contact-template"
 
 const ContactPage = ({ data, location }) => (
-  <Layout location={location} title="CONTACT" isPageType="Contact">
+  <Layout location={location} isPageType="Contact">
     <SEO title="CONTACT" />
     <ContactTemplate
       post={data.markdownRemark}

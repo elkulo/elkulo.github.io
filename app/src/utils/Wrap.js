@@ -1,4 +1,3 @@
-import React from "react"
 import styled from "styled-components"
 
 const size = {
@@ -19,7 +18,7 @@ const device = {
   wide: `(min-width: ${size.wide})`,
 }
 
-const Page = styled.div`
+export default styled.div`
   display: flow-root;
   clear: both;
   max-width: ${size.max.full};
@@ -30,4 +29,3 @@ const Page = styled.div`
     margin: 0 auto;
   }
 `
-export default ({ children }) => <Page>{children}</Page>
