@@ -95,7 +95,7 @@ const PreLoaded = ({ children }) => {
   // SSRは対象外
   return (
     <NoSsr>
-      {isLoaded && <>{children}</>}
+      {isLoaded && children}
       {window.location.pathname === `${__PATH_PREFIX__}/` && (
         <Backdrop
           className={classes.backdrop}
