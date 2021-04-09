@@ -18,9 +18,11 @@ html {
 	box-sizing: inherit;
 }
 
+/*
 body {
 	background-color: $color__background-body;
 }
+*/
 
 a {
 	@include button-all-transition();
@@ -29,6 +31,7 @@ a {
 }
 
 a:visited {
+	color: $color__link-visited;
 }
 
 a:hover,

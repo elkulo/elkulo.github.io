@@ -8,6 +8,7 @@
   min-height: var(--maxvh, 100vh);
   height: 100%;
   width: 100%;
+  background-color: $color__background-body;
 
   :global(.root-drawer--visible) &,
   :global(.root-drawer--visible--end) & {
