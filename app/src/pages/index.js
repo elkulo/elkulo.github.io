@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "components/layout/layout"
-import SEO from "components/seo"
+import MetaSEO from "components/meta-seo"
 import HomeTemplate from "templates/home/home-template"
 
 const IndexPage = ({ location }) => {
@@ -20,7 +20,7 @@ const IndexPage = ({ location }) => {
 
   return (
     <Layout location={location} isPageType="Home">
-      <SEO />
+      <MetaSEO />
       <HomeTemplate date={site} location={location} />
     </Layout>
   )

@@ -9,7 +9,7 @@ import { useStaticQuery, graphql } from "gatsby"
  * @param {*} { description, lang, meta, title }
  * @returns react-helmet
  */
-const SEO = ({ description, lang, meta, title }) => {
+const MetaSEO = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -85,17 +85,17 @@ const SEO = ({ description, lang, meta, title }) => {
   )
 }
 
-SEO.defaultProps = {
+MetaSEO.defaultProps = {
   lang: `ja`,
   meta: [],
   description: ``,
 }
 
-SEO.propTypes = {
+MetaSEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
 }
 
-export default SEO
+export default MetaSEO

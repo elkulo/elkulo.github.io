@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import SEO from "components/seo"
+import MetaSEO from "components/meta-seo"
 import BackToIcon from "@material-ui/icons/KeyboardBackspace"
 import BackgroundImage from "assets/images/background/bg-404.jpg"
 
@@ -60,7 +60,7 @@ const NotFoundPage = ({ data }) => {
 
   return (
     <div style={style.root}>
-      <SEO title={pageTitle} />
+      <MetaSEO title={pageTitle} />
       <div style={style.wrap}>
         <p style={style.branding}>Oops...</p>
         <h1 style={style.mainTitle}>404 NOT FOUND</h1>
