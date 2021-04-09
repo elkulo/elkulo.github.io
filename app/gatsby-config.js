@@ -127,6 +127,19 @@ module.exports = {
 
     // Sass(SCSS)
     `gatsby-plugin-sass`,
+    /*
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        cssLoaderOptions: {
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
+        },
+      },
+    },
+    */
 
     // Material UI
     `gatsby-plugin-material-ui`,

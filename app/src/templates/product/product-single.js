@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "components/layout/layout"
-import SEO from "components/seo"
+import MetaSEO from "components/meta-seo"
 import ProductSingleTemplate from "./product-templates/single-template"
 
 /**
@@ -15,7 +15,7 @@ const ProductSingle = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={post.title} isPageType="ProductSingle">
-      <SEO title={post.title} description={post.content} />
+      <MetaSEO title={post.title} description={post.content} />
       <ProductSingleTemplate data={data} pageContext={pageContext} />
     </Layout>
   )

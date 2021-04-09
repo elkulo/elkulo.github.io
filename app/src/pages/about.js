@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "components/layout/layout"
-import SEO from "components/seo"
+import MetaSEO from "components/meta-seo"
 import AboutTemplate from "templates/about/about-template"
 
 const AboutPage = ({ data, location }) => (
   <Layout location={location} isPageType="About">
-    <SEO title="ABOUT" />
+    <MetaSEO title="ABOUT" />
     <AboutTemplate
       post={data.markdownRemark}
       postContent={data.markdownRemark.frontmatter}

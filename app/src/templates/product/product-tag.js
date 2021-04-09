@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "components/layout/layout"
-import SEO from "components/seo"
+import MetaSEO from "components/meta-seo"
 import ProductIndexTemplate from "./product-templates/index-template"
 
 const ProductTagIndex = ({ data, location }) => {
@@ -12,7 +12,7 @@ const ProductTagIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={pageTitle} isPageType="Product">
-      <SEO title={pageTitle} />
+      <MetaSEO title={pageTitle} />
       <ProductIndexTemplate data={data} title={pageTitle} isProductType="tag" />
     </Layout>
   )
