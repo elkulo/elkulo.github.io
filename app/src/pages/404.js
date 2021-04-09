@@ -3,49 +3,47 @@ import { graphql, Link } from "gatsby"
 import MetaSEO from "components/meta-seo"
 import BackToIcon from "@material-ui/icons/KeyboardBackspace"
 import BackgroundImage from "assets/images/background/bg-404.jpg"
+import styled from "@emotion/styled"
 
 /**
- * Style
+ * Styled Components
  */
-const style = {
-  root: {
-    display: `flex`,
-    alignItems: `center`,
-    minHeight: `var(--maxvh, 100vh)`,
-    backgroundImage: `url(${BackgroundImage})`,
-    backgroundPosition: `30% 50%`,
-    backgroundSize: `cover`,
-    color: `#eee`,
-    fontSize: `10px`, // 基準
-    textShadow: `0 0 1px #000`,
-  },
-  wrap: {
-    paddingLeft: `1em`,
-    paddingRight: `1em`,
-    fontSize: `calc(100% + (1vw * 2.625))`, // 倍率
-  },
-  branding: {
-    fontSize: `0.875em`,
-    fontWeight: `600`,
-    margin: `0`,
-    padding: `0`,
-  },
-  mainTitle: {
-    letterSpacing: `-0.02em`,
-    fontSize: `2em`,
-    fontWeight: `900`,
-    color: `#61d4e4`,
-    margin: `0`,
-  },
-  subTitle: {
-    fontSize: `0.875em`,
-    fontWeight: `600`,
-  },
-  content: {
-    fontSize: `0.675em`,
-    fontWeight: `400`,
-  },
-}
+const StyledRoot = styled.div`
+  display: flex;
+  align-items: center;
+  min-height: var(--maxvh, 100vh);
+  background-image: url(${BackgroundImage});
+  background-position: 30% 50%;
+  background-size: cover;
+  color: #eee;
+  font-size: 10px;
+  text-shadow: 0 0 1px #000;
+`
+const StyledContainer = styled.div`
+  padding: 0 1em;
+  font-size: calc(100% + (1vw * 2.625));
+`
+const StyledBranding = styled.p`
+  font-size: 0.875em;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+`
+const StyledTitle = styled.h1`
+  letter-spacing: -0.02em;
+  font-size: 2em;
+  font-weight: 900;
+  color: #61d4e4;
+  margin: 0;
+`
+const StyledDescription = styled.p`
+  font-size: 0.875em;
+  font-weight: 600;
+`
+const StyledContent = styled.div`
+  font-size: 0.675em;
+  font-weight: 400;
+`
 
 /**
  * 404 NOT FOUND.
@@ -59,13 +57,13 @@ const NotFoundPage = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
-    <div style={style.root}>
+    <StyledRoot>
       <MetaSEO title={pageTitle} />
-      <div style={style.wrap}>
-        <p style={style.branding}>Oops...</p>
-        <h1 style={style.mainTitle}>404 NOT FOUND</h1>
-        <p style={style.subTitle}>指定されたページが存在しません。</p>
-        <div style={style.content}>
+      <StyledContainer>
+        <StyledBranding>Oops...</StyledBranding>
+        <StyledTitle>404 NOT FOUND</StyledTitle>
+        <StyledDescription>指定されたページが存在しません。</StyledDescription>
+        <StyledContent>
           <p>
             お探しのページは削除されたか、
             <br />
@@ -78,9 +76,9 @@ const NotFoundPage = ({ data }) => {
           >
             {siteTitle} のホームに戻る
           </Link>
-        </div>
-      </div>
-    </div>
+        </StyledContent>
+      </StyledContainer>
+    </StyledRoot>
   )
 }
 
