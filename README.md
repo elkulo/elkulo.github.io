@@ -1,13 +1,20 @@
-# elkulo.github.io
+# ポートフォリオ by JAMstack
 
-## Public Site
+## パブリックドメイン
 
 https://elkulo.github.io/
 
-### Build and Deploy
+## 技術関連
 
-~~~
-cd app
-npm run build
-npm run deploy
-~~~
+### 構築
+React, Gatsby, Sass(SCSS), Emotion, Material UI
+
+### コンテンツソース
+RESTfull API, Markdown
+
+### ホスティング
+**Nodeサーバー**
+Github pages
+
+**APIサーバー(PHP)**
+Lolipop

@@ -52,7 +52,7 @@ const getTransitionStyles = {
  * @param {*} { location, children, isPageType }
  * @returns ReactDOM
  */
-const Layout = ({ location = window.location, children, isPageType }) => {
+const Layout = ({ location, children, isPageType }) => {
   // CSSクラスの付与
   let siteStyled = styles.site
   let hasHeader = true

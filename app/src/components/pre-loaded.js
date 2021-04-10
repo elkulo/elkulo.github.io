@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import MetaSEO from "components/meta-seo"
 import { makeStyles } from "@material-ui/core/styles"
 import {
   NoSsr,
@@ -80,7 +81,7 @@ const PreLoaded = ({ children }) => {
           }
           return prevProgress + 1
         })
-      }, 20)
+      }, 30)
       return () => {
         clearInterval(timer)
       }
@@ -95,22 +96,21 @@ const PreLoaded = ({ children }) => {
   // SSRは対象外
   return (
     <NoSsr>
+      <MetaSEO />
       {isLoaded && children}
-      {window.location.pathname === `${__PATH_PREFIX__}/` && (
-        <Backdrop
-          className={classes.backdrop}
-          open={fadeOn}
-          transitionDuration={transition}
-        >
-          <LinearProgressWithLabel
-            value={progress}
-            classes={{
-              determinate: classes.buffer,
-              bar: classes.progress,
-            }}
-          />
-        </Backdrop>
-      )}
+      <Backdrop
+        className={classes.backdrop}
+        open={fadeOn}
+        transitionDuration={transition}
+      >
+        <LinearProgressWithLabel
+          value={progress}
+          classes={{
+            determinate: classes.buffer,
+            bar: classes.progress,
+          }}
+        />
+      </Backdrop>
     </NoSsr>
   )
 }
