@@ -18,8 +18,10 @@ RESTfull API, Markdown
 
 #### ホスティング
 
-**Nodeサーバー**  
+##### Nodeサーバー
+
 Github pages
 
-**APIサーバー(PHP)**  
+##### APIサーバー(PHP)
+
 Lolipop
