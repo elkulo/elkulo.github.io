@@ -1,4 +1,6 @@
-# ポートフォリオ by JAMstack
+# ポートフォリオ
+
+JAMstack
 
 ## パブリックドメイン
 
@@ -6,15 +8,18 @@ https://elkulo.github.io/
 
 ## 技術関連
 
-### 構築
+### 構築技術
+
 React, Gatsby, Sass(SCSS), Emotion, Material UI
 
 ### コンテンツソース
+
 RESTfull API, Markdown
 
 ### ホスティング
-**Nodeサーバー**
+
+**Nodeサーバー**  
 Github pages
 
-**APIサーバー(PHP)**
+**APIサーバー(PHP)**  
 Lolipop
