@@ -6,17 +6,17 @@ JAMstack
 
 https://elkulo.github.io/
 
-## 技術関連
+### 技術関連
 
-### 構築技術
+#### 構築技術
 
 React, Gatsby, Sass(SCSS), Emotion, Material UI
 
-### コンテンツソース
+#### コンテンツソース
 
 RESTfull API, Markdown
 
-### ホスティング
+#### ホスティング
 
 **Nodeサーバー**  
 Github pages
