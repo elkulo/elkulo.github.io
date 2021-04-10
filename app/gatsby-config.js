@@ -11,7 +11,7 @@ module.exports = {
       name: `A.Sudo`,
       summary: `Front-end web developer.`,
     },
-    description: `Portfolio.`,
+    description: `ポートフォリオ`,
     siteUrl: `https://elkulo.github.io/`,
     social: {
       github: `elkulo`,
