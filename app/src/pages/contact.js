@@ -23,9 +23,7 @@ export const pageQuery = graphql`
         description
         picture {
           childImageSharp {
-            fluid(maxWidth: 2400, maxHeight: 1600) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
         form_title

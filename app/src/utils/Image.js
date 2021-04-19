@@ -1,9 +1,9 @@
 import React from "react"
-import GatsbyImage from "gatsby-image/withIEPolyfill"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { StaticQuery, graphql } from "gatsby"
 
 // 画像のURLを引数に取る
-const Image = ({ src, alt }) => (
+const Image = ({ src, alt = "" }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -12,9 +12,7 @@ const Image = ({ src, alt }) => (
             node {
               id
               childImageSharp {
-                fluid(cropFocus: NORTH, maxWidth: 2400) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
           }
@@ -30,10 +28,8 @@ const Image = ({ src, alt }) => (
         targetEdge &&
         targetEdge.node.childImageSharp && (
           <GatsbyImage
-            fluid={targetEdge.node.childImageSharp.fluid}
+            image={targetEdge.node.childImageSharp.gatsbyImageData}
             alt={alt}
-            fadeIn={true}
-            durationFadeIn={1000}
           />
         )
       )

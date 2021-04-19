@@ -55,56 +55,44 @@ Oh, and here's a great quote from this Wikipedia on
 
 ## 開発環境の必要要件
 
-### MacBook Pro 13 inch
+MacBook Pro (US Keyboard)  
+iPad Mini + Apple Pencil
 
-- US Keyboard
-- Adobe Creative Cloud
-
-### iPad Mini
-
-- Apple Pencil
-- Adobe illustrator for iPadOS
-- Adobe Photoshop for iPadOS
-
-#### 必須アプリケーション
+### アプリケーション
 
 100%のパフォーマンスで仕事をするのに必要なアプリケーション  
 \*は有料
 
-### デザイン
+#### デザイン
 
-- Adobe illustrator CC\*
-- Adobe Photoshop CC\*
+- Adobe illustrator\*
+- Adobe Photoshop\*
 - Adobe XD\*
 
-### コードエディッタ
+#### コードエディッタ
 
 - Panic Nova\*
 - VSCode
 
-### 動画編集
+#### 動画編集
 
 - Apple Final Cut Pro\*
-- Apple Motion\*
+- Apple GarageBand
 
-### 仮想開発サーバ
+#### 仮想開発サーバ
 
 - Local by Flywheel
 - Docker
 
-### FTP(S)
+#### FTP(S)
 
 - Panic Transmit\*
 
-### SSH
+#### SSH
 
 - Hyper
 
-#### 推奨アプリケーション
-
-無くても開発は行えるが管理などで必要になるアプリケーション
-
-### オフィス
+#### オフィス
 
 - Microsoft Office(Word/Excel/PowerPoint)\*
 - Google Workspace

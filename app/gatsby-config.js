@@ -58,8 +58,9 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -126,8 +127,6 @@ module.exports = {
     },
 
     // Sass(SCSS)
-    `gatsby-plugin-sass`,
-    /*
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -139,7 +138,6 @@ module.exports = {
         },
       },
     },
-    */
 
     // Material UI
     `gatsby-plugin-material-ui`,

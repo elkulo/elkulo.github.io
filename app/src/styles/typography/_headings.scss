@@ -1,7 +1,6 @@
 h1,
 h2 {
 	font-family: $font__heading;
-	font-weight: 900;
 	letter-spacing: -0.02em;
 	line-height: $font__line-height-heading;
 	-webkit-font-smoothing: antialiased;
@@ -13,7 +12,6 @@ h4,
 h5,
 h6 {
 	font-family: $font__body;
-	font-weight: 600;
 	letter-spacing: -0.02em;
 	line-height: $font__line-height-heading;
 	-webkit-font-smoothing: antialiased;
@@ -22,30 +20,32 @@ h6 {
 
 h1 {
 	font-size: $font__size-xl;
+	font-weight: 900;
 }
 
 h2 {
 	font-size: $font__size-lg;
 	font-weight: 600;
-	color: #555;
 }
 
 h3 {
-	font-size: $font__size-md;
+	font-size: $font__size-lg;
 	font-weight: 500;
-	color: #666;
 }
 
 h4 {
 	font-size: $font__size-md;
+	font-weight: 400;
 }
 
 h5 {
 	font-size: $font__size-sm;
+	font-weight: 300;
 }
 
 h6 {
 	font-size: $font__size-xs;
+	font-weight: 200;
 }
 
 blockquote {
