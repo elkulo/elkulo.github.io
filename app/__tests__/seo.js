@@ -1,6 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import Test from "../src/components/seo"
+import Test from "../src/components/meta-seo"
 
 describe("Test", () => {
   it("renders correctly", () => {

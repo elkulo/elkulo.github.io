@@ -1,5 +1,5 @@
 import React from "react"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import styles from "./contact.module.scss"
 import Wrap from "utils/Wrap"
 
@@ -28,7 +28,10 @@ const ContactTemplate = ({ post, postContent }) => {
               </p>
             </div>
             <div className={styles.primary__bg}>
-              <Image fluid={postContent.picture.childImageSharp.fluid} />
+              <GatsbyImage
+                image={postContent.picture.childImageSharp.gatsbyImageData}
+                alt={postContent.form_title}
+              />
             </div>
           </div>
           <div className={styles.secondary}>

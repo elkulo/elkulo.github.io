@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import MetaSEO from "components/meta-seo"
-import { makeStyles } from "@material-ui/core/styles"
+import styled from "@emotion/styled"
 import {
   NoSsr,
   Backdrop,
@@ -10,21 +10,10 @@ import {
 } from "@material-ui/core"
 
 // ロードスタイル
-const useStyles = makeStyles((theme) => ({
-  backdrop: {
-    zIndex: theme.zIndex.drawer + 1,
-    color: "#f1f1f1",
-    background: "#111", // 指定なしだとError:parts is null
-  },
-  buffer: {
-    background: `#555`,
-    height: `2px`,
-  },
-  progress: {
-    background: `#fff`,
-    height: `2px`,
-  },
-}))
+const StyledBackdrop = styled(Backdrop)`
+  background: #111;
+  color: #f1f1f1;
+`
 
 // フェード
 const transition = {
@@ -54,8 +43,6 @@ const LinearProgressWithLabel = (props) => {
 
 // ロード中
 const PreLoaded = ({ children }) => {
-  const classes = useStyles()
-
   // フェードの状態
   const [fadeOn, setFadeOn] = useState(true)
 
@@ -98,19 +85,9 @@ const PreLoaded = ({ children }) => {
     <NoSsr>
       <MetaSEO />
       {isLoaded && children}
-      <Backdrop
-        className={classes.backdrop}
-        open={fadeOn}
-        transitionDuration={transition}
-      >
-        <LinearProgressWithLabel
-          value={progress}
-          classes={{
-            determinate: classes.buffer,
-            bar: classes.progress,
-          }}
-        />
-      </Backdrop>
+      <StyledBackdrop open={fadeOn} transitionDuration={transition}>
+        <LinearProgressWithLabel value={progress} />
+      </StyledBackdrop>
     </NoSsr>
   )
 }
