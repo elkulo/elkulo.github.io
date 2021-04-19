@@ -12,7 +12,6 @@
     "@emotion/styled": "^11.3.0",
     "@material-ui/core": "^5.0.0-alpha.30",
     "@material-ui/icons": "^5.0.0-alpha.28",
-    "@material-ui/styles": "^5.0.0-alpha.30",
     "gatsby": "^3.3.0",
     "gatsby-plugin-feed": "^3.3.0",
     "gatsby-plugin-google-analytics": "^3.3.0",
@@ -34,6 +33,7 @@
     "gatsby-source-filesystem": "^3.3.0",
     "gatsby-transformer-remark": "^4.0.0",
     "gatsby-transformer-sharp": "^3.3.0",
+    "got": "^11.8.2",
     "gsap": "^3.6.1",
     "prismjs": "^1.23.0",
     "react": "^17.0.2",
@@ -69,7 +69,6 @@
     "url": "git+https://github.com/elkulo/elkulo.github.io"
   },
   "scripts": {
-    "update:v2": "ncu --target minor -u && npm install",
     "clean:gatsby": "gatsby clean",
     "clean:package": "rm -rf node_modules package-lock.json",
     "start": "npm run develop",
