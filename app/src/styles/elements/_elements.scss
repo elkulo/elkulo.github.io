@@ -56,6 +56,10 @@ h5,
 h6 {
 	clear: both;
 	margin: $size__spacing-unit 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
 }
 
 hr {
