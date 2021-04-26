@@ -24,29 +24,40 @@ class AboutTamplate extends Component {
 
   // 表示要素の登録
   _addObserve() {
-    this.observerApi = new IntersectionObserver(
-      (changes) => {
-        changes.map((change) => {
-          if (change.isIntersecting) {
-            /** Start */
-          } else {
-            /** Stop */
+    const option = {
+      root: null, //nullでブラウザ画面を対象にする
+      rootMargin: "0% 0% -20% 0%", //画面の下から-20%の位置をターゲットと交差する位置に指定
+      threshold: 0.2, //指定した要素が画面に20%入るとコールバッイベント発生
+    }
+    const callback = (observerEntries) => {
+      observerEntries.forEach((observerEntry) => {
+        if (observerEntry.isIntersecting) {
+          const $section = observerEntry.target
+          if (observerEntry.intersectionRatio >= 0.2) {
+            $section.classList.add(styles.section__active)
+            this.observerApi.unobserve($section)
           }
-          return change
-        })
-      },
-      { rootMargin: "-25% 0px" }
-    )
-    // この要素の表示範囲
-    const $target = document.querySelector("#about-sticky")
-    this.observerApi.observe($target)
+        } else {
+          /** 画面外の処理 */
+        }
+      })
+    }
+    this.observerApi = new IntersectionObserver(callback, option)
+
+    //ターゲットごとに監視を開始する
+    const triggerSection = document.getElementsByClassName(styles.section)
+    for (let i = 0; i < triggerSection.length; i++) {
+      this.observerApi.observe(triggerSection[i])
+    }
   }
 
   // 表示要素の解除
   _removeObserve() {
     if (this.observerApi) {
-      const $target = document.querySelector("#about-sticky")
-      this.observerApi.unobserve($target)
+      const triggerSection = document.getElementsByClassName(styles.section)
+      for (let i = 0; i < triggerSection.length; i++) {
+        this.observerApi.unobserve(triggerSection[i])
+      }
     }
   }
 
@@ -77,11 +88,14 @@ class AboutTamplate extends Component {
                 </div>
               </div>
             </div>
-            <section className={styles.section}>
-              <div style={{ height: "600px", background: "#eee" }}>TEST</div>
+            <section className={`${styles.section} ${styles.section__1}`}>
+              <div style={{ height: "600px", background: "#eee" }}>WEB</div>
             </section>
-            <section className={styles.section}>
-              <div style={{ height: "600px", background: "#eee" }}>TEST</div>
+            <section className={`${styles.section} ${styles.section__2}`}>
+              <div style={{ height: "600px", background: "#eee" }}>DTP</div>
+            </section>
+            <section className={`${styles.section} ${styles.section__3}`}>
+              <div style={{ height: "600px", background: "#eee" }}>CONTACT</div>
             </section>
           </Wrap>
         </div>
