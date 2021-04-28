@@ -67,6 +67,7 @@ module.exports = {
         trackingId: process.env.TRACKING_ID,
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -115,14 +116,6 @@ module.exports = {
           "Content-Type": "application/json",
         },
         verboseOutput: true, // For debugging purposes
-      },
-    },
-
-    // Sitemap XML
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        exclude: [`/thanks`],
       },
     },
 
