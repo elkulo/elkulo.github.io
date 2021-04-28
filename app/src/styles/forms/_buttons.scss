@@ -16,7 +16,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	@include button-transition;
-	background: $color__background-button;
+	background: linear-gradient(to right, $color__background-button, lighten($color__background-button, 22.5%));
+	background-size: 150% 100%;
+	background-position: 0 0;
 	border-radius: 5px;
 	box-sizing: border-box;
 	color: $color__text-button;
@@ -30,7 +32,8 @@ input[type="submit"] {
 	text-shadow: 0 0 5px #000;
 
 	&:hover {
-		background: $color__background-button-hover;
+		//background: $color__background-button-hover;
+		background-position: 100% 0;
 		color: $color__text-button;
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset, 0 0 0 2px rgba(0, 0, 0, 0.2);
 	}
@@ -41,7 +44,8 @@ input[type="submit"] {
 	}
 
 	&:focus {
-		background: $color__background-button-hover;
+		//background: $color__background-button-hover;
+		background-position: 100% 0;
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset, 0 0 0 2px rgba(0, 0, 0, 0.2);
 		outline: thin dotted;
 		outline-offset: -4px;
