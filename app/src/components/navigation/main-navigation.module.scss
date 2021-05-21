@@ -31,7 +31,7 @@
 
   &__item {
     width: 100%;
-    margin: ($size__spacing-unit / 4) 0;
+    margin: ($size__spacing-unit * 0.25) 0;
     padding: 0;
 
     a {
@@ -39,7 +39,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: ($size__spacing-unit / 3) $size__spacing-unit;
+      padding: ($size__spacing-unit * 0.33) $size__spacing-unit;
       border-bottom: solid 1px #444;
       box-shadow: none;
       min-height: 40px;
