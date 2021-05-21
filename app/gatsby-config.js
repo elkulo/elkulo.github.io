@@ -119,12 +119,7 @@ module.exports = {
     },
 
     // Sitemap XML
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        exclude: [`/thanks`],
-      },
-    },
+    `gatsby-plugin-sitemap`,
 
     // Sass(SCSS)
     {
