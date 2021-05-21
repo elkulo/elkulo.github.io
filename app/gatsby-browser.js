@@ -19,6 +19,7 @@ const Fix100vh = () =>
 Fix100vh()
 
 // タッチデバイスでhoverを無効
+/*
 const TouchActive = () => {
   const touch =
     "ontouchstart" in document.documentElement ||
@@ -43,6 +44,7 @@ const TouchActive = () => {
   }
 }
 TouchActive()
+*/
 
 // 全体をまとめる
 export const wrapRootElement = ({ element }) => <PreLoaded>{element}</PreLoaded>
