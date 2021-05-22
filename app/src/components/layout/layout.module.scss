@@ -45,7 +45,7 @@
     z-index: 3;
     background: {
       image: url("../../assets/images/background/bg@2x.jpg");
-      size: (400px / 2);
+      size: (400px * 0.5);
       color: #fff;
     }
     transition: transform 200ms ease-out;
