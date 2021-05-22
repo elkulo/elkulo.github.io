@@ -106,12 +106,12 @@
             &__item {
                 flex: 1;
                 min-width: 120px;
-                margin: ($size__spacing-unit / 2);
+                margin: ($size__spacing-unit * 0.5);
                 padding: 0;
 
                 a {
                     display: block;
-                    padding: ($size__spacing-unit / 4) 0;
+                    padding: ($size__spacing-unit * 0.25) 0;
                     border: solid 1px #989898;
                     text-align: center;
                     font-family: $font__heading;

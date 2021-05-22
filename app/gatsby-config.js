@@ -119,6 +119,9 @@ module.exports = {
       },
     },
 
+    // Sitemap XML
+    `gatsby-plugin-sitemap`,
+
     // Sass(SCSS)
     {
       resolve: `gatsby-plugin-sass`,
