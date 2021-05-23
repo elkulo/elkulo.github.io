@@ -2,7 +2,7 @@
 @import "../../styles/mixins/mixins-master";
 
 .container {
-    margin: $size__spacing-unit 0 0;
+    margin: ($size__spacing-unit * 3) 0 0;
 
     &__header {
         &__title {
@@ -71,19 +71,20 @@
         margin-bottom: 0;
     }
 
-    &__1 {
-    }
-    &__2 {
-    }
-    &__3 {
-    }
-
     &__active {
         opacity: 1;
     }
 }
 
 .md-editor {
+    p:first-child {
+        margin: 0;
+
+        + h1 {
+            margin-top: 0;
+        }
+    }
+
     h2 {
         font-family: $font__body;
         color: transparent;

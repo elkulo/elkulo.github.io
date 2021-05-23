@@ -19,7 +19,6 @@ const Fix100vh = () =>
 Fix100vh()
 
 // タッチデバイスでhoverを無効
-/*
 const TouchActive = () => {
   const touch =
     "ontouchstart" in document.documentElement ||
@@ -36,7 +35,10 @@ const TouchActive = () => {
           if (!styleSheet.rules[ri].selectorText) continue
 
           if (styleSheet.rules[ri].selectorText.match(":hover")) {
-            styleSheet.deleteRule(ri)
+            //styleSheet.deleteRule(ri)
+            styleSheet.rules[ri].selectorText = styleSheet.rules[
+              ri
+            ].selectorText.replace(":hover", ":active")
           }
         }
       }
@@ -44,7 +46,6 @@ const TouchActive = () => {
   }
 }
 TouchActive()
-*/
 
 // 全体をまとめる
 export const wrapRootElement = ({ element }) => <PreLoaded>{element}</PreLoaded>
