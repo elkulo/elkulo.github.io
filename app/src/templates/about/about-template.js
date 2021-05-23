@@ -10,20 +10,21 @@ class AboutTamplate extends Component {
       post: props.post,
       postContent: props.postContent,
     }
-    this._addObserve = this._addObserve.bind(this)
-    this.observerApi = ""
+    //this._addObserve = this._addObserve.bind(this)
+    //this.observerApi = ""
   }
 
   componentDidMount() {
-    this._addObserve()
+    //this._addObserve()
   }
 
   componentWillUnmount() {
-    this._removeObserve()
+    //this._removeObserve()
   }
 
   // 表示要素の登録
   _addObserve() {
+    /*
     const option = {
       root: null, //nullでブラウザ画面を対象にする
       rootMargin: "0% 0% -20% 0%", //画面の下から-20%の位置をターゲットと交差する位置に指定
@@ -38,7 +39,6 @@ class AboutTamplate extends Component {
             this.observerApi.unobserve($section)
           }
         } else {
-          /** 画面外の処理 */
         }
       })
     }
@@ -49,16 +49,19 @@ class AboutTamplate extends Component {
     for (let i = 0; i < triggerSection.length; i++) {
       this.observerApi.observe(triggerSection[i])
     }
+    */
   }
 
   // 表示要素の解除
   _removeObserve() {
+    /*
     if (this.observerApi) {
       const triggerSection = document.getElementsByClassName(styles.section)
       for (let i = 0; i < triggerSection.length; i++) {
         this.observerApi.unobserve(triggerSection[i])
       }
     }
+    */
   }
 
   render() {
@@ -88,15 +91,6 @@ class AboutTamplate extends Component {
                 </div>
               </div>
             </div>
-            <section className={`${styles.section} ${styles.section__1}`}>
-              <div style={{ height: "600px", background: "#eee" }}>WEB</div>
-            </section>
-            <section className={`${styles.section} ${styles.section__2}`}>
-              <div style={{ height: "600px", background: "#eee" }}>DTP</div>
-            </section>
-            <section className={`${styles.section} ${styles.section__3}`}>
-              <div style={{ height: "600px", background: "#eee" }}>CONTACT</div>
-            </section>
           </Wrap>
         </div>
       </article>

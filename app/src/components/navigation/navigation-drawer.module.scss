@@ -10,8 +10,8 @@
   border-radius: 0;
   background: none;
 
-  @include media(desktop) {
-    margin-left: ($size__spacing-unit * -0.25);
+  @include media(wide) {
+    margin-left: ($size__spacing-unit * -0.5);
   }
 
   &:hover,
