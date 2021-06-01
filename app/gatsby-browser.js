@@ -35,7 +35,6 @@ const TouchActive = () => {
           if (!styleSheet.rules[ri].selectorText) continue
 
           if (styleSheet.rules[ri].selectorText.match(":hover")) {
-            //styleSheet.deleteRule(ri)
             styleSheet.rules[ri].selectorText = styleSheet.rules[
               ri
             ].selectorText.replace(":hover", ":active")
