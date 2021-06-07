@@ -82,12 +82,12 @@ class ProductSingleTemplate extends Component {
                         </a>
                       )}
                     </h1>
-                    <div className={styles.single__primary__header__meta}>
+                    <div className={styles.single__primary__header__date}>
                       Update: {post.updated}
                       {post.link && (
                         <span
                           className={
-                            styles.single__primary__header__meta__preview
+                            styles.single__primary__header__date__preview
                           }
                         >
                           Preview:

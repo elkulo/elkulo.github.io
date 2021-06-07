@@ -39,6 +39,25 @@
     @include media(desktop) {
         width: calc(100% - #{$size__spacing-unit * 3});
     }
+
+    &__header {
+        &__sub {
+            font-size: $font__size-sm;
+            font-weight: 400;
+        }
+
+        &__title {
+            margin: 0;
+        }             
+        
+        &__date {
+            margin: $size__spacing-unit 0;
+            font-family: $font__code;
+            font-size: $font__size-xs;
+            font-weight: 400;
+            color: $color__text-light;
+        }
+    }
 }
 
 .secondary {
@@ -47,9 +66,7 @@
     border-radius: 5px;
     overflow: hidden;
 
-    img {
-        object-fit: cover;
-        width: 100%;
+    :global(.gatsby-image-wrapper) {
         height: 100%;
     }
 
