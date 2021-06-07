@@ -9,7 +9,7 @@ module.exports = {
     title: `el.kulo`,
     author: {
       name: `A.Sudo`,
-      summary: `Front-end web developer.`,
+      summary: `FRONT-END DEVELOPER & DESIGNER.`,
     },
     description: `ポートフォリオ`,
     siteUrl: `https://elkulo.github.io/`,

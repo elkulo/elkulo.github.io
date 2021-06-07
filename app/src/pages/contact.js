@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "components/layout/layout"
-import MetaSEO from "components/meta-seo"
+import Meta from "components/meta"
 import ContactTemplate from "templates/contact/contact-template"
 
 const ContactPage = ({ data, location }) => (
   <Layout location={location} isPageType="Contact">
-    <MetaSEO title="CONTACT" />
+    <Meta title="CONTACT" />
     <ContactTemplate
       post={data.markdownRemark}
       postContent={data.markdownRemark.frontmatter}

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import thumbnail from "assets/videos/landscape/landscape.jpg"
+import { GatsbyImage } from "gatsby-plugin-image"
 import styles from "./about.module.scss"
 import Wrap from "utils/Wrap"
 
@@ -71,14 +71,23 @@ class AboutTamplate extends Component {
       <article className="about">
         <div className={styles.container}>
           <Wrap>
-            <header className={styles.container__header}>
-              <h1 className={styles.container__header__title}>
+            <div className={styles.container__header}>
+              <h2 className={styles.container__header__title}>
                 {postContent.title}
-              </h1>
-            </header>
+              </h2>
+            </div>
             <div className={styles.layout}>
               <div className={styles.layout__primary}>
                 <div className={styles.primary}>
+                  <header className={styles.primary__header}>
+                    <div className={styles.primary__header__sub}>管理者</div>
+                    <h1 className={styles.primary__header__title}>
+                      {postContent.description}
+                    </h1>
+                    <div className={styles.primary__header__date}>
+                      Updated: {postContent.date}
+                    </div>
+                  </header>
                   <section
                     className={styles.mdEditor}
                     dangerouslySetInnerHTML={{ __html: post.html }}
@@ -87,7 +96,10 @@ class AboutTamplate extends Component {
               </div>
               <div className={styles.layout__secondary}>
                 <div id="about-sticky" className={styles.secondary}>
-                  <img src={thumbnail} alt="" />
+                  <GatsbyImage
+                    image={postContent.picture.childImageSharp.gatsbyImageData}
+                    alt={postContent.title}
+                  />
                 </div>
               </div>
             </div>

@@ -117,16 +117,24 @@ const Footer = ({ location, position }) => {
                 </ul>
               </div>
               <div className={styles.info}>
-                © 2019 - {new Date().getFullYear()} {siteTitle}, Built with{" "}
+                © 2020 - {new Date().getFullYear()} {siteTitle}, Built with{" "}
                 {` `}
                 <a
-                  href="https://www.gatsbyjs.org"
+                  href="https://www.gatsbyjs.org/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Gatsby
-                </a>{" "}
-                and React.
+                </a>
+                {" and "}
+                <a
+                  href="https://ja.reactjs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  React
+                </a>
+                .
               </div>
             </div>
           )}

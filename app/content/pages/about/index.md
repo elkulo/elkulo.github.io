@@ -1,13 +1,9 @@
 ---
 title: ABOUT
-description: "Profile Page"
+description: "A.Sudo"
+date: "2021.06.08"
+picture: "./salty_egg.jpg"
 ---
-
-管理者
-
-# A.Sudo
-
-update: 2021.03.19
 
 フロントエンドエンジニアであり、デザイナーでもあります。デザイン学校を出ていることもあり、メインはデザイナーとして考えていますが、もともと Web デザインを 10 年以上行っていることもあり、HTML / CSS のコーディング、Javascript / PHP のプログラミンにはたけています。
 

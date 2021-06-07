@@ -37,17 +37,15 @@
                     height: 6px;
                     border-radius: 100%;
                     background: currentColor;
-                    transform: scale(1);
-                    transition: all 120ms ease;
+                    transition: box-shadow 120ms ease, background 120ms ease;
                 }
 
-                &:hover,
-                &:focus {
+                &:hover {
                     color: $color__link;
 
                     &::after {
                         background: $color__link;
-                        transform: scale(1.75);
+                        box-shadow: 0 0 0 2px $color__link, 0 0 0 5px $color__link inset;
                     }
                 }
             }
@@ -55,12 +53,6 @@
             &__current {
                 a::after {
                     box-shadow: 0 0 0 2px #fff, 0 0 0 3px $color__link;
-                }
-                a:hover,
-                a:focus {
-                    &::after {
-                        box-shadow: none;
-                    }
                 }
             }
         }
@@ -193,9 +185,11 @@
                     font-family: $font__heading;
                 }
 
-                &__meta {
+                &__date {
                     margin: ($size__spacing-unit * 0.25) 0;
+                    font-family: $font__code;
                     font-size: $font__size-xs;
+                    font-weight: 400;
                     color: $color__text-light;
                 }
             }
@@ -311,9 +305,11 @@
                 }
             }
 
-            &__meta {
+            &__date {
                 margin: ($size__spacing-unit * 0.5) 0;
-                font-size: $font__size-xs;
+                font-family: $font__code;
+                font-size: $font__size-sm;
+                font-weight: 400;
                 color: $color__text-light;
 
                 &__preview {

@@ -4,11 +4,11 @@ const Typography = new TypographyPreset({
   googleFonts: [
     {
       name: "Noto Serif JP",
-      styles: ["500", "700", "900"],
+      styles: ["500"],
     },
     {
-      name: "Roboto",
-      styles: ["300", "400", "500", "700"],
+      name: "Lato",
+      styles: ["300", "400"],
     },
   ],
 })

@@ -178,7 +178,7 @@ class ProductTemplate extends Component {
                             </h3>
                             <div
                               className={
-                                styles.product__entries__entry__header__meta
+                                styles.product__entries__entry__header__date
                               }
                             >
                               Updated: {post.updated}
