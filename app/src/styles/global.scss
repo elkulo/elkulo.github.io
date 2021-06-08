@@ -10,14 +10,18 @@
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
-/* 2.Typography */
+/* 2.Normalize */
+
+@import "bootstrap/normalize";
+
+/* 3.Typography */
 
 @import "typography/typography";
 
-/* 3.Elements */
+/* 4.Elements */
 
 @import "elements/elements";
 
-/* 4.Forms */
+/* 5.Forms */
 
 @import "forms/forms";
