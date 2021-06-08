@@ -65,6 +65,7 @@
     margin: ($size__spacing-unit * 5) auto;
     border-radius: 5px;
     overflow: hidden;
+    transform: translate(0); // Safariでoverflow:hiddenが効かない対策
 
     :global(.gatsby-image-wrapper) {
         height: 100%;
@@ -93,16 +94,9 @@
     }
 }
 
-.md-editor {
-    p:first-child {
-        margin: 0;
-
-        + h1 {
-            margin-top: 0;
-        }
-    }
-
-    h2 {
+// markdownBody
+.markdown-body {
+    h1, h2 {
         font-family: $font__body;
         color: transparent;
         background: linear-gradient(45deg, #3e6bfc, #9f51fb);

@@ -1,6 +1,6 @@
 ul,
 ol {
-	padding-left: ( 1 * $size__spacing-unit );
+	padding-left: (0.5 * $size__spacing-unit);
 }
 
 ul {
@@ -21,7 +21,7 @@ li {
 
 li > ul,
 li > ol {
-	padding-left: ( 2 * $size__spacing-unit );
+	padding-left: $size__spacing-unit;
 }
 
 dt {
