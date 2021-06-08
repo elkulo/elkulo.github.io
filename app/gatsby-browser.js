@@ -7,7 +7,6 @@ import "typeface-montserrat"
 import "typeface-merriweather"
 
 // Global CSS
-import "sanitize.css"
 import "prismjs/themes/prism.css"
 import "styles/global.scss"
 
