@@ -89,7 +89,7 @@ class AboutTamplate extends Component {
                     </div>
                   </header>
                   <section
-                    className={styles.mdEditor}
+                    className={styles.markdownBody}
                     dangerouslySetInnerHTML={{ __html: post.html }}
                   />
                 </div>

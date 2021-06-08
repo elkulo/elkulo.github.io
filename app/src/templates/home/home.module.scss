@@ -31,10 +31,15 @@
             width: 100%;
             height: 100%;
 
-            /** 中横揃え用のダミー要素 */
+            // 中横揃え用のダミー要素
             &::before {
                 display: block;
                 content: "";
+            }
+
+            // POWEREDのカラー
+            :global(.site-footer) {
+                color: #767676;
             }
         }
     }
