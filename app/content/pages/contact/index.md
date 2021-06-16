@@ -3,10 +3,14 @@ title: CONTACT
 description: お問い合わせはこちら
 date: "2020.04.30"
 picture: "./big_sur.jpg"
-form_title: Googleフォーム
-form_url: "https://forms.gle/Ra9gNBircfwg2umm9"
 ---
 
 ## 個人情報保護方針
 
-このサイトのお問い合わせは Google フォームを利用しています。リンク先の Google フォームでは Google の[プライバシーポリシー](https://policies.google.com/privacy)と[利用規約](https://policies.google.com/terms)が適用されます。
+**個人情報の利用目的**  
+当サイトのお問合せフォームから個人情報の利用範囲は次のとおりです。ただし、必ずしも返答をお約束することではございません。
+
+- お問い合わせ内容に対する返答のご連絡。
+
+**お問い合わせフォームから寄せられる個人情報**  
+当サイトのお問い合わせは Google フォームを利用しています。リンク先の Google フォームでは Google の[プライバシーポリシー](https://policies.google.com/privacy)と[利用規約](https://policies.google.com/terms)が適用されます。当サイトはこれに対して責任を負うものではありません。

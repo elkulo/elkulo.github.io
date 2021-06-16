@@ -1,9 +1,23 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styles from "./contact.module.scss"
 import Wrap from "utils/Wrap"
+import MailIcon from "@material-ui/icons/Mail"
 
 const ContactTemplate = ({ post, postContent }) => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            formUrl
+          }
+        }
+      }
+    `
+  )
+
   return (
     <article className="contact">
       <div className={styles.container}>
@@ -18,19 +32,20 @@ const ContactTemplate = ({ post, postContent }) => {
               <p>{postContent.description}</p>
               <p>
                 <a
-                  href={postContent.form_url}
+                  href={site.siteMetadata.formUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="button"
                 >
-                  {postContent.form_title}
+                  <MailIcon className="button__icon" />
+                  Googleフォーム
                 </a>
               </p>
             </div>
             <div className={styles.primary__bg}>
               <GatsbyImage
                 image={postContent.picture.childImageSharp.gatsbyImageData}
-                alt={postContent.form_title}
+                alt={postContent.title}
               />
             </div>
           </div>

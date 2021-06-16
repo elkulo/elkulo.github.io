@@ -26,8 +26,6 @@ export const pageQuery = graphql`
             gatsbyImageData(layout: FULL_WIDTH)
           }
         }
-        form_title
-        form_url
       }
       excerpt
       html
