@@ -3,15 +3,15 @@
   "description": "el.kulo, Built with Gatsby and React.",
   "license": "UNLICENSED",
   "private": true,
-  "version": "3.2.0",
+  "version": "3.2.1",
   "bugs": {
     "url": "https://github.com/elkulo/elkulo.github.io/issues"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "@material-ui/core": "^5.0.0-alpha.36",
-    "@material-ui/icons": "^5.0.0-alpha.36",
+    "@material-ui/core": "^5.0.0-alpha.37",
+    "@material-ui/icons": "^5.0.0-alpha.37",
     "gatsby": "^3.7.2",
     "gatsby-plugin-feed": "^3.7.1",
     "gatsby-plugin-google-analytics": "^3.7.1",
@@ -45,17 +45,18 @@
     "sass": "^1.35.1",
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13",
-    "typescript": "^4.3.3",
+    "typescript": "^4.3.4",
     "typography": "^0.16.21"
   },
   "devDependencies": {
     "babel-jest": "^27.0.2",
     "babel-preset-gatsby": "^1.7.1",
-    "gh-pages": "^3.2.1",
+    "gh-pages": "^3.2.2",
     "http-server": "^0.12.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.4",
     "json-server": "^0.16.3",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.3.1",
     "react-test-renderer": "^17.0.2"
   },
@@ -72,14 +73,13 @@
     "clean:gatsby": "gatsby clean",
     "clean:package": "rm -rf node_modules package-lock.json",
     "start": "npm run develop",
-    "develop": "npm run serve:api & npm run serve:storage & npm run serve:localhost",
+    "develop": "run-p serve:* & gatsby develop",
     "serve:api": "json-server --watch ../serve/api/database.json --port 8080",
     "serve:storage": "http-server ../serve/storage -a 127.0.0.1 -p 8090",
-    "serve:localhost": "gatsby develop",
     "test": "jest",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "build": "gatsby build",
-    "serve:public": "gatsby serve",
+    "​staging": "gatsby serve",
     "deploy": "gh-pages -d public"
   }
 }
