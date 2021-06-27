@@ -5,23 +5,19 @@
  * 例2: .block__block__list__item
  */
 
-/* 1.SCSS Config */
+/* 1.Mixins */
 
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
-/* 2.Normalize */
-
-@import "bootstrap/normalize";
-
-/* 3.Typography */
+/* 2.Typography */
 
 @import "typography/typography";
 
-/* 4.Elements */
+/* 3.Elements */
 
 @import "elements/elements";
 
-/* 5.Forms */
+/* 4.Forms */
 
 @import "forms/forms";

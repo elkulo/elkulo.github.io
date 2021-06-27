@@ -47,9 +47,9 @@
         }
 
         :global(.button__icon) {
-            margin: 0 0.25em 0.125em 0;
+            margin: 0 0.25em -0.125em 0;
             padding: 0;
-            vertical-align: middle;
+            vertical-align: bottom;
             font-size: 1.5em;
         }
     }
