@@ -7,20 +7,16 @@ import "typeface-montserrat"
 import "typeface-merriweather"
 
 // Global CSS
-import "styles/normalize.scss"
 import "prismjs/themes/prism.css"
 import "styles/global.scss"
-
-// 100vh Fix
-const Fix100vh = () =>
+;(function () {
+  // 100vh Fix
   document.documentElement.style.setProperty(
     "--maxvh",
     `${window.innerHeight}px`
   )
-Fix100vh()
 
-// タッチデバイスでhoverを無効
-const TouchActive = () => {
+  // タッチデバイスでhoverを無効
   const touch =
     "ontouchstart" in document.documentElement ||
     navigator.maxTouchPoints > 0 ||
@@ -44,8 +40,7 @@ const TouchActive = () => {
       }
     } catch (ex) {}
   }
-}
-TouchActive()
+})()
 
 // 全体をまとめる
 export const wrapRootElement = ({ element }) => <PreLoaded>{element}</PreLoaded>
