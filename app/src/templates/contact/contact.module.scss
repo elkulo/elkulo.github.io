@@ -76,20 +76,20 @@
     &__content {
         box-sizing: border-box;
         padding-left: $size__spacing-unit;
-        border-left: solid 1px currentColor;
+        border-left: solid 1px #06295e;
         font-size: 0.875rem;
 
-        @include media(mobile) {
+        @include media(tablet) {
             margin-left: 20%;
         }
 
         @include media(desktop) {
-            float: right;
-            width: 50%;
+            margin-left: 20%;
+            margin-right: 20%;
         }
 
         h3 {
-            color: #052350;
+            color: #06295e;
         }
 
         p + ul {
