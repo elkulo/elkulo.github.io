@@ -1,6 +1,7 @@
 import * as TypographyPreset from "typography"
 
 const Typography = new TypographyPreset({
+  includeNormalize: true, // normalize.cssを読み込む
   googleFonts: [
     {
       name: "Noto Serif JP",
