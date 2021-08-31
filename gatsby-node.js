@@ -153,14 +153,15 @@ exports.sourceNodes = async ({
 }) => {
   await getNodes().map(async (node, index) => {
     if (node.internal.type === "internal__posts" && node.attachment) {
-      await node.attachment.map(async (attachmentUrl) => {
-        if (!attachmentUrl) return
+      await node.attachment.map(async (publicImageUrl) => {
+        if (!publicImageUrl) return
 
         const fileNode = await createRemoteFileNode({
-          url: process.env.MEDIA_URL + attachmentUrl, // string that points to the URL of the image
+          //url: process.env.MEDIA_URL + publicImageUrl, // string that points to the URL of the image
+          url: publicImageUrl, // string that points to the URL of the image
           parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
           createNode, // helper function in gatsby-node to generate the node
-          createNodeId: (id) => attachmentUrl, // helper function in gatsby-node to generate the node id
+          createNodeId: (id) => publicImageUrl, // helper function in gatsby-node to generate the node id
           cache, // Gatsby's cache
           store, // Gatsby's redux store
         })
@@ -179,7 +180,7 @@ exports.sourceNodes = async ({
         await createNodeField({
           node: fileNode,
           name: "attachment_src",
-          value: attachmentUrl,
+          value: publicImageUrl,
         })
 
         return fileNode
