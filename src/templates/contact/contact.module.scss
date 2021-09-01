@@ -5,6 +5,13 @@
     margin: ($size__spacing-unit * 3) 0 0;
 }
 
+.icon {
+    vertical-align: bottom;
+    margin-right: 0.125em;
+    padding-top: 0.25em;
+    filter:drop-shadow(0 0 3px rgba(0,0,0,0.8));
+}
+
 .primary {
     position: relative;
     padding-bottom: 75%;
@@ -40,7 +47,7 @@
         top: 44%;
         width: 100%;
         text-align: center;
-        color: #ddd;
+        color: #f1f1f1;
 
         p + p {
             margin-top: $size__spacing-unit;
@@ -75,8 +82,8 @@
 
     &__content {
         box-sizing: border-box;
-        padding-left: $size__spacing-unit;
-        border-left: solid 1px #06295e;
+        padding: ($size__spacing-unit * 0.5) 0 ($size__spacing-unit * 0.5) $size__spacing-unit;
+        border-left: solid 1px currentColor;
         font-size: 0.875rem;
 
         @include media(tablet) {
@@ -89,7 +96,12 @@
         }
 
         h3 {
-            color: #06295e;
+            width: max-content;
+            font-family: $font__body;
+            color: transparent;
+            background: linear-gradient(60deg, #01579b 50%, #ec407a);
+            -webkit-background-clip: text;
+            background-clip: text;
         }
 
         p + ul {
@@ -98,7 +110,7 @@
         }
 
         > p:last-child {
-            margin-bottom: $size__spacing-unit;
+            margin-bottom: 0;
         }
     }
 }

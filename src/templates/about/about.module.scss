@@ -97,9 +97,11 @@
 // markdownBody
 .markdown-body {
     h1, h2 {
+        width: max-content;
         font-family: $font__body;
         color: transparent;
-        background: linear-gradient(45deg, #3e6bfc, #9f51fb);
+        background: linear-gradient(60deg, #01579b, #ec407a);
+        -webkit-background-clip: text;
         background-clip: text;
 
         &:first-child {

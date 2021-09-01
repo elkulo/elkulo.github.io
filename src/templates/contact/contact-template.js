@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styles from "./contact.module.scss"
 import Wrap from "utils/Wrap"
-import MailIcon from "@material-ui/icons/Mail"
+import MailIcon from "@material-ui/icons/Send"
 
 const ContactTemplate = ({ post, postContent }) => {
   const { site } = useStaticQuery(
@@ -37,7 +37,7 @@ const ContactTemplate = ({ post, postContent }) => {
                   rel="noopener noreferrer"
                   className="button"
                 >
-                  <MailIcon className="button__icon" />
+                  <MailIcon className={styles.icon} />
                   Googleフォーム
                 </a>
               </p>

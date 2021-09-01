@@ -22,6 +22,7 @@ class NavigationDrawer extends Component {
    * @memberof NavigationDrawer
    */
   componentDidMount() {
+    // ページ遷移で閉じる
     this._onDrawer("hidden")
 
     // ウィンド幅の初期値
