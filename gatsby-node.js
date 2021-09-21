@@ -9,7 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   // 個別ページ生成
-  const productPost = path.resolve(`./src/templates/product/product-single.js`)
+  const productPost = path.resolve(`./src/nodes/product-single.js`)
   await graphql(
     `
       {
@@ -56,9 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   // カテゴリーページ生成
-  const productCategory = path.resolve(
-    `./src/templates/product/product-category.js`
-  )
+  const productCategory = path.resolve(`./src/nodes/product-category.js`)
   await graphql(
     `
       {
@@ -88,7 +86,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   // タグページ生成
-  const productTag = path.resolve(`./src/templates/product/product-tag.js`)
+  const productTag = path.resolve(`./src/nodes/product-tag.js`)
   await graphql(
     `
       {
@@ -203,6 +201,7 @@ exports.onCreateWebpackConfig = ({
         styles: path.resolve(__dirname, "src/styles"),
         assets: path.resolve(__dirname, "src/assets"),
         components: path.resolve(__dirname, "src/components"),
+        nodes: path.resolve(__dirname, "src/nodes"),
         pages: path.resolve(__dirname, "src/pages"),
         templates: path.resolve(__dirname, "src/templates"),
         utils: path.resolve(__dirname, "src/utils"),

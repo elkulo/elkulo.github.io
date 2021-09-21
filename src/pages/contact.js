@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "components/layout/layout"
 import Meta from "components/meta"
-import ContactTemplate from "templates/contact/contact-template"
+import ContactTemplate from "components/templates/contact/contact-template"
 
 const ContactPage = ({ data, location }) => (
   <Layout location={location} isPageType="Contact">

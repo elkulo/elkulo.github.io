@@ -18,6 +18,6 @@ RESTfull API, Markdown
 
 #### ホスティング
 
-##### Nodeサーバー
+##### Node サーバー
 
 Github pages

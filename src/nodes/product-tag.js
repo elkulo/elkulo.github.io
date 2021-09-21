@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "components/layout/layout"
 import Meta from "components/meta"
-import ProductIndexTemplate from "./product-templates/index-template"
+import ProductIndexTemplate from "components/templates/product/product-index-template"
 
 const ProductTagIndex = ({ data, location }) => {
   let pageTitle = decodeURI(location.pathname.split("/").slice(-1)[0])

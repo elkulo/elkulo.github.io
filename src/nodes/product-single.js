@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "components/layout/layout"
 import Meta from "components/meta"
-import ProductSingleTemplate from "./product-templates/single-template"
+import ProductSingleTemplate from "components/templates/product/product-single-template"
 
 /**
  *　プロダクトシングルページ

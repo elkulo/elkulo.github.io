@@ -4,7 +4,7 @@ import Bio from "components/bio"
 import Image from "utils/Image"
 import MediaQuery from "react-responsive"
 import LinkIcon from "@material-ui/icons/InsertLink"
-import styles from "../product.module.scss"
+import styles from "./product.module.scss"
 import Wrap from "utils/Wrap"
 
 /**
