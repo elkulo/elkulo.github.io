@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import Bio from "components/bio"
+import Bio from "components/template-parts/bio"
 import Image from "utils/Image"
 import MediaQuery from "react-responsive"
 import LinkIcon from "@material-ui/icons/InsertLink"

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Meta from "components/meta"
+import Head from "components/meta/head"
 import BackToIcon from "@material-ui/icons/KeyboardBackspace"
 import BackgroundImage from "assets/images/background/bg-404.jpg"
 import styled from "@emotion/styled"
@@ -58,7 +58,7 @@ const NotFoundPage = ({ data }) => {
 
   return (
     <StyledRoot>
-      <Meta title={pageTitle} />
+      <Head title={pageTitle} />
       <StyledContainer>
         <StyledBranding>Oops...</StyledBranding>
         <StyledTitle>404 NOT FOUND</StyledTitle>

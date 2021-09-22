@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "components/layout/layout"
-import Meta from "components/meta"
+import Head from "components/meta/head"
 import ProductIndexTemplate from "components/templates/product/product-index-template"
 
 const ProductTagIndex = ({ data, location }) => {
@@ -12,7 +12,7 @@ const ProductTagIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={pageTitle} isPageType="Product">
-      <Meta title={pageTitle} />
+      <Head title={pageTitle} />
       <ProductIndexTemplate data={data} title={pageTitle} isProductType="tag" />
     </Layout>
   )

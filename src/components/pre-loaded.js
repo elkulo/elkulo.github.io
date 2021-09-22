@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import Meta from "components/meta"
+import Head from "components/meta/head"
 import styled from "@emotion/styled"
 import {
   NoSsr,
@@ -83,7 +83,7 @@ const PreLoaded = ({ children }) => {
   // SSRは対象外
   return (
     <NoSsr>
-      <Meta />
+      <Head />
       {isLoaded && children}
       <StyledBackdrop open={fadeOn} transitionDuration={transition}>
         <LinearProgressWithLabel value={progress} />

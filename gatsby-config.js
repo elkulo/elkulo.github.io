@@ -77,7 +77,7 @@ module.exports = {
         short_name: `el.kulo`,
         start_url: `https://elkulo.github.io/`,
         background_color: `#ffffff`,
-        theme_color: `#551240`,
+        theme_color: `#111111`,
         display: `minimal-ui`,
         icon: `src/assets/icon/application-icon.png`,
       },
