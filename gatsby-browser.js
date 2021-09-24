@@ -26,13 +26,14 @@ import "styles/global.scss"
     try {
       for (let si in document.styleSheets) {
         const styleSheet = document.styleSheets[si]
-        if (!styleSheet.rules) continue
 
-        for (let ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
-          if (!styleSheet.rules[ri].selectorText) continue
+        if (!styleSheet.cssRules) continue
 
-          if (styleSheet.rules[ri].selectorText.match(":hover")) {
-            styleSheet.rules[ri].selectorText = styleSheet.rules[
+        for (let ri = styleSheet.cssRules.length - 1; ri >= 0; ri--) {
+          if (!styleSheet.cssRules[ri].selectorText) continue
+
+          if (styleSheet.cssRules[ri].selectorText.match(":hover")) {
+            styleSheet.cssRules[ri].selectorText = styleSheet.cssRules[
               ri
             ].selectorText.replace(":hover", ":active")
           }
