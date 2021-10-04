@@ -54,8 +54,8 @@
         &__in {
             box-sizing: border-box;
             width: 100%;
-            min-height: 500px;
-            height: calc(var(--maxvh, 100vh) * 0.75);
+            min-height: 400px;
+            height: calc(var(--maxvh, 100vh) * 0.5);
 
             @include media(tablet) {
                 height: 100%;
@@ -80,19 +80,23 @@
     }
 
     &__branding {
-        margin-top: ($size__spacing-unit * 10);
+        margin-top: ($size__spacing-unit * 8);
 
         &__title {
             text-align: center;
-            font-size: $font__size-xxl;
             font-family: $font__heading;
             font-weight: 500;
+            font-size: $font__size-xxl;
+
+            @include media(desktop) {
+                font-size: $font__size-xxxl;
+            }
         }
     }
 
     &__navi {
         clear: both;
-        margin: ($size__spacing-unit * 3) auto 0;
+        margin: ($size__spacing-unit * 5) auto 0;
         width: 100%;
         text-align: center;
 
@@ -110,20 +114,25 @@
 
             &__item {
                 flex: 1;
-                min-width: 120px;
-                margin: ($size__spacing-unit * 0.5);
+                min-width: 140px;
+                margin: 0 ($size__spacing-unit * 0.125) ($size__spacing-unit * 0.5);
                 padding: 0;
 
                 a {
                     display: block;
-                    padding: ($size__spacing-unit * 0.25) 0;
-                    border: solid 1px #989898;
+                    padding: ($size__spacing-unit * 0.5) 0;
+                    border: solid 1px #767676;
                     text-align: center;
                     font-family: $font__code;
                     font-weight: 400;
                     color: #ccc;
                     background: #111;
                     @include button-transition();
+                    font-size: $font__size-md;
+
+                    @include media(tablet) {
+                        font-size: $font__size-sm;
+                    }
 
                     &:hover,
                     &:focus {
@@ -140,9 +149,13 @@
         margin: $size__spacing-unit auto 0;
         text-align: center;
         font-family: $font__code;
-        font-size: $font__size-sm;
+        font-size: $font__size-md;
         font-weight: 400;
         color: rgb(151, 135, 45);
+
+        @include media(tablet) {
+            font-size: $font__size-sm;
+        }
 
         a {
             @include button-all-transition();
@@ -181,6 +194,10 @@
     &__branding {
         margin: $size__spacing-unit;
         text-align: center;
+
+        @include media(tablet) {
+            display: none;
+        }
 
         &__title {
             margin: 0;

@@ -8,6 +8,11 @@ html {
 	box-sizing: inherit;
 }
 
+@include selection() {
+	background-color: $color__background_selection;
+	color: $color__text_selection;
+}
+
 body {
 	background-color: $color__background-body;
 }
@@ -96,9 +101,4 @@ video {
 		width: 100%;
 		height: 100%;
 	}
-}
-
-@include selection() {
-	background-color: $color__background_selection;
-	color: $color__text_selection;
 }
