@@ -49,3 +49,10 @@
 		@content;
 	}
 }
+
+@mixin user-select($event: none) {
+	-moz-user-select: #{$event}; /* Firefox */
+	-ms-user-select: #{$event}; /* Internet Explorer */
+	-webkit-user-select: #{$event}; /* Chrome, Safari, and Opera */
+	-webkit-touch-callout: #{$event}; /* Disable Android and iOS callouts*/
+}

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Bio from "components/template-parts/bio"
 import Image from "utils/Image"
 import MediaQuery from "react-responsive"
-import LinkIcon from "@material-ui/icons/InsertLink"
+import LinkIcon from "@mui/icons-material/InsertLink"
 import styles from "./product.module.scss"
 import Wrap from "utils/Wrap"
 

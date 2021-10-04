@@ -2,13 +2,14 @@ import React from "react"
 import { Link } from "gatsby"
 import Footer from "components/footer/site-footer"
 import NavigationDrawer from "components/navigation/navigation-drawer"
-import OpenIcon from "@material-ui/icons/Notes"
+import OpenIcon from "@mui/icons-material/Notes"
 import Video from "utils/Video"
 import {
   landscapeMP4 as MP4,
   landscapeJPG as thumbnail,
 } from "assets/videos/video"
 import styles from "./home.module.scss"
+import MediaQuery from "react-responsive"
 
 const HomeTemplate = ({ date, location }) => {
   const siteTitle = date.siteMetadata.title
@@ -24,11 +25,13 @@ const HomeTemplate = ({ date, location }) => {
                   <OpenIcon />
                 </NavigationDrawer>
               </div>
-              <div className={styles.header__branding}>
-                <h1 className={`${styles.header__branding__title} site-title`}>
-                  {siteTitle}
-                </h1>
-              </div>
+              <MediaQuery query="(min-width: 768px)">
+                <div className={styles.header__branding}>
+                  <div className={styles.header__branding__title}>
+                    {siteTitle}
+                  </div>
+                </div>
+              </MediaQuery>
               <nav className={styles.header__navi}>
                 <ul className={styles.header__navi__list}>
                   <li className={styles.header__navi__list__item}>
@@ -61,9 +64,7 @@ const HomeTemplate = ({ date, location }) => {
                 </NavigationDrawer>
               </div>
               <div className={styles.content__branding}>
-                <p className={`${styles.content__branding__title} site-title`}>
-                  {siteTitle}
-                </p>
+                <h1 className={styles.content__branding__title}>{siteTitle}</h1>
               </div>
               <div className={styles.content__eyecatch}>
                 <h2 className={styles.content__eyecatch__title}>Portfolio</h2>

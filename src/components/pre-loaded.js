@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Head from "components/meta/head"
 import styled from "@emotion/styled"
-import {
-  NoSsr,
-  Backdrop,
-  Typography,
-  Box,
-  LinearProgress,
-} from "@material-ui/core"
+import { NoSsr, Backdrop, Typography, Box, LinearProgress } from "@mui/material"
 
 // ロードスタイル
 const StyledBackdrop = styled(Backdrop)`

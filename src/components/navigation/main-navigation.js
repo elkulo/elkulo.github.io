@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
-import HomeIcon from "@material-ui/icons/Home"
-import AboutIcon from "@material-ui/icons/Person"
-import ProductIcon from "@material-ui/icons/Grain"
-import ContactIcon from "@material-ui/icons/Send"
+import HomeIcon from "@mui/icons-material/Home"
+import AboutIcon from "@mui/icons-material/Person"
+import ProductIcon from "@mui/icons-material/Grain"
+import ContactIcon from "@mui/icons-material/Send"
 import thumbnail from "assets/videos/landscape/landscape.jpg"
 import styles from "./main-navigation.module.scss"
 

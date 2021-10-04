@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styles from "./contact.module.scss"
 import Wrap from "utils/Wrap"
-import MailIcon from "@material-ui/icons/Send"
+import MailIcon from "@mui/icons-material/Send"
 
 const ContactTemplate = ({ post, postContent }) => {
   const { site } = useStaticQuery(

@@ -8,14 +8,17 @@
     @include media(tablet) {
         display: flex;
         flex-direction: row;
-        min-height: 100vh;
         min-height: var(--maxvh, 100vh);
     }
 
     &__left {
+        border-top: solid 1px #000;
+
         @include media(tablet) {
             flex: 1;
             min-width: 33.33%;
+            border: none;
+            border-right: solid 1px #000;
         }
 
         &__in {
@@ -51,8 +54,8 @@
         &__in {
             box-sizing: border-box;
             width: 100%;
-            height: 100vh;
-            height: var(--maxvh, 100vh);
+            min-height: 500px;
+            height: calc(var(--maxvh, 100vh) * 0.75);
 
             @include media(tablet) {
                 height: 100%;
@@ -77,22 +80,19 @@
     }
 
     &__branding {
-        margin: ($size__spacing-unit * 5) auto 0;
-
-        @include media(tablet) {
-            margin-top: ($size__spacing-unit * 10);
-        }
+        margin-top: ($size__spacing-unit * 10);
 
         &__title {
             text-align: center;
             font-size: $font__size-xxl;
+            font-family: $font__heading;
             font-weight: 500;
         }
     }
 
     &__navi {
         clear: both;
-        margin: $size__spacing-unit auto 0;
+        margin: ($size__spacing-unit * 3) auto 0;
         width: 100%;
         text-align: center;
 
@@ -182,10 +182,6 @@
         margin: $size__spacing-unit;
         text-align: center;
 
-        @include media(tablet) {
-            display: none;
-        }
-
         &__title {
             margin: 0;
             padding: 0;
@@ -196,6 +192,7 @@
             line-height: $font__line-height-heading;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            @include user-select(none);
         }
     }
 
@@ -216,19 +213,25 @@
             top: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.35;
+            opacity: 0.25;
             background: url("../../../assets/images/background/dot.gif");
         }
 
         &__title {
             position: absolute;
-            top: 40%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: #fff;
             text-shadow: 0 0 5px #000;
-            font-size: $font__size-xxxl;
+            font-size: $font__size-xl;
             font-weight: 500;
+            @include user-select(none);
+
+            @include media(tablet) {
+                top: 40%;
+                font-size: $font__size-xxl;
+            }
         }
     }
 }

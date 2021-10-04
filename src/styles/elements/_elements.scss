@@ -2,16 +2,6 @@ html {
 	box-sizing: border-box;
 }
 
-::-moz-selection {
-	background-color: $color__background_selection;
-	color: $color__text_selection;
-}
-
-::selection {
-	background-color: $color__background_selection;
-	color: $color__text_selection;
-}
-
 *,
 *:before,
 *:after {
@@ -106,4 +96,9 @@ video {
 		width: 100%;
 		height: 100%;
 	}
+}
+
+@include selection() {
+	background-color: $color__background_selection;
+	color: $color__text_selection;
 }

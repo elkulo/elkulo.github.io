@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
 import Image from "utils/Image"
-import PreviewIcon from "@material-ui/icons/Panorama"
+import PreviewIcon from "@mui/icons-material/Panorama"
 import {
   TransitionGroup,
   Transition as ReactTransition,
