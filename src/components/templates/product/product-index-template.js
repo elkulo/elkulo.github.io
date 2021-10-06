@@ -6,7 +6,7 @@ import {
   TransitionGroup,
   Transition as ReactTransition,
 } from "react-transition-group"
-import styles from "./product.module.scss"
+import styles from "./product-index.module.scss"
 import Wrap from "utils/Wrap"
 
 const timeout = 500

@@ -7,6 +7,7 @@ import { NoSsr, Backdrop, Typography, Box, LinearProgress } from "@mui/material"
 const StyledBackdrop = styled(Backdrop)`
   background: #111;
   color: #f1f1f1;
+  z-index: 100;
 `
 
 // フェード
@@ -42,25 +43,24 @@ const PreLoaded = ({ children }) => {
 
   // ローディングの状態
   const [isLoaded, setLoaded] = useState(false)
-  const removeModal = () => {
-    // DOM更新
-    setLoaded(() => true)
-    setFadeOn(() => false)
-  }
 
   // 擬似ロード画面
   const [progress, setProgress] = useState(0)
   useEffect(() => {
     if (window.location.pathname === `${__PATH_PREFIX__}/`) {
-      // ロード中
       const timer = setInterval(() => {
         setProgress((prevProgress) => {
-          if (prevProgress >= 100) {
-            removeModal()
-            clearInterval(timer)
-            return 100
+          switch (prevProgress) {
+            case 100:
+              setFadeOn(() => false)
+              clearInterval(timer)
+              return 100
+            case 50:
+              setLoaded(() => true)
+              return prevProgress + 1
+            default:
+              return prevProgress + 1
           }
-          return prevProgress + 1
         })
       }, 30)
       return () => {
@@ -69,7 +69,8 @@ const PreLoaded = ({ children }) => {
     } else {
       // ホーム以外ではスキップ
       setProgress(() => 100)
-      removeModal()
+      setLoaded(() => true)
+      setFadeOn(() => false)
       return
     }
   }, [])

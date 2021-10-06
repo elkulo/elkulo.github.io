@@ -4,7 +4,7 @@ import Bio from "components/template-parts/bio"
 import Image from "utils/Image"
 import MediaQuery from "react-responsive"
 import LinkIcon from "@mui/icons-material/InsertLink"
-import styles from "./product.module.scss"
+import styles from "./product-single.module.scss"
 import Wrap from "utils/Wrap"
 
 /**
@@ -34,14 +34,16 @@ class ProductSingleTemplate extends Component {
     const { post, previous, next, feature } = this.state
 
     return (
-      <div className={styles.single}>
+      <div className={styles.product}>
         <Wrap>
-          <article className={styles.single__entry}>
-            <div className={styles.single__entry__container}>
-              <div className={styles.single__entry__container__primary}>
-                <div className={styles.single__primary}>
-                  <div className={styles.single__primary__categories}>
-                    <div className={styles.single__primary__categories__return}>
+          <article className={styles.product__entry}>
+            <div className={styles.product__entry__container}>
+              <div className={styles.product__entry__container__primary}>
+                <div className={styles.product__primary}>
+                  <div className={styles.product__primary__categories}>
+                    <div
+                      className={styles.product__primary__categories__return}
+                    >
                       <Link to={`/product`} className="button">
                         ← リストへ戻る
                       </Link>
@@ -51,7 +53,7 @@ class ProductSingleTemplate extends Component {
                       return (
                         <div
                           className={
-                            styles.single__primary__categories__category
+                            styles.product__primary__categories__category
                           }
                           key={_cat_index}
                         >
@@ -65,8 +67,8 @@ class ProductSingleTemplate extends Component {
                     })}
                   </div>
 
-                  <header className={styles.single__primary__header}>
-                    <h1 className={styles.single__primary__header__title}>
+                  <header className={styles.product__primary__header}>
+                    <h1 className={styles.product__primary__header__title}>
                       {!post.link && post.title}
                       {post.link && (
                         <a
@@ -74,7 +76,7 @@ class ProductSingleTemplate extends Component {
                           target="_blank"
                           rel="noopener noreferrer"
                           className={
-                            styles.single__primary__header__title__link
+                            styles.product__primary__header__title__link
                           }
                         >
                           {post.title}
@@ -82,12 +84,12 @@ class ProductSingleTemplate extends Component {
                         </a>
                       )}
                     </h1>
-                    <div className={styles.single__primary__header__date}>
+                    <div className={styles.product__primary__header__date}>
                       Update: {post.updated}
                       {post.link && (
                         <span
                           className={
-                            styles.single__primary__header__date__preview
+                            styles.product__primary__header__date__preview
                           }
                         >
                           Preview:
@@ -104,24 +106,24 @@ class ProductSingleTemplate extends Component {
                   </header>
 
                   <div
-                    className={styles.single__primary__content}
+                    className={styles.product__primary__content}
                     dangerouslySetInnerHTML={{ __html: post.content }}
                   />
 
                   <MediaQuery query="(min-width: 768px)">
                     {1 < post.attachment.length && (
-                      <div className={styles.single__primary__attachments}>
+                      <div className={styles.product__primary__attachments}>
                         {post.attachment.map((_image_src, _image_index) => {
                           return (
                             <div
                               className={
-                                styles.single__primary__attachments__attachment
+                                styles.product__primary__attachments__attachment
                               }
                               key={_image_index}
                             >
                               <button
                                 className={
-                                  styles.single__primary__attachments__attachment__link
+                                  styles.product__primary__attachments__attachment__link
                                 }
                                 onClick={() => this.handleClick(_image_index)}
                               >
@@ -134,11 +136,11 @@ class ProductSingleTemplate extends Component {
                     )}
                   </MediaQuery>
 
-                  <div className={styles.single__primary__tags}>
+                  <div className={styles.product__primary__tags}>
                     {post.tag.map((_tag_name, _tag_index) => {
                       return (
                         <div
-                          className={styles.single__primary__tags__tag}
+                          className={styles.product__primary__tags__tag}
                           key={_tag_index}
                         >
                           <Link to={`/product/tag/${encodeURI(_tag_name)}`}>
@@ -149,9 +151,9 @@ class ProductSingleTemplate extends Component {
                     })}
                   </div>
 
-                  <nav className={styles.single__primary__navi}>
-                    <ul className={styles.single__primary__navi__list}>
-                      <li className={styles.single__primary__navi__list__item}>
+                  <nav className={styles.product__primary__navi}>
+                    <ul className={styles.product__primary__navi__list}>
+                      <li className={styles.product__primary__navi__list__item}>
                         {next && (
                           <Link
                             to={`/product/${next.alternative_id}`}
@@ -161,7 +163,7 @@ class ProductSingleTemplate extends Component {
                           </Link>
                         )}
                       </li>
-                      <li className={styles.single__primary__navi__list__item}>
+                      <li className={styles.product__primary__navi__list__item}>
                         {previous && (
                           <Link
                             to={`/product/${previous.alternative_id}`}
@@ -174,24 +176,24 @@ class ProductSingleTemplate extends Component {
                     </ul>
                   </nav>
 
-                  <footer className={styles.single__primary__footer}>
+                  <footer className={styles.product__primary__footer}>
                     <Bio />
                   </footer>
 
                   <MediaQuery query="(max-width: 767px)">
                     {1 < post.attachment.length && (
-                      <div className={styles.single__primary__attachments}>
+                      <div className={styles.product__primary__attachments}>
                         {post.attachment.map((_image_src, _image_index) => {
                           return (
                             <div
                               className={
-                                styles.single__primary__attachments__attachment
+                                styles.product__primary__attachments__attachment
                               }
                               key={_image_index}
                             >
                               <button
                                 className={
-                                  styles.single__primary__attachments__attachment__link
+                                  styles.product__primary__attachments__attachment__link
                                 }
                                 onClick={() => this.handleClick(_image_index)}
                               >
@@ -205,9 +207,9 @@ class ProductSingleTemplate extends Component {
                   </MediaQuery>
                 </div>
               </div>
-              <div className={styles.single__entry__container__secondary}>
-                <div className={styles.single__secondary}>
-                  <div className={styles.single__secondary__feature}>
+              <div className={styles.product__entry__container__secondary}>
+                <div className={styles.product__secondary}>
+                  <div className={styles.product__secondary__feature}>
                     <Image src={feature} alt={post.title} />
                   </div>
                 </div>

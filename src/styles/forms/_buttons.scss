@@ -28,14 +28,14 @@ input[type="submit"] {
 	padding: ($size__spacing-unit * 0.76) $size__spacing-unit;
 	text-decoration: none;
 	vertical-align: bottom;
-	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5) inset, 0 0 0 2px rgba(0, 0, 0, 0.2) inset, 0 0 0 2px rgba(0, 0, 0, 0.1);
-	text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset, 0 0 0 2px rgba(0, 0, 0, 0.2) inset, 0 0 0 2px rgba(0, 0, 0, 0.08);
+	text-shadow: 0 0 2px rgba(0, 0, 0, 1);
 
 	&:hover {
 		//background: $color__background-button-hover;
-		background-position: 100% 0;
+		background-position: 50% 0;
 		color: $color__text-button;
-		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5) inset, 0 0 0 2px rgba(0, 0, 0, 0.2) inset, 0 0 0 2px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset, 0 0 0 2px rgba(0, 0, 0, 0.2) inset, 0 0 0 2px rgba(0, 0, 0, 0.08);
 	}
 
 	&:visited {
