@@ -38,7 +38,7 @@ const ContactTemplate = ({ post, postContent }) => {
                   className="button"
                 >
                   <MailIcon className={styles.icon} />
-                  Googleフォーム
+                  メールフォームへ移動
                 </a>
               </p>
             </div>

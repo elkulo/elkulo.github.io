@@ -96,6 +96,7 @@
         }
 
         h3 {
+            margin-top: 2rem;
             width: max-content;
             font-family: $font__body;
             color: transparent;
@@ -105,7 +106,6 @@
         }
 
         p + ul {
-            margin-top: -1rem;
             font-weight: 500;
         }
 

@@ -1,94 +1,81 @@
 ---
 title: ABOUT
 description: "A.Sudo"
-date: "2021.06.08"
-picture: "./salty_egg.jpg"
+date: "2021.10.22"
+picture: "./cover.jpg"
 ---
 
-フロントエンドエンジニアであり、デザイナーでもあります。デザイン学校を出ていることもあり、メインはデザイナーとして考えていますが、もともと Web デザインを 10 年以上行っていることもあり、HTML / CSS のコーディング、Javascript / PHP のプログラミンにはたけています。
+el.kulo(A.Sudo)と申します。
 
-また、WordPress に関してはデザインはもちろん、テーマやプラグインの開発も行っています。WordPress はコア部分の処理まで把握しています。
+東京の某企業でフロント・エンド・エンジニアを務めています。デザイナーでもあります。
 
-さらに、Javascript と PHP のオープンソースでライブラリ開発も行っています。そのため、プログラミングについては上級者向けのこともしますが、やはりデザインあってのサービスと考えています。
+WordPress をベースにした制作を得意とし、企業向けにオリジナルのテーマやプラグインをゼロから作り管理しています。
+デザインからシステム構築まで一貫したサイト制作をします。また、DTP デザインも行います。
 
-私は書くコードひとつをとっても美しさを追求し、モダンなプログラミングを志しています。
+もとはデザイン系の学校出身で、写真を駆使した Photoshop でのコラージュを得意とします。
 
-## 主な開発言語
+写真や映像、音楽制作などクリエイトすることにジャンルを問わず興味を持っています。
 
-HTML5 / Sass(SCSS) / Javascript / PHP
+デザインをメインに据えたいところですが、HTML / CSS / JavaScript / PHP の実務歴は 15 年以上となり、修得レベルは比較的高いと思います。
 
-![画像の埋込](salty_egg.jpg)
+## Github
 
-### 慣れ親しんだ技術
+個人制作のコードは Github で公開しています。評価するには私の書いたコードを見てください。  
+https://github.com/elkulo
 
-次の技術は仕事で多様していることもあり、最も扱いに慣れた CMS およびライブラリ
+---
 
-WordPress / React / Gatsby / Vue / jQuery / Laravel / Slim / Codeigniter / FuelPHP / CakePHP
+## スキル
 
-#### 私が今、関心の高い技術
+> **主な言語**  
+> HTML5, Sass(SCSS), JavaScript(ES6+), PHP(7.4+)
 
-WordPress / React / Gatsby / Laravel / Slim
+> **主なライブラリ**  
+> React, Gatsby, Vue, WordPress, Laravel, Slim Framework, FuelPHP, 他
 
-#### 逆に関心の低い技術
+> **パッケージ管理**  
+> Git, Composer, NPM
 
-jQuery / Vue / Codeigniter / FuelPHP / CakePHP
+![画像の埋込](cover.jpg)
 
-## プロジェクト管理
+---
 
-Git / Composer / NPM
+## 個人制作
 
-基本ですが、WordPress にも Composer と NPM を導入してパッケージの管理をしています。また、Git によるプロジェクトのコード管理も行います。
+- **Portfolio**  
+  https://elkulo.github.io/  
+  JAMstack なポートフォリオサイト
 
-Composer と NPM を導入する第一の目的は、PHP_Codesniffer と ESLint/Prettier によって、WordPress 公式の命名規則とコード規約を適用しているため、一定レベル以上のコード品質は保証されます。
+- **Mailer**  
+  https://mailer.elkulo.me/  
+  WordPress にも組み込めるモダンでシンプルな Slim Framework 製メールフォーム
 
-![画像の埋込](salty_egg.jpg)
+- **Feeder**  
+  https://feeder.elkulo.me/  
+  管理下の WordPress の更新状況を一元監視するための業務用 RSS フィードリーダー
 
-This is my first post on my new fake blog! How exciting!
+- **API Server**  
+  https://api.elkulo.me/  
+  JAMstack なポートフォリオ連携の API サーバー
 
-I'm sure I'll write a lot more interesting things in the future.
+---
 
-Oh, and here's a great quote from this Wikipedia on
+## 開発環境
 
-## 開発環境の必要要件
+**MacBook Pro (US Keyboard)**  
+**iPad mini + Apple Pencil**
 
-MacBook Pro (US Keyboard)  
-iPad Mini + Apple Pencil
+- **デザイン**  
+  Adobe illustrator / Adobe Photoshop / Adobe XD
 
-### アプリケーション
+- **コードエディッター**  
+  VSCode
 
-100%のパフォーマンスで仕事をするのに必要なアプリケーション  
-\*は有料
+- **動画編集**  
+  Apple Final Cut Pro / Apple GarageBand
 
-#### デザイン
+- **SFTP**  
+  Panic Transmit
 
-- Adobe illustrator\*
-- Adobe Photoshop\*
-- Adobe XD\*
-
-#### コードエディッタ
-
-- Panic Nova\*
-- VSCode
-
-#### 動画編集
-
-- Apple Final Cut Pro\*
-- Apple GarageBand
-
-#### 仮想開発サーバ
-
-- Local by Flywheel
-- Docker
-
-#### FTP(S)
-
-- Panic Transmit\*
-
-#### SSH
-
-- Hyper
-
-#### オフィス
-
-- Microsoft Office(Word/Excel/PowerPoint)\*
-- Google Workspace
+- **SSH**  
+  Hyper
