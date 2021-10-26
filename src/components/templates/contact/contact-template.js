@@ -33,7 +33,6 @@ const ContactTemplate = ({ post, postContent }) => {
               <p>
                 <a
                   href={site.siteMetadata.formUrl}
-                  target="_blank"
                   rel="noopener noreferrer"
                   className="button"
                 >

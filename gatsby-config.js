@@ -16,7 +16,7 @@ module.exports = {
     social: {
       github: `elkulo`,
     },
-    formUrl: `https://inquiry.elkulo.me/elkulo_github_io/post`,
+    formUrl: `https://inquiry.elkulo.me/elkulo-io/post`,
     robots: `noindex,nofollow`,
     verification: process.env.SEARCH_ID ? process.env.SEARCH_ID : "",
   },
