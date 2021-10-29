@@ -18,7 +18,7 @@ WordPress をベースにした制作を得意とし、企業向けにオリジ�
 
 写真や映像、音楽制作などクリエイトすることにジャンルを問わず興味を持っています。
 
-デザインをメインに据えたいところですが、HTML / CSS / JavaScript / PHP の実務歴は15年以上となり、修得レベルは比較的高いほうです。
+デザインをメインに据えたいところですが、HTML / CSS / JavaScript / PHP の実務歴は 15 年以上となり、修得レベルは比較的高いほうです。
 
 ## Github
 
@@ -46,19 +46,19 @@ https://github.com/elkulo
 
 - **Portfolio**  
   https://elkulo.github.io/  
-  JAMstackな React のポートフォリオサイト
+  JAMstack な React のポートフォリオサイト
 
 - **Mailer**  
   https://mailer.elkulo.me/  
-  WordPressにも組み込めるモダンでシンプルな Slim Framework のメールフォーム
+  WordPress にも組み込めるモダンでシンプルな Slim Framework のメールフォーム
 
 - **Feeder**  
   https://feeder.elkulo.me/  
-  管理下のWordPressの更新状況を一元監視するための Vue x Slim のRSSフィードリーダー
+  管理下の WordPress の更新状況を一元監視するための Vue x Slim の RSS フィードリーダー
 
 - **API Server**  
   https://api.elkulo.me/  
-  JAMstack連携用に Slim Framework のAPIサーバー
+  JAMstack 連携用に Slim Framework の API サーバー
 
 ---
 

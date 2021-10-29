@@ -8,6 +8,7 @@ import {
 } from "react-transition-group"
 import styles from "./product-index.module.scss"
 import Wrap from "utils/Wrap"
+import Masonry from "react-masonry-component"
 
 const timeout = 500
 const getTransitionStyles = {
@@ -112,7 +113,13 @@ class ProductTemplate extends Component {
             </div>
           )}
 
-          <article className={styles.product__entries}>
+          <Masonry
+            className={styles.product__entries}
+            elementType={"div"}
+            options={{ transitionDuration: 0 }}
+            disableImagesLoaded={true}
+            updateOnEachImageLoad={true}
+          >
             {posts.map(({ node }, i) => {
               const post = node
               const title = post.title || post.alternative_id
@@ -209,17 +216,36 @@ class ProductTemplate extends Component {
                 </section>
               )
             })}
-            {posts_per_page * paged < max_posts && (
-              <div className={styles.product__entries__more}>
-                <button
-                  onClick={this.handleClick}
-                  className={`${styles.product__entries__more__button} button`}
-                >
-                  もっと見る
-                </button>
-              </div>
-            )}
-          </article>
+          </Masonry>
+          {posts_per_page * paged < max_posts && (
+            <TransitionGroup>
+              <ReactTransition
+                key="more"
+                appear={true}
+                timeout={{
+                  enter: timeout,
+                  exit: timeout,
+                }}
+              >
+                {(status) => (
+                  <div
+                    style={{
+                      ...getTransitionStyles[status],
+                    }}
+                  >
+                    <div className={styles.product__more}>
+                      <button
+                        onClick={this.handleClick}
+                        className={`${styles.product__more__button} button`}
+                      >
+                        もっと見る
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </ReactTransition>
+            </TransitionGroup>
+          )}
         </Wrap>
       </div>
     )

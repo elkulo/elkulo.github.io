@@ -59,7 +59,7 @@
     }
 
     &__tag {
-        margin: ($size__spacing-unit * 2) auto ($size__spacing-unit - 2);
+        margin: ($size__spacing-unit * 2) auto 0;
 
         &__title {
             display: inline-block;
@@ -79,31 +79,25 @@
     }
 
     &__entries {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        &::after {
-            display: block;
-            content: "";
-            margin: auto;
-        }
 
         &__entry {
-            flex-basis: 100%;
-            max-width: 100%;
+            width: 100%;
             margin: ($size__spacing-unit * 2) 0 0;
 
             @include media(mobile) {
-                flex-basis: calc(50% - 2px);
-                max-width: calc(50% - 2px);
-                margin: ($size__spacing-unit * 2.5) 1px 0;
+                width: calc(50% - #{$size__spacing-unit * 2});
+                margin-left: $size__spacing-unit;
+                margin-right: $size__spacing-unit;
             }
 
             @include media(desktop) {
-                flex-basis: calc(33.33% - 2px);
-                max-width: calc(33.33% - 2px);
-                margin: ($size__spacing-unit * 2.5) 1px 0;
+                width: calc(33.33% - #{$size__spacing-unit * 2});
+            }
+
+            @include media(wide) {
+                width: calc(33.33% - #{$size__spacing-unit * 3});
+                margin-left: ($size__spacing-unit * 1.5);
+                margin-right: ($size__spacing-unit * 1.5);
             }
 
             &__feature {
@@ -160,33 +154,21 @@
                 a {
                     position: relative;
                     display: block;
-                    height: 350px;
-
-                    @include media(mobile) {
-                        height: 300px;
-                    }
-                    @include media(tablet) {
-                        height: 375px;
-                    }
-                    @include media(desktop) {
-                        height: 400px;
-                    }
-                    @include media(wide) {
-                        height: 500px;
-                    }
+                    max-height: 500px;
                 }
             }
 
             &__header {
-                padding: $size__spacing-unit ($size__spacing-unit * 0.25) 0;
+                padding: ($size__spacing-unit * 0.5);
 
                 &__title {
                     margin: 0;
                     font-family: $font__heading;
+                    font-size: $font__size-sm;
                 }
 
                 &__date {
-                    margin: ($size__spacing-unit * 0.25) 0;
+                    margin: ($size__spacing-unit * 0.125) 0 0;
                     font-family: $font__code;
                     font-size: $font__size-xs;
                     font-weight: 400;
@@ -209,20 +191,19 @@
                 }
             }
         }
+    }
 
-        &__more {
-            flex-basis: 100%;
-            margin: ($size__spacing-unit * 3) 0 0;
-            text-align: center;
+    &__more {
+        margin: ($size__spacing-unit * 2) auto 0;
+        text-align: center;
 
-            &__button {
-                max-width: 240px;
-                width: 100%;
-                border-radius: 20px;
+        &__button {
+            max-width: 240px;
+            width: 100%;
+            border-radius: 20px;
 
-                @include media(tablet) {
-                    max-width: 360px;
-                }
+            @include media(tablet) {
+                max-width: 360px;
             }
         }
     }
