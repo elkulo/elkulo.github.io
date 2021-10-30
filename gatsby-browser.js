@@ -33,9 +33,12 @@ import "styles/global.scss"
           if (!styleSheet.cssRules[ri].selectorText) continue
 
           if (styleSheet.cssRules[ri].selectorText.match(":hover")) {
+            styleSheet.deleteRule(ri)
+            /*
             styleSheet.cssRules[ri].selectorText = styleSheet.cssRules[
               ri
             ].selectorText.replace(":hover", ":active")
+            */
           }
         }
       }

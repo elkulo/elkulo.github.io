@@ -55,7 +55,7 @@
             box-sizing: border-box;
             width: 100%;
             min-height: 400px;
-            height: calc(var(--maxvh, 100vh) * 0.5);
+            height: calc(var(--maxvh, 100vh) - 60px); // Scroll to の高さ60px
 
             @include media(tablet) {
                 height: 100%;

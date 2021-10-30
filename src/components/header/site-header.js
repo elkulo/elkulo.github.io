@@ -50,7 +50,9 @@ const Header = ({ location = window.location, position }) => {
         <div className={styles.sidebar}>
           <div className={styles.container}>
             <div className={styles.container__primary}>
-              <div className={styles.branding}>{branding}</div>
+              <div className={`${styles.branding} ${styles.brandingSidebar}`}>
+                {branding}
+              </div>
             </div>
             <div className={styles.container__secondary}>
               <NavigationDrawer visibility="hidden">
@@ -65,7 +67,9 @@ const Header = ({ location = window.location, position }) => {
         <Wrap>
           <div className={styles.container}>
             <div className={styles.container__primary}>
-              <div className={styles.branding}>{branding}</div>
+              <div className={`${styles.branding} ${styles.brandingContent}`}>
+                {branding}
+              </div>
             </div>
             <div className={styles.container__secondary}>
               <NavigationDrawer visibility="toggle">

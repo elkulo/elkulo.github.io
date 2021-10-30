@@ -26,6 +26,7 @@
                 color: $color__text-light;
                 box-shadow: none;
                 transition: color 180ms ease;
+                @include user-select(none);
 
                 &::after {
                     display: block;
