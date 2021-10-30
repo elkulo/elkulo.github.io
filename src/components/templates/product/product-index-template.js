@@ -116,7 +116,7 @@ class ProductTemplate extends Component {
           <Masonry
             className={styles.product__entries}
             elementType={"div"}
-            options={{ transitionDuration: 0 }}
+            options={{ percentPosition: true }}
             disableImagesLoaded={true}
             updateOnEachImageLoad={true}
           >

@@ -9,7 +9,7 @@
         list-style: none;
         justify-content: center;
         width: fit-content;
-        margin: ($size__spacing-unit * 2) auto 0;
+        margin: ($size__spacing-unit * 2) auto $size__spacing-unit;
         padding: 0;
 
         &__category {
@@ -59,7 +59,11 @@
     }
 
     &__tag {
-        margin: ($size__spacing-unit * 2) auto 0;
+        margin: ($size__spacing-unit * 2) auto ($size__spacing-unit * -1);
+
+        @include media(tablet) {
+            margin: ($size__spacing-unit * -1) auto;
+        }
 
         &__title {
             display: inline-block;
@@ -79,6 +83,15 @@
     }
 
     &__entries {
+        @include media(mobile) {
+            margin-left: (0 - $size__spacing-unit);
+            margin-right: (0 - $size__spacing-unit);
+        }
+
+        @include media(wide) {
+            margin-left: (0 - $size__spacing-unit * 1.5);
+            margin-right: (0 - $size__spacing-unit * 1.5);
+        }
 
         &__entry {
             width: 100%;

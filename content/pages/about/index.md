@@ -20,11 +20,6 @@ WordPress をベースにした制作を得意とし、企業向けにオリジ�
 
 デザインをメインに据えたいところですが、HTML / CSS / JavaScript / PHP の実務歴は 15 年以上となり、修得レベルは比較的高いほうです。
 
-## Github
-
-個人制作のコードは Github で公開しています。評価するには私の書いたコードを見てください。  
-https://github.com/elkulo
-
 ---
 
 ## スキル
@@ -54,7 +49,7 @@ https://github.com/elkulo
 
 - **Feeder**  
   https://feeder.elkulo.me/  
-  管理下の WordPress の更新状況を一元監視するための Vue x Slim の RSS フィードリーダー
+  管理下の WordPress の更新状況を一元監視する Vue x Slim の RSS フィードリーダー
 
 - **API Server**  
   https://api.elkulo.me/  
@@ -81,3 +76,10 @@ https://github.com/elkulo
 
 - **SSH**  
   Hyper
+
+---
+
+## Github
+
+個人制作のコードは Github で公開しています。評価するには私の書いたコードを見てください。  
+https://github.com/elkulo
