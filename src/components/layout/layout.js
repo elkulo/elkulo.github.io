@@ -12,32 +12,32 @@ const getTransitionStyles = {
   moveStyle: {
     // マウント開始時
     entering: {
-      transition: `transform ${timeout}ms ease-out, opacity ${timeout}ms ease-out`,
+      transition: `transform ${timeout}ms ease-out, opacity ${timeout}ms ease-in`,
       opacity: 1,
-      transform: `translate(0px, 0px)`,
+      transform: `translate(0, 0)`,
     },
     // マウント完了時 スタイルリセット
     entered: {},
     // アンマウント開始時
     exiting: {
-      transition: `opacity ${timeout}ms ease-out`,
+      transition: `opacity ${timeout}ms ease-in`,
       opacity: 0,
-      transform: `translate(0px, 0px)`,
+      transform: `translate(0, 0)`,
     },
     // アンマウント完了時
     exited: {
       opacity: 0,
-      transform: `translate(0, 10px)`,
+      transform: `translate(0, 20px)`,
     },
   },
   fadeStyle: {
     entering: {
-      transition: `opacity ${timeout}ms ease-out`,
+      transition: `opacity ${timeout}ms ease-in`,
       opacity: 1,
     },
     entered: {},
     exiting: {
-      transition: `opacity ${timeout}ms ease-out`,
+      transition: `opacity ${timeout}ms ease-in`,
       opacity: 0,
     },
     exited: {

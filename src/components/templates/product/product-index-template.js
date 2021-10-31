@@ -10,30 +10,40 @@ import styles from "./product-index.module.scss"
 import Wrap from "utils/Wrap"
 import Masonry from "react-masonry-component"
 
-const timeout = 500
-const getTransitionStyles = {
-  // マウント開始時
-  entering: {
-    opacity: 0,
-    paddingTop: `10px`,
-  },
-  // マウント完了時
-  entered: {
-    transition: `padding ${timeout}ms ease-out, opacity ${timeout}ms ease-out`,
-    opacity: 1,
-    paddingTop: `0px`,
-  },
-  // アンマウント開始時
-  exiting: {
-    transition: `opacity ${timeout}ms ease-out`,
-    opacity: 0,
-    paddingTop: `0px`,
-  },
-  // アンマウント完了時
-  exited: {
-    opacity: 0,
-    paddingTop: `10px`,
-  },
+const showMoveTime = 500
+const getTransitionStyles = (status, delay) => {
+  switch (status) {
+    case "entering":
+      return {
+        opacity: 0,
+        transform: `translate(0, 10px)`,
+      }
+    case "entered":
+      return {
+        transition: `
+        transform ${showMoveTime}ms ease-out ${
+          delay * showMoveTime
+        }ms, opacity ${showMoveTime}ms ease-in ${delay * showMoveTime}ms`,
+        opacity: 1,
+        transform: `translate(0, 0)`,
+      }
+    case "exiting":
+      return {
+        transition: `opacity ${showMoveTime}ms ease-in`,
+        opacity: 0,
+        transform: `translate(0, 0)`,
+      }
+    case "exited":
+      return {
+        opacity: 0,
+        transform: `translate(0, 10px)`,
+      }
+    default:
+      return {
+        opacity: 1,
+        transform: `translate(0, 0)`,
+      }
+  }
 }
 
 /**
@@ -139,14 +149,17 @@ class ProductTemplate extends Component {
                       key={post.id}
                       appear={true}
                       timeout={{
-                        enter: timeout,
-                        exit: timeout,
+                        enter: showMoveTime,
+                        exit: showMoveTime,
                       }}
                     >
                       {(status) => (
                         <div
                           style={{
-                            ...getTransitionStyles[status],
+                            ...getTransitionStyles(
+                              status,
+                              i - posts_per_page * (paged - 1)
+                            ),
                           }}
                         >
                           <div
@@ -223,14 +236,14 @@ class ProductTemplate extends Component {
                 key="more"
                 appear={true}
                 timeout={{
-                  enter: timeout,
-                  exit: timeout,
+                  enter: showMoveTime,
+                  exit: showMoveTime,
                 }}
               >
                 {(status) => (
                   <div
                     style={{
-                      ...getTransitionStyles[status],
+                      ...getTransitionStyles(status, posts_per_page),
                     }}
                   >
                     <div className={styles.product__more}>
