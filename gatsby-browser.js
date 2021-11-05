@@ -1,12 +1,8 @@
-// Global JSX
 import React from "react"
 import PreLoaded from "components/pre-loaded"
-
-// Custom Typefaces
+import { UAParser } from "ua-parser-js"
 import "typeface-montserrat"
 import "typeface-merriweather"
-
-// Global CSS
 import "prismjs/themes/prism.css"
 import "styles/global.scss"
 ;(function () {
@@ -17,12 +13,9 @@ import "styles/global.scss"
   )
 
   // タッチデバイスでhoverを無効
-  const touch =
-    "ontouchstart" in document.documentElement ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0
+  const touchDevice = /\b(iOS|iPad|Android)\b/
 
-  if (touch) {
+  if (touchDevice.test(UAParser().os.name)) {
     try {
       for (let si in document.styleSheets) {
         const styleSheet = document.styleSheets[si]
@@ -34,11 +27,6 @@ import "styles/global.scss"
 
           if (styleSheet.cssRules[ri].selectorText.match(":hover")) {
             styleSheet.deleteRule(ri)
-            /*
-            styleSheet.cssRules[ri].selectorText = styleSheet.cssRules[
-              ri
-            ].selectorText.replace(":hover", ":active")
-            */
           }
         }
       }
