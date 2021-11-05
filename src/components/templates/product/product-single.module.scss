@@ -57,13 +57,18 @@
                     svg {
                         display: inline-block;
                         position: absolute;
-                        top: ($size__spacing-unit * 0.8);
+                        top: 50%;
                         right: 100%;
                         color: inherit;
-                        opacity: 0;
+                        opacity: 0.6;
                         vertical-align: middle;
                         font-size: 1.5rem;
-                        transform: rotate(60deg);
+                        transform: translate(0, -50%) rotate(60deg);
+                        @include link-transition(opacity);
+
+                        @include media(tablet) {
+                            opacity: 0;
+                        }
                     }
 
                     &:hover,

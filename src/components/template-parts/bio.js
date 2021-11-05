@@ -34,29 +34,35 @@ const Bio = () => {
         display: `flex`,
         marginTop: rhythm(1 / 2),
         marginBottom: rhythm(1 / 2),
+        marginLeft: rhythm(-1 / 4),
+        marginRight: rhythm(-1 / 4),
       }}
     >
       <div
         style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          width: `50px`,
-          height: `50px`,
-          borderRadius: `100%`,
-          overflow: `hidden`,
+          marginRight: rhythm(1 / 4),
+          flexBasic: `70px`,
+          width: `70px`,
+          height: `70px`,
+          clipPath: `circle(30px at 50% 45%)`,
         }}
       >
         <GatsbyImage
           image={data.avatar.childImageSharp.gatsbyImageData}
           alt={author.name}
+          style={{
+            display: `block`,
+            width: `100%`,
+            height: `100%`,
+          }}
         />
       </div>
-      <p style={{ marginBottom: 0, fontSize: `0.875rem` }}>
+      <div style={{ flex: `1`, fontSize: `0.875rem` }}>
         <strong>{author.name}</strong>{" "}
         <span style={{ display: "inline-block" }}>{author.summary}</span>
         <br />
         <Link to={`/about`}>&rarr; Read about me.</Link>
-      </p>
+      </div>
     </div>
   )
 }

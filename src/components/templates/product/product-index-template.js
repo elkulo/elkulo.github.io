@@ -63,13 +63,21 @@ class ProductTemplate extends Component {
       paged: 1, // 分割数
       posts_per_page: 12, // 分割する投稿数
       max_posts: props.data.allPost.edges.length, // 投稿数
+      has_more: true, // もっと見る判定
     }
-    this.handleClick = this.handleClick.bind(this)
+    this.onMorePostsClick = this.onMorePostsClick.bind(this)
   }
 
   // ページ分割
-  handleClick() {
-    this.setState({ paged: this.state.paged + 1 })
+  async onMorePostsClick() {
+    await this.setState({
+      paged: this.state.paged + 1,
+      has_more: false,
+    })
+    // もっと見るを遅延表示
+    if (this.state.posts_per_page * this.state.paged < this.state.max_posts) {
+      await this.setState({ has_more: true })
+    }
   }
 
   render() {
@@ -80,7 +88,7 @@ class ProductTemplate extends Component {
       isProductType,
       paged,
       posts_per_page,
-      max_posts,
+      has_more,
     } = this.state
 
     // アーカイブタイプの判別
@@ -230,7 +238,7 @@ class ProductTemplate extends Component {
               )
             })}
           </Masonry>
-          {posts_per_page * paged < max_posts && (
+          {has_more && (
             <TransitionGroup>
               <ReactTransition
                 key="more"
@@ -248,7 +256,7 @@ class ProductTemplate extends Component {
                   >
                     <div className={styles.product__more}>
                       <button
-                        onClick={this.handleClick}
+                        onClick={this.onMorePostsClick}
                         className={`${styles.product__more__button} button`}
                       >
                         もっと見る
