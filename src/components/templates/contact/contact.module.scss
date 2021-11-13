@@ -1,8 +1,8 @@
-@import "../../../styles/variables-site/variables-site";
-@import "../../../styles/mixins/mixins-master";
+@use "../../../styles/variables/variables" as variable;
+@use "../../../styles/mixins/mixins" as mixin;
 
 .container {
-    margin: ($size__spacing-unit * 3) 0 0;
+    margin: (variable.$size__spacing-unit * 3) 0 0;
 }
 
 .icon {
@@ -17,10 +17,10 @@
     padding-bottom: 75%;
     z-index: 1;
 
-    @include media(tablet) {
+    @include mixin.media(tablet) {
         padding-bottom: 56.25%;
     }
-    @include media(desktop) {
+    @include mixin.media(desktop) {
         padding-bottom: 40%;
     }
 
@@ -35,7 +35,7 @@
             color: #fff;
             font-size: 2.5rem;
 
-            @include media(tablet) {
+            @include mixin.media(tablet) {
                 font-size: 3rem;
             }
         }
@@ -50,7 +50,7 @@
         color: #f1f1f1;
 
         p + p {
-            margin-top: $size__spacing-unit;
+            margin-top: variable.$size__spacing-unit;
         }
 
         :global(.button__icon) {
@@ -78,19 +78,19 @@
 }
 
 .secondary {
-    margin: $size__spacing-unit 0 0;
+    margin: variable.$size__spacing-unit 0 0;
 
     &__content {
         box-sizing: border-box;
-        padding: ($size__spacing-unit * 0.5) 0 ($size__spacing-unit * 0.5) $size__spacing-unit;
+        padding: (variable.$size__spacing-unit * 0.5) 0 (variable.$size__spacing-unit * 0.5) variable.$size__spacing-unit;
         border-left: solid 1px currentColor;
         font-size: 0.875rem;
 
-        @include media(tablet) {
+        @include mixin.media(tablet) {
             margin-left: 20%;
         }
 
-        @include media(desktop) {
+        @include mixin.media(desktop) {
             margin-left: 20%;
             margin-right: 20%;
         }
@@ -98,7 +98,7 @@
         h3 {
             margin-top: 2rem;
             width: max-content;
-            font-family: $font__body;
+            font-family: variable.$font__body;
             color: transparent;
             background: linear-gradient(60deg, #01579b 50%, #ec407a);
             -webkit-background-clip: text;

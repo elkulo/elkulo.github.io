@@ -1,15 +1,15 @@
-@import "../../../styles/variables-site/variables-site";
-@import "../../../styles/mixins/mixins-master";
+@use "../../../styles/variables/variables" as variable;
+@use "../../../styles/mixins/mixins" as mixin;
 
 .product {
-    margin: 0 0 ($size__spacing-unit * 2);
+    margin: 0 0 (variable.$size__spacing-unit * 2);
 
     &__categories {
         display: flex;
         list-style: none;
         justify-content: center;
         width: fit-content;
-        margin: ($size__spacing-unit * 2) auto $size__spacing-unit;
+        margin: (variable.$size__spacing-unit * 2) auto variable.$size__spacing-unit;
         padding: 0;
 
         &__category {
@@ -19,11 +19,11 @@
             a {
                 position: relative;
                 display: block;
-                padding: ($size__spacing-unit * 0.5) $size__spacing-unit;
-                font-family: $font__heading;
-                font-size: $font__size-sm;
+                padding: (variable.$size__spacing-unit * 0.5) variable.$size__spacing-unit;
+                font-family: variable.$font__heading;
+                font-size: variable.$font__size-sm;
                 font-weight: 600;
-                color: $color__text-light;
+                color: variable.$color__text-light;
                 box-shadow: none;
                 transition: color 180ms ease;
                 -webkit-tap-highlight-color:rgba(0,0,0,0);
@@ -42,38 +42,38 @@
                 }
 
                 &:hover {
-                    color: $color__link;
+                    color: variable.$color__link;
 
                     &::after {
-                        background: $color__link;
-                        box-shadow: 0 0 0 2px $color__link, 0 0 0 5px $color__link inset;
+                        background: variable.$color__link;
+                        box-shadow: 0 0 0 2px variable.$color__link, 0 0 0 5px variable.$color__link inset;
                     }
                 }
             }
 
             &__current {
                 a::after {
-                    box-shadow: 0 0 0 2px #fff, 0 0 0 3px $color__link;
+                    box-shadow: 0 0 0 2px #fff, 0 0 0 3px variable.$color__link;
                 }
             }
         }
     }
 
     &__tag {
-        margin: ($size__spacing-unit * 2) auto ($size__spacing-unit * -1);
+        margin: (variable.$size__spacing-unit * 2) auto (variable.$size__spacing-unit * -1);
 
-        @include media(tablet) {
-            margin: ($size__spacing-unit * -1) auto;
+        @include mixin.media(tablet) {
+            margin: (variable.$size__spacing-unit * -1) auto;
         }
 
         &__title {
             display: inline-block;
             padding: 0;
             margin: 0;
-            font-family: $font__body;
+            font-family: variable.$font__body;
             font-size: 0.875rem;
             font-weight: 400;
-            color: $color__link-hover;
+            color: variable.$color__link-hover;
 
             &::before {
                 display: inline-block;
@@ -84,34 +84,34 @@
     }
 
     &__entries {
-        @include media(mobile) {
-            margin-left: (0 - $size__spacing-unit);
-            margin-right: (0 - $size__spacing-unit);
+        @include mixin.media(mobile) {
+            margin-left: (0 - variable.$size__spacing-unit);
+            margin-right: (0 - variable.$size__spacing-unit);
         }
 
-        @include media(wide) {
-            margin-left: (0 - $size__spacing-unit * 1.5);
-            margin-right: (0 - $size__spacing-unit * 1.5);
+        @include mixin.media(wide) {
+            margin-left: (0 - variable.$size__spacing-unit * 1.5);
+            margin-right: (0 - variable.$size__spacing-unit * 1.5);
         }
 
         &__entry {
             width: 100%;
-            margin: ($size__spacing-unit * 2) 0 0;
+            margin: (variable.$size__spacing-unit * 2) 0 0;
 
-            @include media(mobile) {
-                width: calc(50% - #{$size__spacing-unit * 2});
-                margin-left: $size__spacing-unit;
-                margin-right: $size__spacing-unit;
+            @include mixin.media(mobile) {
+                width: calc(50% - #{variable.$size__spacing-unit * 2});
+                margin-left: variable.$size__spacing-unit;
+                margin-right: variable.$size__spacing-unit;
             }
 
-            @include media(desktop) {
-                width: calc(33.33% - #{$size__spacing-unit * 2});
+            @include mixin.media(desktop) {
+                width: calc(33.33% - #{variable.$size__spacing-unit * 2});
             }
 
-            @include media(wide) {
-                width: calc(33.33% - #{$size__spacing-unit * 3});
-                margin-left: ($size__spacing-unit * 1.5);
-                margin-right: ($size__spacing-unit * 1.5);
+            @include mixin.media(wide) {
+                width: calc(33.33% - #{variable.$size__spacing-unit * 3});
+                margin-left: (variable.$size__spacing-unit * 1.5);
+                margin-right: (variable.$size__spacing-unit * 1.5);
             }
 
             &__feature {
@@ -138,7 +138,7 @@
                     box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.25) inset;
                     padding: 5px;
                     opacity: 0;
-                    @include link-transition(opacity);
+                    @include mixin.link-transition(opacity);
 
                     &:hover {
                         opacity: 0.33;
@@ -151,8 +151,8 @@
                         top: 50%;
                         transform: translate(-50%, -50%);
                         text-align: center;
-                        color: $color__text-main;
-                        font-size: $font__size-sm;
+                        color: variable.$color__text-main;
+                        font-size: variable.$font__size-sm;
                         padding: 1em 2em;
                         border: solid 1px currentColor;
 
@@ -164,7 +164,7 @@
                     }
                 }
 
-                @include clear-link();
+                @include mixin.clear-link();
                 a {
                     position: relative;
                     display: block;
@@ -173,29 +173,29 @@
             }
 
             &__header {
-                padding: ($size__spacing-unit * 0.5);
+                padding: (variable.$size__spacing-unit * 0.5);
 
                 &__title {
                     margin: 0;
-                    font-family: $font__heading;
-                    font-size: $font__size-sm;
+                    font-family: variable.$font__heading;
+                    font-size: variable.$font__size-sm;
                 }
 
                 &__date {
-                    margin: ($size__spacing-unit * 0.125) 0 0;
-                    font-family: $font__code;
-                    font-size: $font__size-xs;
+                    margin: (variable.$size__spacing-unit * 0.125) 0 0;
+                    font-family: variable.$font__code;
+                    font-size: variable.$font__size-xs;
                     font-weight: 400;
-                    color: $color__text-light;
+                    color: variable.$color__text-light;
                 }
             }
 
             &__tags {
-                font-size: $font__size-xs;
+                font-size: variable.$font__size-xs;
 
                 &__tag {
                     display: inline-block;
-                    margin: 0 0 0 ($size__spacing-unit * 0.5);
+                    margin: 0 0 0 (variable.$size__spacing-unit * 0.5);
 
                     a::before {
                         display: inline-block;
@@ -208,7 +208,7 @@
     }
 
     &__more {
-        margin: ($size__spacing-unit * 2) auto 0;
+        margin: (variable.$size__spacing-unit * 2) auto 0;
         text-align: center;
 
         &__button {
@@ -216,7 +216,7 @@
             width: 100%;
             border-radius: 20px;
 
-            @include media(tablet) {
+            @include mixin.media(tablet) {
                 max-width: 360px;
             }
         }

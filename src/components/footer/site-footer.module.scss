@@ -1,14 +1,14 @@
-@import "../../styles/variables-site/variables-site";
-@import "../../styles/mixins/mixins-master";
+@use "../../styles/variables/variables" as variable;
+@use "../../styles/mixins/mixins" as mixin;
 
 // Home
 .sidebar {
-  padding: ($size__spacing-unit * 3) 0;
+  padding: (variable.$size__spacing-unit * 3) 0;
 }
 
 // Other page
 .content {
-  padding: ($size__spacing-unit * 3) 0;
+  padding: (variable.$size__spacing-unit * 3) 0;
 }
 
 .powered {
@@ -19,8 +19,8 @@
     display: inline-block;
     position: relative;
     text-align: center;
-    font-size: $font__size-md;
-    margin: 0 0 ($size__spacing-unit * 2);
+    font-size: variable.$font__size-md;
+    margin: 0 0 (variable.$size__spacing-unit * 2);
 
     &::before,
     &::after {
@@ -47,42 +47,42 @@
     display: flex;
     justify-content: space-between;
     max-width: 360px;
-    padding: 0 $size__spacing-unit;
+    padding: 0 variable.$size__spacing-unit;
     margin: 0 auto;
 
     &__item {
-      flex-basis: calc(20% - #{$size__spacing-unit});
-      max-width: calc(20% - #{$size__spacing-unit});
-      margin: ($size__spacing-unit * 0.5) 0 0;
+      flex-basis: calc(20% - #{variable.$size__spacing-unit});
+      max-width: calc(20% - #{variable.$size__spacing-unit});
+      margin: (variable.$size__spacing-unit * 0.5) 0 0;
       padding: 0;
-      font-family: $font__code;
-      font-size: $font__size-xs;
+      font-family: variable.$font__code;
+      font-size: variable.$font__size-xs;
       font-weight: 400;
       white-space: nowrap;
-      color: $color__text-light;
+      color: variable.$color__text-light;
 
       img {
         width: auto;
         max-width: 40px;
         height: 40px;
         vertical-align: bottom;
-        margin: 0 auto ($size__spacing-unit * 0.25);
+        margin: 0 auto (variable.$size__spacing-unit * 0.25);
       }
     }
   }
 }
 
 .info {
-  margin: ($size__spacing-unit * 3) auto 0;
-  color: $color__text-light;
+  margin: (variable.$size__spacing-unit * 3) auto 0;
+  color: variable.$color__text-light;
   text-align: center;
-  font-family: $font__heading;
+  font-family: variable.$font__heading;
 
   > a {
     color: inherit;
 
     &:hover {
-      color: lighten($color__text-light, 30%);
+      color: lighten(variable.$color__text-light, 30%);
       box-shadow: none;
     }
   }

@@ -1,11 +1,11 @@
-@import "../../../styles/variables-site/variables-site";
-@import "../../../styles/mixins/mixins-master";
+@use "../../../styles/variables/variables" as variable;
+@use "../../../styles/mixins/mixins" as mixin;
 
 .split-layout {
     display: flex;
     flex-direction: column-reverse;
 
-    @include media(tablet) {
+    @include mixin.media(tablet) {
         display: flex;
         flex-direction: row;
         min-height: var(--maxvh, 100vh);
@@ -14,7 +14,7 @@
     &__left {
         border-top: solid 1px #000;
 
-        @include media(tablet) {
+        @include mixin.media(tablet) {
             flex: 1;
             min-width: 33.33%;
             border: none;
@@ -30,7 +30,7 @@
             background: #191919;
             color: #ddd;
             box-sizing: border-box;
-            padding: 0 $size__spacing-unit;
+            padding: 0 variable.$size__spacing-unit;
             width: 100%;
             height: 100%;
 
@@ -67,37 +67,37 @@
     &__drawer {
         display: none;
 
-        @include media(tablet) {
+        @include mixin.media(tablet) {
             display: block;
             position: absolute;
-            left: $size__spacing-unit;
-            top: $size__spacing-unit;
+            left: variable.$size__spacing-unit;
+            top: variable.$size__spacing-unit;
         }
     }
 
     &__branding {
-        margin-top: ($size__spacing-unit * 8);
+        margin-top: (variable.$size__spacing-unit * 8);
 
         &__title {
             text-align: center;
-            font-family: $font__heading;
+            font-family: variable.$font__heading;
             font-weight: 500;
-            font-size: $font__size-xxl;
+            font-size: variable.$font__size-xxl;
 
-            @include media(desktop) {
-                font-size: $font__size-xxxl;
+            @include mixin.media(desktop) {
+                font-size: variable.$font__size-xxxl;
             }
         }
     }
 
     &__navi {
         clear: both;
-        margin: ($size__spacing-unit * 5) auto 0;
+        margin: (variable.$size__spacing-unit * 5) auto 0;
         width: 100%;
         text-align: center;
 
-        @include media(tablet) {
-            margin: ($size__spacing-unit * 2) 0 0;
+        @include mixin.media(tablet) {
+            margin: (variable.$size__spacing-unit * 2) 0 0;
         }
 
         &__list {
@@ -111,23 +111,23 @@
             &__item {
                 flex: 1;
                 min-width: 140px;
-                margin: 0 ($size__spacing-unit * 0.25) ($size__spacing-unit * 0.5);
+                margin: 0 (variable.$size__spacing-unit * 0.25) (variable.$size__spacing-unit * 0.5);
                 padding: 0;
 
                 a {
                     display: block;
-                    padding: ($size__spacing-unit * 0.5) 0;
+                    padding: (variable.$size__spacing-unit * 0.5) 0;
                     border: solid 1px #767676;
                     text-align: center;
-                    font-family: $font__code;
+                    font-family: variable.$font__code;
                     font-weight: 400;
                     color: #ccc;
                     background: #111;
-                    @include button-transition();
-                    font-size: $font__size-md;
+                    @include mixin.button-transition();
+                    font-size: variable.$font__size-md;
 
-                    @include media(tablet) {
-                        font-size: $font__size-sm;
+                    @include mixin.media(tablet) {
+                        font-size: variable.$font__size-sm;
                     }
 
                     &:hover,
@@ -142,19 +142,19 @@
     }
 
     &__description {
-        margin: $size__spacing-unit auto 0;
+        margin: variable.$size__spacing-unit auto 0;
         text-align: center;
-        font-family: $font__code;
-        font-size: $font__size-md;
+        font-family: variable.$font__code;
+        font-size: variable.$font__size-md;
         font-weight: 400;
         color: rgb(151, 135, 45);
 
-        @include media(tablet) {
-            font-size: $font__size-sm;
+        @include mixin.media(tablet) {
+            font-size: variable.$font__size-sm;
         }
 
         a {
-            @include button-all-transition();
+            @include mixin.button-all-transition();
             color: rgb(151, 135, 45);
             box-shadow: 0 0px 0 rgb(151, 135, 45);
 
@@ -169,8 +169,8 @@
 
 /** Split Right */
 .content {
-    @include clearfix("before");
-    @include clearfix("after");
+    @include mixin.clearfix("before");
+    @include mixin.clearfix("after");
     position: relative;
     width: 100%;
     height: 100%;
@@ -179,19 +179,19 @@
 
     &__drawer {
         position: absolute;
-        left: $size__spacing-unit;
-        top: $size__spacing-unit;
+        left: variable.$size__spacing-unit;
+        top: variable.$size__spacing-unit;
 
-        @include media(tablet) {
+        @include mixin.media(tablet) {
             display: none;
         }
     }
 
     &__branding {
-        margin: $size__spacing-unit;
+        margin: variable.$size__spacing-unit;
         text-align: center;
 
-        @include media(tablet) {
+        @include mixin.media(tablet) {
             display: none;
         }
 
@@ -199,13 +199,13 @@
             margin: 0;
             padding: 0;
             font-size: 2rem;
-            font-family: $font__heading;
+            font-family: variable.$font__heading;
             font-weight: 500;
             letter-spacing: -0.02em;
-            line-height: $font__line-height-heading;
+            line-height: variable.$font__line-height-heading;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            @include user-select(none);
+            @include mixin.user-select(none);
         }
     }
 
@@ -237,13 +237,13 @@
             transform: translate(-50%, -50%);
             color: #fff;
             text-shadow: 0 0 5px #000;
-            font-size: $font__size-xl;
+            font-size: variable.$font__size-xl;
             font-weight: 500;
-            @include user-select(none);
+            @include mixin.user-select(none);
 
-            @include media(tablet) {
+            @include mixin.media(tablet) {
                 top: 40%;
-                font-size: $font__size-xxl;
+                font-size: variable.$font__size-xxl;
             }
         }
     }

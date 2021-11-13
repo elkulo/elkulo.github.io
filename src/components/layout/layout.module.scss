@@ -1,5 +1,5 @@
-@import "../../styles/variables-site/variables-site";
-@import "../../styles/mixins/mixins-master";
+@use "../../styles/variables/variables" as variable;
+@use "../../styles/mixins/mixins" as mixin;
 
 .site {
   position: relative;
@@ -7,7 +7,7 @@
   min-height: var(--maxvh, 100vh);
   height: 100%;
   width: 100%;
-  background-color: $color__background-body;
+  background-color: variable.$color__background-body;
 
   :global(.root-drawer--visible) &,
   :global(.root-drawer--visible--end) & {
@@ -29,8 +29,8 @@
     color: #fff;
     border-right: solid 1px #000;
 
-    @include media(mobile) {
-      width: $sidebar_width;
+    @include mixin.media(mobile) {
+      width: variable.$sidebar_width;
     }
 
     :global(.root-drawer--visible) & {
@@ -49,15 +49,15 @@
     transition: transform 200ms ease-out;
 
     .page-home & {
-      background: $color__background-body;
+      background: variable.$color__background-body;
     }
 
     :global(.root-drawer--visible) & {
       overflow: hidden;
       transform: translate(100%, 0);
 
-      @include media(mobile) {
-        transform: translate($sidebar_width, 0);
+      @include mixin.media(mobile) {
+        transform: translate(variable.$sidebar_width, 0);
       }
     }
 

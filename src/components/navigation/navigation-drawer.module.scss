@@ -1,17 +1,17 @@
-@import "../../styles/variables-site/variables-site";
-@import "../../styles/mixins/mixins-master";
+@use "../../styles/variables/variables" as variable;
+@use "../../styles/mixins/mixins" as mixin;
 
 .button {
   display: inline-block;
-  padding: 0 ($size__spacing-unit * 0.5);
-  margin-left: ($size__spacing-unit * -0.75);
+  padding: 0 (variable.$size__spacing-unit * 0.5);
+  margin-left: (variable.$size__spacing-unit * -0.75);
   border-right: solid 1px currentColor;
   color: inherit;
   border-radius: 0;
   background: none;
 
-  @include media(wide) {
-    margin-left: ($size__spacing-unit * -0.5);
+  @include mixin.media(wide) {
+    margin-left: (variable.$size__spacing-unit * -0.5);
   }
 
   &:hover,

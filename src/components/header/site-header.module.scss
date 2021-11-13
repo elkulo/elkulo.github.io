@@ -1,18 +1,18 @@
-@import "../../styles/variables-site/variables-site";
-@import "../../styles/mixins/mixins-master";
+@use "../../styles/variables/variables" as variable;
+@use "../../styles/mixins/mixins" as mixin;
 
 .sidebar {
-  @include clearfix("before");
-  @include clearfix("after");
+  @include mixin.clearfix("before");
+  @include mixin.clearfix("after");
   max-width: 100%;
-  margin: 0 $size__spacing-unit;
+  margin: 0 variable.$size__spacing-unit;
 }
 
 .container {
   position: relative;
 
   &__primary {
-    margin: $size__spacing-unit 0 0;
+    margin: variable.$size__spacing-unit 0 0;
     text-align: center;
   }
   &__secondary {
@@ -29,14 +29,14 @@
     margin: 0;
     padding: 0;
     font-size: 2rem;
-    font-family: $font__heading;
+    font-family: variable.$font__heading;
     font-weight: 500;
     letter-spacing: -0.02em;
-    line-height: $font__line-height-heading;
+    line-height: variable.$font__line-height-heading;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    //@include clear-link();
-    @include user-select(none);
+    //@include mixin.clear-link();
+    @include mixin.user-select(none);
   }
 
   // brandingSidebar
@@ -47,7 +47,7 @@
 
   // brandingContent
   &--content a {
-    color: $color__text-main;
+    color: variable.$color__text-main;
     box-shadow: none;
   }
 }

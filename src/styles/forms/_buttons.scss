@@ -1,3 +1,6 @@
+@use "../variables/variables" as variable;
+@use "../mixins/mixins" as mixin;
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -15,36 +18,36 @@ input[type="submit"] {
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	@include button-transition;
-	background: linear-gradient(to right, $color__background-button, lighten($color__background-button, 22.5%));
+	@include mixin.button-transition;
+	background: linear-gradient(to right, variable.$color__background-button, lighten(variable.$color__background-button, 22.5%));
 	background-size: 150% 100%;
 	background-position: 0 0;
 	border-radius: 5px;
 	box-sizing: border-box;
-	color: $color__text-button;
+	color: variable.$color__text-button;
 	font-weight: 600;
 	font-size: 1.125em;
 	line-height: 1;
-	padding: ($size__spacing-unit * 0.76) $size__spacing-unit;
+	padding: (variable.$size__spacing-unit * 0.76) variable.$size__spacing-unit;
 	text-decoration: none;
 	vertical-align: bottom;
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset, 0 0 0 2px rgba(0, 0, 0, 0.2) inset, 0 0 0 2px rgba(0, 0, 0, 0.08);
 	text-shadow: 0 0 2px rgba(0, 0, 0, 1);
 
 	&:hover {
-		//background: $color__background-button-hover;
+		//background: variable.$color__background-button-hover;
 		background-position: 50% 0;
-		color: $color__text-button;
+		color: variable.$color__text-button;
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset, 0 0 0 2px rgba(0, 0, 0, 0.2) inset, 0 0 0 2px rgba(0, 0, 0, 0.08);
 	}
 
 	&:visited {
-		color: $color__text-button;
+		color: variable.$color__text-button;
 		text-decoration: none;
 	}
 
 	&:focus {
-		//background: $color__background-button-hover;
+		//background: variable.$color__background-button-hover;
 		background-position: 100% 0;
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset, 0 0 0 2px rgba(0, 0, 0, 0.2);
 		outline: thin dotted;

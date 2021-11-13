@@ -1,3 +1,6 @@
+@use "../variables/variables" as variable;
+@use "../mixins/mixins" as mixin;
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -15,18 +18,18 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	-webkit-backface-visibility: hidden;
-	background: $color__background-input;
-	border: solid 1px $color__border;
+	background: variable.$color__background-input;
+	border: solid 1px variable.$color__border;
 	box-sizing: border-box;
 	outline: none;
-	padding: #{.36 * $size__spacing-unit} #{.66 * $size__spacing-unit};
+	padding: #{.36 * variable.$size__spacing-unit} #{.66 * variable.$size__spacing-unit};
 	-webkit-appearance: none;
 	outline-offset: 0;
 	border-radius: 0;
 
 	&:focus {
-		border-color: $color__link;
-		outline: thin solid rgba( $color__link, 0.15 );
+		border-color: variable.$color__link;
+		outline: thin solid rgba( variable.$color__link, 0.15 );
 		outline-offset: -4px;
 	}
 }
@@ -52,7 +55,7 @@ textarea {
 form {
 
 	p {
-		margin: $size__spacing-unit 0;
+		margin: variable.$size__spacing-unit 0;
 	}
 
 }

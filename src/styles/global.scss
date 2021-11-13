@@ -7,19 +7,14 @@
  * 例2: .block__block__list__item
  */
 
-/* 1.Mixins */
+/* 1.Typography */
 
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+@use "typography/typography";
 
-/* 2.Typography */
+/* 2.Elements */
 
-@import "typography/typography";
+@use "elements/elements";
 
-/* 3.Elements */
+/* 3.Forms */
 
-@import "elements/elements";
-
-/* 4.Forms */
-
-@import "forms/forms";
+@use "forms/forms";
