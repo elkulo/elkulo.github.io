@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { rhythm } from "utils/Typography"
 
 /**
  * 作成者
@@ -32,15 +31,12 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginTop: rhythm(1 / 2),
-        marginBottom: rhythm(1 / 2),
-        marginLeft: rhythm(-1 / 4),
-        marginRight: rhythm(-1 / 4),
+        margin: `calc(1rem / 2) calc(1rem / -4)`,
       }}
     >
       <div
         style={{
-          marginRight: rhythm(1 / 4),
+          marginRight: `calc(1rem / 4)`,
           flexBasic: `70px`,
           width: `70px`,
           height: `70px`,

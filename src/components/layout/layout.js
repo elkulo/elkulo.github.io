@@ -79,7 +79,7 @@ const Layout = ({ location, children, isPageType }) => {
                   exit: timeout,
                 }}
               >
-                {(status) => (
+                {status => (
                   <div
                     style={
                       /* Product以外で適用 */
@@ -110,7 +110,7 @@ const Layout = ({ location, children, isPageType }) => {
               exit: timeout,
             }}
           >
-            {(status) => (
+            {status => (
               <div
                 style={{
                   ...getTransitionStyles.fadeStyle[status],

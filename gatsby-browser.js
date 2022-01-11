@@ -1,8 +1,9 @@
-import React from "react"
+import * as React from "react"
 import PreLoaded from "components/pre-loaded"
 import { UAParser } from "ua-parser-js"
 import "typeface-montserrat"
 import "typeface-merriweather"
+import "styles/normalize.scss"
 import "prismjs/themes/prism.css"
 import "styles/global.scss"
 ;(function () {

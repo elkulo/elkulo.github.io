@@ -85,7 +85,7 @@ const Footer = ({ location, position }) => {
             exit: timeout,
           }}
         >
-          {(status) => (
+          {status => (
             <div
               style={{
                 ...getTransitionStyles[status],

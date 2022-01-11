@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     `
-  ).then((result) => {
+  ).then(result => {
     if (result.errors) {
       throw result.errors
     }
@@ -65,7 +65,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     `
-  ).then((result) => {
+  ).then(result => {
     if (result.errors) {
       throw result.errors
     }
@@ -95,7 +95,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     `
-  ).then((result) => {
+  ).then(result => {
     if (result.errors) {
       throw result.errors
     }
@@ -116,9 +116,9 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
-// ページにノードの追加
-exports.onCreateNode = async ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+// ノードに属性を追加
+exports.onCreateNode = async ({ node, actions, getNode, store, cache }) => {
+  const { createNode, createNodeField } = actions
 
   // Post ID を付与
   // ソート用に桁揃え
@@ -128,38 +128,15 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
       node,
       value: ("000000" + node.alternative_id).slice(-6),
     })
-  }
 
-  // gatsby-plugin-feed
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    await createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
-}
-
-// 画像ノード
-exports.sourceNodes = async ({
-  actions: { createNode, createNodeField },
-  //createNodeId,
-  getNodes,
-  store,
-  cache,
-}) => {
-  await getNodes().map(async (node, index) => {
-    if (node.internal.type === "internal__posts" && node.attachment) {
-      await node.attachment.map(async (publicImageUrl) => {
-        if (!publicImageUrl) return
-
+    // 画像ノード
+    if (Array.isArray(node.attachment)) {
+      await node.attachment.forEach(async imageSrcUrl => {
         const fileNode = await createRemoteFileNode({
-          //url: process.env.MEDIA_URL + publicImageUrl, // string that points to the URL of the image
-          url: publicImageUrl, // string that points to the URL of the image
+          url: imageSrcUrl, // string that points to the URL of the image
           parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
           createNode, // helper function in gatsby-node to generate the node
-          createNodeId: (id) => publicImageUrl, // helper function in gatsby-node to generate the node id
+          createNodeId: id => imageSrcUrl, // helper function in gatsby-node to generate the node id
           cache, // Gatsby's cache
           store, // Gatsby's redux store
         })
@@ -178,23 +155,69 @@ exports.sourceNodes = async ({
         await createNodeField({
           node: fileNode,
           name: "attachment_src",
-          value: publicImageUrl,
+          value: imageSrcUrl,
         })
-
-        return fileNode
       })
     }
-  })
+  }
+
+  // gatsby-plugin-feed
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    await createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+}
+
+// GraphQLスキーマをカスタマイズ
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+
+  // Explicitly define the siteMetadata {} object
+  // This way those will always be defined even if removed from gatsby-config.js
+
+  // Also explicitly define the Markdown frontmatter
+  // This way the "MarkdownRemark" queries will return `null` even when no
+  // blog posts are stored inside "content/blog" instead of returning an error
+  createTypes(`
+    type SiteSiteMetadata {
+      author: Author
+      siteUrl: String
+      social: Social
+    }
+
+    type Author {
+      name: String
+      summary: String
+    }
+
+    type Social {
+      twitter: String
+      github: String
+    }
+
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+      fields: Fields
+    }
+
+    type Frontmatter {
+      title: String
+      description: String
+      date: Date @dateformat
+    }
+
+    type Fields {
+      slug: String
+    }
+  `)
 }
 
 // ディレクトリのエイリアスのパス作成
-exports.onCreateWebpackConfig = ({
-  stage,
-  rules,
-  loaders,
-  plugins,
-  actions,
-}) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {

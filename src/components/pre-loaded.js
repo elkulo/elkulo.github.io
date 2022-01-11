@@ -18,7 +18,7 @@ const transition = {
 }
 
 // ローリングバー
-const LinearProgressWithLabel = (props) => {
+const LinearProgressWithLabel = props => {
   return (
     <Box
       display="flex"
@@ -49,7 +49,7 @@ const PreLoaded = ({ children }) => {
   useEffect(() => {
     if (window.location.pathname === `${__PATH_PREFIX__}/`) {
       const timer = setInterval(() => {
-        setProgress((prevProgress) => {
+        setProgress(prevProgress => {
           switch (prevProgress) {
             case 100:
               setFadeOn(() => false)

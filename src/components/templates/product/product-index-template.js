@@ -161,7 +161,7 @@ class ProductTemplate extends Component {
                         exit: showMoveTime,
                       }}
                     >
-                      {(status) => (
+                      {status => (
                         <div
                           style={{
                             ...getTransitionStyles(
@@ -248,7 +248,7 @@ class ProductTemplate extends Component {
                   exit: showMoveTime,
                 }}
               >
-                {(status) => (
+                {status => (
                   <div
                     style={{
                       ...getTransitionStyles(status, posts_per_page),

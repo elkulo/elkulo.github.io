@@ -19,9 +19,9 @@ const Image = ({ src, alt = "" }) => (
         }
       }
     `}
-    render={(data) => {
+    render={data => {
       // 画像リストの中から、コンポーネント引数で指定したURLの画像を抽出する
-      const targetEdge = data.allFile.edges.find((edge) => edge.node.id === src)
+      const targetEdge = data.allFile.edges.find(edge => edge.node.id === src)
 
       // 画像が取得できた場合のみgatsby-imageのコンポーネントを返す
       return (

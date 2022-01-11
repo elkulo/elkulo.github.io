@@ -49,7 +49,7 @@ export default function MainNavigation(props) {
         </div>
       </div>
       <ul className={styles.list}>
-        {naviList.map((navi) => (
+        {naviList.map(navi => (
           <li key={navi.ident} className={styles.list__item}>
             <Link to={navi.url}>
               <navi.icon className={styles.list__item__icon} />
