@@ -11,6 +11,12 @@ import {
 import styles from "./home.module.scss"
 import MediaQuery from "react-responsive"
 
+/**
+ * ホームのテンプレート
+ *
+ * @param {object} date
+ * @param {object} location
+ */
 const HomeTemplate = ({ date, location }) => {
   const siteTitle = date.siteMetadata.title
 

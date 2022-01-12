@@ -10,42 +10,6 @@ import styles from "./product-index.module.scss"
 import Wrap from "utils/Wrap"
 import Masonry from "react-masonry-component"
 
-const showMoveTime = 500
-const getTransitionStyles = (status, delay) => {
-  switch (status) {
-    case "entering":
-      return {
-        opacity: 0,
-        transform: `translate(0, 10px)`,
-      }
-    case "entered":
-      return {
-        transition: `
-        transform ${showMoveTime}ms ease-out ${
-          delay * showMoveTime
-        }ms, opacity ${showMoveTime}ms ease-in ${delay * showMoveTime}ms`,
-        opacity: 1,
-        transform: `translate(0, 0)`,
-      }
-    case "exiting":
-      return {
-        transition: `opacity ${showMoveTime}ms ease-in`,
-        opacity: 0,
-        transform: `translate(0, 0)`,
-      }
-    case "exited":
-      return {
-        opacity: 0,
-        transform: `translate(0, 10px)`,
-      }
-    default:
-      return {
-        opacity: 1,
-        transform: `translate(0, 0)`,
-      }
-  }
-}
-
 /**
  * プロダクトのテンプレート
  *
@@ -53,6 +17,11 @@ const getTransitionStyles = (status, delay) => {
  * @extends {Component}
  */
 class ProductTemplate extends Component {
+  /**
+   * constructor
+   *
+   * @param {object} props
+   */
   constructor(props) {
     super(props)
     this.state = {
@@ -64,11 +33,66 @@ class ProductTemplate extends Component {
       posts_per_page: 12, // 分割する投稿数
       max_posts: props.data.allPost.edges.length, // 投稿数
       has_more: true, // もっと見る判定
+      showMoveTime: 300, // 表示までの時間
     }
     this.onMorePostsClick = this.onMorePostsClick.bind(this)
   }
 
-  // ページ分割
+  /**
+   * 読み込みアクション
+   *
+   * @param {string} status
+   * @param {number}  delay
+   */
+  getTransitionStyles(status, delay) {
+    const { showMoveTime } = this.state
+
+    // NoSSR時に画面サイズで分岐
+    const $wrapper =
+      typeof window === "object" ? document.querySelector("#___gatsby") : 0
+    let TransformCSS = `transform ${showMoveTime}ms ease-out ${
+      delay * showMoveTime
+    }ms, opacity ${showMoveTime}ms ease-in ${delay * showMoveTime}ms`
+    if ($wrapper && $wrapper.clientWidth <= 600) {
+      TransformCSS = `transform ${showMoveTime}ms ease-out, opacity ${showMoveTime}ms ease-in`
+    }
+
+    // アクションタイミング
+    switch (status) {
+      case "entering":
+        return {
+          opacity: 0,
+          transform: `translate(0, 10px)`,
+        }
+      case "entered":
+        return {
+          transition: TransformCSS,
+          opacity: 1,
+          transform: `translate(0, 0)`,
+        }
+      case "exiting":
+        return {
+          transition: `opacity ${showMoveTime}ms ease-in`,
+          opacity: 0,
+          transform: `translate(0, 0)`,
+        }
+      case "exited":
+        return {
+          opacity: 0,
+          transform: `translate(0, 10px)`,
+        }
+      default:
+        return {
+          opacity: 1,
+          transform: `translate(0, 0)`,
+        }
+    }
+  }
+
+  /**
+   * ページ分割
+   *
+   */
   async onMorePostsClick() {
     await this.setState({
       paged: this.state.paged + 1,
@@ -80,6 +104,10 @@ class ProductTemplate extends Component {
     }
   }
 
+  /**
+   * レンダリング
+   *
+   */
   render() {
     const {
       posts,
@@ -89,6 +117,7 @@ class ProductTemplate extends Component {
       paged,
       posts_per_page,
       has_more,
+      showMoveTime,
     } = this.state
 
     // アーカイブタイプの判別
@@ -164,7 +193,7 @@ class ProductTemplate extends Component {
                       {status => (
                         <div
                           style={{
-                            ...getTransitionStyles(
+                            ...this.getTransitionStyles(
                               status,
                               i - posts_per_page * (paged - 1)
                             ),
@@ -251,7 +280,7 @@ class ProductTemplate extends Component {
                 {status => (
                   <div
                     style={{
-                      ...getTransitionStyles(status, posts_per_page),
+                      ...this.getTransitionStyles(status, posts_per_page),
                     }}
                   >
                     <div className={styles.product__more}>

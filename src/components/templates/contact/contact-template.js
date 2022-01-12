@@ -5,6 +5,12 @@ import styles from "./contact.module.scss"
 import Wrap from "utils/Wrap"
 import MailIcon from "@mui/icons-material/Send"
 
+/**
+ * コンタクトのテンプレート
+ *
+ * @param {object} post
+ * @param {object} postContent
+ */
 const ContactTemplate = ({ post, postContent }) => {
   const { site } = useStaticQuery(
     graphql`

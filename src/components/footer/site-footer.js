@@ -20,7 +20,8 @@ let getTransitionStyles = {}
 /**
  * フッター
  *
- * @returns
+ * @param {*} { location, position }
+ * @returns Footer DOM
  */
 const Footer = ({ location, position }) => {
   const { site } = useStaticQuery(

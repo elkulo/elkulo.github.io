@@ -1,12 +1,17 @@
 import React, { Component, createRef } from "react"
 
 /**
- * Video.js
+ * Video
  *
  * @class Video
  * @extends {Component}
  */
 class Video extends Component {
+  /**
+   * constructor
+   *
+   * @param {object} props
+   */
   constructor(props) {
     super(props)
     this.state = {
@@ -18,29 +23,38 @@ class Video extends Component {
     this.videoTimerID = 0 // タイマーID
   }
 
+  /**
+   * componentDidMount
+   *
+   */
   componentDidMount() {
     const { videoStatus } = this.props
 
     // sceneが0の場合は停止
     if (videoStatus && videoStatus.scene === 0) {
-      this._pause()
+      this.pause()
     }
   }
 
-  // スクロールが進んだ場合
+  /**
+   * componentDidUpdate
+   *
+   * @param {object} prevProps
+   */
   componentDidUpdate(prevProps) {
+    // スクロールが進んだ場合
     const { videoStatus } = this.props
     if (prevProps.videoStatus !== videoStatus && this.videoTimerID === 0) {
       // シーンが進んでいる場合
-      this._play()
+      this.play()
 
       if (videoStatus.scene === 0) {
-        this._pause()
+        this.pause()
       }
 
       if (videoStatus.timer) {
         this.videoTimerID = setTimeout(() => {
-          this._pause()
+          this.pause()
 
           // タイマーリセット
           clearTimeout(this.videoTimerID)
@@ -50,16 +64,26 @@ class Video extends Component {
     }
   }
 
-  // 動画の再生
-  _play() {
+  /**
+   * 動画の再生
+   *
+   */
+  play() {
     this.videoRef.current && this.videoRef.current.play()
   }
 
-  // 動画の停止
-  _pause() {
+  /**
+   * 動画の停止
+   *
+   */
+  pause() {
     this.videoRef.current && this.videoRef.current.pause()
   }
 
+  /**
+   * レンダリング
+   *
+   */
   render() {
     const { src, thumbnail, alt } = this.state
 

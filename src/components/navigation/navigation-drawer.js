@@ -8,6 +8,11 @@ import styles from "./navigation-drawer.module.scss"
  * @extends {Component}
  */
 class NavigationDrawer extends Component {
+  /**
+   * constructor
+   *
+   * @param {object} props
+   */
   constructor(props) {
     super(props)
     this.state = {
@@ -19,11 +24,10 @@ class NavigationDrawer extends Component {
   /**
    * 再マウントでリセット
    *
-   * @memberof NavigationDrawer
    */
   componentDidMount() {
     // ページ遷移で閉じる
-    this._onDrawer("hidden")
+    this.onDrawer("hidden")
 
     // ウィンド幅の初期値
     const wrapperWidth = document.querySelector("#___gatsby")
@@ -37,36 +41,13 @@ class NavigationDrawer extends Component {
   }
 
   /**
-   * リサイズイベント: 未使用
+   * メニューの開閉
    *
-   * @memberof NavigationDrawer
-   */
-  _onResize() {
-    if (this.state.timer > 0) {
-      clearTimeout(this.state.timer)
-    }
-
-    // ウィンド幅が変更された場合
-    const wrapperWidth = document.querySelector("#___gatsby")
-      ? document.querySelector("#___gatsby").clientWidth
-      : this.state.rootWidth
-    if (this.state.rootWidth !== wrapperWidth) {
-      this.setState({
-        rootWidth: wrapperWidth,
-        timer: setTimeout(() => {
-          this._onDrawer("hidden")
-        }, 100),
-      })
-    }
-  }
-
-  /**
    * root要素にクラスの付け替え
    *
-   * @param {string} [type="toggle"]
-   * @memberof NavigationDrawer
+   * @param {string} type
    */
-  _onDrawer(type = "toggle") {
+  onDrawer(type = "toggle") {
     const $root = document.querySelector("#___gatsby")
 
     switch (type) {
@@ -89,8 +70,6 @@ class NavigationDrawer extends Component {
   /**
    * DOMの生成
    *
-   * @returns
-   * @memberof NavigationDrawer
    */
   render() {
     const { visibility, children } = this.props
@@ -99,7 +78,7 @@ class NavigationDrawer extends Component {
       <div className="navigation-drawer">
         <button
           className={styles.button}
-          onClick={() => this._onDrawer(visibility)}
+          onClick={() => this.onDrawer(visibility)}
         >
           {children}
         </button>

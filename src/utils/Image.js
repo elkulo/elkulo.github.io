@@ -2,7 +2,12 @@ import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { StaticQuery, graphql } from "gatsby"
 
-// 画像のURLを引数に取る
+/**
+ * Image
+ *
+ * @param {string} src 画像のURL
+ * @param {string} alt 画像の説明
+ */
 const Image = ({ src, alt = "" }) => (
   <StaticQuery
     query={graphql`

@@ -14,6 +14,11 @@ import Wrap from "utils/Wrap"
  * @extends {Component}
  */
 class ProductSingleTemplate extends Component {
+  /**
+   * constructor
+   *
+   * @param {object} props
+   */
   constructor(props) {
     super(props)
     this.state = {
@@ -25,11 +30,19 @@ class ProductSingleTemplate extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  // 画像の差し替え
+  /**
+   * 画像の差し替え
+   *
+   * @param {number} i
+   */
   handleClick(i) {
     this.setState({ feature: this.state.post.attachment[i] })
   }
 
+  /**
+   * レンダリング
+   *
+   */
   render() {
     const { post, previous, next, feature } = this.state
 

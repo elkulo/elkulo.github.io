@@ -3,67 +3,30 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import styles from "./about.module.scss"
 import Wrap from "utils/Wrap"
 
+/**
+ * アバウトのテンプレート
+ *
+ * @class AboutTamplate
+ * @extends {Component}
+ */
 class AboutTamplate extends Component {
+  /**
+   * constructor
+   *
+   * @param {object} props
+   */
   constructor(props) {
     super(props)
     this.state = {
       post: props.post,
       postContent: props.postContent,
     }
-    //this._addObserve = this._addObserve.bind(this)
-    //this.observerApi = ""
   }
 
-  componentDidMount() {
-    //this._addObserve()
-  }
-
-  componentWillUnmount() {
-    //this._removeObserve()
-  }
-
-  // 表示要素の登録
-  _addObserve() {
-    /*
-    const option = {
-      root: null, //nullでブラウザ画面を対象にする
-      rootMargin: "0% 0% -20% 0%", //画面の下から-20%の位置をターゲットと交差する位置に指定
-      threshold: 0.2, //指定した要素が画面に20%入るとコールバッイベント発生
-    }
-    const callback = (observerEntries) => {
-      observerEntries.forEach((observerEntry) => {
-        if (observerEntry.isIntersecting) {
-          const $section = observerEntry.target
-          if (observerEntry.intersectionRatio >= 0.2) {
-            $section.classList.add(styles.section__active)
-            this.observerApi.unobserve($section)
-          }
-        } else {
-        }
-      })
-    }
-    this.observerApi = new IntersectionObserver(callback, option)
-
-    //ターゲットごとに監視を開始する
-    const triggerSection = document.getElementsByClassName(styles.section)
-    for (let i = 0; i < triggerSection.length; i++) {
-      this.observerApi.observe(triggerSection[i])
-    }
-    */
-  }
-
-  // 表示要素の解除
-  _removeObserve() {
-    /*
-    if (this.observerApi) {
-      const triggerSection = document.getElementsByClassName(styles.section)
-      for (let i = 0; i < triggerSection.length; i++) {
-        this.observerApi.unobserve(triggerSection[i])
-      }
-    }
-    */
-  }
-
+  /**
+   * レンダリング
+   *
+   */
   render() {
     const { post, postContent } = this.state
 

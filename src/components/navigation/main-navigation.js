@@ -37,10 +37,8 @@ const naviList = [
 /**
  * ナビゲーション
  *
- * @export MainNavigation
- * @returns MainNavigation
  */
-export default function MainNavigation(props) {
+export default function MainNavigation() {
   return (
     <nav className="main-navigation">
       <div className={styles.avatar}>
