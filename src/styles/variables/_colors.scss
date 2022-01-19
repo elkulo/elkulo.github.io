@@ -1,6 +1,6 @@
 
 // Backgrounds
-$color__background-body: #191919;
+$color__background-body: #fff;
 $color__background-input: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
@@ -11,12 +11,12 @@ $color__background-ins: #fff9c0;
 $color__background_selection: lighten( #3f51b5, 22.5% ); // lighten( salmon, 22.5% ); // lighten( #0999d4, 48% );
 
 // Text
-$color__text-main: #111;
+$color__text-main: #212121;
 $color__text-light: #565656;
-$color__text-hover: lighten( #111, 22.5% );
+$color__text-hover: lighten( #212121, 22.5% );
 $color__text-screen: #5c6bc0;
 $color__text-input: #666;
-$color__text-input-focus: #111;
+$color__text-input-focus: #212121;
 $color__text-header: #fff;
 $color__text_accent: #B69649;
 $color__text-button: #f1f1f1;
