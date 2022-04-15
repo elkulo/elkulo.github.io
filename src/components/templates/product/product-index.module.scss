@@ -185,7 +185,7 @@
                 &__title {
                     margin: 0;
                     font-family: variable.$font__heading;
-                    font-size: variable.$font__size-sm;
+                    font-size: variable.$font__size-lg;
                 }
 
                 &__date {
@@ -198,7 +198,7 @@
             }
 
             &__tags {
-                font-size: variable.$font__size-xs;
+                font-size: variable.$font__size-sm;
 
                 &__tag {
                     display: inline-block;

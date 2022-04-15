@@ -54,6 +54,8 @@ h5,
 h6 {
 	clear: both;
 	margin: variable.$size__spacing-unit 0;
+	overflow-wrap: break-word;
+	word-break: keep-all;
 
 	&:first-child {
 		margin-top: 0;
