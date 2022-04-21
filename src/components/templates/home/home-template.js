@@ -1,13 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-import Footer from "components/footer/site-footer"
-import NavigationDrawer from "components/navigation/navigation-drawer"
+import Footer from "@/components/footer/site-footer"
+import NavigationDrawer from "@/components/navigation/navigation-drawer"
 import OpenIcon from "@mui/icons-material/Notes"
-import Video from "utils/Video"
+import Video from "@/utils/Video"
 import {
   landscapeMP4 as MP4,
   landscapeJPG as thumbnail,
-} from "assets/videos/video"
+} from "@/assets/videos/video"
 import styles from "./home.module.scss"
 import MediaQuery from "react-responsive"
 

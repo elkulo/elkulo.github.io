@@ -4,7 +4,7 @@ import HomeIcon from "@mui/icons-material/Home"
 import AboutIcon from "@mui/icons-material/Person"
 import ProductIcon from "@mui/icons-material/Grain"
 import ContactIcon from "@mui/icons-material/Send"
-import thumbnail from "assets/videos/landscape/landscape.jpg"
+import thumbnail from "@/assets/videos/landscape/landscape.jpg"
 import styles from "./main-navigation.module.scss"
 
 const naviList = [

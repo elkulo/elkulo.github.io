@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "components/layout/layout"
-import Head from "components/meta/head"
-import ProductIndexTemplate from "components/templates/product/product-index-template"
+import Layout from "@/components/layout/layout"
+import Head from "@/components/meta/head"
+import ProductIndexTemplate from "@/components/templates/product/product-index-template"
 
 const ProductIndex = ({ data, location }) => (
   <Layout location={location} isPageType="Product">

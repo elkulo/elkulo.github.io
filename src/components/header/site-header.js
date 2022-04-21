@@ -5,7 +5,7 @@ import NavigationDrawer from "../navigation/navigation-drawer"
 import OpenIcon from "@mui/icons-material/Notes"
 import CloseIcon from "@mui/icons-material/Close"
 import styles from "./site-header.module.scss"
-import Wrap from "utils/Wrap"
+import Wrap from "@/utils/Wrap"
 
 /**
  * ヘッダー

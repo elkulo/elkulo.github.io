@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "components/layout/layout"
-import Head from "components/meta/head"
-import ProductSingleTemplate from "components/templates/product/product-single-template"
+import Layout from "@/components/layout/layout"
+import Head from "@/components/meta/head"
+import ProductSingleTemplate from "@/components/templates/product/product-single-template"
 
 /**
  *　プロダクトシングルページ

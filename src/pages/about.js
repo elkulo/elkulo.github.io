@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "components/layout/layout"
-import Head from "components/meta/head"
-import AboutTemplate from "components/templates/about/about-template"
+import Layout from "@/components/layout/layout"
+import Head from "@/components/meta/head"
+import AboutTemplate from "@/components/templates/about/about-template"
 
 const AboutPage = ({ data, location }) => (
   <Layout location={location} isPageType="About">

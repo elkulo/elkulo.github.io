@@ -1,11 +1,11 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import Bio from "components/template-parts/bio"
-import Image from "utils/Image"
+import Bio from "@/components/template-parts/bio"
+import Image from "@/utils/Image"
 import MediaQuery from "react-responsive"
 import LinkIcon from "@mui/icons-material/InsertLink"
 import styles from "./product-single.module.scss"
-import Wrap from "utils/Wrap"
+import Wrap from "@/utils/Wrap"
 
 /**
  *　プロダクトシングルページ

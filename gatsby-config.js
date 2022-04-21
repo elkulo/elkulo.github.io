@@ -91,9 +91,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: process.env.TRACKING_ID,
+        trackingIds: [
+          process.env.TRACKING_ID
+        ],
       },
     },
     {

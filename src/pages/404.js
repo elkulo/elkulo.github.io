@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Head from "components/meta/head"
+import Head from "@/components/meta/head"
 import BackToIcon from "@mui/icons-material/KeyboardBackspace"
-import BackgroundImage from "assets/images/background/bg-404.jpg"
+import BackgroundImage from "@/assets/images/background/bg-404.jpg"
 import styled from "@emotion/styled"
 
 /**

@@ -1,11 +1,11 @@
 import * as React from "react"
-import PreLoaded from "components/pre-loaded"
+import PreLoaded from "@/components/pre-loaded"
 import { UAParser } from "ua-parser-js"
 import "typeface-montserrat"
 import "typeface-merriweather"
-import "styles/normalize.scss"
+import "normalize.css"
 import "prismjs/themes/prism.css"
-import "styles/global.scss"
+import "@/styles/global.scss"
 ;(function () {
   // 100vh Fix
   document.documentElement.style.setProperty(
