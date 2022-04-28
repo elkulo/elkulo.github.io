@@ -46,6 +46,7 @@ const PreLoaded = ({ children }) => {
 
   // 擬似ロード画面
   const [progress, setProgress] = useState(0)
+
   useEffect(() => {
     if (window.location.pathname === `${__PATH_PREFIX__}/`) {
       const timer = setInterval(() => {

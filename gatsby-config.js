@@ -19,7 +19,6 @@ module.exports = {
     },
     formUrl: `https://elkulo.me/forms/elkulo-io/post`,
     robots: `noindex,nofollow`,
-    verification: process.env.SEARCH_ID || "",
   },
   plugins: [
     {
@@ -93,9 +92,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [
-          process.env.TRACKING_ID
-        ],
+        trackingIds: [process.env?.TRACKING_ID],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     {
@@ -163,7 +163,7 @@ module.exports = {
         name: `posts`,
 
         // 取得先のURL(env変数)
-        url: `${process.env.API_URL}?key=${process.env.API_KEY}`,
+        url: `${process.env?.API_URL}?key=${process.env?.API_KEY}`,
 
         // Apiの配列のルートになっているキー: {"data": [{},{},{}]}
         entityLevel: `data`,

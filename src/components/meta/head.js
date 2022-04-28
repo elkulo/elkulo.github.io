@@ -18,7 +18,6 @@ const Head = ({ description, lang, meta, title }) => {
             title
             description
             robots
-            verification
           }
         }
       }
@@ -75,10 +74,6 @@ const Head = ({ description, lang, meta, title }) => {
         {
           name: `robots`,
           content: site.siteMetadata.robots, // 非公開サイト
-        },
-        {
-          name: `google-site-verification`,
-          content: site.siteMetadata.verification, // Google Search Console
         },
       ].concat(meta)}
     />
