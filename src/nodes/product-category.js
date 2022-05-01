@@ -21,7 +21,6 @@ const ProductCategoryIndex = ({ data, location }) => {
     </Layout>
   )
 }
-
 export default ProductCategoryIndex
 
 export const pageQuery = graphql`

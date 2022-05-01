@@ -3,47 +3,49 @@ import { graphql, Link } from "gatsby"
 import Head from "@/components/meta/head"
 import BackToIcon from "@mui/icons-material/KeyboardBackspace"
 import BackgroundImage from "@/assets/images/background/bg-404.jpg"
-import styled from "@emotion/styled"
+import styling from "@emotion/styled"
 
 /**
  * Styled Components
  */
-const StyledRoot = styled.div`
-  display: flex;
-  align-items: center;
-  min-height: var(--maxvh, 100vh);
-  background-image: url(${BackgroundImage});
-  background-position: 30% 50%;
-  background-size: cover;
-  color: #eee;
-  font-size: 10px;
-  text-shadow: 0 0 1px #000;
-`
-const StyledContainer = styled.div`
-  padding: 0 1em;
-  font-size: calc(100% + (1vw * 2.625));
-`
-const StyledBranding = styled.p`
-  font-size: 0.875em;
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
-`
-const StyledTitle = styled.h1`
-  letter-spacing: -0.02em;
-  font-size: 2em;
-  font-weight: 900;
-  color: #61d4e4;
-  margin: 0;
-`
-const StyledDescription = styled.p`
-  font-size: 0.875em;
-  font-weight: 600;
-`
-const StyledContent = styled.div`
-  font-size: 0.675em;
-  font-weight: 400;
-`
+const Styled = {
+  root: styling.div`
+    display: flex;
+    align-items: center;
+    min-height: var(--maxvh, 100vh);
+    background-image: url(${BackgroundImage});
+    background-position: 30% 50%;
+    background-size: cover;
+    color: #eee;
+    font-size: 10px;
+    text-shadow: 0 0 1px #000;
+  `,
+  container: styling.div`
+    padding: 0 1em;
+    font-size: calc(100% + (1vw * 2.625));
+  `,
+  branding: styling.p`
+    font-size: 0.875em;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+  `,
+  title: styling.h1`
+    letter-spacing: -0.02em;
+    font-size: 2em;
+    font-weight: 900;
+    color: #61d4e4;
+    margin: 0;
+  `,
+  description: styling.p`
+    font-size: 0.875em;
+    font-weight: 600;
+  `,
+  content: styling.div`
+    font-size: 0.675em;
+    font-weight: 400;
+  `,
+}
 
 /**
  * 404 NOT FOUND.
@@ -57,13 +59,13 @@ const NotFoundPage = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
-    <StyledRoot>
+    <Styled.root>
       <Head title={pageTitle} />
-      <StyledContainer>
-        <StyledBranding>Oops...</StyledBranding>
-        <StyledTitle>404 NOT FOUND</StyledTitle>
-        <StyledDescription>指定されたページが存在しません。</StyledDescription>
-        <StyledContent>
+      <Styled.container>
+        <Styled.branding>Oops...</Styled.branding>
+        <Styled.title>404 NOT FOUND</Styled.title>
+        <Styled.description>指定されたページが存在しません。</Styled.description>
+        <Styled.content>
           <p>
             お探しのページは削除されたか、
             <br />
@@ -76,9 +78,9 @@ const NotFoundPage = ({ data }) => {
           >
             {siteTitle} のホームに戻る
           </Link>
-        </StyledContent>
-      </StyledContainer>
-    </StyledRoot>
+        </Styled.content>
+      </Styled.container>
+    </Styled.root>
   )
 }
 

@@ -53,6 +53,7 @@
 
             &__current {
                 a::after {
+                    background: variable.$color__link;
                     box-shadow: 0 0 0 2px #fff, 0 0 0 3px variable.$color__link;
                 }
             }

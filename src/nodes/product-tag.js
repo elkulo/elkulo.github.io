@@ -17,7 +17,6 @@ const ProductTagIndex = ({ data, location }) => {
     </Layout>
   )
 }
-
 export default ProductTagIndex
 
 export const pageQuery = graphql`

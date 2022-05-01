@@ -12,7 +12,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.6.2",
     "@mui/material": "^5.6.3",
-    "gatsby": "^4.13.0",
+    "gatsby": "^4.13.1",
     "gatsby-plugin-feed": "^4.13.0",
     "gatsby-plugin-gatsby-cloud": "^4.13.0",
     "gatsby-plugin-google-fonts": "^1.0.1",

@@ -1,7 +1,7 @@
 ---
 title: ABOUT
 description: "A.Sudo"
-date: "2021.10.26"
+date: "2022.05.01"
 picture: "./cover.jpg"
 ---
 
@@ -18,20 +18,15 @@ WordPress をベースにした制作を得意とし、企業向けにオリジ�
 
 写真や映像、音楽制作などクリエイトすることにジャンルを問わず興味を持っています。
 
-デザインをメインに据えたいところですが、HTML / CSS / JavaScript / PHP の実務歴は 15 年以上となり、修得レベルは比較的高いほうです。
+デザインをメインに据えたいところですが、HTML / CSS / JavaScript / PHP の実務歴は15年以上となり、修得レベルは比較的高いほうです。
 
----
+## スキル 
 
-## スキル
+>**主要言語**  
+>HTML5, Sass(SCSS), TypeScript, JavaScript(^ES6), PHP(^8.0)
 
-> **主な言語**  
-> HTML5, Sass(SCSS), JavaScript(ES6+), PHP(7.4+)
-
-> **主なライブラリ**  
-> React, Gatsby, Vue, WordPress, Slim Framework, Laravel, FuelPHP, 他
-
-> **パッケージ管理**  
-> Git, Composer, NPM
+>**主要ライブラリ**  
+>React, Gatsby, Vue, Express, WordPress, Slim Framework, Laravel, FuelPHP, 他
 
 ![画像の埋込](cover.jpg)
 
@@ -41,45 +36,47 @@ WordPress をベースにした制作を得意とし、企業向けにオリジ�
 
 - **Portfolio**  
   https://elkulo.github.io/  
-  JAMstack な React のポートフォリオサイト
+  JAMstackな React x Gatsby のポートフォリオ  
 
 - **Mailer**  
   https://mailer.elkulo.me/  
-  WordPress にも組み込めるモダンでシンプルな Slim Framework のメールフォーム
+  WordPressにも組み込めるモダンでシンプルな Slim Framework のメールフォーム  
 
 - **Feeder**  
   https://feeder.elkulo.me/  
-  管理下の WordPress の更新状況を一元監視する Vue x Slim の RSS フィードリーダー
+  WordPressの更新状況を一元監視するための Vue x Slim のRSSフィードリーダー  
+
+---
+
+### その他
 
 - **API Server**  
   https://api.elkulo.me/  
-  JAMstack 連携用に Slim Framework の API サーバー
+  JAMstack用に作った Slim Framework のAPIサーバー  
 
 ---
 
 ## 開発環境
 
-**MacBook Pro (US Keyboard)**  
-**iPad mini + Apple Pencil**
+MacBook Pro (US Keyboard)  
+iPad mini + Apple Pencil
 
-- **デザイン**  
-  Adobe illustrator / Adobe Photoshop / Adobe XD
+**■ デザイン**  
+Adobe illustrator / Adobe Photoshop / Adobe XD
 
-- **コードエディッター**  
-  VSCode
+**■ コードエディッター**  
+VSCode / Panic Nova
 
-- **動画編集**  
-  Apple Final Cut Pro / Apple GarageBand
+**■ 動画&音楽**  
+Apple Final Cut Pro / Apple GarageBand
 
-- **SFTP**  
-  Panic Transmit
-
-- **SSH**  
-  Hyper
+**■ SFTP**  
+Panic Transmit
 
 ---
 
 ## Github
 
-個人制作のコードは Github で公開しています。評価するには私の書いたコードを見てください。  
+個人制作のコードは Github で公開しています。評価するには私の書いたコードを見てください。
+
 https://github.com/elkulo
