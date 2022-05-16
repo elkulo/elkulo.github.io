@@ -1,5 +1,5 @@
-@use "../../styles/variables/variables" as variable;
-@use "../../styles/mixins/mixins" as mixin;
+@use "@/styles/variables/variables" as variable;
+@use "@/styles/mixins/mixins" as mixin;
 
 .avatar {
   margin: (variable.$size__spacing-unit * 5) auto 0;

@@ -1,11 +1,11 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import MainNavigation from "../navigation/main-navigation"
-import NavigationDrawer from "../navigation/navigation-drawer"
+import MainNavigation from "@/components/navigation/main-navigation"
+import NavigationDrawer from "@/components/navigation/navigation-drawer"
 import OpenIcon from "@mui/icons-material/Notes"
 import CloseIcon from "@mui/icons-material/Close"
 import styles from "./site-header.module.scss"
-import Wrap from "@/utils/Wrap"
+import Wrap from "@/components/utils/Wrap"
 
 /**
  * ヘッダー

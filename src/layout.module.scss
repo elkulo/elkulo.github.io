@@ -1,5 +1,5 @@
-@use "../../styles/variables/variables" as variable;
-@use "../../styles/mixins/mixins" as mixin;
+@use "@/styles/variables/variables" as variable;
+@use "@/styles/mixins/mixins" as mixin;
 
 .site {
   position: relative;
@@ -42,7 +42,7 @@
     position: relative;
     z-index: 3;
     background: {
-      //image: url("../../assets/images/background/bg@2x.jpg");
+      //image: url("@/assets/images/background/bg@2x.jpg");
       //size: (400px * 0.5);
       color: #f5f5f5;
     }

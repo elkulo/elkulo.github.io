@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styles from "./about.module.scss"
-import Wrap from "@/utils/Wrap"
+import Wrap from "@/components/utils/Wrap"
 
 /**
  * アバウトのテンプレート

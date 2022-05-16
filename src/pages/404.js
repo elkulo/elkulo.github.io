@@ -64,7 +64,9 @@ const NotFoundPage = ({ data }) => {
       <Styled.container>
         <Styled.branding>Oops...</Styled.branding>
         <Styled.title>404 NOT FOUND</Styled.title>
-        <Styled.description>指定されたページが存在しません。</Styled.description>
+        <Styled.description>
+          指定されたページが存在しません。
+        </Styled.description>
         <Styled.content>
           <p>
             お探しのページは削除されたか、

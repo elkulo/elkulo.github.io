@@ -1,5 +1,5 @@
-@use "../../../styles/variables/variables" as variable;
-@use "../../../styles/mixins/mixins" as mixin;
+@use "@/styles/variables/variables" as variable;
+@use "@/styles/mixins/mixins" as mixin;
 
 .product {
     margin: 0 0 (variable.$size__spacing-unit * 2);

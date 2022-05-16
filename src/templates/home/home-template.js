@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Footer from "@/components/footer/site-footer"
 import NavigationDrawer from "@/components/navigation/navigation-drawer"
 import OpenIcon from "@mui/icons-material/Notes"
-import Video from "@/utils/Video"
+import Video from "@/components/utils/Video"
 import {
   landscapeMP4 as MP4,
   landscapeJPG as thumbnail,

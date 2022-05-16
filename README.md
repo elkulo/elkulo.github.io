@@ -10,14 +10,12 @@ https://elkulo.github.io/
 
 #### 構築技術
 
-React, Gatsby, Sass(SCSS), Emotion, Material UI
+React, Gatsby, Sass(SCSS), Emotion, MUI
 
 #### コンテンツソース
 
 RESTfull API, Markdown
 
 #### ホスティング
-
-##### Node サーバー
 
 Github pages

@@ -18,15 +18,15 @@ WordPress をベースにした制作を得意とし、企業向けにオリジ�
 
 写真や映像、音楽制作などクリエイトすることにジャンルを問わず興味を持っています。
 
-デザインをメインに据えたいところですが、HTML / CSS / JavaScript / PHP の実務歴は15年以上となり、修得レベルは比較的高いほうです。
+デザインをメインに据えたいところですが、HTML / CSS / JavaScript / PHP の実務歴は 15 年以上となり、修得レベルは比較的高いほうです。
 
-## スキル 
+## スキル
 
->**主要言語**  
->HTML5, Sass(SCSS), TypeScript, JavaScript(^ES6), PHP(^8.0)
+> **主要言語**  
+> HTML5, Sass(SCSS), TypeScript, JavaScript(^ES6), PHP(^8.0)
 
->**主要ライブラリ**  
->React, Gatsby, Vue, Express, WordPress, Slim Framework, Laravel, FuelPHP, 他
+> **主要ライブラリ**  
+> React, Gatsby, Vue, Express, WordPress, Slim Framework, Laravel, FuelPHP, 他
 
 ![画像の埋込](cover.jpg)
 
@@ -36,15 +36,15 @@ WordPress をベースにした制作を得意とし、企業向けにオリジ�
 
 - **Portfolio**  
   https://elkulo.github.io/  
-  JAMstackな React x Gatsby のポートフォリオ  
+  JAMstack な React x Gatsby のポートフォリオ
 
 - **Mailer**  
   https://mailer.elkulo.me/  
-  WordPressにも組み込めるモダンでシンプルな Slim Framework のメールフォーム  
+  WordPress にも組み込めるモダンでシンプルな Slim Framework のメールフォーム
 
 - **Feeder**  
   https://feeder.elkulo.me/  
-  WordPressの更新状況を一元監視するための Vue x Slim のRSSフィードリーダー  
+  WordPress の更新状況を一元監視するための Vue x Slim の RSS フィードリーダー
 
 ---
 
@@ -52,7 +52,7 @@ WordPress をベースにした制作を得意とし、企業向けにオリジ�
 
 - **API Server**  
   https://api.elkulo.me/  
-  JAMstack用に作った Slim Framework のAPIサーバー  
+  JAMstack 用に作った Slim Framework の API サーバー
 
 ---
 

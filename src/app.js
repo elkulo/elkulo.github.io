@@ -37,7 +37,7 @@ const LinearProgressWithLabel = props => {
 }
 
 // ロード中
-const PreLoaded = ({ children }) => {
+const App = ({ children }) => {
   // フェードの状態
   const [fadeOn, setFadeOn] = useState(true)
 
@@ -87,4 +87,4 @@ const PreLoaded = ({ children }) => {
     </NoSsr>
   )
 }
-export default PreLoaded
+export default App
