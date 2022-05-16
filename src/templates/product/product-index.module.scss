@@ -123,13 +123,16 @@
             }
 
             &__feature {
-                background: #fff;
-                box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.2);
-                overflow: hidden;
+                box-sizing: border-box;
                 transform: translate(0); // Safariでblurに対してoverflow:hiddenが効かない対策
+                overflow: hidden;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                border: solid 5px #fafafa;
+                background: #fafafa;
 
                 &:hover img {
-                    filter: blur(8px);
+                    filter: blur(5px);
                 }
 
                 &__link {
@@ -141,15 +144,12 @@
                     width: 100%;
                     height: 100%;
                     z-index: 1;
-                    background: #fff;
-                    background-clip: content-box;
-                    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.75) inset, 0 0 0 6px rgba(0, 0, 0, 0.25) inset;
-                    padding: 5px;
+                    background: variable.$color__link;
                     opacity: 0;
                     @include mixin.link-transition(opacity);
 
                     &:hover {
-                        opacity: 0.5;
+                        opacity: 0.75;
                     }
 
                     &__inner {
@@ -159,10 +159,11 @@
                         top: 50%;
                         transform: translate(-50%, -50%);
                         text-align: center;
-                        color: variable.$color__text-main;
+                        color: #fafafa;
                         font-size: variable.$font__size-sm;
                         padding: 1em 2em;
                         border: solid 1px currentColor;
+                        border-radius: 3px;
 
                         svg {
                             display: inline-block;

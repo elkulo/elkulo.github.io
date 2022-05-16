@@ -93,14 +93,29 @@ class ProductTemplate extends Component {
    * ページ分割
    *
    */
-  async onMorePostsClick() {
-    await this.setState({
-      paged: this.state.paged + 1,
+  onMorePostsClick() {
+    const { paged, posts_per_page, max_posts } = this.state
+
+    this.setState({
+      paged: paged + 1,
       has_more: false,
     })
     // もっと見るを遅延表示
-    if (this.state.posts_per_page * this.state.paged < this.state.max_posts) {
-      await this.setState({ has_more: true })
+    if (posts_per_page * paged < max_posts - posts_per_page) {
+      this.setState({ has_more: true })
+    }
+  }
+
+  /**
+   * アップデート時
+   *
+   */
+  componentDidMount() {
+    const { posts_per_page, max_posts } = this.state
+
+    // 規定数に満たない場合はもっと見るを非表示.
+    if (posts_per_page > max_posts) {
+      this.setState({ has_more: false })
     }
   }
 
