@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "@/layout"
 import Head from "@/components/meta/head"
-import ProductSingleTemplate from "@/templates/product/product-single-template"
+import Layout from "@/templates/layout.template"
+import Template from "@/templates/product/product-single.template"
 
 const ProductSingle = ({ data, pageContext, location }) => {
   const post = data.internalPosts
@@ -10,7 +10,7 @@ const ProductSingle = ({ data, pageContext, location }) => {
   return (
     <Layout location={location} title={post.title} isPageType="ProductSingle">
       <Head title={post.title} description={post.content} />
-      <ProductSingleTemplate data={data} pageContext={pageContext} />
+      <Template data={data} pageContext={pageContext} />
     </Layout>
   )
 }

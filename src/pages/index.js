@@ -1,8 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Layout from "@/layout"
 import Head from "@/components/meta/head"
-import HomeTemplate from "@/templates/home/home-template"
+import Layout from "@/templates/layout.template"
+import Template from "@/templates/home/home.template"
 
 const IndexPage = ({ location }) => {
   const { site } = useStaticQuery(
@@ -21,7 +21,7 @@ const IndexPage = ({ location }) => {
   return (
     <Layout location={location} isPageType="Home">
       <Head />
-      <HomeTemplate date={site} location={location} />
+      <Template date={site} location={location} />
     </Layout>
   )
 }

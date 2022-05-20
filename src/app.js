@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import Head from "@/components/meta/head"
 import styled from "@emotion/styled"
 import { NoSsr, Backdrop, Typography, Box, LinearProgress } from "@mui/material"
 
@@ -13,7 +12,7 @@ const StyledBackdrop = styled(Backdrop)`
 // フェード
 const transition = {
   appear: 0,
-  enter: 300,
+  enter: 0,
   exit: 1000,
 }
 
@@ -41,9 +40,6 @@ const App = ({ children }) => {
   // フェードの状態
   const [fadeOn, setFadeOn] = useState(true)
 
-  // ローディングの状態
-  const [isLoaded, setLoaded] = useState(false)
-
   // 擬似ロード画面
   const [progress, setProgress] = useState(0)
 
@@ -57,7 +53,6 @@ const App = ({ children }) => {
               clearInterval(timer)
               return 100
             case 50:
-              setLoaded(() => true)
               return prevProgress + 1
             default:
               return prevProgress + 1
@@ -70,17 +65,14 @@ const App = ({ children }) => {
     } else {
       // ホーム以外ではスキップ
       setProgress(() => 100)
-      setLoaded(() => true)
       setFadeOn(() => false)
       return
     }
   }, [])
 
-  // SSRは対象外
   return (
     <NoSsr>
-      <Head />
-      {isLoaded && children}
+      {children}
       <StyledBackdrop open={fadeOn} transitionDuration={transition}>
         <LinearProgressWithLabel value={progress} />
       </StyledBackdrop>
