@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Head from "@/components/atoms/Head"
+import Metadata from "@/components/atoms/Metadata"
 import Layout from "@/templates/layout.template"
 import Template from "@/templates/about/about.template"
 
 const AboutPage = ({ data, location }) => (
   <Layout location={location} isPageType="About">
-    <Head title="ABOUT" />
+    <Metadata title="ABOUT" />
     <Template
       post={data.markdownRemark}
       postContent={data.markdownRemark.frontmatter}

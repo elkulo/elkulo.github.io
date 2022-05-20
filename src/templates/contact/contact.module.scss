@@ -2,115 +2,115 @@
 @use "@/styles/mixins/mixins" as mixin;
 
 .container {
-    margin: (variable.$size__spacing-unit * 3) 0 0;
+  margin: (variable.$size__spacing-unit * 3) 0 0;
 }
 
 .icon {
-    vertical-align: bottom;
-    margin-right: 0.125em;
-    padding-top: 0.25em;
-    filter:drop-shadow(0 0 3px rgba(0,0,0,0.8));
+  vertical-align: bottom;
+  margin-right: 0.125em;
+  padding-top: 0.25em;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.8));
 }
 
 .primary {
-    position: relative;
-    padding-bottom: 75%;
-    z-index: 1;
+  position: relative;
+  padding-bottom: 75%;
+  z-index: 1;
 
-    @include mixin.media(tablet) {
-        padding-bottom: 56.25%;
+  @include mixin.media(tablet) {
+    padding-bottom: 56.25%;
+  }
+  @include mixin.media(desktop) {
+    padding-bottom: 40%;
+  }
+
+  &__header {
+    position: absolute;
+    left: 0;
+    bottom: 58%;
+    width: 100%;
+    text-align: center;
+
+    &__title {
+      color: #fff;
+      font-size: 2.5rem;
+
+      @include mixin.media(tablet) {
+        font-size: 3rem;
+      }
     }
-    @include mixin.media(desktop) {
-        padding-bottom: 40%;
-    }
+  }
 
-    &__header {
-        position: absolute;
-        left: 0;
-        bottom: 58%;
-        width: 100%;
-        text-align: center;
+  &__content {
+    position: absolute;
+    left: 0;
+    top: 44%;
+    width: 100%;
+    text-align: center;
+    color: #f1f1f1;
 
-        &__title {
-            color: #fff;
-            font-size: 2.5rem;
-
-            @include mixin.media(tablet) {
-                font-size: 3rem;
-            }
-        }
-    }
-
-    &__content {
-        position: absolute;
-        left: 0;
-        top: 44%;
-        width: 100%;
-        text-align: center;
-        color: #f1f1f1;
-
-        p + p {
-            margin-top: variable.$size__spacing-unit;
-        }
-
-        :global(.button__icon) {
-            margin: 0 0.25em -0.125em 0;
-            padding: 0;
-            vertical-align: bottom;
-            font-size: 1.5em;
-        }
+    p + p {
+      margin-top: variable.$size__spacing-unit;
     }
 
-    &__bg {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        overflow: hidden;
-        border-radius: 5px;
-
-        :global(.gatsby-image-wrapper) {
-            height: 100%;
-        }
+    :global(.button__icon) {
+      margin: 0 0.25em -0.125em 0;
+      padding: 0;
+      vertical-align: bottom;
+      font-size: 1.5em;
     }
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    border-radius: 5px;
+
+    :global(.gatsby-image-wrapper) {
+      height: 100%;
+    }
+  }
 }
 
 .secondary {
-    margin: variable.$size__spacing-unit 0 0;
+  margin: variable.$size__spacing-unit 0 0;
 
-    &__content {
-        box-sizing: border-box;
-        padding: (variable.$size__spacing-unit * 0.5) 0 (variable.$size__spacing-unit * 0.5) variable.$size__spacing-unit;
-        border-left: solid 1px currentColor;
-        font-size: 0.875rem;
+  &__content {
+    box-sizing: border-box;
+    padding: (variable.$size__spacing-unit * 0.5) 0 (variable.$size__spacing-unit * 0.5) variable.$size__spacing-unit;
+    border-left: solid 1px currentColor;
+    font-size: 0.875rem;
 
-        @include mixin.media(tablet) {
-            margin-left: 20%;
-        }
-
-        @include mixin.media(desktop) {
-            margin-left: 20%;
-            margin-right: 20%;
-        }
-
-        h3 {
-            margin-top: 2rem;
-            width: max-content;
-            font-family: variable.$font__body;
-            color: transparent;
-            background: linear-gradient(60deg, #01579b 50%, #ec407a);
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-
-        p + ul {
-            font-weight: 500;
-        }
-
-        > p:last-child {
-            margin-bottom: 0;
-        }
+    @include mixin.media(tablet) {
+      margin-left: 20%;
     }
+
+    @include mixin.media(desktop) {
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+
+    h3 {
+      margin-top: 2rem;
+      width: max-content;
+      font-family: variable.$font__body;
+      color: transparent;
+      background: linear-gradient(60deg, #01579b 50%, #ec407a);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    p + ul {
+      font-weight: 500;
+    }
+
+    > p:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

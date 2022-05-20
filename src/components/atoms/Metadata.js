@@ -9,7 +9,7 @@ import { useStaticQuery, graphql } from "gatsby"
  * @param {*} { description, lang, meta, title }
  * @returns react-helmet
  */
-const Head = ({ description, lang, meta, title }) => {
+const Metadata = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -80,17 +80,17 @@ const Head = ({ description, lang, meta, title }) => {
   )
 }
 
-Head.defaultProps = {
+Metadata.defaultProps = {
   lang: `ja`,
   meta: [],
   description: ``,
 }
 
-Head.propTypes = {
+Metadata.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
 }
 
-export default Head
+export default Metadata

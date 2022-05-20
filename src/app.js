@@ -16,8 +16,13 @@ const transition = {
   exit: 1000,
 }
 
-// ローリングバー
-const LinearProgressWithLabel = props => {
+/**
+ * ローリング
+ *
+ * @param  {*} props
+ * @return {HTMLElement}
+ */
+const Loading = props => {
   return (
     <Box
       display="flex"
@@ -35,7 +40,12 @@ const LinearProgressWithLabel = props => {
   )
 }
 
-// ロード中
+/**
+ * App
+ *
+ * @param  {*} props.children
+ * @return {HTMLElement}
+ */
 const App = ({ children }) => {
   // フェードの状態
   const [fadeOn, setFadeOn] = useState(true)
@@ -58,7 +68,7 @@ const App = ({ children }) => {
               return prevProgress + 1
           }
         })
-      }, 30)
+      }, 20)
       return () => {
         clearInterval(timer)
       }
@@ -74,7 +84,7 @@ const App = ({ children }) => {
     <NoSsr>
       {children}
       <StyledBackdrop open={fadeOn} transitionDuration={transition}>
-        <LinearProgressWithLabel value={progress} />
+        <Loading value={progress} />
       </StyledBackdrop>
     </NoSsr>
   )

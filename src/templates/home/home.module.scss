@@ -2,249 +2,249 @@
 @use "@/styles/mixins/mixins" as mixin;
 
 .split-layout {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include mixin.media(tablet) {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
+    min-height: var(--maxvh, 100vh);
+  }
+
+  &__left {
+    border-top: solid 1px #000;
 
     @include mixin.media(tablet) {
-        display: flex;
-        flex-direction: row;
-        min-height: var(--maxvh, 100vh);
+      flex: 1;
+      min-width: 33.33%;
+      border: none;
+      border-right: solid 1px #000;
     }
 
-    &__left {
-        border-top: solid 1px #000;
+    &__in {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: #191919;
+      color: #ddd;
+      box-sizing: border-box;
+      padding: 0 variable.$size__spacing-unit;
+      width: 100%;
+      height: 100%;
 
-        @include mixin.media(tablet) {
-            flex: 1;
-            min-width: 33.33%;
-            border: none;
-            border-right: solid 1px #000;
-        }
+      // 中横揃え用のダミー要素
+      &::before {
+        display: block;
+        content: "";
+      }
 
-        &__in {
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background: #191919;
-            color: #ddd;
-            box-sizing: border-box;
-            padding: 0 variable.$size__spacing-unit;
-            width: 100%;
-            height: 100%;
-
-            // 中横揃え用のダミー要素
-            &::before {
-                display: block;
-                content: "";
-            }
-
-            // POWEREDのカラー
-            :global(.site-footer) {
-                color: #767676;
-            }
-        }
+      // POWEREDのカラー
+      :global(.site-footer) {
+        color: #767676;
+      }
     }
+  }
 
-    &__right {
-        flex: 1;
-        min-width: 66.66%;
+  &__right {
+    flex: 1;
+    min-width: 66.66%;
 
-        &__in {
-            box-sizing: border-box;
-            width: 100%;
-            min-height: 400px;
-            height: var(--maxvh, 100vh);
-        }
+    &__in {
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 400px;
+      height: var(--maxvh, 100vh);
     }
+  }
 }
 
 /** Split Left */
 .header {
-    margin: auto;
+  margin: auto;
 
-    &__drawer {
-        display: none;
+  &__drawer {
+    display: none;
 
-        @include mixin.media(tablet) {
-            display: block;
-            position: absolute;
-            left: variable.$size__spacing-unit;
-            top: variable.$size__spacing-unit;
-        }
+    @include mixin.media(tablet) {
+      display: block;
+      position: absolute;
+      left: variable.$size__spacing-unit;
+      top: variable.$size__spacing-unit;
+    }
+  }
+
+  &__branding {
+    margin-top: (variable.$size__spacing-unit * 8);
+
+    &__title {
+      text-align: center;
+      font-family: variable.$font__heading;
+      font-weight: 500;
+      font-size: variable.$font__size-xxl;
+
+      @include mixin.media(desktop) {
+        font-size: variable.$font__size-xxxl;
+      }
+    }
+  }
+
+  &__navi {
+    clear: both;
+    margin: (variable.$size__spacing-unit * 5) auto 0;
+    width: 100%;
+    text-align: center;
+
+    @include mixin.media(tablet) {
+      margin: (variable.$size__spacing-unit * 2) 0 0;
     }
 
-    &__branding {
-        margin-top: (variable.$size__spacing-unit * 8);
+    &__list {
+      list-style: none;
+      display: inline-flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
 
-        &__title {
-            text-align: center;
-            font-family: variable.$font__heading;
-            font-weight: 500;
-            font-size: variable.$font__size-xxl;
-
-            @include mixin.media(desktop) {
-                font-size: variable.$font__size-xxxl;
-            }
-        }
-    }
-
-    &__navi {
-        clear: both;
-        margin: (variable.$size__spacing-unit * 5) auto 0;
-        width: 100%;
-        text-align: center;
-
-        @include mixin.media(tablet) {
-            margin: (variable.$size__spacing-unit * 2) 0 0;
-        }
-
-        &__list {
-            list-style: none;
-            display: inline-flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 0;
-            padding: 0;
-
-            &__item {
-                flex: 1;
-                min-width: 140px;
-                margin: 0 (variable.$size__spacing-unit * 0.25) (variable.$size__spacing-unit * 0.5);
-                padding: 0;
-
-                a {
-                    display: block;
-                    padding: (variable.$size__spacing-unit * 0.5) 0;
-                    border: solid 1px #767676;
-                    text-align: center;
-                    font-family: variable.$font__code;
-                    font-weight: 400;
-                    color: #ccc;
-                    background: #111;
-                    @include mixin.button-transition();
-                    font-size: variable.$font__size-md;
-
-                    @include mixin.media(tablet) {
-                        font-size: variable.$font__size-sm;
-                    }
-
-                    &:hover,
-                    &:focus {
-                        background: #97872d;
-                        border-color: #97872d;
-                        box-shadow: none;
-                    }
-                }
-            }
-        }
-    }
-
-    &__description {
-        margin: variable.$size__spacing-unit auto 0;
-        text-align: center;
-        font-family: variable.$font__code;
-        font-size: variable.$font__size-md;
-        font-weight: 400;
-        color: rgb(151, 135, 45);
-
-        @include mixin.media(tablet) {
-            font-size: variable.$font__size-sm;
-        }
+      &__item {
+        flex: 1;
+        min-width: 140px;
+        margin: 0 (variable.$size__spacing-unit * 0.25) (variable.$size__spacing-unit * 0.5);
+        padding: 0;
 
         a {
-            @include mixin.button-all-transition();
-            color: rgb(151, 135, 45);
-            box-shadow: 0 0px 0 rgb(151, 135, 45);
+          display: block;
+          padding: (variable.$size__spacing-unit * 0.5) 0;
+          border: solid 1px #767676;
+          text-align: center;
+          font-family: variable.$font__code;
+          font-weight: 400;
+          color: #ccc;
+          background: #111;
+          @include mixin.button-transition();
+          font-size: variable.$font__size-md;
 
-            &:hover,
-            &:active {
-                color: rgb(151, 135, 45);
-                box-shadow: 0 2px 0 rgb(151, 135, 45);
-            }
+          @include mixin.media(tablet) {
+            font-size: variable.$font__size-sm;
+          }
+
+          &:hover,
+          &:focus {
+            background: #97872d;
+            border-color: #97872d;
+            box-shadow: none;
+          }
         }
+      }
     }
+  }
+
+  &__description {
+    margin: variable.$size__spacing-unit auto 0;
+    text-align: center;
+    font-family: variable.$font__code;
+    font-size: variable.$font__size-md;
+    font-weight: 400;
+    color: rgb(151, 135, 45);
+
+    @include mixin.media(tablet) {
+      font-size: variable.$font__size-sm;
+    }
+
+    a {
+      @include mixin.button-all-transition();
+      color: rgb(151, 135, 45);
+      box-shadow: 0 0px 0 rgb(151, 135, 45);
+
+      &:hover,
+      &:active {
+        color: rgb(151, 135, 45);
+        box-shadow: 0 2px 0 rgb(151, 135, 45);
+      }
+    }
+  }
 }
 
 /** Split Right */
 .content {
-    @include mixin.clearfix("before");
-    @include mixin.clearfix("after");
-    position: relative;
+  @include mixin.clearfix("before");
+  @include mixin.clearfix("after");
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  color: #fff;
+
+  &__drawer {
+    position: absolute;
+    left: variable.$size__spacing-unit;
+    top: variable.$size__spacing-unit;
+
+    @include mixin.media(tablet) {
+      display: none;
+    }
+  }
+
+  &__branding {
+    margin: variable.$size__spacing-unit;
+    text-align: center;
+
+    @include mixin.media(tablet) {
+      display: none;
+    }
+
+    &__title {
+      margin: 0;
+      padding: 0;
+      font-size: 2rem;
+      font-family: variable.$font__heading;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: variable.$font__line-height-heading;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      @include mixin.user-select(none);
+    }
+  }
+
+  &__eyecatch {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    color: #fff;
 
-    &__drawer {
-        position: absolute;
-        left: variable.$size__spacing-unit;
-        top: variable.$size__spacing-unit;
-
-        @include mixin.media(tablet) {
-            display: none;
-        }
+    // 画質錯視
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.25;
+      background: url("@/assets/images/background/dot.gif");
     }
 
-    &__branding {
-        margin: variable.$size__spacing-unit;
-        text-align: center;
+    &__title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-shadow: 0 0 5px #000;
+      font-size: variable.$font__size-xl;
+      font-weight: 500;
+      @include mixin.user-select(none);
 
-        @include mixin.media(tablet) {
-            display: none;
-        }
-
-        &__title {
-            margin: 0;
-            padding: 0;
-            font-size: 2rem;
-            font-family: variable.$font__heading;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-            line-height: variable.$font__line-height-heading;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            @include mixin.user-select(none);
-        }
+      @include mixin.media(tablet) {
+        top: 40%;
+        font-size: variable.$font__size-xxl;
+      }
     }
-
-    &__eyecatch {
-        position: absolute;
-        z-index: -1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-
-        // 画質錯視
-        &::before {
-            display: block;
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.25;
-            background: url("@/assets/images/background/dot.gif");
-        }
-
-        &__title {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            text-shadow: 0 0 5px #000;
-            font-size: variable.$font__size-xl;
-            font-weight: 500;
-            @include mixin.user-select(none);
-
-            @include mixin.media(tablet) {
-                top: 40%;
-                font-size: variable.$font__size-xxl;
-            }
-        }
-    }
+  }
 }

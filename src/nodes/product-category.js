@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Head from "@/components/atoms/Head"
+import Metadata from "@/components/atoms/Metadata"
 import Layout from "@/templates/layout.template"
 import Template from "@/templates/product/product-index.template"
 
@@ -12,7 +12,7 @@ const ProductCategoryIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={pageTitle} isPageType="Product">
-      <Head title={pageTitle} />
+      <Metadata title={pageTitle} />
       <Template data={data} title={pageTitle} isProductType="category" />
     </Layout>
   )

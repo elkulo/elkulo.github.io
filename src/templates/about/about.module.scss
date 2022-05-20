@@ -2,113 +2,114 @@
 @use "@/styles/mixins/mixins" as mixin;
 
 .container {
-    margin: (variable.$size__spacing-unit * 3) 0 0;
+  margin: (variable.$size__spacing-unit * 3) 0 0;
 
-    &__header {
-        &__title {
-            margin-bottom: 0;
-            font-size: variable.$font__size-md;
-            text-align: center;
-            color: #555;
-        }
+  &__header {
+    &__title {
+      margin-bottom: 0;
+      font-size: variable.$font__size-md;
+      text-align: center;
+      color: #555;
     }
+  }
 }
 
 .layout {
-    @include mixin.media(desktop) {
-        display: flex;
-        justify-content: space-between;
+  @include mixin.media(desktop) {
+    display: flex;
+    justify-content: space-between;
 
-        &__primary {
-            order: 2;
-            flex-basis: calc(50% - #{variable.$size__spacing-unit * 1.5});
-            max-width: calc(50% - #{variable.$size__spacing-unit * 1.5});
-        }
-
-        &__secondary {
-            order: 1;
-            flex-basis: calc(50% - #{variable.$size__spacing-unit * 1.5});
-            max-width: calc(50% - #{variable.$size__spacing-unit * 1.5});
-        }
+    &__primary {
+      order: 2;
+      flex-basis: calc(50% - #{variable.$size__spacing-unit * 1.5});
+      max-width: calc(50% - #{variable.$size__spacing-unit * 1.5});
     }
+
+    &__secondary {
+      order: 1;
+      flex-basis: calc(50% - #{variable.$size__spacing-unit * 1.5});
+      max-width: calc(50% - #{variable.$size__spacing-unit * 1.5});
+    }
+  }
 }
 
 .primary {
-    margin: (variable.$size__spacing-unit * 2) auto 0;
+  margin: (variable.$size__spacing-unit * 2) auto 0;
 
-    @include mixin.media(desktop) {
-        width: calc(100% - #{variable.$size__spacing-unit * 3});
+  @include mixin.media(desktop) {
+    width: calc(100% - #{variable.$size__spacing-unit * 3});
+  }
+
+  &__header {
+    &__sub {
+      font-size: variable.$font__size-sm;
+      font-weight: 400;
     }
 
-    &__header {
-        &__sub {
-            font-size: variable.$font__size-sm;
-            font-weight: 400;
-        }
-
-        &__title {
-            margin: 0;
-        }             
-        
-        &__date {
-            margin: variable.$size__spacing-unit 0;
-            font-family: variable.$font__code;
-            font-size: variable.$font__size-xs;
-            font-weight: 400;
-            color: variable.$color__text-light;
-        }
+    &__title {
+      margin: 0;
     }
+
+    &__date {
+      margin: variable.$size__spacing-unit 0;
+      font-family: variable.$font__code;
+      font-size: variable.$font__size-xs;
+      font-weight: 400;
+      color: variable.$color__text-light;
+    }
+  }
 }
 
 .secondary {
-    height: calc(var(--maxvh, 100vh) - #{variable.$size__spacing-unit * 4});
-    margin: (variable.$size__spacing-unit * 5) auto;
-    border-radius: 5px;
-    overflow: hidden;
-    transform: translate(0); // Safariでoverflow:hiddenが効かない対策
+  height: calc(var(--maxvh, 100vh) - #{variable.$size__spacing-unit * 4});
+  margin: (variable.$size__spacing-unit * 5) auto;
+  border-radius: 5px;
+  overflow: hidden;
+  transform: translate(0); // Safariでoverflow:hiddenが効かない対策
 
-    :global(.gatsby-image-wrapper) {
-        height: 100%;
-    }
+  :global(.gatsby-image-wrapper) {
+    height: 100%;
+  }
 
-    @include mixin.media(desktop) {
-        position: sticky;
-        top: (variable.$size__spacing-unit * 2);
-        left: 0;
-        width: 100%;
-        margin: (variable.$size__spacing-unit * 2) 0;
-    }
+  @include mixin.media(desktop) {
+    position: sticky;
+    top: (variable.$size__spacing-unit * 2);
+    left: 0;
+    width: 100%;
+    margin: (variable.$size__spacing-unit * 2) 0;
+  }
 }
 
 .section {
-    margin: 3rem auto;
-    opacity: 0;
-    transition: transform 300ms ease-out, opacity 300ms ease-out;
+  margin: 3rem auto;
+  opacity: 0;
+  transition: transform 300ms ease-out, opacity 300ms ease-out;
 
-    &:last-child {
-        margin-bottom: 0;
-    }
+  &:last-child {
+    margin-bottom: 0;
+  }
 
-    &__active {
-        opacity: 1;
-    }
+  &__active {
+    opacity: 1;
+  }
 }
 
 // markdownBody
 .markdown-body {
-    h1, h2 {
-        width: max-content;
-        font-family: variable.$font__body;
-        color: transparent;
-        background: linear-gradient(60deg, #01579b, #ec407a);
-        -webkit-background-clip: text;
-        background-clip: text;
+  h1,
+  h2 {
+    width: max-content;
+    font-family: variable.$font__body;
+    color: transparent;
+    background: linear-gradient(60deg, #01579b, #ec407a);
+    -webkit-background-clip: text;
+    background-clip: text;
 
-        &:first-child {
-            margin-top: 0;
-        }
+    &:first-child {
+      margin-top: 0;
     }
-    strong {
-        color: #000;
-    }
+  }
+  strong {
+    color: #000;
+  }
 }

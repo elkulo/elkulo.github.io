@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Head from "@/components/atoms/Head"
+import Metadata from "@/components/atoms/Metadata"
 import Layout from "@/templates/layout.template"
 import Template from "@/templates/home/home.template"
 
@@ -20,7 +20,7 @@ const IndexPage = ({ location }) => {
 
   return (
     <Layout location={location} isPageType="Home">
-      <Head />
+      <Metadata />
       <Template date={site} location={location} />
     </Layout>
   )
