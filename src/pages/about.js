@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Head from "@/components/meta/head"
+import Head from "@/components/atoms/Head"
 import Layout from "@/templates/layout.template"
 import Template from "@/templates/about/about.template"
 

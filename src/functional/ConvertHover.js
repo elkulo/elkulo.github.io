@@ -1,13 +1,10 @@
 import { UAParser } from "ua-parser-js"
 
+/**
+ * タッチデバイスでhoverを無効
+ *
+ */
 const ConvertHover = () => {
-  // 100vh Fix
-  document.documentElement.style.setProperty(
-    "--maxvh",
-    `${window.innerHeight}px`
-  )
-
-  // タッチデバイスでhoverを無効
   const touchDevice = /\b(iOS|iPad|Android)\b/
 
   if (touchDevice.test(UAParser().os.name)) {

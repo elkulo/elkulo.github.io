@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
-import Footer from "@/components/footer/site-footer"
-import NavigationDrawer from "@/components/navigation/navigation-drawer"
+import Footer from "@/components/organisms/site-footer.component"
+import NavigationDrawer from "@/components/molecules/navigation-drawer.component"
+import Video from "@/components/atoms/Video"
 import OpenIcon from "@mui/icons-material/Notes"
-import Video from "@/components/utils/Video"
 import {
   landscapeMP4 as MP4,
   landscapeJPG as thumbnail,

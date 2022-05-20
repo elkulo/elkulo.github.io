@@ -1,13 +1,13 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import Image from "@/components/utils/Image"
 import PreviewIcon from "@mui/icons-material/Panorama"
 import {
   TransitionGroup,
   Transition as ReactTransition,
 } from "react-transition-group"
 import styles from "./product-index.module.scss"
-import Wrap from "@/components/utils/Wrap"
+import Wrap from "@/components/atoms/Wrap"
+import Image from "@/components/atoms/Image"
 import Masonry from "react-masonry-component"
 
 /**
