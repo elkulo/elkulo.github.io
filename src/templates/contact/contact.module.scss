@@ -32,7 +32,7 @@
     text-align: center;
 
     &__title {
-      color: #fff;
+      color: #ffebee;
       font-size: 2.5rem;
 
       @include mixin.media(tablet) {
@@ -47,7 +47,7 @@
     top: 44%;
     width: 100%;
     text-align: center;
-    color: #f1f1f1;
+    color: #fff;
 
     p + p {
       margin-top: variable.$size__spacing-unit;
@@ -83,7 +83,7 @@
   &__content {
     box-sizing: border-box;
     padding: (variable.$size__spacing-unit * 0.5) 0 (variable.$size__spacing-unit * 0.5) variable.$size__spacing-unit;
-    border-left: solid 1px currentColor;
+    border-left: solid 1px variable.$color__border;
     font-size: 0.875rem;
 
     @include mixin.media(tablet) {
@@ -93,6 +93,10 @@
     @include mixin.media(desktop) {
       margin-left: 20%;
       margin-right: 20%;
+    }
+
+    h2 {
+      color: #37474f;
     }
 
     h3 {

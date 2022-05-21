@@ -3,16 +3,16 @@
 $color__background-body: #111;
 $color__background-input: #fff;
 $color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
+$color__background-hr: #78909c;
 $color__background-button: darken( #c2185b, 10% );
 $color__background-button-hover: darken( $color__background-button, 10% );
-$color__background-pre: #eee;
+$color__background-pre: #eceff1;
 $color__background-ins: #fff9c0;
 $color__background_selection: lighten( #311b92, 22.5% ); // lighten( salmon, 22.5% ); // lighten( #0999d4, 48% );
 
 // Text
 $color__text-main: #212121;
-$color__text-light: #565656;
+$color__text-light: #546e7a;
 $color__text-hover: lighten( #212121, 22.5% );
 $color__text-screen: #311b92;
 $color__text-input: #666;
@@ -30,7 +30,7 @@ $color__link-header: #fff;
 $color__link-header-hover: darken( #fff, 22.5% );
 
 // Borders
-$color__border: #dbdbdb;
+$color__border: #78909c;
 $color__border-link: #7986cb;
 $color__border-link-hover: darken( $color__link, 10% );
 $color__border-button: #ccc #ccc #bbb;

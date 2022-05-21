@@ -9,7 +9,7 @@
       margin-bottom: 0;
       font-size: variable.$font__size-md;
       text-align: center;
-      color: #555;
+      color: variable.$color__text-light;
     }
   }
 }
@@ -42,6 +42,7 @@
 
   &__header {
     &__sub {
+      color: #1a237e;
       font-size: variable.$font__size-sm;
       font-weight: 400;
     }

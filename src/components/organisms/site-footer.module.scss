@@ -1,6 +1,8 @@
 @use "@/styles/variables/variables" as variable;
 @use "@/styles/mixins/mixins" as mixin;
 
+$color__footer-text: #565656;
+
 // Home
 .sidebar {
   padding: (variable.$size__spacing-unit * 3) 0;
@@ -59,7 +61,7 @@
       font-size: variable.$font__size-xs;
       font-weight: 400;
       white-space: nowrap;
-      color: variable.$color__text-light;
+      color: $color__footer-text;
 
       img {
         width: auto;
@@ -74,7 +76,7 @@
 
 .info {
   margin: (variable.$size__spacing-unit * 3) auto 0;
-  color: variable.$color__text-light;
+  color: $color__footer-text;
   text-align: center;
   font-family: variable.$font__heading;
 
@@ -82,7 +84,7 @@
     color: inherit;
 
     &:hover {
-      color: lighten(variable.$color__text-light, 30%);
+      color: lighten($color__footer-text, 30%);
       box-shadow: none;
     }
   }

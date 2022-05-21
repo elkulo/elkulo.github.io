@@ -71,10 +71,10 @@
       display: inline-block;
       padding: 0.25rem 0.25rem 0;
       margin: 0;
-      font-family: variable.$font__body;
+      //font-family: variable.$font__body;
       font-size: variable.$font__size-md;
       font-weight: 300;
-      color: #565656;
+      color: variable.$color__text-light;
 
       &::before {
         display: inline-block;
@@ -124,25 +124,25 @@
 
       &__feature {
         box-sizing: border-box;
-        transform: translate(0); // Safariでblurに対してoverflow:hiddenが効かない対策
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
 
         @include mixin.clear-link();
 
         .feature-link {
+          transform: translate(0); // FIXME: Safariでoverflow:hiddenが効かない対策
           box-sizing: border-box;
           position: relative;
           display: block;
           max-height: 500px;
           border-radius: 10px;
-          border: solid 5px #fafafa;
+          border: solid 4px #fafafa;
           background: #fafafa;
           overflow: hidden;
           @include mixin.link-transition(border);
   
           &:hover {
-            border-color: darken(variable.$color__link, 2%);
+            border: solid 6px darken(variable.$color__link, 2%);
 
             img {
               filter: blur(5px);
@@ -173,6 +173,7 @@
               top: 50%;
               transform: translate(-50%, -50%);
               text-align: center;
+              font-family: variable.$font__code;
               color: #ddd;
               padding: 2em 1em;
               border-radius: 3px;
