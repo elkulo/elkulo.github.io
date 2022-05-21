@@ -217,20 +217,16 @@ class ProductTemplate extends Component {
                           <div
                             className={styles.product__entries__entry__feature}
                           >
-                            <Link to={`/product/${post.alternative_id}`}>
+                            <Link
+                              to={`/product/${post.alternative_id}`}
+                              className={styles.featureLink}
+                            >
                               <Image src={post.attachment[0]} alt={title} />
-                              <span
-                                className={
-                                  styles.product__entries__entry__feature__link
-                                }
-                              >
+                              <span className={styles.featureLink__cover}>
                                 <span
-                                  className={
-                                    styles.product__entries__entry__feature__link__inner
-                                  }
+                                  className={styles.featureLink__cover__inner}
                                 >
                                   <PreviewIcon />
-                                  <br />
                                   Permalink
                                 </span>
                               </span>

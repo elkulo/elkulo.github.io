@@ -200,11 +200,12 @@
             z-index: 100;
             background: variable.$color__link;
             opacity: 0;
+            box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2) inset;
             @include mixin.link-transition(opacity);
           }
 
           &:hover::after {
-            opacity: 0.75;
+            opacity: 0.6;
           }
         }
       }

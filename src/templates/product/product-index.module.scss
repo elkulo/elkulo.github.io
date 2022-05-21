@@ -64,17 +64,17 @@
     margin: (variable.$size__spacing-unit * 2) auto (variable.$size__spacing-unit * -2);
 
     @include mixin.media(tablet) {
-      margin: (variable.$size__spacing-unit * -1) auto (variable.$size__spacing-unit * -1);
+      margin: (variable.$size__spacing-unit * 1) auto (variable.$size__spacing-unit * -2);
     }
 
     &__title {
       display: inline-block;
-      padding: 0;
+      padding: 0.25rem 0.25rem 0;
       margin: 0;
       font-family: variable.$font__body;
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: variable.$color__link-hover;
+      font-size: variable.$font__size-md;
+      font-weight: 300;
+      color: #565656;
 
       &::before {
         display: inline-block;
@@ -125,59 +125,67 @@
       &__feature {
         box-sizing: border-box;
         transform: translate(0); // Safariでblurに対してoverflow:hiddenが効かない対策
-        overflow: hidden;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
-        border: solid 5px #fafafa;
-        background: #fafafa;
-
-        &:hover img {
-          filter: blur(5px);
-        }
-
-        &__link {
-          box-sizing: border-box;
-          display: block;
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 1;
-          background: variable.$color__link;
-          opacity: 0;
-          @include mixin.link-transition(opacity);
-
-          &:hover {
-            opacity: 0.75;
-          }
-
-          &__inner {
-            display: inline-block;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: #fafafa;
-            font-size: variable.$font__size-sm;
-            padding: 1em 2em;
-            border: solid 1px currentColor;
-            border-radius: 3px;
-
-            svg {
-              display: inline-block;
-              vertical-align: middle;
-              font-size: 2rem;
-            }
-          }
-        }
 
         @include mixin.clear-link();
-        a {
+
+        .feature-link {
+          box-sizing: border-box;
           position: relative;
           display: block;
           max-height: 500px;
+          border-radius: 10px;
+          border: solid 5px #fafafa;
+          background: #fafafa;
+          overflow: hidden;
+          @include mixin.link-transition(border);
+  
+          &:hover {
+            border-color: darken(variable.$color__link, 2%);
+
+            img {
+              filter: blur(5px);
+            }    
+
+            > * {
+              opacity: 0.8;
+            }
+          }
+
+          &__cover {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: variable.$color__link;
+            opacity: 0;
+            @include mixin.link-transition(opacity);
+
+            &__inner {
+              display: inline-block;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              text-align: center;
+              color: #ddd;
+              padding: 2em 1em;
+              border-radius: 3px;
+              border: solid 1px currentColor;
+
+              svg {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 2rem;
+                margin-right: 0.5rem;
+              }
+            }
+          }
         }
       }
 
@@ -228,7 +236,7 @@
 
       &::before {
         position: absolute;
-        content: '▼';
+        content: "▼";
         left: 2rem;
         top: 50%;
         transform: translate(-50%, -50%);
