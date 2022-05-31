@@ -1,6 +1,6 @@
-import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { StaticQuery, graphql } from 'gatsby'
 
 /**
  * Image
@@ -8,7 +8,7 @@ import { StaticQuery, graphql } from "gatsby"
  * @param {string} src 画像のURL
  * @param {string} alt 画像の説明
  */
-const Image = ({ src, alt = "" }) => (
+const Image = ({ src, alt = '' }) => (
   <StaticQuery
     query={graphql`
       query {

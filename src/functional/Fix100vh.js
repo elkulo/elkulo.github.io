@@ -4,7 +4,7 @@
  */
 const Fix100vh = () => {
   document.documentElement.style.setProperty(
-    "--maxvh",
+    '--maxvh',
     `${window.innerHeight}px`
   )
 }

@@ -1,8 +1,8 @@
 ---
 title: CONTACT
 description: お問い合わせはこちら
-date: "2021.10.22"
-picture: "./cover.jpg"
+date: '2021.10.22'
+picture: './cover.jpg'
 ---
 
 ## 個人情報保護方針

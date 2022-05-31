@@ -122,7 +122,7 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ 'content:encoded': node.html }],
                 })
               })
             },
@@ -173,7 +173,7 @@ module.exports = {
 
         // リクエストヘッダー
         headers: {
-          "Content-Type": `application/json`,
+          'Content-Type': `application/json`,
         },
         verboseOutput: true, // For debugging purposes
       },
@@ -192,6 +192,17 @@ module.exports = {
             namedExport: false,
           },
         },
+      },
+    },
+
+    // ディレクトリのエイリアスのパス作成
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@': 'src',
+        },
+        extensions: ['js', 'jsx', 'ts', 'tsx'],
       },
     },
 

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react"
-import styled from "@emotion/styled"
-import { NoSsr, Backdrop, Typography, Box, LinearProgress } from "@mui/material"
+import React, { useState, useEffect } from 'react'
+import styled from '@emotion/styled'
+import { NoSsr, Backdrop, Typography, Box, LinearProgress } from '@mui/material'
 
 // ロードスタイル
 const StyledBackdrop = styled(Backdrop)`

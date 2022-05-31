@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Metadata from "@/components/atoms/Metadata"
-import Layout from "@/templates/layout.template"
-import Template from "@/templates/product/product-index.template"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Metadata from '@/components/atoms/Metadata'
+import Layout from '@/templates/layout.template'
+import Template from '@/templates/product/product-index.template'
 
 const ProductIndex = ({ data, location }) => (
   <Layout location={location} isPageType="Product">

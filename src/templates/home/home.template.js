@@ -1,15 +1,15 @@
-import React from "react"
-import { Link } from "gatsby"
-import Footer from "@/components/organisms/site-footer.component"
-import NavigationDrawer from "@/components/molecules/navigation-drawer.component"
-import Video from "@/components/atoms/Video"
-import OpenIcon from "@mui/icons-material/Notes"
+import React from 'react'
+import { Link } from 'gatsby'
+import Footer from '@/components/organisms/site-footer.component'
+import NavigationDrawer from '@/components/molecules/navigation-drawer.component'
+import Video from '@/components/atoms/Video'
+import OpenIcon from '@mui/icons-material/Notes'
 import {
   landscapeMP4 as MP4,
   landscapeJPG as thumbnail,
-} from "@/assets/videos/video"
-import styles from "./home.module.scss"
-import MediaQuery from "react-responsive"
+} from '@/assets/videos/video'
+import styles from './home.module.scss'
+import MediaQuery from 'react-responsive'
 
 /**
  * ホームのテンプレート

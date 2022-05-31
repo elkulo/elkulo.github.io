@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import Metadata from "@/components/atoms/Metadata"
-import BackToIcon from "@mui/icons-material/KeyboardBackspace"
-import BackgroundImage from "@/assets/images/background/bg-404.jpg"
-import styling from "@emotion/styled"
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import Metadata from '@/components/atoms/Metadata'
+import BackToIcon from '@mui/icons-material/KeyboardBackspace'
+import BackgroundImage from '@/assets/images/background/bg-404.jpg'
+import styling from '@emotion/styled'
 
 /**
  * Styled Components
@@ -54,7 +54,7 @@ const Styled = {
  * @returns DOM
  */
 const NotFoundPage = ({ data }) => {
-  const pageTitle = "404 NOT FOUND"
+  const pageTitle = '404 NOT FOUND'
 
   const siteTitle = data.site.siteMetadata.title
 
@@ -73,7 +73,7 @@ const NotFoundPage = ({ data }) => {
             <br />
             アドレスが間違っている可能性があります。
           </p>
-          <BackToIcon style={{ fontSize: `0.75em`, color: `#b6bdf2` }} />{" "}
+          <BackToIcon style={{ fontSize: `0.75em`, color: `#b6bdf2` }} />{' '}
           <Link
             to="/"
             style={{ fontSize: `0.875em`, color: `#b6bdf2`, boxShadow: `none` }}

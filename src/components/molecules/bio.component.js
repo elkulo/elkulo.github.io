@@ -1,6 +1,6 @@
-import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import React from 'react'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 /**
  * 作成者
@@ -54,8 +54,8 @@ const Bio = () => {
         />
       </div>
       <div style={{ flex: `1`, fontSize: `0.875rem` }}>
-        <strong>{author.name}</strong>{" "}
-        <span style={{ display: "inline-block" }}>{author.summary}</span>
+        <strong>{author.name}</strong>{' '}
+        <span style={{ display: 'inline-block' }}>{author.summary}</span>
         <br />
         <Link to={`/about`}>&rarr; Read about me.</Link>
       </div>

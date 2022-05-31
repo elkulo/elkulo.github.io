@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
       // ページの生成
       createPage({
-        path: "product/" + post.node.alternative_id,
+        path: 'product/' + post.node.alternative_id,
         component: productPost,
         context: {
           slug: post.node.alternative_id,
@@ -76,7 +76,7 @@ exports.createPages = async ({ graphql, actions }) => {
     categories.forEach((cat, index) => {
       // ページの生成
       createPage({
-        path: "product/category/" + cat,
+        path: 'product/category/' + cat,
         component: productCategory,
         context: {
           slug: cat,
@@ -106,7 +106,7 @@ exports.createPages = async ({ graphql, actions }) => {
     tags.forEach((tag, index) => {
       // ページの生成
       createPage({
-        path: "product/tag/" + tag,
+        path: 'product/tag/' + tag,
         component: productTag,
         context: {
           slug: tag,
@@ -122,11 +122,11 @@ exports.onCreateNode = async ({ node, actions, getNode, store, cache }) => {
 
   // Post ID を付与
   // ソート用に桁揃え
-  if (node.internal.type === "internal__posts") {
+  if (node.internal.type === 'internal__posts') {
     await createNodeField({
-      name: "post_id",
+      name: 'post_id',
       node,
-      value: ("000000" + node.alternative_id).slice(-6),
+      value: ('000000' + node.alternative_id).slice(-6),
     })
 
     // 画像ノード
@@ -142,19 +142,19 @@ exports.onCreateNode = async ({ node, actions, getNode, store, cache }) => {
         })
 
         // インスタンス名を上書き
-        fileNode.sourceInstanceName = "attachments"
+        fileNode.sourceInstanceName = 'attachments'
 
         // 他ファイルノードと区別するための識別子を付与
         await createNodeField({
           node: fileNode,
-          name: "has_post_attachment",
+          name: 'has_post_attachment',
           value: true,
         })
 
         // メタ情報として画像のURLを付与
         await createNodeField({
           node: fileNode,
-          name: "attachment_src",
+          name: 'attachment_src',
           value: imageSrcUrl,
         })
       })
@@ -214,15 +214,4 @@ exports.createSchemaCustomization = ({ actions }) => {
       slug: String
     }
   `)
-}
-
-// ディレクトリのエイリアスのパス作成
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        "@": path.resolve(__dirname, "src"),
-      },
-    },
-  })
 }

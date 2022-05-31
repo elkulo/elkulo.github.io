@@ -1,11 +1,11 @@
-import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import MainNavigation from "@/components/molecules/main-navigation.component"
-import NavigationDrawer from "@/components/molecules/navigation-drawer.component"
-import OpenIcon from "@mui/icons-material/Notes"
-import CloseIcon from "@mui/icons-material/Close"
-import styles from "./site-header.module.scss"
-import Wrap from "@/components/atoms/Wrap"
+import React from 'react'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import MainNavigation from '@/components/molecules/main-navigation.component'
+import NavigationDrawer from '@/components/molecules/navigation-drawer.component'
+import OpenIcon from '@mui/icons-material/Notes'
+import CloseIcon from '@mui/icons-material/Close'
+import styles from './site-header.module.scss'
+import Wrap from '@/components/atoms/Wrap'
 
 /**
  * ヘッダー
@@ -34,7 +34,7 @@ const Header = ({ location = window.location, position }) => {
   let branding
 
   // ルートかつサイドバーポジションのみ<h1>
-  if (location.pathname === rootPath && position === "sidebar") {
+  if (location.pathname === rootPath && position === 'sidebar') {
     branding = <h1 className={styles.branding__title}>{siteTitle}</h1>
   } else {
     branding = (
@@ -46,7 +46,7 @@ const Header = ({ location = window.location, position }) => {
 
   return (
     <header className="site-header">
-      {position === "sidebar" && (
+      {position === 'sidebar' && (
         <div className={styles.sidebar}>
           <div className={styles.container}>
             <div className={styles.container__primary}>
@@ -63,7 +63,7 @@ const Header = ({ location = window.location, position }) => {
           <MainNavigation />
         </div>
       )}
-      {position === "content" && (
+      {position === 'content' && (
         <Wrap>
           <div className={styles.container}>
             <div className={styles.container__primary}>

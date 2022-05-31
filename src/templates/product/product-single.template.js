@@ -1,11 +1,11 @@
-import React, { Component } from "react"
-import { Link } from "gatsby"
-import MediaQuery from "react-responsive"
-import LinkIcon from "@mui/icons-material/InsertLink"
-import styles from "./product-single.module.scss"
-import Wrap from "@/components/atoms/Wrap"
-import Image from "@/components/atoms/Image"
-import Bio from "@/components/molecules/bio.component"
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
+import MediaQuery from 'react-responsive'
+import LinkIcon from '@mui/icons-material/InsertLink'
+import styles from './product-single.module.scss'
+import Wrap from '@/components/atoms/Wrap'
+import Image from '@/components/atoms/Image'
+import Bio from '@/components/molecules/bio.component'
 
 /**
  *　プロダクトシングルページ

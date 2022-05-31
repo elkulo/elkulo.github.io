@@ -1,11 +1,11 @@
-import React from "react"
-import Header from "@/components/organisms/site-header.component"
-import Footer from "@/components/organisms/site-footer.component"
+import React from 'react'
+import Header from '@/components/organisms/site-header.component'
+import Footer from '@/components/organisms/site-footer.component'
 import {
   TransitionGroup,
   Transition as ReactTransition,
-} from "react-transition-group"
-import styles from "./layout.module.scss"
+} from 'react-transition-group'
+import styles from './layout.module.scss'
 
 const timeout = 500
 const getTransitionStyles = {
@@ -83,7 +83,7 @@ const Layout = ({ location, children, isPageType }) => {
                   <div
                     style={
                       /* Product以外で適用 */
-                      isPageType === "Product"
+                      isPageType === 'Product'
                         ? {}
                         : { ...getTransitionStyles.moveStyle[status] }
                     }

@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Metadata from "@/components/atoms/Metadata"
-import Layout from "@/templates/layout.template"
-import Template from "@/templates/product/product-single.template"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Metadata from '@/components/atoms/Metadata'
+import Layout from '@/templates/layout.template'
+import Template from '@/templates/product/product-single.template'
 
 const ProductSingle = ({ data, pageContext, location }) => {
   const post = data.internalPosts

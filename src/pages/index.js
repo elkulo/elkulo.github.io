@@ -1,8 +1,8 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Metadata from "@/components/atoms/Metadata"
-import Layout from "@/templates/layout.template"
-import Template from "@/templates/home/home.template"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Metadata from '@/components/atoms/Metadata'
+import Layout from '@/templates/layout.template'
+import Template from '@/templates/home/home.template'
 
 const IndexPage = ({ location }) => {
   const { site } = useStaticQuery(

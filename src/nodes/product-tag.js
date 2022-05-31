@@ -1,13 +1,13 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Metadata from "@/components/atoms/Metadata"
-import Layout from "@/templates/layout.template"
-import Template from "@/templates/product/product-index.template"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Metadata from '@/components/atoms/Metadata'
+import Layout from '@/templates/layout.template'
+import Template from '@/templates/product/product-index.template'
 
 const ProductTagIndex = ({ data, location }) => {
-  let pageTitle = decodeURI(location.pathname.split("/").slice(-1)[0])
-  if (location.pathname.slice(-1) === "/") {
-    pageTitle = decodeURI(location.pathname.split("/").slice(-2)[0])
+  let pageTitle = decodeURI(location.pathname.split('/').slice(-1)[0])
+  if (location.pathname.slice(-1) === '/') {
+    pageTitle = decodeURI(location.pathname.split('/').slice(-2)[0])
   }
 
   return (

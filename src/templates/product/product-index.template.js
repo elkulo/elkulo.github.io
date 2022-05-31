@@ -1,14 +1,14 @@
-import React, { Component } from "react"
-import { Link } from "gatsby"
-import PreviewIcon from "@mui/icons-material/Panorama"
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
+import PreviewIcon from '@mui/icons-material/Panorama'
 import {
   TransitionGroup,
   Transition as ReactTransition,
-} from "react-transition-group"
-import styles from "./product-index.module.scss"
-import Wrap from "@/components/atoms/Wrap"
-import Image from "@/components/atoms/Image"
-import Masonry from "react-masonry-component"
+} from 'react-transition-group'
+import styles from './product-index.module.scss'
+import Wrap from '@/components/atoms/Wrap'
+import Image from '@/components/atoms/Image'
+import Masonry from 'react-masonry-component'
 
 /**
  * プロダクトのテンプレート
@@ -49,7 +49,7 @@ class ProductTemplate extends Component {
 
     // NoSSR時に画面サイズで分岐
     const $wrapper =
-      typeof window === "object" ? document.querySelector("#___gatsby") : 0
+      typeof window === 'object' ? document.querySelector('#___gatsby') : 0
     let TransformCSS = `transform ${showMoveTime}ms ease-out ${
       delay * showMoveTime
     }ms, opacity ${showMoveTime}ms ease-in ${delay * showMoveTime}ms`
@@ -59,24 +59,24 @@ class ProductTemplate extends Component {
 
     // アクションタイミング
     switch (status) {
-      case "entering":
+      case 'entering':
         return {
           opacity: 0,
           transform: `translate(0, 10px)`,
         }
-      case "entered":
+      case 'entered':
         return {
           transition: TransformCSS,
           opacity: 1,
           transform: `translate(0, 0)`,
         }
-      case "exiting":
+      case 'exiting':
         return {
           transition: `opacity ${showMoveTime}ms ease-in`,
           opacity: 0,
           transform: `translate(0, 0)`,
         }
-      case "exited":
+      case 'exited':
         return {
           opacity: 0,
           transform: `translate(0, 10px)`,
@@ -137,9 +137,9 @@ class ProductTemplate extends Component {
 
     // アーカイブタイプの判別
     let current =
-      isProductType === "index" || isProductType === "tag"
+      isProductType === 'index' || isProductType === 'tag'
         ? styles.product__categories__category__current
-        : ""
+        : ''
 
     return (
       <div className={styles.product}>
@@ -155,7 +155,7 @@ class ProductTemplate extends Component {
               current =
                 pageTitle === _cat_name
                   ? styles.product__categories__category__current
-                  : ""
+                  : ''
               return (
                 <li
                   className={`${styles.product__categories__category} ${current}`}
@@ -169,7 +169,7 @@ class ProductTemplate extends Component {
             })}
           </ul>
 
-          {isProductType === "tag" && (
+          {isProductType === 'tag' && (
             <div className={styles.product__tag}>
               <h2 className={styles.product__tag__title}>{pageTitle}</h2>
             </div>
@@ -177,7 +177,7 @@ class ProductTemplate extends Component {
 
           <Masonry
             className={styles.product__entries}
-            elementType={"div"}
+            elementType={'div'}
             options={{ percentPosition: true }}
             disableImagesLoaded={true}
             updateOnEachImageLoad={true}

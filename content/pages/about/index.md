@@ -1,8 +1,8 @@
 ---
 title: ABOUT
-description: "A.Sudo"
-date: "2022.05.01"
-picture: "./cover.jpg"
+description: 'A.Sudo'
+date: '2022.05.01'
+picture: './cover.jpg'
 ---
 
 el.kulo という名で活動している A.Sudo です。

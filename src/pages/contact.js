@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Metadata from "@/components/atoms/Metadata"
-import Layout from "@/templates/layout.template"
-import Template from "@/templates/contact/contact.template"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Metadata from '@/components/atoms/Metadata'
+import Layout from '@/templates/layout.template'
+import Template from '@/templates/contact/contact.template'
 
 const ContactPage = ({ data, location }) => (
   <Layout location={location} isPageType="Contact">

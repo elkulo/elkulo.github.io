@@ -1,4 +1,4 @@
-import { UAParser } from "ua-parser-js"
+import { UAParser } from 'ua-parser-js'
 
 /**
  * タッチデバイスでhoverを無効
@@ -17,7 +17,7 @@ const ConvertHover = () => {
         for (let ri = styleSheet.cssRules.length - 1; ri >= 0; ri--) {
           if (!styleSheet.cssRules[ri].selectorText) continue
 
-          if (styleSheet.cssRules[ri].selectorText.match(":hover")) {
+          if (styleSheet.cssRules[ri].selectorText.match(':hover')) {
             styleSheet.deleteRule(ri)
           }
         }

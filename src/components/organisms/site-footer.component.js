@@ -1,17 +1,17 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import {
   NodeIcon,
   ReactIcon,
   GraphQLIcon,
   GatsbyIcon,
   GitHubIcon,
-} from "@/assets/images/image"
+} from '@/assets/images/image'
 import {
   TransitionGroup,
   Transition as ReactTransition,
-} from "react-transition-group"
-import styles from "./site-footer.module.scss"
+} from 'react-transition-group'
+import styles from './site-footer.module.scss'
 
 // アニメーション初期値
 const timeout = 750
@@ -38,7 +38,7 @@ const Footer = ({ location, position }) => {
   )
 
   let footerStyled
-  if (position === "content") {
+  if (position === 'content') {
     footerStyled = styles.content
 
     getTransitionStyles = {
@@ -118,7 +118,7 @@ const Footer = ({ location, position }) => {
                 </ul>
               </div>
               <div className={styles.info}>
-                © 2020 - {new Date().getFullYear()} {siteTitle}, Built with{" "}
+                © 2020 - {new Date().getFullYear()} {siteTitle}, Built with{' '}
                 {` `}
                 <a
                   href="https://www.gatsbyjs.org/"
@@ -127,7 +127,7 @@ const Footer = ({ location, position }) => {
                 >
                   Gatsby
                 </a>
-                {" and "}
+                {' and '}
                 <a
                   href="https://ja.reactjs.org/"
                   target="_blank"
