@@ -3,6 +3,7 @@ import { UAParser } from 'ua-parser-js'
 /**
  * タッチデバイスでhoverを無効
  *
+ * @return {void}
  */
 const ConvertHover = () => {
   const touchDevice = /\b(iOS|iPad|Android)\b/

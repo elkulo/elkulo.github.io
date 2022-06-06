@@ -5,7 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 /**
  * 作成者
  *
- * @returns Bio DOM
+ * @return {JSX.Element}
  */
 const Bio = () => {
   const data = useStaticQuery(graphql`

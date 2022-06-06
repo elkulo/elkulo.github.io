@@ -24,6 +24,7 @@ class NavigationDrawer extends Component {
   /**
    * 再マウントでリセット
    *
+   * @return {void}
    */
   componentDidMount() {
     // ページ遷移で閉じる
@@ -70,6 +71,7 @@ class NavigationDrawer extends Component {
   /**
    * DOMの生成
    *
+   * @return {JSX.Element}
    */
   render() {
     const { visibility, children } = this.props

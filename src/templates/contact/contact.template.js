@@ -8,8 +8,9 @@ import MailIcon from '@mui/icons-material/Send'
 /**
  * コンタクトのテンプレート
  *
- * @param {object} post
- * @param {object} postContent
+ * @param  {object} post
+ * @param  {object} postContent
+ * @return {JSX.Element}
  */
 const ContactTemplate = ({ post, postContent }) => {
   const { site } = useStaticQuery(

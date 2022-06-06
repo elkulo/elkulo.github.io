@@ -26,6 +26,7 @@ class Video extends Component {
   /**
    * componentDidMount
    *
+   * @return {void}
    */
   componentDidMount() {
     const { videoStatus } = this.props
@@ -40,6 +41,7 @@ class Video extends Component {
    * componentDidUpdate
    *
    * @param {object} prevProps
+   * @return {void}
    */
   componentDidUpdate(prevProps) {
     // スクロールが進んだ場合
@@ -67,6 +69,7 @@ class Video extends Component {
   /**
    * 動画の再生
    *
+   * @return {void}
    */
   play() {
     this.videoRef.current && this.videoRef.current.play()
@@ -75,6 +78,7 @@ class Video extends Component {
   /**
    * 動画の停止
    *
+   * @return {void}
    */
   pause() {
     this.videoRef.current && this.videoRef.current.pause()
@@ -83,6 +87,7 @@ class Video extends Component {
   /**
    * レンダリング
    *
+   * @return {JSX.Element}
    */
   render() {
     const { src, thumbnail, alt } = this.state

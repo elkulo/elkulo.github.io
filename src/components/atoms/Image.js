@@ -7,6 +7,7 @@ import { StaticQuery, graphql } from 'gatsby'
  *
  * @param {string} src 画像のURL
  * @param {string} alt 画像の説明
+ * @return {JSX.Element}
  */
 const Image = ({ src, alt = '' }) => (
   <StaticQuery

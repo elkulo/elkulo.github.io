@@ -49,8 +49,10 @@ const getTransitionStyles = {
 /**
  * レイアウト
  *
- * @param {*} { location, children, isPageType }
- * @returns ReactDOM
+ * @param  {object} location
+ * @param  {object} children
+ * @param  {string} isPageType
+ * @return {JSX.Element}
  */
 const Layout = ({ location, children, isPageType }) => {
   // CSSクラスの付与

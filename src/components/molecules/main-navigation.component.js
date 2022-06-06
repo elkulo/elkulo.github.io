@@ -37,6 +37,7 @@ const naviList = [
 /**
  * ナビゲーション
  *
+ * @return {JSX.Element}
  */
 export default function MainNavigation() {
   return (

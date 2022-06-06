@@ -10,8 +10,9 @@ import Wrap from '@/components/atoms/Wrap'
 /**
  * ヘッダー
  *
- * @param {*} { location, position }
- * @returns Header DOM
+ * @param  {*} location
+ * @param  {*} position
+ * @return {JSX.Element}
  */
 const Header = ({ location = window.location, position }) => {
   const { site } = useStaticQuery(

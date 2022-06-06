@@ -42,6 +42,7 @@ class ProductSingleTemplate extends Component {
   /**
    * レンダリング
    *
+   * @return {JSX.Element}
    */
   render() {
     const { post, previous, next, feature } = this.state

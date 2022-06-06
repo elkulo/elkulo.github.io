@@ -14,8 +14,9 @@ import MediaQuery from 'react-responsive'
 /**
  * ホームのテンプレート
  *
- * @param {object} date
- * @param {object} location
+ * @param  {object} date
+ * @param  {object} location
+ * @return {JSX.Element}
  */
 const HomeTemplate = ({ date, location }) => {
   const siteTitle = date.siteMetadata.title

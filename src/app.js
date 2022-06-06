@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
-import { NoSsr, Backdrop, Typography, Box, LinearProgress } from '@mui/material'
+import { NoSsr, Backdrop } from '@mui/material'
+import Loading from '@/components/molecules/loading.compornent'
 
 // ロードスタイル
 const StyledBackdrop = styled(Backdrop)`
@@ -17,34 +18,10 @@ const transition = {
 }
 
 /**
- * ローリング
- *
- * @param  {*} props
- * @return {HTMLElement}
- */
-const Loading = props => {
-  return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      width="100%"
-    >
-      <Box width="100%" maxWidth={160} ml={1}>
-        <LinearProgress variant="determinate" {...props} />
-      </Box>
-      <Box minWidth={40} textAlign="right" mr={1}>
-        <Typography variant="body2">{`${Math.round(props.value)}%`}</Typography>
-      </Box>
-    </Box>
-  )
-}
-
-/**
  * App
  *
  * @param  {*} props.children
- * @return {HTMLElement}
+ * @return {JSX.Element}
  */
 const App = ({ children }) => {
   // フェードの状態

@@ -26,6 +26,7 @@ class AboutTamplate extends Component {
   /**
    * レンダリング
    *
+   * @return {JSX.Element}
    */
   render() {
     const { post, postContent } = this.state

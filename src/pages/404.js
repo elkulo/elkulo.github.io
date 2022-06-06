@@ -50,8 +50,8 @@ const Styled = {
 /**
  * 404 NOT FOUND.
  *
- * @param {*} { data }
- * @returns DOM
+ * @param  {object} data
+ * @return {JSX.Element}
  */
 const NotFoundPage = ({ data }) => {
   const pageTitle = '404 NOT FOUND'

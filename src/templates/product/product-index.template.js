@@ -122,6 +122,7 @@ class ProductTemplate extends Component {
   /**
    * レンダリング
    *
+   * @return {JSX.Element}
    */
   render() {
     const {

@@ -6,8 +6,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 /**
  *　メタタイトルの設定
  *
- * @param {*} { description, lang, meta, title }
- * @returns react-helmet
+ * @param  {*} description
+ * @param  {*} lang
+ * @param  {*} meta
+ * @param  {*} title
+ * @return {JSX.Element}
  */
 const Metadata = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
