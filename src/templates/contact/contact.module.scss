@@ -2,7 +2,11 @@
 @use "@/styles/mixins/mixins" as mixin;
 
 .container {
-  margin: (variable.$size__spacing-unit * 3) 0 0;
+  margin: variable.$size__spacing-unit 0 0;
+
+  @include mixin.media(tablet) {
+    margin: (variable.$size__spacing-unit * 3) 0 0;
+  }
 }
 
 .icon {

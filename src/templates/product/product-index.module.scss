@@ -9,8 +9,12 @@
     list-style: none;
     justify-content: center;
     width: fit-content;
-    margin: (variable.$size__spacing-unit * 2) auto variable.$size__spacing-unit;
     padding: 0;
+    margin: (variable.$size__spacing-unit * 1.5) auto 0;
+
+    @include mixin.media(tablet) {
+      margin: (variable.$size__spacing-unit * 2) auto variable.$size__spacing-unit;
+    }
 
     &__category {
       margin: 0;

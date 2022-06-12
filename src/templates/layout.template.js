@@ -13,30 +13,33 @@ const motion = {
   delay: 200, // 表示までの時間.
 }
 
-const getTransitionStyles = {
-  moveStyle: {
-    // マウント開始時
+const transitionStyles = {
+  move: {
+    // マウント開始時.
     entering: {
-      transition: `transform ${motion.timeout}ms ease-out ${motion.delay}ms,
-                   opacity ${motion.timeout}ms ease-in ${motion.delay}ms`,
+      opacity: 0,
+      transform: `translate(0, 20px)`,
+    },
+    // マウント完了時 スタイルリセット.
+    entered: {
+      transition: `transform ${motion.timeout}ms ease-out,
+                   opacity ${motion.timeout}ms ease-in`,
       opacity: 1,
       transform: `translate(0, 0)`,
     },
-    // マウント完了時 スタイルリセット
-    entered: {},
-    // アンマウント開始時
+    // アンマウント開始時.
     exiting: {
       transition: `opacity ${motion.timeout}ms ease-in`,
       opacity: 0,
       transform: `translate(0, 0)`,
     },
-    // アンマウント完了時
+    // アンマウント完了時.
     exited: {
       opacity: 0,
       transform: `translate(0, 20px)`,
     },
   },
-  fadeStyle: {
+  fade: {
     entering: {
       transition: `opacity ${motion.timeout}ms ease-in`,
       opacity: 1,
@@ -75,7 +78,7 @@ const Layout = ({ location, children, isPageType }) => {
             {status => (
               <div
                 style={{
-                  ...getTransitionStyles.fadeStyle[status],
+                  ...transitionStyles.fade[status],
                 }}
               >
                 <div className={styles.site__sidebar}>
@@ -118,7 +121,7 @@ const Layout = ({ location, children, isPageType }) => {
                     /* Product以外で適用 */
                     isPageType === 'Product'
                       ? {}
-                      : { ...getTransitionStyles.moveStyle[status] }
+                      : { ...transitionStyles.move[status] }
                   }
                 >
                   <main>{children}</main>

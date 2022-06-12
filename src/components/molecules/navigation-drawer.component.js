@@ -33,16 +33,14 @@ class NavigationDrawer extends Component {
         $root.classList.add('root-drawer--visible')
         break
       case 'hidden':
-        new Promise(resolve => {
-          setTimeout(() => {
-            $root.classList.remove('root-drawer--visible')
-            $root.classList.add('root-drawer--visible--end')
-            resolve('')
-          }, 1)
+        new Promise(async resolve => {
+          await $root.classList.remove('root-drawer--visible')
+          await $root.classList.add('root-drawer--visible--end')
+          await resolve('')
         }).then(() => {
           return setTimeout(() => {
             $root.classList.remove('root-drawer--visible--end')
-          }, 1)
+          }, 200)
         })
         break
       default:

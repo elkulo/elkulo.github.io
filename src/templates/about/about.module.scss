@@ -2,7 +2,11 @@
 @use "@/styles/mixins/mixins" as mixin;
 
 .container {
-  margin: (variable.$size__spacing-unit * 3) 0 0;
+  margin: variable.$size__spacing-unit 0 0;
+
+  @include mixin.media(tablet) {
+    margin: (variable.$size__spacing-unit * 3) 0 0;
+  }
 
   &__header {
     &__title {
@@ -34,9 +38,10 @@
 }
 
 .primary {
-  margin: (variable.$size__spacing-unit * 2) auto 0;
+  margin: variable.$size__spacing-unit auto 0;
 
   @include mixin.media(desktop) {
+    margin: (variable.$size__spacing-unit * 2) auto 0;
     width: calc(100% - #{variable.$size__spacing-unit * 3});
   }
 
@@ -63,7 +68,7 @@
 
 .secondary {
   height: calc(var(--maxvh, 100vh) - #{variable.$size__spacing-unit * 4});
-  margin: (variable.$size__spacing-unit * 5) auto;
+  margin: (variable.$size__spacing-unit * 3) auto 0;
   border-radius: 5px;
   overflow: hidden;
   transform: translate(0); // Safariでoverflow:hiddenが効かない対策

@@ -50,12 +50,17 @@ class ProductTemplate extends Component {
   getTransitionStyles(status, delay) {
     const { motion } = this.state
 
-    const TransformCSS = `transform ${motion.timeout}ms ease-out ${
+    let TransformCSS = `transform ${motion.timeout}ms ease-out ${
       delay * motion.delay
-    }ms,
-                          opacity ${motion.timeout}ms ease-in ${
-      delay * motion.delay
-    }ms`
+    }ms, opacity ${motion.timeout}ms ease-in ${delay * motion.delay}ms`
+
+    // モバイルでは遅延を省略.
+    if (
+      typeof window === 'object' &&
+      document.querySelector('#___gatsby')?.clientWidth <= 600
+    ) {
+      TransformCSS = `transform ${motion.timeout}ms ease-out, opacity ${motion.timeout}ms ease-in`
+    }
 
     // アクションタイミング
     switch (status) {
