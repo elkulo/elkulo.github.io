@@ -4,6 +4,12 @@ import Metadata from '@/components/atoms/Metadata'
 import Layout from '@/templates/layout.template'
 import Template from '@/templates/home/home.template'
 
+/**
+ * HOME PAGE.
+ *
+ * @param  {{location: string}} props
+ * @return {JSX.Element}
+ */
 const IndexPage = ({ location }) => {
   const { site } = useStaticQuery(
     graphql`

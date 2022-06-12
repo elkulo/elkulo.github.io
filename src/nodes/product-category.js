@@ -4,6 +4,12 @@ import Metadata from '@/components/atoms/Metadata'
 import Layout from '@/templates/layout.template'
 import Template from '@/templates/product/product-index.template'
 
+/**
+ * PRODUCT PAGE - Category.
+ *
+ * @param  {{data: object, location: string}} props
+ * @return {JSX.Element}
+ */
 const ProductCategoryIndex = ({ data, location }) => {
   let pageTitle = decodeURI(location.pathname.split('/').slice(-1)[0])
   if (location.pathname.slice(-1) === '/') {

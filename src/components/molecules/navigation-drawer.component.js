@@ -9,19 +9,6 @@ import styles from './navigation-drawer.module.scss'
  */
 class NavigationDrawer extends Component {
   /**
-   * constructor
-   *
-   * @param {object} props
-   */
-  constructor(props) {
-    super(props)
-    this.state = {
-      rootWidth: 0,
-      timer: 0,
-    }
-  }
-
-  /**
    * 再マウントでリセット
    *
    * @return {void}
@@ -29,16 +16,6 @@ class NavigationDrawer extends Component {
   componentDidMount() {
     // ページ遷移で閉じる
     this.onDrawer('hidden')
-
-    // ウィンド幅の初期値
-    const wrapperWidth = document.querySelector('#___gatsby')
-      ? document.querySelector('#___gatsby').clientWidth
-      : this.state.rootWidth
-    if (this.state.rootWidth !== wrapperWidth) {
-      this.setState({
-        rootWidth: wrapperWidth,
-      })
-    }
   }
 
   /**
@@ -56,12 +33,17 @@ class NavigationDrawer extends Component {
         $root.classList.add('root-drawer--visible')
         break
       case 'hidden':
-        $root.classList.remove('root-drawer--visible')
-        $root.classList.add('root-drawer--visible--end')
-        setTimeout(
-          () => $root.classList.remove('root-drawer--visible--end'),
-          200
-        )
+        new Promise(resolve => {
+          setTimeout(() => {
+            $root.classList.remove('root-drawer--visible')
+            $root.classList.add('root-drawer--visible--end')
+            resolve('')
+          }, 1)
+        }).then(() => {
+          return setTimeout(() => {
+            $root.classList.remove('root-drawer--visible--end')
+          }, 1)
+        })
         break
       default:
         $root.classList.toggle('root-drawer--visible')

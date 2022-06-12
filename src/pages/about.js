@@ -4,6 +4,12 @@ import Metadata from '@/components/atoms/Metadata'
 import Layout from '@/templates/layout.template'
 import Template from '@/templates/about/about.template'
 
+/**
+ * ABOUT PAGE.
+ *
+ * @param  {{data: object, location: string}} props
+ * @return {JSX.Element}
+ */
 const AboutPage = ({ data, location }) => (
   <Layout location={location} isPageType="About">
     <Metadata title="ABOUT" />

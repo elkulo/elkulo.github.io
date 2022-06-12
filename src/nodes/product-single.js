@@ -4,6 +4,12 @@ import Metadata from '@/components/atoms/Metadata'
 import Layout from '@/templates/layout.template'
 import Template from '@/templates/product/product-single.template'
 
+/**
+ * PRODUCT PAGE - Single.
+ *
+ * @param  {{data: object, pageContext: object, location: string}} props
+ * @return {JSX.Element}
+ */
 const ProductSingle = ({ data, pageContext, location }) => {
   const post = data.internalPosts
 
