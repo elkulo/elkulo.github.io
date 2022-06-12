@@ -25,15 +25,18 @@ class ProductTemplate extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      posts: props.data.allPost.edges, // 投稿ノード
-      categories: props.data.allCategory.distinct, // カテゴリー名ノード
-      pageTitle: props.title, // ページタイトル
-      isProductType: props.isProductType, // テンプレート分岐
+      posts: props.data.allPost.edges, // 投稿ノード.
+      categories: props.data.allCategory.distinct, // カテゴリー名ノード.
+      pageTitle: props.title, // ページタイトル.
+      isProductType: props.isProductType, // テンプレート分岐.
       paged: 1, // 分割数
-      posts_per_page: 12, // 分割する投稿数
-      max_posts: props.data.allPost.edges.length, // 投稿数
-      has_more: true, // もっと見る判定
-      showMoveTime: 300, // 表示までの時間
+      posts_per_page: 12, // 分割する投稿数.
+      max_posts: props.data.allPost.edges.length, // 投稿数.
+      has_more: true, // もっと見る判定.
+      motion: {
+        timeout: 200, // モーション時間.
+        delay: 200, // 表示までの時間.
+      },
     }
     this.onMorePostsClick = this.onMorePostsClick.bind(this)
   }
@@ -45,17 +48,14 @@ class ProductTemplate extends Component {
    * @param {number}  delay
    */
   getTransitionStyles(status, delay) {
-    const { showMoveTime } = this.state
+    const { motion } = this.state
 
-    // NoSSR時に画面サイズで分岐
-    const $wrapper =
-      typeof window === 'object' ? document.querySelector('#___gatsby') : 0
-    let TransformCSS = `transform ${showMoveTime}ms ease-out ${
-      delay * showMoveTime
-    }ms, opacity ${showMoveTime}ms ease-in ${delay * showMoveTime}ms`
-    if ($wrapper && $wrapper.clientWidth <= 600) {
-      TransformCSS = `transform ${showMoveTime}ms ease-out, opacity ${showMoveTime}ms ease-in`
-    }
+    const TransformCSS = `transform ${motion.timeout}ms ease-out ${
+      delay * motion.delay
+    }ms,
+                          opacity ${motion.timeout}ms ease-in ${
+      delay * motion.delay
+    }ms`
 
     // アクションタイミング
     switch (status) {
@@ -72,7 +72,7 @@ class ProductTemplate extends Component {
         }
       case 'exiting':
         return {
-          transition: `opacity ${showMoveTime}ms ease-in`,
+          transition: `opacity ${motion.timeout}ms ease-in`,
           opacity: 0,
           transform: `translate(0, 0)`,
         }
@@ -133,7 +133,7 @@ class ProductTemplate extends Component {
       paged,
       posts_per_page,
       has_more,
-      showMoveTime,
+      motion,
     } = this.state
 
     // アーカイブタイプの判別
@@ -202,8 +202,8 @@ class ProductTemplate extends Component {
                       key={post.id}
                       appear={true}
                       timeout={{
-                        enter: showMoveTime,
-                        exit: showMoveTime,
+                        enter: motion.timeout,
+                        exit: motion.timeout,
                       }}
                     >
                       {status => (
@@ -285,8 +285,8 @@ class ProductTemplate extends Component {
                 key="more"
                 appear={true}
                 timeout={{
-                  enter: showMoveTime,
-                  exit: showMoveTime,
+                  enter: motion.timeout,
+                  exit: motion.timeout,
                 }}
               >
                 {status => (

@@ -7,9 +7,10 @@ import {
 } from 'react-transition-group'
 import styles from './layout.module.scss'
 
+// NOTE: product-index.template 以外で有効.
 const motion = {
-  timeout: 500,
-  delay: 100,
+  timeout: 500, // モーション時間.
+  delay: 200, // 表示までの時間.
 }
 
 const getTransitionStyles = {
