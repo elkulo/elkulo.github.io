@@ -34,7 +34,7 @@ class ProductTemplate extends Component {
       max_posts: props.data.allPost.edges.length, // 投稿数.
       has_more: true, // もっと見る判定.
       motion: {
-        timeout: 200, // モーション時間.
+        timeout: 300, // モーション時間.
         delay: 200, // 表示までの時間.
       },
     }
