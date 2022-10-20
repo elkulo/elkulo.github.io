@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
-import { NoSsr, Backdrop } from '@mui/material'
+import { Backdrop } from '@mui/material'
 import Loading from '@/components/molecules/loading.compornent'
 
 // ロードスタイル
@@ -24,46 +24,44 @@ const transition = {
  * @return {JSX.Element}
  */
 const App = ({ children }) => {
+  const isHome =
+    window.location.pathname === `${__PATH_PREFIX__}/` ? true : false
+
   // フェードの状態
-  const [fadeOn, setFadeOn] = useState(true)
+  const [fadeOn, setFadeOn] = useState(isHome ? true : false)
 
   // 擬似ロード画面
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(isHome ? 0 : 100)
 
   useEffect(() => {
-    if (window.location.pathname === `${__PATH_PREFIX__}/`) {
-      const timer = setInterval(() => {
-        setProgress(prevProgress => {
-          switch (prevProgress) {
-            case 100:
-              setFadeOn(() => false)
-              clearInterval(timer)
-              return 100
-            case 50:
-              return prevProgress + 1
-            default:
-              return prevProgress + 1
-          }
-        })
-      }, 20)
-      return () => {
-        clearInterval(timer)
-      }
-    } else {
-      // ホーム以外ではスキップ
-      setProgress(() => 100)
-      setFadeOn(() => false)
-      return
+    const timer = setInterval(() => {
+      setProgress(prevProgress => {
+        switch (prevProgress) {
+          case 100:
+            setFadeOn(() => false)
+            clearInterval(timer)
+            return 100
+          case 50:
+            return prevProgress + 1
+          default:
+            return prevProgress + 1
+        }
+      })
+    }, 20)
+    return () => {
+      clearInterval(timer)
     }
   }, [])
 
   return (
-    <NoSsr>
+    <>
       {children}
       <StyledBackdrop open={fadeOn} transitionDuration={transition}>
         <Loading value={progress} />
       </StyledBackdrop>
-    </NoSsr>
+    </>
   )
 }
-export default App
+//export default App
+
+export default ({ children }) => <>{children}</>

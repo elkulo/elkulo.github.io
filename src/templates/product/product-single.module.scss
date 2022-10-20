@@ -42,8 +42,16 @@
   }
 
   &__primary {
-    position: sticky;
-    padding: (variable.$size__spacing-unit * 2);
+    padding: variable.$size__spacing-unit;
+
+    @include mixin.media(mobile) {
+      padding: (variable.$size__spacing-unit * 2);
+    }
+    @include mixin.media(tablet) {
+      position: sticky;
+      top: (variable.$size__spacing-unit * -1.5);
+      left: 0;
+    }
 
     &__header {
       &__title {
@@ -55,7 +63,7 @@
           display: inline-block;
 
           svg {
-            display: inline-block;
+            display: none;
             position: absolute;
             top: 50%;
             right: 100%;
@@ -66,6 +74,9 @@
             transform: translate(0, -50%) rotate(60deg);
             @include mixin.link-transition(opacity);
 
+            @include mixin.media(mobile) {
+              display: inline-block;
+            }
             @include mixin.media(tablet) {
               opacity: 0;
             }
@@ -213,10 +224,18 @@
   }
 
   &__secondary {
-    padding: (variable.$size__spacing-unit * 2);
+    box-sizing: border-box;
+    padding: (variable.$size__spacing-unit * 0.5);
 
+    @include mixin.media(mobile) {
+      padding: (variable.$size__spacing-unit * 2);
+    }
     @include mixin.media(tablet) {
+      padding: (variable.$size__spacing-unit * 0.5);
       height: 100%;
+    }
+    @include mixin.media(desktop) {
+      padding: (variable.$size__spacing-unit * 2);
     }
 
     &__feature {
