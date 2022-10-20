@@ -62,4 +62,6 @@ const App = ({ children }) => {
     </>
   )
 }
-export default App
+//export default App
+
+export default ({ children }) => <>{children}</>
