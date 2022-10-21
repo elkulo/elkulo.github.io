@@ -18,6 +18,8 @@ class Video extends Component {
       src: props.src,
       thumbnail: props.thumbnail,
       alt: props.alt,
+      width: props.width,
+      height: props.height,
     }
     this.videoRef = createRef() // videoID
     this.videoTimerID = 0 // タイマーID
@@ -90,7 +92,7 @@ class Video extends Component {
    * @return {JSX.Element}
    */
   render() {
-    const { src, thumbnail, alt } = this.state
+    const { src, thumbnail, alt, width, height } = this.state
 
     return (
       <video
@@ -103,6 +105,8 @@ class Video extends Component {
         poster={thumbnail}
         ref={this.videoRef}
         preload="metadata"
+        width={width}
+        height={height}
       >
         <source src={src} type="video/mp4" />
         <img src={thumbnail} alt={alt} />

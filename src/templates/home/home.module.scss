@@ -76,7 +76,12 @@
   }
 
   &__branding {
+    display: none;
     margin-top: (variable.$size__spacing-unit * 8);
+
+    @include mixin.media(tablet) {
+      display: block;
+    }
 
     &__title {
       text-align: center;

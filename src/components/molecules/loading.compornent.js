@@ -29,24 +29,25 @@ const Loading = () => {
   const [loadedState, loadedDispatch] = useContext(LoadedContext)
 
   // フェードの状態
-  const [fadeOn, setFadeOn] = useState(loadedState?.is ? false : true)
+  const [fadeOn, setFadeOn] = useState(true)
 
   // 擬似ロード画面
-  const [progress, setProgress] = useState(loadedState?.is ? 100 : 0)
+  const [progress, setProgress] = useState(loadedState?.is ? 50 : 0)
 
   // ロード処理.
   useEffect(() => {
     let timer = 0
 
     // ロード済み判定.
-    if (loadedState?.is) {
+    if (!loadedState?.is) {
+      loadedDispatch({ type: 'end' })
+    } else {
+      /* NOTE: 2回目からはロードをスキップする場合.
       return () => {
         clearInterval(timer)
       }
+      */
     }
-
-    // 未ロードの場合.
-    loadedDispatch({ type: 'end' })
 
     timer = setInterval(() => {
       setProgress(prevProgress => {

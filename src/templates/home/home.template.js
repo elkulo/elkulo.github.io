@@ -9,7 +9,6 @@ import {
   landscapeJPG as thumbnail,
 } from '@/assets/videos/video'
 import styles from './home.module.scss'
-import MediaQuery from 'react-responsive'
 
 /**
  * ホームのテンプレート
@@ -32,13 +31,11 @@ const HomeTemplate = ({ date, location }) => {
                   <OpenIcon />
                 </NavigationDrawer>
               </div>
-              <MediaQuery query="(min-width: 768px)">
-                <div className={styles.header__branding}>
-                  <div className={styles.header__branding__title}>
-                    {siteTitle}
-                  </div>
+              <div className={styles.header__branding}>
+                <div className={styles.header__branding__title}>
+                  {siteTitle}
                 </div>
-              </MediaQuery>
+              </div>
               <nav className={styles.header__navi}>
                 <ul className={styles.header__navi__list}>
                   <li className={styles.header__navi__list__item}>

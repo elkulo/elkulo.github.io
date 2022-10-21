@@ -65,20 +65,23 @@
   }
 
   &__tag {
-    margin: (variable.$size__spacing-unit * 2) auto (variable.$size__spacing-unit * -2);
+    margin: (variable.$size__spacing-unit * 1.5) auto (variable.$size__spacing-unit * -1.5);
+    text-align: center;
 
     @include mixin.media(tablet) {
-      margin: (variable.$size__spacing-unit * 1) auto (variable.$size__spacing-unit * -2);
+      margin: 0 auto (variable.$size__spacing-unit * -1.5);
+      text-align: left;
     }
 
     &__title {
       display: inline-block;
-      padding: 0.25rem 0.25rem 0;
+      padding: 0 0.25rem 0.5rem;
       margin: 0;
-      //font-family: variable.$font__body;
-      font-size: variable.$font__size-md;
+      font-family: variable.$font__body;
+      font-size: variable.$font__size-sm;
       font-weight: 300;
-      color: variable.$color__text-light;
+      //color: variable.$color__text-light;
+      border-bottom: solid 1px currentColor;
 
       &::before {
         display: inline-block;
@@ -222,7 +225,7 @@
           a::before {
             display: inline-block;
             content: "#";
-            margin-right: 0.02em;
+            margin-right: 0.2em;
           }
         }
       }
@@ -230,12 +233,12 @@
   }
 
   &__more {
-    margin: (variable.$size__spacing-unit * 2) auto 0;
+    margin: (variable.$size__spacing-unit * 3) auto 0;
     text-align: center;
 
     &__button {
       position: relative;
-      max-width: 240px;
+      max-width: 600px;
       width: 100%;
       border-radius: 20px;
 
@@ -247,10 +250,7 @@
         transform: translate(-50%, -50%);
         font-size: 1.25em;
         font-weight: 900;
-      }
-
-      @include mixin.media(tablet) {
-        max-width: 360px;
+        font-family: variable.$font__heading;
       }
     }
   }
