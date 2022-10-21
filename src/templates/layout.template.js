@@ -1,4 +1,5 @@
 import React from 'react'
+import Loading from '@/components/molecules/loading.compornent'
 import Header from '@/components/organisms/site-header.component'
 import Footer from '@/components/organisms/site-footer.component'
 import {
@@ -62,10 +63,13 @@ const transitionStyles = {
  * @return {JSX.Element}
  */
 const Layout = ({ location, children, isPageType }) => {
+  const isHome = isPageType === 'Home' ? true : false
+
   // Homeの場合.
-  if (isPageType === 'Home') {
+  if (isHome) {
     return (
       <div className={`${styles.site} ${styles.pageHome}`}>
+        <Loading />
         <TransitionGroup>
           <ReactTransition
             key={location.pathname}
