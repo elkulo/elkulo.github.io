@@ -19,7 +19,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	@include mixin.button-transition;
-	background: linear-gradient(to right, variable.$color__background-button, lighten(variable.$color__background-button, 22.5%));
+	background: linear-gradient(to right, variable.$color__background-button 25%, variable.$color__background-button-hover);
 	background-size: 200% 100%;
 	background-position: 0 0;
 	border-radius: 5px;
@@ -32,7 +32,7 @@ input[type="submit"] {
 	text-decoration: none;
 	vertical-align: bottom;
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset, 0 0 0 3px rgba(0, 0, 0, 0.1) inset, 0 0 0 2px rgba(0, 0, 0, 0.08);
-	text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+	text-shadow: 0 0 1px rgba(0, 0, 0, 1);
 
 	&:hover {
 		//background: variable.$color__background-button-hover;

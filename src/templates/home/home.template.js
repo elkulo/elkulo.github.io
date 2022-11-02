@@ -74,7 +74,9 @@ const HomeTemplate = ({ date, location }) => {
                 </h1>
               </div>
               <div className={styles.content__eyecatch}>
-                <h2 className={styles.content__eyecatch__title}>Portfolio</h2>
+                <h2 className={styles.content__eyecatch__title}>
+                  Hello, World!
+                </h2>
                 <Video src={MP4} thumbnail={thumbnail} alt="" />
               </div>
             </section>
