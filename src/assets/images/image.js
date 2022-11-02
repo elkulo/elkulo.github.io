@@ -1,6 +1,8 @@
 /**
  * 画像を纏めて読み込む
  */
+export { default as LogoBlack } from './logo/logo-black.png'
+export { default as LogoWhite } from './logo/logo-white.png'
 export { default as NodeIcon } from './icons/icon-node.png'
 export { default as ReactIcon } from './icons/icon-react.png'
 export { default as GraphQLIcon } from './icons/icon-graphql.png'

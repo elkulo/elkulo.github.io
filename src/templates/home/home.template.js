@@ -9,6 +9,7 @@ import {
   landscapeJPG as thumbnail,
 } from '@/assets/videos/video'
 import styles from './home.module.scss'
+import { LogoWhite } from '@/assets/images/image'
 
 /**
  * ホームのテンプレート
@@ -33,7 +34,7 @@ const HomeTemplate = ({ date, location }) => {
               </div>
               <div className={styles.header__branding}>
                 <div className={styles.header__branding__title}>
-                  {siteTitle}
+                  <img src={LogoWhite} alt={siteTitle} />
                 </div>
               </div>
               <nav className={styles.header__navi}>
@@ -68,7 +69,9 @@ const HomeTemplate = ({ date, location }) => {
                 </NavigationDrawer>
               </div>
               <div className={styles.content__branding}>
-                <h1 className={styles.content__branding__title}>{siteTitle}</h1>
+                <h1 className={styles.content__branding__title}>
+                  <img src={LogoWhite} alt={siteTitle} />
+                </h1>
               </div>
               <div className={styles.content__eyecatch}>
                 <h2 className={styles.content__eyecatch__title}>Portfolio</h2>

@@ -37,6 +37,11 @@
     -moz-osx-font-smoothing: grayscale;
     //@include mixin.clear-link();
     @include mixin.user-select(none);
+
+    img {
+      max-height: 30px;
+      width: auto;
+    }
   }
 
   // brandingSidebar

@@ -6,6 +6,7 @@ import OpenIcon from '@mui/icons-material/Notes'
 import CloseIcon from '@mui/icons-material/Close'
 import styles from './site-header.module.scss'
 import Wrap from '@/components/atoms/Wrap'
+import { LogoBlack, LogoWhite } from '@/assets/images/image'
 
 /**
  * ヘッダー
@@ -32,17 +33,37 @@ const Header = ({ location = window.location, position }) => {
 
   const rootPath = `${__PATH_PREFIX__}/`
 
-  let branding
+  let Brand = {
+    main: (
+      <p className={styles.branding__title}>
+        <Link to={`/`}>
+          <img src={LogoBlack} alt={siteTitle} />
+        </Link>
+      </p>
+    ),
+    sidebar: (
+      <p className={styles.branding__title}>
+        <Link to={`/`}>
+          <img src={LogoWhite} alt={siteTitle} />
+        </Link>
+      </p>
+    ),
+  }
 
   // ルートかつサイドバーポジションのみ<h1>
   if (location.pathname === rootPath && position === 'sidebar') {
-    branding = <h1 className={styles.branding__title}>{siteTitle}</h1>
-  } else {
-    branding = (
-      <p className={styles.branding__title}>
-        <Link to={`/`}>{siteTitle}</Link>
-      </p>
-    )
+    Brand = {
+      main: (
+        <h1 className={styles.branding__title}>
+          <img src={LogoWhite} alt={siteTitle} />
+        </h1>
+      ),
+      sidebar: (
+        <p className={styles.branding__title}>
+          <img src={LogoWhite} alt={siteTitle} />
+        </p>
+      ),
+    }
   }
 
   return (
@@ -52,7 +73,7 @@ const Header = ({ location = window.location, position }) => {
           <div className={styles.container}>
             <div className={styles.container__primary}>
               <div className={`${styles.branding} ${styles.brandingSidebar}`}>
-                {branding}
+                {Brand.sidebar}
               </div>
             </div>
             <div className={styles.container__secondary}>
@@ -69,7 +90,7 @@ const Header = ({ location = window.location, position }) => {
           <div className={styles.container}>
             <div className={styles.container__primary}>
               <div className={`${styles.branding} ${styles.brandingContent}`}>
-                {branding}
+                {Brand.main}
               </div>
             </div>
             <div className={styles.container__secondary}>

@@ -93,6 +93,11 @@
         font-size: variable.$font__size-xxxl;
       }
     }
+
+    img {
+      max-height: 45px;
+      width: auto;
+    }
   }
 
   &__navi {
@@ -211,6 +216,11 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       @include mixin.user-select(none);
+    }
+
+    img {
+      max-height: 30px;
+      width: auto;
     }
   }
 
