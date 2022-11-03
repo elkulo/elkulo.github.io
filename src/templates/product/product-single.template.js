@@ -40,7 +40,6 @@ class ProductSingleTemplate extends Component {
   handleClick(id) {
     const { feature, isLoad } = this.state
     if (feature !== this.state.post.attachment[id] && !isLoad) {
-      console.log(feature)
       this.setState({
         feature: this.state.post.attachment[id],
         isLoad: true,
