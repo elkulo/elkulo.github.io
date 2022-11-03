@@ -1,5 +1,6 @@
 import React from 'react'
 import Loading from '@/components/molecules/loading.compornent'
+import Loading2 from '@/components/molecules/loading2.compornent'
 import Header from '@/components/organisms/site-header.component'
 import Footer from '@/components/organisms/site-footer.component'
 import {
@@ -104,7 +105,7 @@ const Layout = ({ location, children, isPageType }) => {
   // Home以外の場合.
   return (
     <div className={styles.site}>
-      <Loading transparent={true} />
+      <Loading2 />
       <div className={styles.site__sidebar}>
         <Header location={location} position="sidebar" />
       </div>

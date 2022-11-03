@@ -35,13 +35,14 @@ class ProductSingleTemplate extends Component {
   /**
    * 画像の差し替え
    *
-   * @param {number} i
+   * @param {number} id
    */
-  handleClick(i) {
-    const { isLoad } = this.state
-    if (!isLoad) {
+  handleClick(id) {
+    const { feature, isLoad } = this.state
+    if (feature !== this.state.post.attachment[id] && !isLoad) {
+      console.log(feature)
       this.setState({
-        feature: this.state.post.attachment[i],
+        feature: this.state.post.attachment[id],
         isLoad: true,
       })
       const timer = setTimeout(() => {

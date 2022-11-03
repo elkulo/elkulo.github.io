@@ -1,7 +1,24 @@
 import React from 'react'
-import Box from '@mui/material/Box'
-import LinearProgress from '@mui/material/LinearProgress'
+import styled from '@emotion/styled'
+import { Box, LinearProgress } from '@mui/material'
 
+const StyledBox = styled(Box)`
+  width: calc(100% - 12px);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  z-index: 100;
+  border-radius: 3px;
+  overflow: hidden;
+`
+const StyledLinearProgress = styled(LinearProgress)`
+  height: 3px;
+  background: #b7d4d0;
+
+  .MuiLinearProgress-bar {
+    background: #33b2a6;
+  }
+`
 /**
  * LinearIndeterminate
  *
@@ -9,16 +26,9 @@ import LinearProgress from '@mui/material/LinearProgress'
  */
 const LinearIndeterminate = () => {
   return (
-    <Box
-      sx={{
-        width: 'calc(100% - 12px)',
-        position: 'absolute',
-        top: '2px',
-        left: '6px',
-      }}
-    >
-      <LinearProgress color="secondary" />
-    </Box>
+    <StyledBox>
+      <StyledLinearProgress />
+    </StyledBox>
   )
 }
 export default LinearIndeterminate
