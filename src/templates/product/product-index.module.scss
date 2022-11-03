@@ -26,7 +26,7 @@
         padding: (variable.$size__spacing-unit * 0.5) variable.$size__spacing-unit;
         font-family: variable.$font__heading;
         font-size: variable.$font__size-sm;
-        font-weight: 600;
+        font-weight: 500;
         color: variable.$color__text-light;
         box-shadow: none;
         transition: color 180ms ease;
@@ -56,9 +56,13 @@
       }
 
       &__current {
-        a::after {
-          background: variable.$color__link;
-          box-shadow: 0 0 0 2px #fff, 0 0 0 3px variable.$color__link;
+        a {
+          color: variable.$color__link;
+
+          &::after {
+            background: variable.$color__link;
+            box-shadow: 0 0 0 2px #fff, 0 0 0 3px variable.$color__link;
+          }
         }
       }
     }
@@ -181,16 +185,19 @@
               transform: translate(-50%, -50%);
               text-align: center;
               font-family: variable.$font__code;
-              color: #ddd;
-              padding: 2em 1em;
-              border-radius: 3px;
-              border: solid 1px currentColor;
+              font-size: variable.$font__size-lg;
+              font-weight: 300;
+              color: #fff;
+              background: rgba(255, 255, 255, 0.15);
+              line-height: 1.4;
+              padding: 0.25rem 1rem;
+              white-space: nowrap;
 
               svg {
                 display: inline-block;
                 vertical-align: middle;
                 font-size: 2rem;
-                margin-right: 0.5rem;
+                margin: 0 0.5rem 0.325rem 0;
               }
             }
           }
@@ -204,6 +211,7 @@
           margin: 0;
           font-family: variable.$font__heading;
           font-size: variable.$font__size-lg;
+          font-weight: 500;
         }
 
         &__date {

@@ -104,6 +104,7 @@ const Layout = ({ location, children, isPageType }) => {
   // Home以外の場合.
   return (
     <div className={styles.site}>
+      <Loading transparent={true} />
       <div className={styles.site__sidebar}>
         <Header location={location} position="sidebar" />
       </div>

@@ -39,7 +39,7 @@
     &__title {
       color: #fff;
       font-size: 2.5rem;
-      text-shadow: 0 0 3px #000;
+      font-weight: 500;
 
       @include mixin.media(tablet) {
         font-size: 3rem;
@@ -50,13 +50,13 @@
   &__content {
     box-sizing: border-box;
     position: absolute;
-    left: 1rem;
+    left: 0;
     bottom: 0;
-    width: calc(100% - 2rem);
+    width: 100%;
     padding: 1rem 0 1.75rem;
     text-align: center;
     color: #fff;
-    background: linear-gradient(to right, rgba(1, 87, 155, 0), rgba(51, 177, 164, 0.33) 50%, rgba(1, 87, 155, 0));
+    background: linear-gradient(to right, rgba(1, 87, 155, 0) 5%, rgba(51, 177, 164, 0.33) 50%, rgba(1, 87, 155, 0) 95%);
 
     :global(.button__icon) {
       margin: 0 0.25em -0.125em 0;
@@ -69,7 +69,6 @@
       margin: 0 0 0.5rem;
       font-size: 1.125rem;
       font-weight: 500;
-      text-shadow: 0 0 1px #000;
     }
 
     :global(.button) {
