@@ -2,7 +2,7 @@
 @use "@/styles/mixins/mixins" as mixin;
 
 .avatar {
-  margin: (variable.$size__spacing-unit * 5) auto 0;
+  margin: (variable.$size__spacing-unit * 3) auto 0;
 
   &__item {
     position: relative;
@@ -25,7 +25,7 @@
 }
 
 .list {
-  margin: (variable.$size__spacing-unit * 1.5) auto 0;
+  margin: (variable.$size__spacing-unit * 2) auto 0;
   padding: 0;
 
   &__item {
