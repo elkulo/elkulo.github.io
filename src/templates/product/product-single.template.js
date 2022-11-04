@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import MediaQuery from 'react-responsive'
 import LinkIcon from '@mui/icons-material/InsertLink'
 import styles from './product-single.module.scss'
 import Wrap from '@/components/atoms/Wrap'
@@ -136,31 +135,31 @@ class ProductSingleTemplate extends Component {
                     dangerouslySetInnerHTML={{ __html: post.content }}
                   />
 
-                  <MediaQuery query="(min-width: 768px)">
-                    {1 < post.attachment.length && (
-                      <div className={styles.product__primary__attachments}>
-                        {post.attachment.map((_image_src, _image_index) => {
-                          return (
-                            <div
+                  {1 < post.attachment.length && (
+                    <div
+                      className={`${styles.product__primary__attachments} ${styles.product__primary__attachmentsLarge}`}
+                    >
+                      {post.attachment.map((_image_src, _image_index) => {
+                        return (
+                          <div
+                            className={
+                              styles.product__primary__attachments__attachment
+                            }
+                            key={_image_index}
+                          >
+                            <button
                               className={
-                                styles.product__primary__attachments__attachment
+                                styles.product__primary__attachments__attachment__link
                               }
-                              key={_image_index}
+                              onClick={() => this.handleClick(_image_index)}
                             >
-                              <button
-                                className={
-                                  styles.product__primary__attachments__attachment__link
-                                }
-                                onClick={() => this.handleClick(_image_index)}
-                              >
-                                <Image src={_image_src} />
-                              </button>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    )}
-                  </MediaQuery>
+                              <Image src={_image_src} />
+                            </button>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  )}
 
                   <div className={styles.product__primary__tags}>
                     {post.tag.map((_tag_name, _tag_index) => {
@@ -206,31 +205,31 @@ class ProductSingleTemplate extends Component {
                     <Bio />
                   </footer>
 
-                  <MediaQuery query="(max-width: 767px)">
-                    {1 < post.attachment.length && (
-                      <div className={styles.product__primary__attachments}>
-                        {post.attachment.map((_image_src, _image_index) => {
-                          return (
-                            <div
+                  {1 < post.attachment.length && (
+                    <div
+                      className={`${styles.product__primary__attachments} ${styles.product__primary__attachmentsSmall}`}
+                    >
+                      {post.attachment.map((_image_src, _image_index) => {
+                        return (
+                          <div
+                            className={
+                              styles.product__primary__attachments__attachment
+                            }
+                            key={_image_index}
+                          >
+                            <button
                               className={
-                                styles.product__primary__attachments__attachment
+                                styles.product__primary__attachments__attachment__link
                               }
-                              key={_image_index}
+                              onClick={() => this.handleClick(_image_index)}
                             >
-                              <button
-                                className={
-                                  styles.product__primary__attachments__attachment__link
-                                }
-                                onClick={() => this.handleClick(_image_index)}
-                              >
-                                <Image src={_image_src} />
-                              </button>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    )}
-                  </MediaQuery>
+                              <Image src={_image_src} />
+                            </button>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  )}
                 </div>
               </div>
               <div className={styles.product__entry__container__secondary}>

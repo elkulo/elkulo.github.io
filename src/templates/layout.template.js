@@ -1,6 +1,6 @@
 import React from 'react'
-import Loading from '@/components/molecules/loading.compornent'
-import Loading2 from '@/components/molecules/loading2.compornent'
+import HomeLoader from '@/components/molecules/home-loader.compornent'
+import PageLoader from '@/components/molecules/page-loader.compornent'
 import Header from '@/components/organisms/site-header.component'
 import Footer from '@/components/organisms/site-footer.component'
 import {
@@ -70,7 +70,7 @@ const Layout = ({ location, children, isPageType }) => {
   if (isHome) {
     return (
       <div className={`${styles.site} ${styles.pageHome}`}>
-        <Loading />
+        <HomeLoader />
         <TransitionGroup>
           <ReactTransition
             key={location.pathname}
@@ -105,7 +105,7 @@ const Layout = ({ location, children, isPageType }) => {
   // Home以外の場合.
   return (
     <div className={styles.site}>
-      <Loading2 />
+      <PageLoader />
       <div className={styles.site__sidebar}>
         <Header location={location} position="sidebar" />
       </div>
