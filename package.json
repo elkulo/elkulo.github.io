@@ -41,7 +41,7 @@
     "react-dom": "^18.2.0",
     "react-masonry-component": "^6.3.0",
     "react-transition-group": "^4.4.5",
-    "sass": "^1.56.0",
+    "sass": "^1.56.1",
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13",
     "ua-parser-js": "^1.0.32"
@@ -67,7 +67,7 @@
     "clean:package": "rm -rf node_modules package-lock.json && npm install --legacy-peer-deps",
     "start": "run-p serve:* & npm run develop",
     "serve:api": "json-server --watch __serve__/api/database.json --port 3000",
-    "serve:storage": "http-server __serve__/storage -a 127.0.0.1 --port 8080",
+    "serve:storage": "http-server __serve__/storage -a localhost --port 8080",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
