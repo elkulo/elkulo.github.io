@@ -15,10 +15,10 @@ module.exports = {
     siteUrl: `https://elkulo.github.io/`,
     social: {
       github: `elkulo`,
-      twitter: `twitter`,
     },
     formUrl: `https://elkulo.me/forms/elkulo-io/post`,
     robots: `noindex,nofollow`,
+    lang: 'ja',
   },
   plugins: [
     {
@@ -33,7 +33,7 @@ module.exports = {
         icon: `src/assets/application-icons/favicon.png`,
       },
     },
-    `gatsby-plugin-react-helmet`,
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
@@ -128,9 +128,7 @@ module.exports = {
             },
             query: `
               {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
+                allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
                   nodes {
                     excerpt
                     html
@@ -146,7 +144,7 @@ module.exports = {
               }
             `,
             output: `/rss.xml`,
-            title: `el.kulo RSS Feed`,
+            title: `el.kulo - RSS Feed`,
           },
         ],
       },

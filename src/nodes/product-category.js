@@ -18,7 +18,6 @@ const ProductCategoryIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={pageTitle} isPageType="Product">
-      <Metadata title={pageTitle} />
       <Template data={data} title={pageTitle} isProductType="category" />
     </Layout>
   )
@@ -33,11 +32,11 @@ export const pageQuery = graphql`
       }
     }
     allCategory: allInternalPosts {
-      distinct(field: category)
+      distinct(field: { category: SELECT })
     }
     allPost: allInternalPosts(
       filter: { category: { eq: $slug } }
-      sort: { order: DESC, fields: fields___post_id }
+      sort: { fields: { post_id: DESC } }
     ) {
       edges {
         node {
@@ -54,3 +53,11 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = ({ location }) => {
+  let pageTitle = decodeURI(location.pathname.split('/').slice(-1)[0])
+  if (location.pathname.slice(-1) === '/') {
+    pageTitle = decodeURI(location.pathname.split('/').slice(-2)[0])
+  }
+  return <Metadata title={pageTitle} />
+}

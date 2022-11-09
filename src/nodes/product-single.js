@@ -11,11 +11,10 @@ import Template from '@/templates/product/product-single.template'
  * @return {JSX.Element}
  */
 const ProductSingle = ({ data, pageContext, location }) => {
-  const post = data.internalPosts
+  const { title: pageTitle } = data.internalPosts
 
   return (
-    <Layout location={location} title={post.title} isPageType="ProductSingle">
-      <Metadata title={post.title} description={post.content} />
+    <Layout location={location} title={pageTitle} isPageType="ProductSingle">
       <Template data={data} pageContext={pageContext} />
     </Layout>
   )
@@ -40,3 +39,8 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = ({ data }) => {
+  const post = data.internalPosts
+  return <Metadata title={post.title} description={post.content} />
+}

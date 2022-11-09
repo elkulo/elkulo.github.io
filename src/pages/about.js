@@ -12,7 +12,6 @@ import Template from '@/templates/about/about.template'
  */
 const AboutPage = ({ data, location }) => (
   <Layout location={location} isPageType="About">
-    <Metadata title="ABOUT" />
     <Template
       post={data.markdownRemark}
       postContent={data.markdownRemark.frontmatter}
@@ -39,3 +38,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = () => <Metadata title="ABOUT" />

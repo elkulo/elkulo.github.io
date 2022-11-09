@@ -26,9 +26,10 @@ const IndexPage = ({ location }) => {
 
   return (
     <Layout location={location} isPageType="Home">
-      <Metadata />
       <Template date={site} location={location} />
     </Layout>
   )
 }
 export default IndexPage
+
+export const Head = () => <Metadata />
