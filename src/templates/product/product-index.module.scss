@@ -153,11 +153,9 @@
           @include mixin.link-transition(border);
   
           &:hover {
-            border: solid 6px darken(variable.$color__link, 2%);
-
             img {
               filter: blur(5px);
-            }    
+            }
 
             > * {
               opacity: 0.8;
@@ -173,7 +171,7 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            background: variable.$color__link;
+            background: #000;
             opacity: 0;
             @include mixin.link-transition(opacity);
 
@@ -189,8 +187,8 @@
               font-weight: 300;
               color: #fff;
               background: rgba(255, 255, 255, 0.15);
-              line-height: 1.4;
-              padding: 0.25rem 1rem;
+              border-radius: 2px;
+              padding: 0.25rem 1.5rem;
               white-space: nowrap;
 
               svg {
