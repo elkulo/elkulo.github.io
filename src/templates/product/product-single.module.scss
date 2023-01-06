@@ -204,7 +204,7 @@
         box-sizing: border-box;
         flex-basis: calc(33.33% - #{variable.$size__spacing-unit * 0.5});
         max-width: calc(33.33% - #{variable.$size__spacing-unit * 0.5});
-        padding-bottom: calc(33.33% / 1.5 - #{variable.$size__spacing-unit * 0.5});
+        padding-bottom: calc(33.33% / 1.5 - #{variable.$size__spacing-unit * 0.5}); // アスペクト比.
         margin: 0 (variable.$size__spacing-unit * 0.25) (variable.$size__spacing-unit * 0.25);
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
         border: solid 2px #fafafa;
@@ -223,26 +223,6 @@
             object-fit: cover;
             width: 100%;
             height: 100%;
-          }
-
-          &::after {
-            box-sizing: border-box;
-            position: absolute;
-            display: block;
-            content: "";
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 100;
-            background: #000;
-            opacity: 0;
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5) inset;
-            @include mixin.link-transition(opacity);
-          }
-
-          &:hover::after {
-            opacity: 0.5;
           }
         }
       }

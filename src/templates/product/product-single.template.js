@@ -26,7 +26,8 @@ class ProductSingleTemplate extends Component {
       previous: props.pageContext.previous,
       next: props.pageContext.next,
       feature: props.data.internalPosts.attachment[0],
-      isLoad: false,
+      featureActiveID: 0,
+      isFeatureLoad: false,
     }
     this.handleClick = this.handleClick.bind(this)
   }
@@ -36,17 +37,16 @@ class ProductSingleTemplate extends Component {
    *
    * @param {number} id
    */
-  handleClick(id) {
-    const { feature, isLoad } = this.state
-    if (feature !== this.state.post.attachment[id] && !isLoad) {
-      this.setState({
+  async handleClick(id) {
+    const { feature, isFeatureLoad } = this.state
+    // 同一画像以外で非ロード中の場合のみ変更可.
+    if (feature !== this.state.post.attachment[id] && !isFeatureLoad) {
+      await this.setState({
         feature: this.state.post.attachment[id],
-        isLoad: true,
+        featureActiveID: id,
+        isFeatureLoad: true,
       })
-      const timer = setTimeout(() => {
-        this.setState({ isLoad: false })
-        clearTimeout(timer)
-      }, 2000)
+      await setTimeout(() => this.setState({ isFeatureLoad: false }), 2000)
     }
   }
 
@@ -56,7 +56,8 @@ class ProductSingleTemplate extends Component {
    * @return {JSX.Element}
    */
   render() {
-    const { post, previous, next, feature, isLoad } = this.state
+    const { post, previous, next, feature, featureActiveID, isFeatureLoad } =
+      this.state
 
     return (
       <div className={styles.product}>
@@ -147,6 +148,8 @@ class ProductSingleTemplate extends Component {
                             }
                             key={_image_index}
                           >
+                            {_image_index === featureActiveID &&
+                              isFeatureLoad && <LinearIndeterminate />}
                             <button
                               className={
                                 styles.product__primary__attachments__attachment__link
@@ -217,6 +220,8 @@ class ProductSingleTemplate extends Component {
                             }
                             key={_image_index}
                           >
+                            {_image_index === featureActiveID &&
+                              isFeatureLoad && <LinearIndeterminate />}
                             <button
                               className={
                                 styles.product__primary__attachments__attachment__link
@@ -235,7 +240,6 @@ class ProductSingleTemplate extends Component {
               <div className={styles.product__entry__container__secondary}>
                 <div className={styles.product__secondary}>
                   <div className={styles.product__secondary__feature}>
-                    {isLoad && <LinearIndeterminate />}
                     <Image src={feature} alt={post.title} />
                   </div>
                 </div>
