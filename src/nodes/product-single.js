@@ -22,7 +22,7 @@ const ProductSingle = ({ data, pageContext, location }) => {
 export default ProductSingle
 
 export const pageQuery = graphql`
-  query ProductPostBySlug($slug: String!) {
+  query ProductPostBySlug($slug: Int!) {
     site {
       siteMetadata {
         title

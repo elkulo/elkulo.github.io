@@ -1,8 +1,8 @@
 {
-  "posts": {
+  "test": {
     "data": [
       {
-        "id": "1",
+        "id": 1,
         "updated": "2020.03.29",
         "title": "No.01",
         "category": ["WEB", "DTP"],
@@ -16,7 +16,7 @@
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。"
       },
       {
-        "id": "2",
+        "id": 2,
         "updated": "2020.03.29",
         "title": "No.02",
         "category": ["WEB", "DTP"],
@@ -26,7 +26,7 @@
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。"
       },
       {
-        "id": "3",
+        "id": 3,
         "updated": "2020.03.29",
         "title": "No.03",
         "category": ["WEB", "DTP"],
@@ -36,7 +36,7 @@
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。"
       },
       {
-        "id": "4",
+        "id": 4,
         "updated": "2020.03.29",
         "title": "No.04",
         "category": ["WEB", "DTP"],

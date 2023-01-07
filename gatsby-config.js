@@ -1,6 +1,29 @@
+const md5 = require('md5')
 const activeEnv =
   process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || `development`
 require(`dotenv`).config({ path: `.env.${activeEnv}` })
+
+// APIを指定.
+const getAPI = {
+  _date: new Date(),
+  _format(n) {
+    return n < 10 ? '0' + n : n.toString()
+  },
+  year() {
+    return this._date.getFullYear().toString()
+  },
+  month() {
+    return this._format(this._date.getMonth() + 1)
+  },
+  day() {
+    return this._format(this._date.getDate())
+  },
+  url() {
+    return `${process.env?.API_URL}?key=${md5(
+      this.year() + this.month() + this.day() + process.env?.API_KEY
+    )}`
+  },
+}
 
 module.exports = {
   // Github pages へ npm gh-pages　でデプロイするRepository
@@ -161,7 +184,7 @@ module.exports = {
         name: `posts`,
 
         // 取得先のURL(env変数)
-        url: `${process.env?.API_URL}?key=${process.env?.API_KEY}`,
+        url: getAPI.url(),
 
         // Apiの配列のルートになっているキー: {"data": [{},{},{}]}
         entityLevel: `data`,
