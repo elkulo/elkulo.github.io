@@ -6,6 +6,7 @@ import Wrap from '@/components/atoms/Wrap'
 import Image from '@/components/atoms/Image'
 import Bio from '@/components/molecules/bio.component'
 import LinearIndeterminate from '@/components/atoms/LinearIndeterminate'
+import DummySite from '@/components/atoms/DummySite'
 
 /**
  *　プロダクトシングルページ
@@ -240,7 +241,11 @@ class ProductSingleTemplate extends Component {
               <div className={styles.product__entry__container__secondary}>
                 <div className={styles.product__secondary}>
                   <div className={styles.product__secondary__feature}>
-                    <Image src={feature} alt={post.title} />
+                    {isFeatureLoad ? (
+                      <DummySite />
+                    ) : (
+                      <Image src={feature} alt={post.title} />
+                    )}
                   </div>
                 </div>
               </div>
