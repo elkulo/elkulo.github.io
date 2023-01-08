@@ -18,9 +18,21 @@ const getAPI = {
   day() {
     return this._format(this._date.getDate())
   },
+  hour() {
+    return this._format(this._date.getHours())
+  },
+  min() {
+    return this._format(this._date.getMinutes())
+  },
   url() {
     return `${process.env?.API_URL}?key=${md5(
-      this.year() + this.month() + this.day() + process.env?.API_KEY
+      this.year() +
+        this.month() +
+        this.day() +
+        this.hour() +
+        this.min() +
+        process.env?.API_KEY +
+        process.env?.API_SALT
     )}`
   },
 }
