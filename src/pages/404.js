@@ -54,13 +54,10 @@ const Styled = {
  * @return {JSX.Element}
  */
 const NotFoundPage = ({ data }) => {
-  const pageTitle = '404 NOT FOUND'
-
   const siteTitle = data.site.siteMetadata.title
 
   return (
     <Styled.root>
-      <Metadata title={pageTitle} />
       <Styled.container>
         <Styled.branding>Oops...</Styled.branding>
         <Styled.title>404 NOT FOUND</Styled.title>
@@ -97,3 +94,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = () => <Metadata title="404 NOT FOUND" />

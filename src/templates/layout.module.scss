@@ -36,6 +36,10 @@
     :global(.root-drawer--visible) & {
       display: block;
     }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__content {

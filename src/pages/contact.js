@@ -12,7 +12,6 @@ import Template from '@/templates/contact/contact.template'
  */
 const ContactPage = ({ data, location }) => (
   <Layout location={location} isPageType="Contact">
-    <Metadata title="CONTACT" />
     <Template
       post={data.markdownRemark}
       postContent={data.markdownRemark.frontmatter}
@@ -38,3 +37,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = () => <Metadata title="CONTACT" />

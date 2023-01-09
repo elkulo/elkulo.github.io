@@ -61,7 +61,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         allInternalPosts {
-          distinct(field: category)
+          distinct(field: { category: SELECT })
         }
       }
     `
@@ -91,7 +91,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         allInternalPosts {
-          distinct(field: tag)
+          distinct(field: { tag: SELECT })
         }
       }
     `

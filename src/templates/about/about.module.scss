@@ -68,14 +68,18 @@
 }
 
 .secondary {
-  height: calc(var(--maxvh, 100vh) - #{variable.$size__spacing-unit * 8});
+  height: calc(56.25vw - #{variable.$size__spacing-unit}); // NOTE: 16:9.
   margin: (variable.$size__spacing-unit * 3) auto 0;
   border-radius: 5px;
   overflow: hidden;
-  transform: translate(0); // Safariでoverflow:hiddenが効かない対策
+  transform: translate(0); // NOTE: Safariでoverflow:hiddenが効かない対策.
 
   :global(.gatsby-image-wrapper) {
     height: 100%;
+  }
+
+  @include mixin.media(tablet) {
+    height: calc(56.25vw - #{variable.$size__spacing-unit * 6});
   }
 
   @include mixin.media(desktop) {

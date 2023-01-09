@@ -12,7 +12,6 @@ import Template from '@/templates/product/product-index.template'
  */
 const ProductIndex = ({ data, location }) => (
   <Layout location={location} isPageType="Product">
-    <Metadata title="PRODUCT" />
     <Template data={data} title="PRODUCT" isProductType="index" />
   </Layout>
 )
@@ -26,11 +25,11 @@ export const pageQuery = graphql`
       }
     }
     allCategory: allInternalPosts {
-      distinct(field: category)
+      distinct(field: { category: SELECT })
     }
     allPost: allInternalPosts(
       filter: { id: { ne: "dummy" } }
-      sort: { order: DESC, fields: fields___post_id }
+      sort: { fields: { post_id: DESC } }
     ) {
       edges {
         node {
@@ -47,3 +46,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = () => <Metadata title="PRODUCT" />

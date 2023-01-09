@@ -1,99 +1,55 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 /**
- *　メタタイトルの設定
+ * メタデータ
  *
- * @param  {*} description
- * @param  {*} lang
- * @param  {*} meta
  * @param  {*} title
+ * @param  {*} description
+ * @param  {*} children
  * @return {JSX.Element}
  */
-const Metadata = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
-    graphql`
+const Metadata = ({ title: pageTitle, description, children }) => {
+  // サイトデータの取得.
+  const SiteMeta = () => {
+    const { site } = useStaticQuery(graphql`
       query {
         site {
           siteMetadata {
             title
             description
             robots
+            lang
           }
         }
       }
-    `
-  )
-
-  // titleがnullの場合、ホームのタイトルに切り替える
-  const pageTitle = title || site.siteMetadata.description
-  let titleFormat
-  if (title) {
-    titleFormat = `%s | ${site.siteMetadata.title}`
-  } else {
-    titleFormat = `${site.siteMetadata.title} | %s`
+    `)
+    return site.siteMetadata
   }
 
-  const metaDescription = description || site.siteMetadata.description
+  const {
+    title: siteTitle,
+    description: siteDescription,
+    robots,
+    lang,
+  } = SiteMeta()
+
+  const meta = {
+    title: pageTitle
+      ? `${pageTitle} | ${siteTitle}`
+      : `${siteTitle} - ${siteDescription}`,
+    description: description || siteDescription,
+    robots: robots,
+    lang: lang,
+  }
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={pageTitle}
-      titleTemplate={titleFormat}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: `robots`,
-          content: site.siteMetadata.robots, // 非公開サイト
-        },
-      ].concat(meta)}
-    />
+    <>
+      <title>{meta.title}</title>
+      <meta name="description" content={meta.description} />
+      {children}
+    </>
   )
-}
-
-Metadata.defaultProps = {
-  lang: `ja`,
-  meta: [],
-  description: ``,
-}
-
-Metadata.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string,
 }
 
 export default Metadata

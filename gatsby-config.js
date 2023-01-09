@@ -1,6 +1,41 @@
+const md5 = require('md5')
 const activeEnv =
   process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || `development`
 require(`dotenv`).config({ path: `.env.${activeEnv}` })
+
+// APIを指定.
+const getAPI = {
+  _date: new Date(),
+  _format(n) {
+    return n < 10 ? '0' + n : n.toString()
+  },
+  year() {
+    return this._date.getFullYear().toString()
+  },
+  month() {
+    return this._format(this._date.getMonth() + 1)
+  },
+  day() {
+    return this._format(this._date.getDate())
+  },
+  hour() {
+    return this._format(this._date.getHours())
+  },
+  min() {
+    return this._format(this._date.getMinutes())
+  },
+  url() {
+    return `${process.env?.API_URL}?key=${md5(
+      this.year() +
+        this.month() +
+        this.day() +
+        this.hour() +
+        this.min() +
+        process.env?.API_KEY +
+        process.env?.API_SALT
+    )}`
+  },
+}
 
 module.exports = {
   // Github pages へ npm gh-pages　でデプロイするRepository
@@ -15,10 +50,10 @@ module.exports = {
     siteUrl: `https://elkulo.github.io/`,
     social: {
       github: `elkulo`,
-      twitter: `twitter`,
     },
     formUrl: `https://elkulo.me/forms/elkulo-io/post`,
     robots: `noindex,nofollow`,
+    lang: 'ja',
   },
   plugins: [
     {
@@ -33,7 +68,7 @@ module.exports = {
         icon: `src/assets/application-icons/favicon.png`,
       },
     },
-    `gatsby-plugin-react-helmet`,
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
@@ -128,9 +163,7 @@ module.exports = {
             },
             query: `
               {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
+                allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
                   nodes {
                     excerpt
                     html
@@ -146,7 +179,7 @@ module.exports = {
               }
             `,
             output: `/rss.xml`,
-            title: `el.kulo RSS Feed`,
+            title: `el.kulo - RSS Feed`,
           },
         ],
       },
@@ -163,7 +196,7 @@ module.exports = {
         name: `posts`,
 
         // 取得先のURL(env変数)
-        url: `${process.env?.API_URL}?key=${process.env?.API_KEY}`,
+        url: getAPI.url(),
 
         // Apiの配列のルートになっているキー: {"data": [{},{},{}]}
         entityLevel: `data`,
