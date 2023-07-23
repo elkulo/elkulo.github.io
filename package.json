@@ -66,10 +66,11 @@
   "scripts": {
     "clean:cache": "gatsby clean",
     "clean:package": "rm -rf node_modules package-lock.json && npm install --legacy-peer-deps",
-    "start": "run-p serve:* & npm run develop",
+    "start": "npm run develop",
     "serve:api": "json-server --watch __serve__/api/database.json --port 3000",
     "serve:storage": "http-server __serve__/storage -a localhost --port 8080",
-    "develop": "gatsby develop",
+    "serve:gatsby": "gatsby develop",
+    "develop": "run-p serve:*",
     "build": "gatsby build",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "staging": "gatsby serve",
