@@ -13,17 +13,15 @@ import MailIcon from '@mui/icons-material/Send'
  * @return {JSX.Element}
  */
 const ContactTemplate = ({ post, postContent }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            formUrl
-          }
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          formUrl
         }
       }
-    `
-  )
+    }
+  `)
 
   return (
     <article className="contact">

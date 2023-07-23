@@ -32,7 +32,7 @@ const getAPI = {
         this.hour() +
         this.min() +
         process.env?.API_KEY +
-        process.env?.API_SALT
+        process.env?.API_SALT,
     )}`
   },
 }

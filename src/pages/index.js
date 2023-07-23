@@ -11,18 +11,16 @@ import Template from '@/templates/home/home.template'
  * @return {JSX.Element}
  */
 const IndexPage = ({ location }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
         }
       }
-    `
-  )
+    }
+  `)
 
   return (
     <Layout location={location} isPageType="Home">

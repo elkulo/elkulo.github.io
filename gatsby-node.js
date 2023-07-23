@@ -10,27 +10,25 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // 個別ページ生成
   const productPost = path.resolve(`./src/nodes/product-single.js`)
-  await graphql(
-    `
-      {
-        allInternalPosts(filter: { id: { ne: "dummy" } }) {
-          edges {
-            node {
-              id
-              alternative_id
-              updated
-              title
-              category
-              tag
-              attachment
-              link
-              content
-            }
+  await graphql(`
+    {
+      allInternalPosts(filter: { id: { ne: "dummy" } }) {
+        edges {
+          node {
+            id
+            alternative_id
+            updated
+            title
+            category
+            tag
+            attachment
+            link
+            content
           }
         }
       }
-    `
-  ).then(result => {
+    }
+  `).then(result => {
     if (result.errors) {
       throw result.errors
     }
@@ -57,15 +55,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // カテゴリーページ生成
   const productCategory = path.resolve(`./src/nodes/product-category.js`)
-  await graphql(
-    `
-      {
-        allInternalPosts {
-          distinct(field: { category: SELECT })
-        }
+  await graphql(`
+    {
+      allInternalPosts {
+        distinct(field: { category: SELECT })
       }
-    `
-  ).then(result => {
+    }
+  `).then(result => {
     if (result.errors) {
       throw result.errors
     }
@@ -87,15 +83,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // タグページ生成
   const productTag = path.resolve(`./src/nodes/product-tag.js`)
-  await graphql(
-    `
-      {
-        allInternalPosts {
-          distinct(field: { tag: SELECT })
-        }
+  await graphql(`
+    {
+      allInternalPosts {
+        distinct(field: { tag: SELECT })
       }
-    `
-  ).then(result => {
+    }
+  `).then(result => {
     if (result.errors) {
       throw result.errors
     }
