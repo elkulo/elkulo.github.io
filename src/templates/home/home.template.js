@@ -53,7 +53,7 @@ const HomeTemplate = ({ date, location }) => {
               </nav>
               <div className={styles.header__description}>
                 <p>
-                  <Link to="/contact">Contact us here.</Link>
+                  <Link to="/contact">Contact us here</Link>
                 </p>
               </div>
             </header>
@@ -74,9 +74,12 @@ const HomeTemplate = ({ date, location }) => {
                 </h1>
               </div>
               <div className={styles.content__eyecatch}>
-                <h2 className={styles.content__eyecatch__title}>
-                  Hello, World!
-                </h2>
+                <div className={styles.content__eyecatch__header}>
+                  <h2 className={styles.content__eyecatch__header__title}>
+                    There is no time like the present
+                  </h2>
+                  <p>思い立ったが吉日</p>
+                </div>
                 <Video src={MP4} thumbnail={thumbnail} alt="" />
               </div>
             </section>

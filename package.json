@@ -10,9 +10,9 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@graphql-tools/utils": "^10.0.4",
-    "@mui/icons-material": "^5.14.1",
-    "@mui/material": "^5.14.1",
+    "@graphql-tools/utils": "^10.0.5",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.5",
     "gatsby": "^5.11.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-feed": "^5.11.0",
@@ -42,17 +42,17 @@
     "react-dom": "^18.2.0",
     "react-masonry-component": "^6.3.0",
     "react-transition-group": "^4.4.5",
-    "sass": "^1.64.1",
+    "sass": "^1.65.1",
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13",
     "ua-parser-js": "^1.0.35"
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0",
+    "gh-pages": "^6.0.0",
     "http-server": "^14.1.1",
     "json-server": "^0.17.3",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.1"
   },
   "homepage": "https://elkulo.github.io/",
   "keywords": [
