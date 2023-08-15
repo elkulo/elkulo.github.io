@@ -216,7 +216,7 @@ class ProductTemplate extends Component {
                           style={{
                             ...this.getTransitionStyles(
                               status,
-                              i - posts_per_page * (paged - 1)
+                              i - posts_per_page * (paged - 1),
                             ),
                           }}
                         >

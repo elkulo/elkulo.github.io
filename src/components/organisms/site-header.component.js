@@ -16,18 +16,16 @@ import { LogoBlack, LogoWhite } from '@/assets/images/image'
  * @return {JSX.Element}
  */
 const Header = ({ location = window.location, position }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
         }
       }
-    `
-  )
+    }
+  `)
 
   const siteTitle = site.siteMetadata.title
 

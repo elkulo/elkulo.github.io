@@ -27,7 +27,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      background: #191919;
+      background: linear-gradient(to bottom, #212121 50%, #000);
       color: #ddd;
       box-sizing: border-box;
       padding: 0 variable.$size__spacing-unit;
@@ -127,7 +127,8 @@
         a {
           display: block;
           padding: (variable.$size__spacing-unit * 0.5) 0;
-          border: solid 1px #454545;
+          border: solid 1px #000;
+          border-radius: 3px;
           text-align: center;
           font-family: variable.$font__code;
           font-weight: 400;
@@ -167,7 +168,7 @@
       &:hover,
       &:active {
         color: rgb(151, 135, 45);
-        box-shadow: 0 2px 0 rgb(151, 135, 45);
+        box-shadow: 0 1px 0 rgb(151, 135, 45);
       }
     }
   }
@@ -241,17 +242,31 @@
       background: url("@/assets/images/background/dot.gif");
     }
 
-    &__title {
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #fff;
-      text-shadow: 0 0 3px #000;
-      font-size: variable.$font__size-lg;
-      font-weight: 100;
-      font-family: variable.$font__code;
+    &__header {
       @include mixin.user-select(none);
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      padding: 0 1rem 3rem;
+      transform: translate(0, -50%);
+      text-shadow: 0 0 3px #000;
+      color: #fff;
+      text-align: center;
+      font-size: variable.$font__size-md;
+      font-weight: 300;
+
+      &__title {
+        font-family: variable.$font__code;
+        font-size: variable.$font__size-lg;
+        font-weight: 300;
+        line-height: 1.2;
+
+        @include mixin.media(desktop) {
+          font-size: variable.$font__size-xl;
+        }
+      }
     }
   }
 }

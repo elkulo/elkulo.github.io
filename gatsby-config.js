@@ -32,7 +32,7 @@ const getAPI = {
         this.hour() +
         this.min() +
         process.env?.API_KEY +
-        process.env?.API_SALT
+        process.env?.API_SALT,
     )}`
   },
 }
@@ -127,7 +127,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [process.env?.TRACKING_ID],
+        trackingIds: process.env?.TRACKING_ID ? [process.env?.TRACKING_ID] : [],
         pluginConfig: {
           head: true,
         },
@@ -143,7 +143,6 @@ module.exports = {
                 title
                 description
                 siteUrl
-                site_url: siteUrl
               }
             }
           }

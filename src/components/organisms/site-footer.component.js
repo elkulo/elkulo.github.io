@@ -25,18 +25,16 @@ let getTransitionStyles = {}
  * @return {JSX.Element}
  */
 const Footer = ({ location, position }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
         }
       }
-    `
-  )
+    }
+  `)
 
   let footerStyled
   if (position === 'content') {
