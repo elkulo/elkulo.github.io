@@ -1,21 +1,21 @@
 # ポートフォリオ
 
-JAMstack
+JAMstack by Gatsby.js
 
 ## パブリックドメイン
 
-https://elkulo.github.io/
+[https://elkulo.github.io/](https://elkulo.github.io/)
 
 ### 技術関連
 
-#### 構築技術
+#### 構築
 
 React, Gatsby, Sass(SCSS), Emotion, MUI
 
-#### コンテンツソース
+#### コンテンツリソース
 
 RESTfull API, Markdown
 
-#### ホスティング
+#### ホスティングサーバー
 
 Github pages

@@ -27,7 +27,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      background: linear-gradient(to bottom, #212121 50%, #000);
+      background: #000;
       color: #ddd;
       box-sizing: border-box;
       padding: 0 variable.$size__spacing-unit;
@@ -55,7 +55,11 @@
       box-sizing: border-box;
       width: 100%;
       min-height: 400px;
-      height: var(--maxvh, 100vh);
+      height: 75vh;
+
+      @include mixin.media(tablet) {
+        height: var(--maxvh, 100vh);
+      }
     }
   }
 }
@@ -102,7 +106,7 @@
 
   &__navi {
     clear: both;
-    margin: (variable.$size__spacing-unit * 5) auto 0;
+    margin: (variable.$size__spacing-unit * 4) auto 0;
     width: 100%;
     text-align: center;
 
@@ -127,13 +131,13 @@
         a {
           display: block;
           padding: (variable.$size__spacing-unit * 0.5) 0;
-          border: solid 1px #000;
+          border: solid 1px #212121;
           border-radius: 3px;
           text-align: center;
           font-family: variable.$font__code;
           font-weight: 400;
           color: #ccc;
-          background: #111;
+          background: #121212;
           @include mixin.button-transition();
           font-size: variable.$font__size-md;
 
@@ -249,13 +253,17 @@
       left: 0;
       top: 50%;
       width: 100%;
-      padding: 0 1rem 3rem;
+      padding: 0 1rem;
       transform: translate(0, -50%);
       text-shadow: 0 0 3px #000;
       color: #fff;
       text-align: center;
       font-size: variable.$font__size-md;
       font-weight: 300;
+
+      @include mixin.media(tablet) {
+        padding: 0 1rem 3rem;
+      }
 
       &__title {
         font-family: variable.$font__code;

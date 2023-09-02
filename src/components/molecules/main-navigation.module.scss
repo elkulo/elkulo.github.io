@@ -46,7 +46,7 @@
       font-family: variable.$font__code;
       font-size: variable.$font__size-lg;
       font-weight: 300;
-      background: #111;
+      background: rgba(0,0,0,0);
       color: #aaa;
 
       @include mixin.media(mobile) {

@@ -28,25 +28,26 @@ const HomeLoader = () => {
 
   // ロード処理.
   useEffect(() => {
-    let timer = 0
-
+    const timer = {
+      id: 0,
+    }
     // ロード済み判定.
     if (!loadedState?.is) {
       loadedDispatch({ type: 'end' })
     } else {
       /* NOTE: 2回目からはロードをスキップする場合.
       return () => {
-        clearInterval(timer)
+        clearInterval(timer.id)
       }
       */
     }
 
-    timer = setInterval(() => {
+    timer.id = setInterval(() => {
       setProgress(prevProgress => {
         switch (prevProgress) {
           case 100:
             setFadeOn(() => false)
-            clearInterval(timer)
+            clearInterval(timer.id)
             return 100
           case 50:
             return prevProgress + 1
@@ -54,12 +55,12 @@ const HomeLoader = () => {
             return prevProgress + 1
         }
       })
-    }, 20)
+    }, 30)
   }, [loadedState, loadedDispatch])
 
   // ロードスタイル
   const StyledBackdrop = styled(Backdrop)`
-    background: #111;
+    background: #000;
     color: #f1f1f1;
     z-index: 100;
   `

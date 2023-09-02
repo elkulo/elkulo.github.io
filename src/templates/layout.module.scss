@@ -25,7 +25,7 @@
     min-height: var(--maxvh, 100vh);
     height: 100%;
     width: 100%;
-    background: #111;
+    background: variable.$color__background-body;
     color: #fff;
     border-right: solid 1px #000;
 
@@ -54,7 +54,7 @@
     transition: transform 180ms ease-out 20ms;
 
     .page-home & {
-      background: #191919;
+      background: #000;
     }
 
     :global(.root-drawer--visible) & {

@@ -24,14 +24,15 @@ const PageLoader = () => {
 
   // ロード処理.
   useEffect(() => {
-    let timer = 0
-
-    timer = setInterval(() => {
+    const timer = {
+      id: 0,
+    }
+    timer.id = setInterval(() => {
       setProgress(prevProgress => {
         switch (prevProgress) {
           case 100:
             setFadeOn(() => false)
-            clearInterval(timer)
+            clearInterval(timer.id)
             return 100
           case 50:
             return prevProgress + 1
@@ -39,7 +40,7 @@ const PageLoader = () => {
             return prevProgress + 1
         }
       })
-    }, 2)
+    }, 3)
   }, [])
 
   // ロードスタイル

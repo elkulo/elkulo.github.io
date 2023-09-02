@@ -1,8 +1,7 @@
 const path = require(`path`)
-const {
-  createFilePath,
-  createRemoteFileNode,
-} = require(`gatsby-source-filesystem`)
+const { createFilePath, createRemoteFileNode } = require(
+  `gatsby-source-filesystem`,
+)
 
 // ページ生成
 exports.createPages = async ({ graphql, actions }) => {
