@@ -54,8 +54,8 @@
     &__in {
       box-sizing: border-box;
       width: 100%;
-      min-height: 400px;
-      height: 75vh;
+      min-height: 300px;
+      height: 60vh;
 
       @include mixin.media(tablet) {
         height: var(--maxvh, 100vh);
