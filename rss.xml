@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[el.kulo - RSS Feed]]></title><description><![CDATA[ポートフォリオ]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 14 Oct 2023 06:07:20 GMT</lastBuildDate><item><title><![CDATA[ABOUT]]></title><description><![CDATA[el.kulo という名で活動している A.Sudo です。 東京の某企業でフロント・エンド・エンジニアを務めています。デザイナーでもあります。 WordPress…]]></description><link>https://elkulo.github.io/about/</link><guid isPermaLink="false">https://elkulo.github.io/about/</guid><pubDate>Sat, 30 Apr 2022 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;el.kulo という名で活動している A.Sudo です。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[el.kulo - RSS Feed]]></title><description><![CDATA[ポートフォリオ]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 14 Oct 2023 13:26:01 GMT</lastBuildDate><item><title><![CDATA[ABOUT]]></title><description><![CDATA[el.kulo という名で活動している A.Sudo です。 東京の某企業でフロント・エンド・エンジニアを務めています。デザイナーでもあります。 WordPress…]]></description><link>https://elkulo.github.io/about/</link><guid isPermaLink="false">https://elkulo.github.io/about/</guid><pubDate>Fri, 13 Oct 2023 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;el.kulo という名で活動している A.Sudo です。&lt;/p&gt;
 &lt;p&gt;東京の某企業でフロント・エンド・エンジニアを務めています。デザイナーでもあります。&lt;/p&gt;
 &lt;p&gt;WordPress をベースにした制作を得意とし、企業向けにオリジナルのテーマやプラグインをゼロから作り管理しています。
 デザインからシステム構築まで一貫したサイト制作をします。&lt;/p&gt;
 &lt;p&gt;また、ポスターやフライヤーなどの印刷媒体の広告デザインも行います。&lt;/p&gt;
 &lt;p&gt;もとはデザイン系の学校出身で、写真を駆使した Photoshop でのコラージュを得意とします。&lt;/p&gt;
 &lt;p&gt;写真や映像、音楽などクリエイトすることにジャンルを問わず興味を持っています。&lt;/p&gt;
-&lt;p&gt;デザインをメインに据えたいところですが、HTML, CSS, JavaScript, PHP の実務歴は 15 年以上となり、修得レベルは比較的高いほうです。&lt;/p&gt;
+&lt;p&gt;デザインをメインに据えたいところですが、HTML, CSS, JavaScript, PHP の実務歴は 18 年以上となり、修得レベルは比較的高いほうです。&lt;/p&gt;
 &lt;h2&gt;スキル&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;主要言語&lt;/strong&gt;&lt;br&gt;
-HTML5, Sass(SCSS), TypeScript, JavaScript(^ES6), PHP(^8.0)&lt;/p&gt;
+HTML, Sass(SCSS), TypeScript, JavaScript, PHP&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;主要ライブラリ&lt;/strong&gt;&lt;br&gt;
