@@ -22,7 +22,7 @@ export default ContactPage
 
 export const pageQuery = graphql`
   query {
-    markdownRemark(fileAbsolutePath: { regex: "//contact/index.md/" }) {
+    markdownRemark(fileAbsolutePath: { regex: "//pages/contact/index.md/" }) {
       frontmatter {
         title
         description

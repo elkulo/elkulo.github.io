@@ -22,7 +22,7 @@ export default AboutPage
 
 export const pageQuery = graphql`
   query {
-    markdownRemark(fileAbsolutePath: { regex: "//about/index.md/" }) {
+    markdownRemark(fileAbsolutePath: { regex: "//pages/about/index.md/" }) {
       frontmatter {
         title
         description
