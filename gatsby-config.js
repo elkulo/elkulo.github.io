@@ -62,8 +62,8 @@ module.exports = {
         name: `el.kulo`,
         short_name: `el.kulo`,
         start_url: `https://elkulo.github.io/`,
-        background_color: `#ffffff`,
-        theme_color: `#191919`,
+        background_color: `#0a0a0a`,
+        theme_color: `#0a0a0a`,
         display: `minimal-ui`,
         icon: `src/assets/application-icons/favicon.png`,
       },
@@ -77,14 +77,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/pages`,
+        path: `${__dirname}/docs/pages`,
         name: `pages`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
+        path: `${__dirname}/docs/assets`,
         name: `assets`,
       },
     },
