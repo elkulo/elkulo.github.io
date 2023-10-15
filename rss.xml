@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[el.kulo - RSS Feed]]></title><description><![CDATA[ポートフォリオ]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 15 Oct 2023 05:08:59 GMT</lastBuildDate><item><title><![CDATA[ABOUT]]></title><description><![CDATA[el.kulo という名で活動している A.Sudo です。 東京の某企業でフロント・エンド・エンジニアを務めています。デザイナーでもあります。 WordPress…]]></description><link>https://elkulo.github.io/about/</link><guid isPermaLink="false">https://elkulo.github.io/about/</guid><pubDate>Fri, 13 Oct 2023 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;el.kulo という名で活動している A.Sudo です。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[el.kulo - RSS Feed]]></title><description><![CDATA[ポートフォリオ]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 15 Oct 2023 09:44:15 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[ポートフォリオ JAMstack by Gatsby.js パブリックドメイン https://elkulo.github.io/ 技術関連 構築 React, Gatsby, Sass(SCSS), Emotion, MUI コンテンツリソース RESTfull API…]]></description><link>https://elkulo.github.io/README/</link><guid isPermaLink="false">https://elkulo.github.io/README/</guid><content:encoded>&lt;h1&gt;ポートフォリオ&lt;/h1&gt;
+&lt;p&gt;JAMstack by Gatsby.js&lt;/p&gt;
+&lt;h2&gt;パブリックドメイン&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://elkulo.github.io/&quot;&gt;https://elkulo.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;技術関連&lt;/h3&gt;
+&lt;h4&gt;構築&lt;/h4&gt;
+&lt;p&gt;React, Gatsby, Sass(SCSS), Emotion, MUI&lt;/p&gt;
+&lt;h4&gt;コンテンツリソース&lt;/h4&gt;
+&lt;p&gt;RESTfull API, Markdown&lt;/p&gt;
+&lt;h4&gt;ホスティングサーバー&lt;/h4&gt;
+&lt;p&gt;Github pages&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ABOUT]]></title><description><![CDATA[el.kulo という名で活動している A.Sudo です。 東京の某企業でフロント・エンド・エンジニアを務めています。デザイナーでもあります。 WordPress…]]></description><link>https://elkulo.github.io/pages/about/</link><guid isPermaLink="false">https://elkulo.github.io/pages/about/</guid><pubDate>Fri, 13 Oct 2023 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;el.kulo という名で活動している A.Sudo です。&lt;/p&gt;
 &lt;p&gt;東京の某企業でフロント・エンド・エンジニアを務めています。デザイナーでもあります。&lt;/p&gt;
 &lt;p&gt;WordPress をベースにした制作を得意とし、企業向けにオリジナルのテーマやプラグインをゼロから作り管理しています。
 デザインからシステム構築まで一貫したサイト制作をします。&lt;/p&gt;
@@ -54,7 +64,7 @@ Panic Transmit&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3&gt;Github&lt;/h3&gt;
 &lt;p&gt;個人制作のコードは Github で公開しています。評価するには私の書いたコードを見てください。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/elkulo&quot;&gt;https://github.com/elkulo&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[CONTACT]]></title><description><![CDATA[…]]></description><link>https://elkulo.github.io/contact/</link><guid isPermaLink="false">https://elkulo.github.io/contact/</guid><pubDate>Thu, 21 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;個人情報保護方針&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/elkulo&quot;&gt;https://github.com/elkulo&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[CONTACT]]></title><description><![CDATA[…]]></description><link>https://elkulo.github.io/pages/contact/</link><guid isPermaLink="false">https://elkulo.github.io/pages/contact/</guid><pubDate>Thu, 21 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;個人情報保護方針&lt;/h2&gt;
 &lt;p&gt;当サイトでは、個人情報の取得・利用その他の個人情報の取扱いに関し、個人情報の保護に関する法律、関連する政省令、ガイドライン等を遵守します。&lt;/p&gt;
 &lt;h3&gt;個人情報の定義&lt;/h3&gt;
 &lt;p&gt;個人情報とは、次のように生存する個人を特定、識別できる情報を指します。&lt;/p&gt;
