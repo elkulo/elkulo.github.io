@@ -16,7 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             id
             alternative_id
-            updated
+            date
             title
             category
             tag
@@ -140,7 +140,7 @@ exports.onCreateNode = async ({ node, actions, getNode, store, cache }) => {
         // 他ファイルノードと区別するための識別子を付与
         await createNodeField({
           node: fileNode,
-          name: 'has_post_attachment',
+          name: 'has_attachment',
           value: true,
         })
 
@@ -188,7 +188,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Social {
-      twitter: String
       github: String
     }
 

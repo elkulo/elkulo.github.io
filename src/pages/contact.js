@@ -26,7 +26,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
-        picture {
+        attached {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }

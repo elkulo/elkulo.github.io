@@ -255,7 +255,7 @@ class ProductTemplate extends Component {
                                 styles.product__entries__entry__header__date
                               }
                             >
-                              Updated: {post.updated}
+                              Updated: {post.date}
                             </div>
                           </header>
                           <div className={styles.product__entries__entry__tags}>

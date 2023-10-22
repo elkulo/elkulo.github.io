@@ -48,7 +48,7 @@ const ContactTemplate = ({ post, postContent }) => {
             </div>
             <div className={styles.primary__bg}>
               <GatsbyImage
-                image={postContent.picture.childImageSharp.gatsbyImageData}
+                image={postContent.attached.childImageSharp.gatsbyImageData}
                 alt={postContent.title}
               />
             </div>

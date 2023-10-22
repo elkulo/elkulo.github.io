@@ -2,7 +2,7 @@
 title: ABOUT
 description: 'A.Sudo'
 date: '2023.10.14'
-picture: './profile.jpg'
+attached: './profile.jpg'
 ---
 
 el.kulo という名で活動している A.Sudo です。

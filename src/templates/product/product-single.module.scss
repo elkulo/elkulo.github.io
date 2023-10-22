@@ -199,7 +199,7 @@
         }
       }
 
-      &__attachment {
+      &__attached {
         position: relative;
         box-sizing: border-box;
         flex-basis: calc(33.33% - #{variable.$size__spacing-unit * 0.5});

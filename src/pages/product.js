@@ -35,7 +35,7 @@ export const pageQuery = graphql`
         node {
           id
           alternative_id
-          updated
+          date
           title
           category
           tag

@@ -61,7 +61,7 @@ class AboutTamplate extends Component {
               <div className={styles.layout__secondary}>
                 <div id="about-sticky" className={styles.secondary}>
                   <GatsbyImage
-                    image={postContent.picture.childImageSharp.gatsbyImageData}
+                    image={postContent.attached.childImageSharp.gatsbyImageData}
                     alt={postContent.title}
                   />
                 </div>

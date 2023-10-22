@@ -112,7 +112,7 @@ class ProductSingleTemplate extends Component {
                       )}
                     </h1>
                     <div className={styles.product__primary__header__date}>
-                      Update: {post.updated}
+                      Updated: {post.date}
                       {post.link && (
                         <span
                           className={
@@ -145,7 +145,7 @@ class ProductSingleTemplate extends Component {
                         return (
                           <div
                             className={
-                              styles.product__primary__attachments__attachment
+                              styles.product__primary__attachments__attached
                             }
                             key={_image_index}
                           >
@@ -153,7 +153,7 @@ class ProductSingleTemplate extends Component {
                               isFeatureLoad && <LinearIndeterminate />}
                             <button
                               className={
-                                styles.product__primary__attachments__attachment__link
+                                styles.product__primary__attachments__attached__link
                               }
                               onClick={() => this.handleClick(_image_index)}
                             >
@@ -217,7 +217,7 @@ class ProductSingleTemplate extends Component {
                         return (
                           <div
                             className={
-                              styles.product__primary__attachments__attachment
+                              styles.product__primary__attachments__attached
                             }
                             key={_image_index}
                           >
@@ -225,7 +225,7 @@ class ProductSingleTemplate extends Component {
                               isFeatureLoad && <LinearIndeterminate />}
                             <button
                               className={
-                                styles.product__primary__attachments__attachment__link
+                                styles.product__primary__attachments__attached__link
                               }
                               onClick={() => this.handleClick(_image_index)}
                             >

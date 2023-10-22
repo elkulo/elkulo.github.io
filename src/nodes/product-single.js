@@ -29,7 +29,7 @@ export const pageQuery = graphql`
       }
     }
     internalPosts(alternative_id: { eq: $slug }) {
-      updated
+      date
       title
       category
       tag

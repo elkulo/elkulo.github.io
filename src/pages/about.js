@@ -27,7 +27,7 @@ export const pageQuery = graphql`
         title
         description
         date
-        picture {
+        attached {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
