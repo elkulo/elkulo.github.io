@@ -28,7 +28,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    internalPosts(fields: {post_slug: { eq: $slug }}) {
+    internalPosts(fields: { post_slug: { eq: $slug } }) {
       id
       alternative_id
       date
