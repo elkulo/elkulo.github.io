@@ -22,13 +22,15 @@ const ProductSingle = ({ data, pageContext, location }) => {
 export default ProductSingle
 
 export const pageQuery = graphql`
-  query ProductPostBySlug($slug: Int!) {
+  query ProductPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    internalPosts(alternative_id: { eq: $slug }) {
+    internalPosts(fields: {post_slug: { eq: $slug }}) {
+      id
+      alternative_id
       date
       title
       category
@@ -36,6 +38,10 @@ export const pageQuery = graphql`
       attachment
       link
       content
+      fields {
+        post_id
+        post_slug
+      }
     }
   }
 `

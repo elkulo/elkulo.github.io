@@ -23,7 +23,7 @@ class ProductSingleTemplate extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      post: props.data.internalPosts,
+      node: props.data.internalPosts,
       previous: props.pageContext.previous,
       next: props.pageContext.next,
       feature: props.data.internalPosts.attachment[0],
@@ -41,9 +41,9 @@ class ProductSingleTemplate extends Component {
   async handleClick(id) {
     const { feature, isFeatureLoad } = this.state
     // 同一画像以外で非ロード中の場合のみ変更可.
-    if (feature !== this.state.post.attachment[id] && !isFeatureLoad) {
+    if (feature !== this.state.node.attachment[id] && !isFeatureLoad) {
       await this.setState({
-        feature: this.state.post.attachment[id],
+        feature: this.state.node.attachment[id],
         featureActiveID: id,
         isFeatureLoad: true,
       })
@@ -57,7 +57,7 @@ class ProductSingleTemplate extends Component {
    * @return {JSX.Element}
    */
   render() {
-    const { post, previous, next, feature, featureActiveID, isFeatureLoad } =
+    const { node, previous, next, feature, featureActiveID, isFeatureLoad } =
       this.state
 
     return (
@@ -76,7 +76,7 @@ class ProductSingleTemplate extends Component {
                       </Link>
                     </div>
 
-                    {post.category.map((_cat_name, _cat_index) => {
+                    {node.category.map((_cat_name, _cat_index) => {
                       return (
                         <div
                           className={
@@ -96,24 +96,24 @@ class ProductSingleTemplate extends Component {
 
                   <header className={styles.product__primary__header}>
                     <h1 className={styles.product__primary__header__title}>
-                      {!post.link && post.title}
-                      {post.link && (
+                      {!node.link && node.title}
+                      {node.link && (
                         <a
-                          href={post.link}
+                          href={node.link}
                           target="_blank"
                           rel="noopener noreferrer"
                           className={
                             styles.product__primary__header__title__link
                           }
                         >
-                          {post.title}
+                          {node.title}
                           <LinkIcon />
                         </a>
                       )}
                     </h1>
                     <div className={styles.product__primary__header__date}>
-                      Updated: {post.date}
-                      {post.link && (
+                      Updated: {node.date}
+                      {node.link && (
                         <span
                           className={
                             styles.product__primary__header__date__preview
@@ -121,11 +121,11 @@ class ProductSingleTemplate extends Component {
                         >
                           Preview:
                           <a
-                            href={post.link}
+                            href={node.link}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            {post.link}
+                            {node.link}
                           </a>
                         </span>
                       )}
@@ -134,14 +134,14 @@ class ProductSingleTemplate extends Component {
 
                   <div
                     className={styles.product__primary__content}
-                    dangerouslySetInnerHTML={{ __html: post.content }}
+                    dangerouslySetInnerHTML={{ __html: node.content }}
                   />
 
-                  {1 < post.attachment.length && (
+                  {1 < node.attachment.length && (
                     <div
                       className={`${styles.product__primary__attachments} ${styles.product__primary__attachmentsLarge}`}
                     >
-                      {post.attachment.map((_image_src, _image_index) => {
+                      {node.attachment.map((_image_src, _image_index) => {
                         return (
                           <div
                             className={
@@ -166,7 +166,7 @@ class ProductSingleTemplate extends Component {
                   )}
 
                   <div className={styles.product__primary__tags}>
-                    {post.tag.map((_tag_name, _tag_index) => {
+                    {node.tag.map((_tag_name, _tag_index) => {
                       return (
                         <div
                           className={styles.product__primary__tags__tag}
@@ -185,7 +185,7 @@ class ProductSingleTemplate extends Component {
                       <li className={styles.product__primary__navi__list__item}>
                         {next && (
                           <Link
-                            to={`/product/${next.alternative_id}`}
+                            to={`/product/${next.fields.post_slug}`}
                             rel="next"
                           >
                             ← {next.title}
@@ -195,7 +195,7 @@ class ProductSingleTemplate extends Component {
                       <li className={styles.product__primary__navi__list__item}>
                         {previous && (
                           <Link
-                            to={`/product/${previous.alternative_id}`}
+                            to={`/product/${previous.fields.post_slug}`}
                             rel="prev"
                           >
                             {previous.title} →
@@ -209,11 +209,11 @@ class ProductSingleTemplate extends Component {
                     <Bio />
                   </footer>
 
-                  {1 < post.attachment.length && (
+                  {1 < node.attachment.length && (
                     <div
                       className={`${styles.product__primary__attachments} ${styles.product__primary__attachmentsSmall}`}
                     >
-                      {post.attachment.map((_image_src, _image_index) => {
+                      {node.attachment.map((_image_src, _image_index) => {
                         return (
                           <div
                             className={
@@ -244,7 +244,7 @@ class ProductSingleTemplate extends Component {
                     {isFeatureLoad ? (
                       <DummySite />
                     ) : (
-                      <Image src={feature} alt={post.title} />
+                      <Image src={feature} alt={node.title} />
                     )}
                   </div>
                 </div>

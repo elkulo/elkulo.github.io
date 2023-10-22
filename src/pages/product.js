@@ -41,6 +41,10 @@ export const pageQuery = graphql`
           tag
           attachment
           link
+          fields {
+            post_id
+            post_slug
+          }
         }
       }
     }

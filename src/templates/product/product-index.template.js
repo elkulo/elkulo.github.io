@@ -25,7 +25,7 @@ class ProductTemplate extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      posts: props.data.allPost.edges, // 投稿ノード.
+      nodes: props.data.allPost.edges, // 投稿ノード.
       categories: props.data.allCategory.distinct, // カテゴリー名ノード.
       pageTitle: props.title, // ページタイトル.
       isProductType: props.isProductType, // テンプレート分岐.
@@ -131,7 +131,7 @@ class ProductTemplate extends Component {
    */
   render() {
     const {
-      posts,
+      nodes,
       categories,
       pageTitle,
       isProductType,
@@ -188,9 +188,8 @@ class ProductTemplate extends Component {
             disableImagesLoaded={true}
             updateOnEachImageLoad={true}
           >
-            {posts.map(({ node }, i) => {
-              const post = node
-              const title = post.title || post.alternative_id
+            {nodes.map(({ node }, i) => {
+              const title = node.title || node.fields.post_slug
 
               // ページ分割
               if (i >= posts_per_page * paged) {
@@ -200,11 +199,11 @@ class ProductTemplate extends Component {
               return (
                 <section
                   className={styles.product__entries__entry}
-                  key={post.id}
+                  key={node.id}
                 >
                   <TransitionGroup>
                     <ReactTransition
-                      key={post.id}
+                      key={node.id}
                       appear={true}
                       timeout={{
                         enter: motion.timeout,
@@ -224,10 +223,10 @@ class ProductTemplate extends Component {
                             className={styles.product__entries__entry__feature}
                           >
                             <Link
-                              to={`/product/${post.alternative_id}`}
+                              to={`/product/${node.fields.post_slug}`}
                               className={styles.featureLink}
                             >
-                              <Image src={post.attachment[0]} alt={title} />
+                              <Image src={node.attachment[0]} alt={title} />
                               <span className={styles.featureLink__cover}>
                                 <span
                                   className={styles.featureLink__cover__inner}
@@ -246,7 +245,7 @@ class ProductTemplate extends Component {
                                 styles.product__entries__entry__header__title
                               }
                             >
-                              <Link to={`/product/${post.alternative_id}`}>
+                              <Link to={`/product/${node.fields.post_slug}`}>
                                 {title}
                               </Link>
                             </h3>
@@ -255,11 +254,11 @@ class ProductTemplate extends Component {
                                 styles.product__entries__entry__header__date
                               }
                             >
-                              Updated: {post.date}
+                              Updated: {node.date}
                             </div>
                           </header>
                           <div className={styles.product__entries__entry__tags}>
-                            {post.tag.map((_tag_name, _tag_index) => {
+                            {node.tag.map((_tag_name, _tag_index) => {
                               return (
                                 <span
                                   className={

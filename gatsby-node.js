@@ -2,6 +2,7 @@ const path = require(`path`)
 const { createFilePath, createRemoteFileNode } = require(
   `gatsby-source-filesystem`,
 )
+const md5 = require('md5')
 
 // ページ生成
 exports.createPages = async ({ graphql, actions }) => {
@@ -23,6 +24,10 @@ exports.createPages = async ({ graphql, actions }) => {
             attachment
             link
             content
+            fields {
+              post_id
+              post_slug
+            }
           }
         }
       }
@@ -41,10 +46,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
       // ページの生成
       createPage({
-        path: 'product/' + post.node.alternative_id,
+        path:
+          'product/' +
+          md5(('000000' + post.node.alternative_id).slice(-6)).slice(12),
         component: productPost,
         context: {
-          slug: post.node.alternative_id,
+          slug: md5(('000000' + post.node.alternative_id).slice(-6)).slice(12),
           previous,
           next,
         },
@@ -68,16 +75,18 @@ exports.createPages = async ({ graphql, actions }) => {
     // Create product posts pages.
     const categories = result.data.allInternalPosts.distinct
 
-    categories.forEach((cat, index) => {
-      // ページの生成
-      createPage({
-        path: 'product/category/' + cat,
-        component: productCategory,
-        context: {
-          slug: cat,
-        },
+    if (categories.length) {
+      categories.forEach(cat => {
+        // ページの生成
+        createPage({
+          path: 'product/category/' + cat,
+          component: productCategory,
+          context: {
+            slug: cat,
+          },
+        })
       })
-    })
+    }
   })
 
   // タグページ生成
@@ -96,16 +105,18 @@ exports.createPages = async ({ graphql, actions }) => {
     // Create product posts pages.
     const tags = result.data.allInternalPosts.distinct
 
-    tags.forEach((tag, index) => {
-      // ページの生成
-      createPage({
-        path: 'product/tag/' + tag,
-        component: productTag,
-        context: {
-          slug: tag,
-        },
+    if (tags.length) {
+      tags.forEach(tag => {
+        // ページの生成
+        createPage({
+          path: 'product/tag/' + tag,
+          component: productTag,
+          context: {
+            slug: tag,
+          },
+        })
       })
-    })
+    }
   })
 }
 
@@ -113,16 +124,22 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onCreateNode = async ({ node, actions, getNode, store, cache }) => {
   const { createNode, createNodeField } = actions
 
-  // Post ID を付与
-  // ソート用に桁揃え
   if (node.internal.type === 'internal__posts') {
+    // ソート用に桁揃えのIDを付与.
     await createNodeField({
       name: 'post_id',
       node,
       value: ('000000' + node.alternative_id).slice(-6),
     })
 
-    // 画像ノード
+    // ハッシュ化したスラッグを追加.
+    await createNodeField({
+      name: 'post_slug',
+      node,
+      value: md5(('000000' + node.alternative_id).slice(-6)).slice(12),
+    })
+
+    // 画像ノードを追加.
     if (Array.isArray(node.attachment)) {
       await node.attachment.forEach(async imageSrcUrl => {
         const fileNode = await createRemoteFileNode({
