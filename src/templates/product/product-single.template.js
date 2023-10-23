@@ -63,7 +63,7 @@ class ProductSingleTemplate extends Component {
     return (
       <div className={styles.product}>
         <Wrap>
-          <article className={styles.product__entry}>
+          <article id='___article' className={styles.product__entry}>
             <div className={styles.product__entry__container}>
               <div className={styles.product__entry__container__primary}>
                 <div className={styles.product__primary}>
@@ -151,14 +151,15 @@ class ProductSingleTemplate extends Component {
                           >
                             {_image_index === featureActiveID &&
                               isFeatureLoad && <LinearIndeterminate />}
-                            <button
+                            <a
+                              href='#___article'
                               className={
                                 styles.product__primary__attachments__attached__link
                               }
                               onClick={() => this.handleClick(_image_index)}
                             >
                               <Image src={_image_src} />
-                            </button>
+                            </a>
                           </div>
                         )
                       })}
@@ -211,6 +212,7 @@ class ProductSingleTemplate extends Component {
 
                   {1 < node.attachment.length && (
                     <div
+                      id="___attachments"
                       className={`${styles.product__primary__attachments} ${styles.product__primary__attachmentsSmall}`}
                     >
                       {node.attachment.map((_image_src, _image_index) => {
@@ -223,14 +225,15 @@ class ProductSingleTemplate extends Component {
                           >
                             {_image_index === featureActiveID &&
                               isFeatureLoad && <LinearIndeterminate />}
-                            <button
+                            <a
+                              href='#___attachments'
                               className={
                                 styles.product__primary__attachments__attached__link
                               }
                               onClick={() => this.handleClick(_image_index)}
                             >
                               <Image src={_image_src} />
-                            </button>
+                            </a>
                           </div>
                         )
                       })}

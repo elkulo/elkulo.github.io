@@ -177,11 +177,12 @@
       display: flex;
       flex-wrap: wrap;
       list-style: none;
-      margin: (variable.$size__spacing-unit * 2) (variable.$size__spacing-unit * -0.5) 0;
-      padding: 0;
+      margin: 0 (variable.$size__spacing-unit * -0.5);
+      padding: variable.$size__spacing-unit 0 0;
 
       @include mixin.media(tablet) {
         margin-bottom: variable.$size__spacing-unit;
+        padding: (variable.$size__spacing-unit * 0.5) 0 0;
       }
 
       &--large {

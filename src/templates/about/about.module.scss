@@ -42,7 +42,7 @@
   margin: variable.$size__spacing-unit auto 0;
 
   @include mixin.media(desktop) {
-    margin: (variable.$size__spacing-unit * 2) auto 0;
+    margin: (variable.$size__spacing-unit * 2) auto;
     width: calc(100% - #{variable.$size__spacing-unit * 3});
   }
 
