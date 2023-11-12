@@ -61,7 +61,7 @@ class NavigationDrawer extends Component {
     return (
       <div className="navigation-drawer">
         <button
-          className={styles.button}
+          className={styles.drawerButton}
           onClick={() => this.onDrawer(visibility)}
         >
           {children}

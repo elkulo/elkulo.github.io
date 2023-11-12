@@ -1,7 +1,7 @@
 @use "@/styles/variables/variables" as variable;
 @use "@/styles/mixins/mixins" as mixin;
 
-.button {
+.drawer-button {
   display: inline-block;
   padding: 0 (variable.$size__spacing-unit * 0.5);
   margin-left: (variable.$size__spacing-unit * -0.75);

@@ -17,19 +17,19 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	background: variable.$color__background-input;
 	border: solid 1px variable.$color__border;
 	box-sizing: border-box;
 	outline: none;
-	padding: #{.36 * variable.$size__spacing-unit} #{.66 * variable.$size__spacing-unit};
-	-webkit-appearance: none;
+	padding: #{0.36 * variable.$size__spacing-unit} #{0.66 * variable.$size__spacing-unit};
+	appearance: none;
 	outline-offset: 0;
 	border-radius: 0;
 
 	&:focus {
 		border-color: variable.$color__link;
-		outline: thin solid rgba( variable.$color__link, 0.15 );
+		outline: thin solid rgba(variable.$color__link, 0.15);
 		outline-offset: -4px;
 	}
 }
@@ -40,9 +40,7 @@ input[type="search"] {
 	}
 }
 
-select {
-
-}
+//select {}
 
 textarea {
 	box-sizing: border-box;
@@ -53,9 +51,7 @@ textarea {
 }
 
 form {
-
 	p {
 		margin: variable.$size__spacing-unit 0;
 	}
-
 }
