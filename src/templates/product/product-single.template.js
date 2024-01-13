@@ -153,6 +153,7 @@ class ProductSingleTemplate extends Component {
                               isFeatureLoad && <LinearIndeterminate />}
                             <a
                               href="#___article"
+                              aria-label={_image_index}
                               className={
                                 styles.product__primary__attachments__attached__link
                               }
@@ -227,6 +228,7 @@ class ProductSingleTemplate extends Component {
                               isFeatureLoad && <LinearIndeterminate />}
                             <a
                               href="#___attachments"
+                              aria-label={_image_index}
                               className={
                                 styles.product__primary__attachments__attached__link
                               }
