@@ -189,7 +189,7 @@ class ProductTemplate extends Component {
             updateOnEachImageLoad={true}
           >
             {nodes.map(({ node }, i) => {
-              const title = node.title || node.fields.post_slug
+              const title = node.title || 'No title'
 
               // ページ分割
               if (i >= posts_per_page * paged) {

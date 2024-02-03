@@ -46,10 +46,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
       // ページの生成.
       createPage({
-        path: 'product/' + md5(post.node?.alternative_id || 0).slice(0, 12), // ハッシュ化したURL.
+        path: 'product/' + md5(post.node?.alternative_id || 0), // ハッシュ化したURL.
         component: productPost,
         context: {
-          slug: md5(post.node?.alternative_id || 0).slice(0, 12), // ハッシュ化したURL.
+          slug: md5(post.node?.alternative_id || 0), // ハッシュ化したURL.
           previous,
           next,
         },
@@ -134,7 +134,7 @@ exports.onCreateNode = async ({ node, actions, getNode, store, cache }) => {
     await createNodeField({
       name: 'post_slug',
       node,
-      value: md5(node?.alternative_id || 0).slice(0, 12),
+      value: md5(node?.alternative_id || 0),
     })
 
     // 画像ノードを追加.
