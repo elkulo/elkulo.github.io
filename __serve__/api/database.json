@@ -10,9 +10,9 @@
         "link": "https://sp01.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
         "attachment": [
-          "http://localhost:8080/media/1/m1.jpg",
-          "http://localhost:8080/media/1/m2.jpg",
-          "http://localhost:8080/media/1/m3.jpg"
+          "http://localhost:50080/media/1/m1.jpg",
+          "http://localhost:50080/media/1/m2.jpg",
+          "http://localhost:50080/media/1/m3.jpg"
         ]
       },
       {
@@ -23,7 +23,7 @@
         "tag": ["ダークモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp02.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/2/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/2/m1.jpg"]
       },
       {
         "id": 3,
@@ -33,7 +33,7 @@
         "tag": ["ライトモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp03.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/3/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/3/m1.jpg"]
       },
       {
         "id": 4,
@@ -43,7 +43,7 @@
         "tag": ["ダークモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp04.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/4/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/4/m1.jpg"]
       },
       {
         "id": 5,
@@ -54,9 +54,9 @@
         "link": "https://sp01.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
         "attachment": [
-          "http://localhost:8080/media/1/m1.jpg",
-          "http://localhost:8080/media/1/m2.jpg",
-          "http://localhost:8080/media/1/m3.jpg"
+          "http://localhost:50080/media/1/m1.jpg",
+          "http://localhost:50080/media/1/m2.jpg",
+          "http://localhost:50080/media/1/m3.jpg"
         ]
       },
       {
@@ -67,7 +67,7 @@
         "tag": ["ダークモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp02.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/2/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/2/m1.jpg"]
       },
       {
         "id": 7,
@@ -77,7 +77,7 @@
         "tag": ["ライトモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp03.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/3/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/3/m1.jpg"]
       },
       {
         "id": 8,
@@ -87,7 +87,7 @@
         "tag": ["ダークモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp04.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/4/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/4/m1.jpg"]
       },
       {
         "id": 9,
@@ -98,9 +98,9 @@
         "link": "https://sp01.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
         "attachment": [
-          "http://localhost:8080/media/1/m1.jpg",
-          "http://localhost:8080/media/1/m2.jpg",
-          "http://localhost:8080/media/1/m3.jpg"
+          "http://localhost:50080/media/1/m1.jpg",
+          "http://localhost:50080/media/1/m2.jpg",
+          "http://localhost:50080/media/1/m3.jpg"
         ]
       },
       {
@@ -111,7 +111,7 @@
         "tag": ["ダークモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp02.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/2/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/2/m1.jpg"]
       },
       {
         "id": 11,
@@ -121,7 +121,7 @@
         "tag": ["ライトモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp03.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/3/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/3/m1.jpg"]
       },
       {
         "id": 12,
@@ -131,7 +131,7 @@
         "tag": ["ダークモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp04.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/4/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/4/m1.jpg"]
       },
       {
         "id": 13,
@@ -142,9 +142,9 @@
         "link": "https://sp01.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
         "attachment": [
-          "http://localhost:8080/media/1/m1.jpg",
-          "http://localhost:8080/media/1/m2.jpg",
-          "http://localhost:8080/media/1/m3.jpg"
+          "http://localhost:50080/media/1/m1.jpg",
+          "http://localhost:50080/media/1/m2.jpg",
+          "http://localhost:50080/media/1/m3.jpg"
         ]
       },
       {
@@ -155,7 +155,7 @@
         "tag": ["ダークモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp02.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/2/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/2/m1.jpg"]
       },
       {
         "id": 15,
@@ -165,7 +165,7 @@
         "tag": ["ライトモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp03.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/3/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/3/m1.jpg"]
       },
       {
         "id": 16,
@@ -175,7 +175,7 @@
         "tag": ["ダークモード", "1カラム", "トップ画像スライド"],
         "link": "https://sp04.mdiv.jp/",
         "content": "Premium/Basic/Lightプラン版があります。オリジナル管理画面対応。管理画面からメインカラー、アクセントカラー、ヘッダー画像等変更できます。",
-        "attachment": ["http://localhost:8080/media/4/m1.jpg"]
+        "attachment": ["http://localhost:50080/media/4/m1.jpg"]
       }
     ]
   }
