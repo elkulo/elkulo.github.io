@@ -110,6 +110,15 @@
       width: 100%;
       margin: (variable.$size__spacing-unit * 3) 0 0;
 
+      & {
+        @include mixin.link-transition(transform);
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        padding-bottom: 5px;
+      }
+
       @include mixin.media(mobile) {
         width: calc(50% - #{variable.$size__spacing-unit * 2});
         margin-left: variable.$size__spacing-unit;
@@ -126,19 +135,14 @@
         margin-right: (variable.$size__spacing-unit * 1.5);
       }
 
-      @include mixin.link-transition(transform);
-
-      &:hover {
-        transform: translateY(-5px);
-        padding-bottom: 5px;
-      }
-
       &__feature {
         box-sizing: border-box;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
 
-        @include mixin.clear-link();
+        & {
+          @include mixin.clear-link();
+        }
 
         .feature-link {
           transform: translate(0); // NOTE: Safariでoverflow:hiddenが効かない対策

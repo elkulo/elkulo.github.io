@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "@/styles/variables/variables" as variable;
 @use "@/styles/mixins/mixins" as mixin;
 
@@ -84,7 +85,7 @@ $color__footer-text: #565656;
     color: inherit;
 
     &:hover {
-      color: lighten($color__footer-text, 30%);
+      color: color.adjust( $color__footer-text, $lightness: 30%);
       box-shadow: none;
     }
   }
