@@ -1,41 +1,9 @@
-const md5 = require('md5')
 const activeEnv =
   process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || `development`
 require(`dotenv`).config({ path: `.env.${activeEnv}` })
 
-// APIを指定.
-const getAPI = {
-  _date: new Date(),
-  _format(n) {
-    return n < 10 ? '0' + n : n.toString()
-  },
-  year() {
-    return this._date.getFullYear().toString()
-  },
-  month() {
-    return this._format(this._date.getMonth() + 1)
-  },
-  day() {
-    return this._format(this._date.getDate())
-  },
-  hour() {
-    return this._format(this._date.getHours())
-  },
-  min() {
-    return this._format(this._date.getMinutes())
-  },
-  url() {
-    return `${process.env?.API_URL}?key=${md5(
-      this.year() +
-        this.month() +
-        this.day() +
-        this.hour() +
-        this.min() +
-        process.env?.API_KEY +
-        process.env?.API_SALT,
-    )}`
-  },
-}
+// APIのURL生成.
+const getAPI = require('./generate-key')
 
 module.exports = {
   // Github pages へ npm gh-pages　でデプロイするRepository
@@ -188,7 +156,11 @@ module.exports = {
         name: `posts`,
 
         // 取得先のURL(env変数)
-        url: getAPI.url(),
+        url: getAPI.url(
+          process.env?.API_URL,
+          process.env?.API_KEY,
+          process.env?.API_SALT,
+        ),
 
         // Apiの配列のルートになっているキー: {"data": [{},{},{}]}
         entityLevel: `data`,
