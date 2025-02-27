@@ -25,6 +25,8 @@ let getTransitionStyles = {}
  * @return {JSX.Element}
  */
 const Footer = ({ location, position }) => {
+  const nodeRef = React.useRef(null)
+  let footerStyled
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -36,7 +38,6 @@ const Footer = ({ location, position }) => {
     }
   `)
 
-  let footerStyled
   if (position === 'content') {
     footerStyled = styles.content
 
@@ -79,6 +80,7 @@ const Footer = ({ location, position }) => {
       <TransitionGroup>
         <ReactTransition
           key={location.pathname}
+          nodeRef={nodeRef}
           appear={true}
           timeout={{
             enter: timeout,
@@ -87,6 +89,7 @@ const Footer = ({ location, position }) => {
         >
           {status => (
             <div
+              ref={nodeRef}
               style={{
                 ...getTransitionStyles[status],
               }}

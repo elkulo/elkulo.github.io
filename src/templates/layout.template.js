@@ -65,6 +65,7 @@ const transitionStyles = {
  */
 const Layout = ({ location, children, isPageType }) => {
   const isHome = isPageType === 'Home' ? true : false
+  const nodeRef = React.useRef(null)
 
   // Homeの場合.
   if (isHome) {
@@ -73,6 +74,7 @@ const Layout = ({ location, children, isPageType }) => {
         <HomeLoader />
         <TransitionGroup>
           <ReactTransition
+            nodeRef={nodeRef}
             key={location.pathname}
             appear={true}
             timeout={{
@@ -115,6 +117,7 @@ const Layout = ({ location, children, isPageType }) => {
           <TransitionGroup>
             <ReactTransition
               key={location.pathname}
+              nodeRef={nodeRef}
               appear={true}
               timeout={{
                 enter: motion.timeout,
@@ -122,14 +125,7 @@ const Layout = ({ location, children, isPageType }) => {
               }}
             >
               {status => (
-                <div
-                  style={
-                    /* Product以外で適用 */
-                    isPageType === 'Product'
-                      ? {}
-                      : { ...transitionStyles.move[status] }
-                  }
-                >
+                <div ref={nodeRef} style={transitionStyles.move[status]}>
                   <main>{children}</main>
                 </div>
               )}
