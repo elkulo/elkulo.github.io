@@ -22,14 +22,17 @@ module.exports = {
     return this._format(this._date.getMinutes())
   },
   url(API_URL, API_KEY, API_SALT) {
-    return `${API_URL}?key=${md5(
-      this.year() +
-        this.month() +
-        this.day() +
-        this.hour() +
-        this.min() +
-        API_KEY +
-        API_SALT,
-    )}`
+    if (API_SALT) {
+      return `${API_URL}?key=${md5(
+        this.year() +
+          this.month() +
+          this.day() +
+          this.hour() +
+          this.min() +
+          API_KEY +
+          API_SALT,
+      )}`
+    }
+    return `${API_URL}?key=${API_KEY}`
   },
 }
