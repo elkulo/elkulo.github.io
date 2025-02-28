@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import styled from '@emotion/styled'
 import { Backdrop } from '@mui/material'
 import { Typography, Box, LinearProgress } from '@mui/material'
-import { LoadedContext } from '@/story/contexts'
+import { LoadedContext } from '@/composables/useLoadedStory'
 
 // フェード
 const transition = {
