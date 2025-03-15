@@ -18,7 +18,7 @@
   },
   "scripts": {
     "clean:cache": "gatsby clean",
-    "clean:package": "rm -rf node_modules package-lock.json && npm install --legacy-peer-deps",
+    "clean:package": "rm -rf node_modules && npm install --legacy-peer-deps",
     "start": "npm run develop",
     "develop": "run-p serve:*",
     "serve:api": "json-server --watch __serve__/api/database.json --port 3000",
