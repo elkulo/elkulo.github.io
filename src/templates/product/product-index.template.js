@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import PreviewIcon from '@mui/icons-material/Panorama'
-import {
-  TransitionGroup,
-  Transition as ReactTransition,
-} from 'react-transition-group'
 import styles from './product-index.module.scss'
 import Wrap from '@/components/atoms/Wrap'
 import Image from '@/components/atoms/Image'
@@ -33,65 +29,8 @@ class ProductTemplate extends Component {
       posts_per_page: 12, // 分割する投稿数.
       max_posts: props.data.allPost.edges.length, // 投稿数.
       has_more: true, // もっと見る判定.
-      motion: {
-        timeout: 300, // モーション時間.
-        delay: 200, // 表示までの時間.
-      },
     }
     this.onMorePostsClick = this.onMorePostsClick.bind(this)
-  }
-
-  /**
-   * 読み込みアクション
-   *
-   * @param {string} status
-   * @param {number}  delay
-   */
-  getTransitionStyles(status, delay) {
-    const { motion } = this.state
-
-    let TransformCSS = `transform ${motion.timeout}ms ease-out ${
-      delay * motion.delay
-    }ms, opacity ${motion.timeout}ms ease-in ${delay * motion.delay}ms`
-
-    // モバイルでは遅延を省略.
-    if (
-      typeof window === 'object' &&
-      document.querySelector('#___gatsby')?.clientWidth <= 600
-    ) {
-      TransformCSS = `transform ${motion.timeout}ms ease-out, opacity ${motion.timeout}ms ease-in`
-    }
-
-    // アクションタイミング
-    switch (status) {
-      case 'entering':
-        return {
-          opacity: 0,
-          transform: `translate(0, 10px)`,
-        }
-      case 'entered':
-        return {
-          transition: TransformCSS,
-          opacity: 1,
-          transform: `translate(0, 0)`,
-        }
-      case 'exiting':
-        return {
-          transition: `opacity ${motion.timeout}ms ease-in`,
-          opacity: 0,
-          transform: `translate(0, 0)`,
-        }
-      case 'exited':
-        return {
-          opacity: 0,
-          transform: `translate(0, 10px)`,
-        }
-      default:
-        return {
-          opacity: 1,
-          transform: `translate(0, 0)`,
-        }
-    }
   }
 
   /**
@@ -138,7 +77,6 @@ class ProductTemplate extends Component {
       paged,
       posts_per_page,
       has_more,
-      motion,
     } = this.state
 
     // アーカイブタイプの判別
@@ -146,6 +84,24 @@ class ProductTemplate extends Component {
       isProductType === 'index' || isProductType === 'tag'
         ? styles.product__categories__category__current
         : ''
+
+    // 順番に表示.
+    const addMotion = i => {
+      const delay = 300 // 表示までの時間.
+
+      // モバイルでは遅延を省略.
+      if (
+        typeof window === 'object' &&
+        document.querySelector('#___gatsby')?.clientWidth <= 600
+      ) {
+        return {
+          animationDelay: `${delay}ms`,
+        }
+      }
+      return {
+        animationDelay: `${Math.floor(i * delay)}ms`,
+      }
+    }
 
     return (
       <div className={styles.product}>
@@ -201,116 +157,70 @@ class ProductTemplate extends Component {
                   className={styles.product__entries__entry}
                   key={node.id}
                 >
-                  <TransitionGroup>
-                    <ReactTransition
-                      key={node.id}
-                      appear={true}
-                      timeout={{
-                        enter: motion.timeout,
-                        exit: motion.timeout,
-                      }}
-                    >
-                      {status => (
-                        <div
-                          style={{
-                            ...this.getTransitionStyles(
-                              status,
-                              i - posts_per_page * (paged - 1),
-                            ),
-                          }}
-                        >
-                          <div
-                            className={styles.product__entries__entry__feature}
+                  <div
+                    className={styles.product__entries__entry__motion}
+                    style={addMotion(i - posts_per_page * (paged - 1))}
+                  >
+                    <div className={styles.product__entries__entry__feature}>
+                      <Link
+                        to={`/product/${node.fields.post_slug}`}
+                        className={styles.featureLink}
+                      >
+                        <Image src={node.attachment[0]} alt={title} />
+                        <span className={styles.featureLink__cover}>
+                          <span className={styles.featureLink__cover__inner}>
+                            <PreviewIcon />
+                            Permalink
+                          </span>
+                        </span>
+                      </Link>
+                    </div>
+                    <header className={styles.product__entries__entry__header}>
+                      <h3
+                        className={
+                          styles.product__entries__entry__header__title
+                        }
+                      >
+                        <Link to={`/product/${node.fields.post_slug}`}>
+                          {title}
+                        </Link>
+                      </h3>
+                      <div
+                        className={styles.product__entries__entry__header__date}
+                      >
+                        Updated: {node.date}
+                      </div>
+                    </header>
+                    <div className={styles.product__entries__entry__tags}>
+                      {node.tag.map((_tag_name, _tag_index) => {
+                        return (
+                          <span
+                            className={
+                              styles.product__entries__entry__tags__tag
+                            }
+                            key={_tag_index}
                           >
-                            <Link
-                              to={`/product/${node.fields.post_slug}`}
-                              className={styles.featureLink}
-                            >
-                              <Image src={node.attachment[0]} alt={title} />
-                              <span className={styles.featureLink__cover}>
-                                <span
-                                  className={styles.featureLink__cover__inner}
-                                >
-                                  <PreviewIcon />
-                                  Permalink
-                                </span>
-                              </span>
+                            <Link to={`/product/tag/${encodeURI(_tag_name)}`}>
+                              {_tag_name}
                             </Link>
-                          </div>
-                          <header
-                            className={styles.product__entries__entry__header}
-                          >
-                            <h3
-                              className={
-                                styles.product__entries__entry__header__title
-                              }
-                            >
-                              <Link to={`/product/${node.fields.post_slug}`}>
-                                {title}
-                              </Link>
-                            </h3>
-                            <div
-                              className={
-                                styles.product__entries__entry__header__date
-                              }
-                            >
-                              Updated: {node.date}
-                            </div>
-                          </header>
-                          <div className={styles.product__entries__entry__tags}>
-                            {node.tag.map((_tag_name, _tag_index) => {
-                              return (
-                                <span
-                                  className={
-                                    styles.product__entries__entry__tags__tag
-                                  }
-                                  key={_tag_index}
-                                >
-                                  <Link
-                                    to={`/product/tag/${encodeURI(_tag_name)}`}
-                                  >
-                                    {_tag_name}
-                                  </Link>
-                                </span>
-                              )
-                            })}
-                          </div>
-                        </div>
-                      )}
-                    </ReactTransition>
-                  </TransitionGroup>
+                          </span>
+                        )
+                      })}
+                    </div>
+                  </div>
                 </section>
               )
             })}
           </Masonry>
           {has_more && (
-            <TransitionGroup>
-              <ReactTransition
-                key="more"
-                appear={true}
-                timeout={{
-                  enter: motion.timeout,
-                  exit: motion.timeout,
-                }}
+            <div className={styles.product__more}>
+              <button
+                onClick={this.onMorePostsClick}
+                className={`${styles.product__more__button} button`}
               >
-                {status => (
-                  <div
-                    style={{
-                      ...this.getTransitionStyles(status, posts_per_page),
-                    }}
-                  >
-                    <div className={styles.product__more}>
-                      <button
-                        onClick={this.onMorePostsClick}
-                        className={`${styles.product__more__button} button`}
-                      >
-                        もっと見る
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </ReactTransition>
-            </TransitionGroup>
+                もっと見る
+              </button>
+            </div>
           )}
         </Wrap>
       </div>

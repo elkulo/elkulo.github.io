@@ -1,6 +1,17 @@
 @use "@/styles/variables/variables" as variable;
 @use "@/styles/mixins/mixins" as mixin;
 
+@keyframes fadeInOrder {
+  0% {
+    opacity: 0;
+    transform: translate(0, 10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
 .product {
   margin: 0 0 (variable.$size__spacing-unit * 2);
 
@@ -42,7 +53,9 @@
           height: 6px;
           border-radius: 100%;
           background: currentColor;
-          transition: box-shadow 120ms ease, background 120ms ease;
+          transition:
+            box-shadow 120ms ease,
+            background 120ms ease;
         }
 
         &:hover {
@@ -50,7 +63,9 @@
 
           &::after {
             background: variable.$color__link;
-            box-shadow: 0 0 0 2px variable.$color__link, 0 0 0 5px variable.$color__link inset;
+            box-shadow:
+              0 0 0 2px variable.$color__link,
+              0 0 0 5px variable.$color__link inset;
           }
         }
       }
@@ -61,7 +76,9 @@
 
           &::after {
             background: variable.$color__link;
-            box-shadow: 0 0 0 2px #fff, 0 0 0 3px variable.$color__link;
+            box-shadow:
+              0 0 0 2px #fff,
+              0 0 0 3px variable.$color__link;
           }
         }
       }
@@ -110,6 +127,15 @@
       width: 100%;
       margin: (variable.$size__spacing-unit * 3) 0 0;
 
+      & {
+        @include mixin.link-transition(transform);
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        padding-bottom: 5px;
+      }
+
       @include mixin.media(mobile) {
         width: calc(50% - #{variable.$size__spacing-unit * 2});
         margin-left: variable.$size__spacing-unit;
@@ -126,11 +152,11 @@
         margin-right: (variable.$size__spacing-unit * 1.5);
       }
 
-      @include mixin.link-transition(transform);
-
-      &:hover {
-        transform: translateY(-5px);
-        padding-bottom: 5px;
+      // 順番に表示.
+      &__motion {
+        animation: fadeInOrder 600ms ease-in forwards;
+        opacity: 0;
+        transform: translate(0, 10px);
       }
 
       &__feature {
@@ -138,7 +164,9 @@
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
 
-        @include mixin.clear-link();
+        & {
+          @include mixin.clear-link();
+        }
 
         .feature-link {
           transform: translate(0); // NOTE: Safariでoverflow:hiddenが効かない対策
@@ -151,7 +179,7 @@
           background: #fafafa;
           overflow: hidden;
           @include mixin.link-transition(border);
-  
+
           &:hover {
             img {
               filter: blur(5px);

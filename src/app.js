@@ -1,5 +1,5 @@
 import React from 'react'
-import { LoadedStory } from '@/story/contexts'
+import { useLoadedStory, LoadedContext } from '@/composables/useLoadedStory'
 
 /**
  * App
@@ -7,6 +7,14 @@ import { LoadedStory } from '@/story/contexts'
  * @param  {*} props.children
  * @return {JSX.Element}
  */
-const App = ({ children }) => <LoadedStory>{children}</LoadedStory>
+const App = ({ children }) => {
+  const loadedStory = useLoadedStory()
+
+  return (
+    <LoadedContext.Provider value={loadedStory}>
+      {children}
+    </LoadedContext.Provider>
+  )
+}
 
 export default App
