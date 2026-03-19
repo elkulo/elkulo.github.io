@@ -6,6 +6,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import styles from './site-header.module.scss'
 import Wrap from '@/components/atoms/Wrap'
 import { LogoBlack, LogoWhite } from '@/assets/images/image'
+import { baseUrl } from '@/lib/url'
 
 const siteTitle = 'el.kulo'
 
@@ -17,7 +18,7 @@ const siteTitle = 'el.kulo'
  * @return {JSX.Element}
  */
 const Header = ({ location = window.location, position }) => {
-  const base = import.meta.env.BASE_URL
+  const base = baseUrl()
   const rootPath = base
 
   let Brand = {

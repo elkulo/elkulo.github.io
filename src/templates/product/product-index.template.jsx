@@ -4,6 +4,7 @@ import styles from './product-index.module.scss'
 import Wrap from '@/components/atoms/Wrap'
 import Image from '@/components/atoms/Image'
 import Masonry from 'react-masonry-component'
+import { baseUrl } from '@/lib/url'
 
 /**
  * プロダクトのテンプレート
@@ -110,7 +111,7 @@ class ProductTemplate extends Component {
               className={`${styles.product__categories__category} ${current}`}
               key="ALL"
             >
-              <a href={`${import.meta.env.BASE_URL}product`}>ALL</a>
+              <a href={`${baseUrl()}product`}>ALL</a>
             </li>
             {categories.map((_cat_name, _cat_index) => {
               current =
@@ -122,7 +123,7 @@ class ProductTemplate extends Component {
                   className={`${styles.product__categories__category} ${current}`}
                   key={_cat_index}
                 >
-                  <a href={`${import.meta.env.BASE_URL}product/category/${encodeURI(_cat_name)}`}>
+                  <a href={`${baseUrl()}product/category/${encodeURI(_cat_name)}`}>
                     {_cat_name}
                   </a>
                 </li>
@@ -162,7 +163,7 @@ class ProductTemplate extends Component {
                   >
                     <div className={styles.product__entries__entry__feature}>
                       <a
-                        href={`${import.meta.env.BASE_URL}product/${node.fields.post_slug}`}
+                        href={`${baseUrl()}product/${node.fields.post_slug}`}
                         className={styles.featureLink}
                       >
                         <Image src={node.attachment[0]} alt={title} />
@@ -180,7 +181,7 @@ class ProductTemplate extends Component {
                           styles.product__entries__entry__header__title
                         }
                       >
-                        <a href={`${import.meta.env.BASE_URL}product/${node.fields.post_slug}`}>
+                        <a href={`${baseUrl()}product/${node.fields.post_slug}`}>
                           {title}
                         </a>
                       </h3>
@@ -199,7 +200,7 @@ class ProductTemplate extends Component {
                             }
                             key={_tag_index}
                           >
-                            <a href={`${import.meta.env.BASE_URL}product/tag/${encodeURI(_tag_name)}`}>
+                            <a href={`${baseUrl()}product/tag/${encodeURI(_tag_name)}`}>
                               {_tag_name}
                             </a>
                           </span>

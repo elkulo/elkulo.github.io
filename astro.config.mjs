@@ -2,6 +2,10 @@ import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import mdx from '@astrojs/mdx'
+import { fileURLToPath } from 'url'
+import path from 'path'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   site: 'https://elkulo.github.io',
@@ -17,10 +21,15 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '@': '/src',
+        '@': path.resolve(__dirname, 'src'),
       },
     },
     css: {
+      modules: {
+        // Gatsby の webpack と同様に kebab-case → camelCase 変換を有効化
+        // 例: .split-layout → styles.splitLayout
+        localsConvention: 'camelCase',
+      },
       preprocessorOptions: {
         scss: {
           // SCSS グローバル設定

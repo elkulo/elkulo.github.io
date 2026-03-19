@@ -9,6 +9,7 @@ import {
 } from '@/assets/videos/video'
 import styles from './home.module.scss'
 import { LogoWhite } from '@/assets/images/image'
+import { baseUrl } from '@/lib/url'
 
 /**
  * ホームのテンプレート
@@ -18,7 +19,7 @@ import { LogoWhite } from '@/assets/images/image'
  * @return {JSX.Element}
  */
 const HomeTemplate = ({ location }) => {
-  const base = import.meta.env.BASE_URL
+  const base = baseUrl()
   const siteTitle = 'el.kulo'
 
   return (

@@ -3,8 +3,9 @@ import HomeIcon from '@mui/icons-material/Home'
 import AboutIcon from '@mui/icons-material/Person'
 import ProductIcon from '@mui/icons-material/Grain'
 import ContactIcon from '@mui/icons-material/Send'
-import thumbnail from '@/assets/videos/landscape/landscape.jpg'
+import thumbnail from '@/assets/videos/landscape/landscape.jpg?url'
 import styles from './main-navigation.module.scss'
+import { baseUrl } from '@/lib/url'
 
 /**
  * ナビゲーション
@@ -12,7 +13,7 @@ import styles from './main-navigation.module.scss'
  * @return {JSX.Element}
  */
 export default function MainNavigation() {
-  const base = import.meta.env.BASE_URL
+  const base = baseUrl()
 
   const naviList = [
     {

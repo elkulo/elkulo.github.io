@@ -6,6 +6,7 @@ import Image from '@/components/atoms/Image'
 import Bio from '@/components/molecules/bio.component'
 import LinearIndeterminate from '@/components/atoms/LinearIndeterminate'
 import DummySite from '@/components/atoms/DummySite'
+import { baseUrl } from '@/lib/url'
 
 /**
  *　プロダクトシングルページ
@@ -70,7 +71,7 @@ class ProductSingleTemplate extends Component {
                     <div
                       className={styles.product__primary__categories__return}
                     >
-                      <a href={`${import.meta.env.BASE_URL}product`} className="button">
+                      <a href={`${baseUrl()}product`} className="button">
                         ← リストへ戻る
                       </a>
                     </div>
@@ -84,7 +85,7 @@ class ProductSingleTemplate extends Component {
                           key={_cat_index}
                         >
                           <a
-                            href={`${import.meta.env.BASE_URL}product/category/${encodeURI(_cat_name)}`}
+                            href={`${baseUrl()}product/category/${encodeURI(_cat_name)}`}
                           >
                             {_cat_name}
                           </a>
@@ -173,7 +174,7 @@ class ProductSingleTemplate extends Component {
                           className={styles.product__primary__tags__tag}
                           key={_tag_index}
                         >
-                          <a href={`${import.meta.env.BASE_URL}product/tag/${encodeURI(_tag_name)}`}>
+                          <a href={`${baseUrl()}product/tag/${encodeURI(_tag_name)}`}>
                             {_tag_name}
                           </a>
                         </div>
@@ -186,7 +187,7 @@ class ProductSingleTemplate extends Component {
                       <li className={styles.product__primary__navi__list__item}>
                         {next && (
                           <a
-                            href={`${import.meta.env.BASE_URL}product/${next.fields.post_slug}`}
+                            href={`${baseUrl()}product/${next.fields.post_slug}`}
                             rel="next"
                           >
                             ← {next.title}
@@ -196,7 +197,7 @@ class ProductSingleTemplate extends Component {
                       <li className={styles.product__primary__navi__list__item}>
                         {previous && (
                           <a
-                            href={`${import.meta.env.BASE_URL}product/${previous.fields.post_slug}`}
+                            href={`${baseUrl()}product/${previous.fields.post_slug}`}
                             rel="prev"
                           >
                             {previous.title} →

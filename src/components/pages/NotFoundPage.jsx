@@ -2,7 +2,8 @@ import React from 'react'
 import { styled } from '@mui/material/styles'
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace'
 import App from '@/app'
-import bg404 from '@/assets/images/background/bg-404.jpg'
+import bg404 from '@/assets/images/background/bg-404.jpg?url'
+import { baseUrl } from '@/lib/url'
 
 const Wrap = styled('div')({
   position: 'fixed',
@@ -52,7 +53,7 @@ const BackLink = styled('a')({
  * @return {JSX.Element}
  */
 function NotFound() {
-  const base = import.meta.env.BASE_URL
+  const base = baseUrl()
   return (
     <Wrap>
       <Inner>

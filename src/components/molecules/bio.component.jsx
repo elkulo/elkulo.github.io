@@ -1,5 +1,6 @@
 import React from 'react'
-import avatarSrc from '@/assets/images/avatar.png'
+import avatarSrc from '@/assets/images/avatar.png?url'
+import { baseUrl } from '@/lib/url'
 
 const author = {
   name: 'A.Sudo',
@@ -12,7 +13,7 @@ const author = {
  * @return {JSX.Element}
  */
 const Bio = () => {
-  const base = import.meta.env.BASE_URL
+  const base = baseUrl()
   return (
     <div
       style={{
