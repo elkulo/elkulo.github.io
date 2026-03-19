@@ -55,8 +55,8 @@ typings/
 .env*
 
 # SSG files
-.cache/
 dist/
+.astro/
 
 # Mac files
 .DS_Store
