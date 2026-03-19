@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkel_kulo=self.webpackChunkel_kulo||[]).push([[546],{5952:function(e,t,a){a.r(t),a.d(t,{Head:function(){return r}});var l=a(6540),n=a(2415),c=a(6058),u=a(1162);t.default=e=>{let{data:t,location:a}=e;return l.createElement(c.A,{location:a,isPageType:"Product"},l.createElement(u.A,{data:t,title:"PRODUCT",isProductType:"index"}))};const r=()=>l.createElement(n.A,{title:"PRODUCT"})}}]);
-//# sourceMappingURL=component---src-pages-product-js-ab40dee75f18797ee4fc.js.map
