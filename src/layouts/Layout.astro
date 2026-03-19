@@ -1,0 +1,67 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import 'normalize.css'
+import 'prismjs/themes/prism-tomorrow.css'
+import '@/styles/global.scss'
+
+export interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title,
+  description,
+} = Astro.props
+
+const siteTitle = 'el.kulo'
+const siteDescription = 'ポートフォリオ'
+const metaTitle = title ? `${title} | ${siteTitle}` : `${siteTitle} - ${siteDescription}`
+const metaDescription = description || siteDescription
+const base = import.meta.env.BASE_URL
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={metaDescription} />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>{metaTitle}</title>
+    <link rel="icon" type="image/x-icon" href={`${base}favicon.ico`} />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <ViewTransitions />
+    {import.meta.env.PUBLIC_TRACKING_ID && (
+      <Fragment>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_TRACKING_ID}`}
+        ></script>
+        <script define:vars={{ trackingId: import.meta.env.PUBLIC_TRACKING_ID }}>
+          window.dataLayer = window.dataLayer || []
+          function gtag() { dataLayer.push(arguments) }
+          gtag('js', new Date())
+          gtag('config', trackingId)
+        </script>
+      </Fragment>
+    )}
+  </head>
+  <body>
+    <div id="app">
+      <slot />
+    </div>
+    <script>
+      import Fix100vh from '@/functional/Fix100vh'
+      import ConvertHover from '@/functional/ConvertHover'
+      Fix100vh()
+      ConvertHover()
+    </script>
+  </body>
+</html>

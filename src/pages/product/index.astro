@@ -1,0 +1,17 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import ProductPage from '@/components/pages/ProductPage'
+import { fetchPosts } from '@/lib/api'
+
+const { allPost, allCategory } = await fetchPosts()
+const data = { allPost, allCategory }
+---
+
+<Layout title="PRODUCT">
+  <ProductPage
+    client:only="react"
+    data={data}
+    title="PRODUCT"
+    isProductType="index"
+  />
+</Layout>

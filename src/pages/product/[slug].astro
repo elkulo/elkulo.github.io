@@ -1,0 +1,32 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import ProductSinglePage from '@/components/pages/ProductSinglePage'
+import { fetchPosts } from '@/lib/api'
+
+export async function getStaticPaths() {
+  const { posts } = await fetchPosts()
+
+  return posts.map((post, i) => ({
+    params: { slug: post.fields.post_slug },
+    props: {
+      data: { internalPosts: post },
+      pageContext: {
+        // 新しい順なので i-1 が次（新しい）、i+1 が前（古い）
+        next: i > 0 ? posts[i - 1] : null,
+        previous: i < posts.length - 1 ? posts[i + 1] : null,
+      },
+    },
+  }))
+}
+
+const { data, pageContext } = Astro.props
+const post = data.internalPosts
+---
+
+<Layout title={post.title} description={post.content}>
+  <ProductSinglePage
+    client:only="react"
+    data={data}
+    pageContext={pageContext}
+  />
+</Layout>

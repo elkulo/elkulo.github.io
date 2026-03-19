@@ -1,0 +1,34 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import ProductPage from '@/components/pages/ProductPage'
+import { fetchPosts } from '@/lib/api'
+
+export async function getStaticPaths() {
+  const { allCategory, posts } = await fetchPosts()
+
+  return allCategory.distinct.map(catName => {
+    const filtered = posts.filter(p => p.category?.includes(catName))
+    return {
+      params: { name: encodeURIComponent(catName) },
+      props: {
+        catName,
+        data: {
+          allPost: { edges: filtered.map(node => ({ node })) },
+          allCategory,
+        },
+      },
+    }
+  })
+}
+
+const { catName, data } = Astro.props
+---
+
+<Layout title={catName}>
+  <ProductPage
+    client:only="react"
+    data={data}
+    title={catName}
+    isProductType="category"
+  />
+</Layout>
