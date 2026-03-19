@@ -3,8 +3,7 @@ import { fetchPosts } from '@/lib/api'
 
 export async function GET(context) {
   const { posts } = await fetchPosts()
-  const base =
-    context.site?.href || 'https://elkulo.github.io/'
+  const base = context.site?.href || 'https://elkulo.github.io/'
 
   return rss({
     title: 'el.kulo',
