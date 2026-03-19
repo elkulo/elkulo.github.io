@@ -3,7 +3,7 @@ import PreviewIcon from '@mui/icons-material/Panorama'
 import styles from './product-index.module.scss'
 import Wrap from '@/components/atoms/Wrap'
 import Image from '@/components/atoms/Image'
-import Masonry from 'react-masonry-component'
+import Masonry from 'react-masonry-css'
 import { baseUrl } from '@/lib/url'
 
 /**
@@ -138,11 +138,9 @@ class ProductTemplate extends Component {
           )}
 
           <Masonry
+            breakpointCols={{ default: 3, 1024: 2, 640: 1 }}
             className={styles.product__entries}
-            elementType={'div'}
-            options={{ percentPosition: true }}
-            disableImagesLoaded={true}
-            updateOnEachImageLoad={true}
+            columnClassName={styles.product__entries__column}
           >
             {nodes.map(({ node }, i) => {
               const title = node.title || 'No title'
