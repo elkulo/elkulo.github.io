@@ -1,0 +1,17 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import ContactPage from '@/components/pages/ContactPage'
+import * as contactMd from '@/content/contact/index.md'
+
+const html = await contactMd.compiledContent()
+const { title, description, date } = contactMd.frontmatter
+const base = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/')
+const attachedSrc = `${base}content/contact/cover.jpg`
+
+const post = { html }
+const postContent = { title, description, date, attachedSrc }
+---
+
+<Layout title={title} description={description}>
+  <ContactPage client:only="react" post={post} postContent={postContent} />
+</Layout>

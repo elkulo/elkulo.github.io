@@ -48,15 +48,13 @@ $color__footer-text: #565656;
     box-sizing: border-box;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 360px;
     padding: 0 variable.$size__spacing-unit;
     margin: 0 auto;
 
     &__item {
-      flex-basis: calc(20% - #{variable.$size__spacing-unit});
-      max-width: calc(20% - #{variable.$size__spacing-unit});
-      margin: (variable.$size__spacing-unit * 0.5) 0 0;
+      margin: (variable.$size__spacing-unit * 0.5) 1rem 0;
       padding: 0;
       font-family: variable.$font__code;
       font-size: variable.$font__size-xs;
@@ -67,7 +65,7 @@ $color__footer-text: #565656;
       img {
         width: auto;
         max-width: 40px;
-        height: 40px;
+        height: auto;
         vertical-align: bottom;
         margin: 0 auto (variable.$size__spacing-unit * 0.25);
       }

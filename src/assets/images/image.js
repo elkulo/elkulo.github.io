@@ -1,10 +1,11 @@
 /**
  * 画像を纏めて読み込む
+ * ?url を付けて Astro の画像最適化パイプラインをバイパスし URL 文字列を取得する
  */
-export { default as LogoBlack } from './logo/logo-black.png'
-export { default as LogoWhite } from './logo/logo-white.png'
-export { default as NodeIcon } from './icons/icon-node.png'
-export { default as ReactIcon } from './icons/icon-react.png'
-export { default as GraphQLIcon } from './icons/icon-graphql.png'
-export { default as GatsbyIcon } from './icons/icon-gatsby.png'
-export { default as GitHubIcon } from './icons/icon-github.png'
+import LogoBlack from './logo/logo-black.png?url'
+import LogoWhite from './logo/logo-white.png?url'
+import NodeIcon from './icons/icon-node.png?url'
+import ReactIcon from './icons/icon-react.png?url'
+import GitHubIcon from './icons/icon-github.png?url'
+
+export { LogoBlack, LogoWhite, NodeIcon, ReactIcon, GitHubIcon }

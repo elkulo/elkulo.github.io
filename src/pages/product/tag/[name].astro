@@ -1,0 +1,37 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import ProductPage from '@/components/pages/ProductPage'
+import { fetchPosts } from '@/lib/api'
+
+export async function getStaticPaths() {
+  const { posts, allCategory } = await fetchPosts()
+
+  // 全タグを集約
+  const allTags = [...new Set(posts.flatMap(p => p.tag || []))]
+
+  return allTags.map(tagName => {
+    const filtered = posts.filter(p => p.tag?.includes(tagName))
+    return {
+      params: { name: tagName },
+      props: {
+        tagName,
+        data: {
+          allPost: { edges: filtered.map(node => ({ node })) },
+          allCategory,
+        },
+      },
+    }
+  })
+}
+
+const { tagName, data } = Astro.props
+---
+
+<Layout title={tagName}>
+  <ProductPage
+    client:only="react"
+    data={data}
+    title={tagName}
+    isProductType="tag"
+  />
+</Layout>

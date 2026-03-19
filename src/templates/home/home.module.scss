@@ -1,7 +1,7 @@
 @use "@/styles/variables/variables" as variable;
 @use "@/styles/mixins/mixins" as mixin;
 
-.split-layout {
+.splitLayout {
   display: flex;
   flex-direction: column-reverse;
 

@@ -74,10 +74,6 @@
   overflow: hidden;
   transform: translate(0); // NOTE: Safariでoverflow:hiddenが効かない対策.
 
-  :global(.gatsby-image-wrapper) {
-    height: 100%;
-  }
-
   @include mixin.media(tablet) {
     height: calc(56.25vw - #{variable.$size__spacing-unit * 6});
   }
@@ -92,17 +88,20 @@
   }
 }
 
-.section {
-  margin: 3rem auto;
-  opacity: 0;
-  transition: transform 300ms ease-out, opacity 300ms ease-out;
+.attached {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 100%;
+  height: auto;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  &__active {
-    opacity: 1;
+  @include mixin.media(desktop) {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
   }
 }
 

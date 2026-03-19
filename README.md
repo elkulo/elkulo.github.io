@@ -1,6 +1,6 @@
-# ポートフォリオ
+# elkulo.github.io
 
-JAMstack by Gatsby.js
+JAMstack な React x Astro のポートフォリオ
 
 ## パブリックドメイン
 
@@ -10,7 +10,7 @@ JAMstack by Gatsby.js
 
 #### 構築
 
-React, Gatsby, Sass(SCSS), Emotion, MUI
+React, Astro, Sass(SCSS), Emotion, MUI
 
 #### コンテンツリソース
 
