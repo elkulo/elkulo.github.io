@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   return allCategory.distinct.map(catName => {
     const filtered = posts.filter(p => p.category?.includes(catName))
     return {
-      params: { name: encodeURIComponent(catName) },
+      params: { name: catName },
       props: {
         catName,
         data: {
