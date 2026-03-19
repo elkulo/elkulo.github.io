@@ -174,7 +174,9 @@ class ProductSingleTemplate extends Component {
                           className={styles.product__primary__tags__tag}
                           key={_tag_index}
                         >
-                          <a href={`${baseUrl()}product/tag/${encodeURI(_tag_name)}`}>
+                          <a
+                            href={`${baseUrl()}product/tag/${encodeURI(_tag_name)}`}
+                          >
                             {_tag_name}
                           </a>
                         </div>

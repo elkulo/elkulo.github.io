@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-  NodeIcon,
-  ReactIcon,
-  GitHubIcon,
-} from '@/assets/images/image'
+import { NodeIcon, ReactIcon, GitHubIcon } from '@/assets/images/image'
 import {
   TransitionGroup,
   Transition as ReactTransition,

@@ -8,10 +8,4 @@ import NodeIcon from './icons/icon-node.png?url'
 import ReactIcon from './icons/icon-react.png?url'
 import GitHubIcon from './icons/icon-github.png?url'
 
-export {
-  LogoBlack,
-  LogoWhite,
-  NodeIcon,
-  ReactIcon,
-  GitHubIcon,
-}
+export { LogoBlack, LogoWhite, NodeIcon, ReactIcon, GitHubIcon }

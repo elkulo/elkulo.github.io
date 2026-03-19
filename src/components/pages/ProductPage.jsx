@@ -13,7 +13,11 @@ import ProductTemplate from '@/templates/product/product-index.template'
 export default function ProductPage({ data, title, isProductType }) {
   return (
     <App isPageType="Product">
-      <ProductTemplate data={data} title={title} isProductType={isProductType} />
+      <ProductTemplate
+        data={data}
+        title={title}
+        isProductType={isProductType}
+      />
     </App>
   )
 }

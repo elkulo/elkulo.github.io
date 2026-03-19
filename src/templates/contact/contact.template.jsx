@@ -26,11 +26,7 @@ const ContactTemplate = ({ post, postContent }) => {
             <div className={styles.primary__content}>
               <p>{postContent.description}</p>
               <p>
-                <a
-                  href={formUrl}
-                  rel="noopener noreferrer"
-                  className="button"
-                >
+                <a href={formUrl} rel="noopener noreferrer" className="button">
                   <MailIcon className={styles.icon} />
                   メールフォームへ移動
                 </a>
