@@ -106,6 +106,23 @@
   }
 }
 
+.attached {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 100%;
+  height: auto;
+
+  @include mixin.media(desktop) {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+  }
+}
+
 // markdownBody
 .markdown-body {
   h1,

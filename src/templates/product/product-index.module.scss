@@ -20,11 +20,11 @@
     list-style: none;
     justify-content: center;
     width: fit-content;
-    padding: 0;
-    margin: (variable.$size__spacing-unit * 1.5) auto 0;
+    padding: 0 0 (variable.$size__spacing-unit * 0.5);
+    margin: (variable.$size__spacing-unit * 1.5) auto;
 
     @include mixin.media(tablet) {
-      margin: (variable.$size__spacing-unit * 2) auto variable.$size__spacing-unit;
+      margin: (variable.$size__spacing-unit * 2) auto;
     }
 
     &__category {

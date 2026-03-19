@@ -63,7 +63,7 @@ class AboutTamplate extends Component {
                     <img
                       src={postContent.attachedSrc}
                       alt={postContent.title}
-                      style={{ width: '100%', height: 'auto', display: 'block' }}
+                      className={styles.attached}
                     />
                   )}
                 </div>
