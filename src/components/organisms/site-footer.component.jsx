@@ -2,8 +2,6 @@ import React from 'react'
 import {
   NodeIcon,
   ReactIcon,
-  GraphQLIcon,
-  GatsbyIcon,
   GitHubIcon,
 } from '@/assets/images/image'
 import {
@@ -93,14 +91,6 @@ const Footer = ({ location, position }) => {
                   <li className={styles.powered__list__item}>
                     <img src={ReactIcon} alt="React.js" />
                     <div>React</div>
-                  </li>
-                  <li className={styles.powered__list__item}>
-                    <img src={GatsbyIcon} alt="Astro" />
-                    <div>Astro</div>
-                  </li>
-                  <li className={styles.powered__list__item}>
-                    <img src={GraphQLIcon} alt="GraphQL" />
-                    <div>GraphQL</div>
                   </li>
                   <li className={styles.powered__list__item}>
                     <img src={GitHubIcon} alt="Github" />

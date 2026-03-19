@@ -1,6 +1,6 @@
 import React from 'react'
-import HomeLoader from '@/components/molecules/home-loader.compornent'
-import PageLoader from '@/components/molecules/page-loader.compornent'
+import HomeLoader from '@/components/molecules/home-loader.component'
+import PageLoader from '@/components/molecules/page-loader.component'
 import Header from '@/components/organisms/site-header.component'
 import Footer from '@/components/organisms/site-footer.component'
 import {

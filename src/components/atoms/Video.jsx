@@ -21,69 +21,7 @@ class Video extends Component {
       width: props.width,
       height: props.height,
     }
-    this.videoRef = createRef() // videoID
-    this.videoTimerID = 0 // タイマーID
-  }
-
-  /**
-   * componentDidMount
-   *
-   * @return {void}
-   */
-  componentDidMount() {
-    const { videoStatus } = this.props
-
-    // sceneが0の場合は停止
-    if (videoStatus && videoStatus.scene === 0) {
-      this.pause()
-    }
-  }
-
-  /**
-   * componentDidUpdate
-   *
-   * @param {object} prevProps
-   * @return {void}
-   */
-  componentDidUpdate(prevProps) {
-    // スクロールが進んだ場合
-    const { videoStatus } = this.props
-    if (prevProps.videoStatus !== videoStatus && this.videoTimerID === 0) {
-      // シーンが進んでいる場合
-      this.play()
-
-      if (videoStatus.scene === 0) {
-        this.pause()
-      }
-
-      if (videoStatus.timer) {
-        this.videoTimerID = setTimeout(() => {
-          this.pause()
-
-          // タイマーリセット
-          clearTimeout(this.videoTimerID)
-          this.videoTimerID = 0
-        }, videoStatus.timer)
-      }
-    }
-  }
-
-  /**
-   * 動画の再生
-   *
-   * @return {void}
-   */
-  play() {
-    this.videoRef.current && this.videoRef.current.play()
-  }
-
-  /**
-   * 動画の停止
-   *
-   * @return {void}
-   */
-  pause() {
-    this.videoRef.current && this.videoRef.current.pause()
+    this.videoRef = createRef()
   }
 
   /**

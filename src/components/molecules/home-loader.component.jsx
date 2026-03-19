@@ -34,12 +34,6 @@ const HomeLoader = () => {
     // ロード済み判定.
     if (!loadedState?.is) {
       loadedDispatch({ type: 'end' })
-    } else {
-      /* NOTE: 2回目からはロードをスキップする場合.
-      return () => {
-        clearInterval(timer.id)
-      }
-      */
     }
 
     timer.id = setInterval(() => {

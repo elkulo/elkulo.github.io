@@ -74,10 +74,6 @@
   overflow: hidden;
   transform: translate(0); // NOTE: Safariでoverflow:hiddenが効かない対策.
 
-  :global(.gatsby-image-wrapper) {
-    height: 100%;
-  }
-
   @include mixin.media(tablet) {
     height: calc(56.25vw - #{variable.$size__spacing-unit * 6});
   }
@@ -89,20 +85,6 @@
     width: 100%;
     height: calc(var(--maxvh, 100vh) - #{variable.$size__spacing-unit * 4});
     margin: (variable.$size__spacing-unit * 2) 0;
-  }
-}
-
-.section {
-  margin: 3rem auto;
-  opacity: 0;
-  transition: transform 300ms ease-out, opacity 300ms ease-out;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  &__active {
-    opacity: 1;
   }
 }
 

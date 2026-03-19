@@ -6,8 +6,6 @@ import LogoBlack from './logo/logo-black.png?url'
 import LogoWhite from './logo/logo-white.png?url'
 import NodeIcon from './icons/icon-node.png?url'
 import ReactIcon from './icons/icon-react.png?url'
-import GraphQLIcon from './icons/icon-graphql.png?url'
-import GatsbyIcon from './icons/icon-gatsby.png?url'
 import GitHubIcon from './icons/icon-github.png?url'
 
 export {
@@ -15,7 +13,5 @@ export {
   LogoWhite,
   NodeIcon,
   ReactIcon,
-  GraphQLIcon,
-  GatsbyIcon,
   GitHubIcon,
 }
