@@ -17,7 +17,6 @@ const sassAliasImporter = {
 
 export default defineConfig({
   site: 'https://elkulo.github.io',
-  base: '/elkulo.github.io',
   integrations: [
     react(),
     sitemap(),
