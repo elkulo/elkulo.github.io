@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace'
 import App from '@/app'
 import bg404 from '@/assets/images/background/bg-404.jpg?url'
-import { baseUrl } from '@/lib/url'
+import { baseUrl } from '@/utils/url'
 
 const Wrap = styled('div')({
   position: 'fixed',

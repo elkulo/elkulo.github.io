@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import ProductPage from '@/components/pages/ProductPage'
-import { fetchPosts } from '@/lib/api'
+import { fetchPosts } from '@/utils/api'
 
 const { allPost, allCategory } = await fetchPosts()
 const data = { allPost, allCategory }

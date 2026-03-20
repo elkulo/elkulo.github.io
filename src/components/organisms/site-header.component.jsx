@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import styles from './site-header.module.scss'
 import Wrap from '@/components/atoms/Wrap'
 import { LogoBlack, LogoWhite } from '@/assets/images/image'
-import { baseUrl } from '@/lib/url'
+import { baseUrl } from '@/utils/url'
 
 const siteTitle = 'el.kulo'
 

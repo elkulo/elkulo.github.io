@@ -9,7 +9,7 @@ import {
 } from '@/assets/videos/video'
 import styles from './home.module.scss'
 import { LogoWhite } from '@/assets/images/image'
-import { baseUrl } from '@/lib/url'
+import { baseUrl } from '@/utils/url'
 
 /**
  * ホームのテンプレート

@@ -60,11 +60,13 @@ class AboutTamplate extends Component {
               <div className={styles.layout__secondary}>
                 <div id="about-sticky" className={styles.secondary}>
                   {postContent.attachedSrc && (
-                    <img
-                      src={postContent.attachedSrc}
-                      alt={postContent.title}
-                      className={styles.attached}
-                    />
+                    <div className={styles.attached}>
+                      <img
+                        src={postContent.attachedSrc}
+                        alt={postContent.title}
+                        className={styles.attached__img}
+                      />
+                    </div>
                   )}
                 </div>
               </div>

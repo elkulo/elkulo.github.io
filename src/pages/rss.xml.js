@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss'
-import { fetchPosts } from '@/lib/api'
+import { fetchPosts } from '@/utils/api'
 
 export async function GET(context) {
   const { posts } = await fetchPosts()

@@ -37,7 +37,7 @@ const ContactTemplate = ({ post, postContent }) => {
                 <img
                   src={postContent.attachedSrc}
                   alt={postContent.title}
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  className={styles.primary__bg__img}
                 />
               )}
             </div>

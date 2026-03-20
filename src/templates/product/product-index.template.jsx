@@ -4,7 +4,7 @@ import styles from './product-index.module.scss'
 import Wrap from '@/components/atoms/Wrap'
 import Image from '@/components/atoms/Image'
 import Masonry from 'react-masonry-css'
-import { baseUrl } from '@/lib/url'
+import { baseUrl } from '@/utils/url'
 
 /**
  * プロダクトのテンプレート
@@ -123,9 +123,7 @@ class ProductTemplate extends Component {
                   className={`${styles.product__categories__category} ${current}`}
                   key={_cat_index}
                 >
-                  <a
-                    href={`${baseUrl()}product/category/${encodeURI(_cat_name)}`}
-                  >
+                  <a href={`${baseUrl()}product/category/${_cat_name}`}>
                     {_cat_name}
                   </a>
                 </li>
@@ -202,9 +200,7 @@ class ProductTemplate extends Component {
                             }
                             key={_tag_index}
                           >
-                            <a
-                              href={`${baseUrl()}product/tag/${encodeURI(_tag_name)}`}
-                            >
+                            <a href={`${baseUrl()}product/tag/${_tag_name}`}>
                               {_tag_name}
                             </a>
                           </span>

@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import ProductSinglePage from '@/components/pages/ProductSinglePage'
-import { fetchPosts } from '@/lib/api'
+import { fetchPosts } from '@/utils/api'
 
 export async function getStaticPaths() {
   const { posts } = await fetchPosts()

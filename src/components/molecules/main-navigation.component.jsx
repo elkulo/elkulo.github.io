@@ -5,7 +5,7 @@ import ProductIcon from '@mui/icons-material/Grain'
 import ContactIcon from '@mui/icons-material/Send'
 import thumbnail from '@/assets/videos/landscape/landscape.jpg?url'
 import styles from './main-navigation.module.scss'
-import { baseUrl } from '@/lib/url'
+import { baseUrl } from '@/utils/url'
 
 /**
  * ナビゲーション
@@ -17,25 +17,25 @@ export default function MainNavigation() {
 
   const naviList = [
     {
-      ident: encodeURI('home'),
+      ident: 'home',
       name: 'HOME',
       url: base,
       icon: () => <HomeIcon />,
     },
     {
-      ident: encodeURI('about'),
+      ident: 'about',
       name: 'ABOUT',
       url: `${base}about`,
       icon: () => <AboutIcon />,
     },
     {
-      ident: encodeURI('product'),
+      ident: 'product',
       name: 'PRODUCT',
       url: `${base}product`,
       icon: () => <ProductIcon />,
     },
     {
-      ident: encodeURI('contact'),
+      ident: 'contact',
       name: 'CONTACT',
       url: `${base}contact`,
       icon: () => <ContactIcon />,

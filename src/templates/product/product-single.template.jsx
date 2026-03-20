@@ -6,7 +6,7 @@ import Image from '@/components/atoms/Image'
 import Bio from '@/components/molecules/bio.component'
 import LinearIndeterminate from '@/components/atoms/LinearIndeterminate'
 import DummySite from '@/components/atoms/DummySite'
-import { baseUrl } from '@/lib/url'
+import { baseUrl } from '@/utils/url'
 
 /**
  *　プロダクトシングルページ
@@ -52,6 +52,49 @@ class ProductSingleTemplate extends Component {
   }
 
   /**
+   * サムネイル
+   *
+   * @param {boolean} in_footer
+   */
+  theAttachmentThumbnail(in_footer = false) {
+    const { node, featureActiveID, isFeatureLoad } = this.state
+
+    // 画面サイズで表示を分岐.
+    if (in_footer) {
+      if (768 <= window.innerWidth) {
+        return
+      }
+    } else if (window.innerWidth < 768) {
+      return
+    }
+
+    return (
+      <div className={styles.product__primary__attachments}>
+        {node.attachment.map((_image_src, _image_index) => {
+          return (
+            <div
+              className={styles.product__primary__attachments__attached}
+              key={_image_index}
+            >
+              {_image_index === featureActiveID && isFeatureLoad && (
+                <LinearIndeterminate />
+              )}
+              <a
+                href="#___article"
+                aria-label={_image_index}
+                className={styles.product__primary__attachments__attached__link}
+                onClick={() => this.handleClick(_image_index)}
+              >
+                <Image src={_image_src} />
+              </a>
+            </div>
+          )
+        })}
+      </div>
+    )
+  }
+
+  /**
    * レンダリング
    *
    * @return {JSX.Element}
@@ -84,9 +127,7 @@ class ProductSingleTemplate extends Component {
                           }
                           key={_cat_index}
                         >
-                          <a
-                            href={`${baseUrl()}product/category/${encodeURI(_cat_name)}`}
-                          >
+                          <a href={`${baseUrl()}product/category/${_cat_name}`}>
                             {_cat_name}
                           </a>
                         </div>
@@ -137,35 +178,7 @@ class ProductSingleTemplate extends Component {
                     dangerouslySetInnerHTML={{ __html: node.content }}
                   />
 
-                  {1 < node.attachment.length && (
-                    <div
-                      className={`${styles.product__primary__attachments} ${styles.product__primary__attachmentsLarge}`}
-                    >
-                      {node.attachment.map((_image_src, _image_index) => {
-                        return (
-                          <div
-                            className={
-                              styles.product__primary__attachments__attached
-                            }
-                            key={_image_index}
-                          >
-                            {_image_index === featureActiveID &&
-                              isFeatureLoad && <LinearIndeterminate />}
-                            <a
-                              href="#___article"
-                              aria-label={_image_index}
-                              className={
-                                styles.product__primary__attachments__attached__link
-                              }
-                              onClick={() => this.handleClick(_image_index)}
-                            >
-                              <Image src={_image_src} />
-                            </a>
-                          </div>
-                        )
-                      })}
-                    </div>
-                  )}
+                  {1 < node.attachment.length && this.theAttachmentThumbnail()}
 
                   <div className={styles.product__primary__tags}>
                     {node.tag.map((_tag_name, _tag_index) => {
@@ -174,9 +187,7 @@ class ProductSingleTemplate extends Component {
                           className={styles.product__primary__tags__tag}
                           key={_tag_index}
                         >
-                          <a
-                            href={`${baseUrl()}product/tag/${encodeURI(_tag_name)}`}
-                          >
+                          <a href={`${baseUrl()}product/tag/${_tag_name}`}>
                             {_tag_name}
                           </a>
                         </div>
@@ -213,36 +224,8 @@ class ProductSingleTemplate extends Component {
                     <Bio />
                   </footer>
 
-                  {1 < node.attachment.length && (
-                    <div
-                      id="___attachments"
-                      className={`${styles.product__primary__attachments} ${styles.product__primary__attachmentsSmall}`}
-                    >
-                      {node.attachment.map((_image_src, _image_index) => {
-                        return (
-                          <div
-                            className={
-                              styles.product__primary__attachments__attached
-                            }
-                            key={_image_index}
-                          >
-                            {_image_index === featureActiveID &&
-                              isFeatureLoad && <LinearIndeterminate />}
-                            <a
-                              href="#___attachments"
-                              aria-label={_image_index}
-                              className={
-                                styles.product__primary__attachments__attached__link
-                              }
-                              onClick={() => this.handleClick(_image_index)}
-                            >
-                              <Image src={_image_src} />
-                            </a>
-                          </div>
-                        )
-                      })}
-                    </div>
-                  )}
+                  {1 < node.attachment.length &&
+                    this.theAttachmentThumbnail(true)}
                 </div>
               </div>
               <div className={styles.product__entry__container__secondary}>
