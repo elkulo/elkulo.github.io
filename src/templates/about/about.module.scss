@@ -113,11 +113,13 @@
 }
 
 // markdownBody
-.markdown-body {
+.markdownBody {
   h1,
   h2 {
     width: max-content;
+    margin: 2rem 0 1rem;
     font-family: variable.$font__body;
+    font-weight: 600;
     color: transparent;
     background: linear-gradient(60deg, #01579b, #33b1a4);
     -webkit-background-clip: text;
@@ -128,9 +130,13 @@
     }
   }
   strong {
+    font-weight: 600;
     color: #000;
   }
   ul {
-    padding-left: 1.25em;
+    padding-left: 1.5em;
+  }
+  hr {
+    margin: 3rem 0;
   }
 }

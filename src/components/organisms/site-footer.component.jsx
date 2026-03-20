@@ -98,19 +98,19 @@ const Footer = ({ location, position }) => {
                 © 2020 - {new Date().getFullYear()} {siteTitle}, Built with{' '}
                 {` `}
                 <a
-                  href="https://astro.build/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Astro
-                </a>
-                {' and '}
-                <a
                   href="https://ja.reactjs.org/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   React
+                </a>
+                {' and '}
+                <a
+                  href="https://astro.build/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Astro
                 </a>
                 .
               </div>

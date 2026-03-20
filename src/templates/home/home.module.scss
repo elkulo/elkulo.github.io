@@ -72,6 +72,11 @@
 /** Split Left */
 .header {
   margin: auto;
+  padding: (variable.$size__spacing-unit * 3) 0 variable.$size__spacing-unit;
+
+  @include mixin.media(tablet) {
+    padding: 0;
+  }
 
   &__drawer {
     display: none;
@@ -111,13 +116,9 @@
 
   &__navi {
     clear: both;
-    margin: (variable.$size__spacing-unit * 4) auto 0;
+    margin: (variable.$size__spacing-unit * 2) auto 0;
     width: 100%;
     text-align: center;
-
-    @include mixin.media(tablet) {
-      margin: (variable.$size__spacing-unit * 2) 0 0;
-    }
 
     &__list {
       list-style: none;
@@ -130,18 +131,18 @@
       &__item {
         flex: 1;
         min-width: 140px;
-        margin: 0 (variable.$size__spacing-unit * 0.25) (variable.$size__spacing-unit * 0.5);
+        margin: 0 (variable.$size__spacing-unit * 0.5) (variable.$size__spacing-unit * 0.25);
         padding: 0;
 
         a {
           display: block;
           padding: (variable.$size__spacing-unit * 0.5) 0;
-          border: solid 1px #212121;
-          border-radius: 3px;
+          border: solid 1px #191919;
+          border-radius: 2px;
           text-align: center;
           font-family: variable.$font__code;
           font-weight: 400;
-          color: #ccc;
+          color: #ddd;
           background: #121212;
           @include mixin.button-transition();
           font-size: variable.$font__size-md;
