@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { Backdrop } from '@mui/material'
 import { Typography, Box, LinearProgress } from '@mui/material'
-import { LoadedContext } from '@/composables/useLoadedStory'
 
 // フェード
 const transition = {
@@ -17,40 +16,26 @@ const transition = {
  * @return {JSX.Element}
  */
 const HomeLoader = () => {
-  // ロード済み
-  const [loadedState, loadedDispatch] = useContext(LoadedContext)
-
   // フェードの状態
   const [fadeOn, setFadeOn] = useState(true)
 
   // 擬似ロード画面
-  const [progress, setProgress] = useState(loadedState?.is ? 50 : 0)
+  const [progress, setProgress] = useState(0)
 
   // ロード処理.
   useEffect(() => {
-    const timer = {
-      id: 0,
-    }
-    // ロード済み判定.
-    if (!loadedState?.is) {
-      loadedDispatch({ type: 'end' })
-    }
-
-    timer.id = setInterval(() => {
+    let timer = 0;
+    timer = setInterval(() => {
       setProgress(prevProgress => {
-        switch (prevProgress) {
-          case 100:
-            setFadeOn(() => false)
-            clearInterval(timer.id)
-            return 100
-          case 50:
-            return prevProgress + 1
-          default:
-            return prevProgress + 1
+        if (100 <= prevProgress) {
+          setFadeOn(() => false)
+          clearInterval(timer)
+          return 100
         }
+        return prevProgress + 1
       })
     }, 30)
-  }, [loadedState, loadedDispatch])
+  }, [])
 
   // ロードスタイル
   const StyledBackdrop = styled(Backdrop)`

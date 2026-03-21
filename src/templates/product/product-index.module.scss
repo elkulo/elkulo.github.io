@@ -89,23 +89,19 @@
   }
 
   &__tag {
-    margin: (variable.$size__spacing-unit * 1.5) auto (variable.$size__spacing-unit * -1.5);
-    text-align: center;
+    margin: (variable.$size__spacing-unit * 1.5) auto (variable.$size__spacing-unit * 2);
 
     @include mixin.media(tablet) {
-      margin: 0 auto (variable.$size__spacing-unit * -1.5);
-      text-align: left;
+      margin-bottom: (variable.$size__spacing-unit * 2.5);
     }
 
     &__title {
-      display: inline-block;
-      padding: 0 0.25rem 0.5rem;
-      margin: 0;
+      display: block;
+      text-align: center;
       font-family: variable.$font__body;
       font-size: variable.$font__size-sm;
       font-weight: 300;
-      //color: variable.$color__text-light;
-      border-bottom: solid 1px currentColor;
+      color: variable.$color__text-light;
 
       &::before {
         display: inline-block;
@@ -142,16 +138,14 @@
   // 各エントリー（カラム内アイテム）
   &__entries__entry {
     margin-top: (variable.$size__spacing-unit * 3);
-
-    &:first-child {
-      margin-top: 0;
-    }
-
     @include mixin.link-transition(transform);
 
     &:hover {
       transform: translateY(-5px);
-      padding-bottom: 5px;
+    }
+
+    &:first-child {
+      margin-top: 0;
     }
 
     // 順番に表示.
@@ -167,7 +161,7 @@
       border-radius: 10px;
       @include mixin.clear-link();
 
-      .feature-link {
+      .featureLink {
         transform: translate(0); // NOTE: Safariでoverflow:hiddenが効かない対策
         box-sizing: border-box;
         position: relative;
@@ -203,26 +197,26 @@
           @include mixin.link-transition(opacity);
 
           &__inner {
-            display: inline-block;
+            display: block;
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
             font-family: variable.$font__code;
-            font-size: variable.$font__size-lg;
-            font-weight: 300;
+            font-size: variable.$font__size-sm;
+            font-weight: 500;
             color: variable.$color__link;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 1);
             border-radius: 2px;
-            padding: 0.25rem 1.5rem;
+            padding: 0.25rem 1rem;
             white-space: nowrap;
 
             svg {
               display: inline-block;
               vertical-align: middle;
-              font-size: 2rem;
-              margin: 0 0.5rem 0.325rem 0;
+              font-size: 1.25em;
+              margin: 0 0.25em 0.1725em 0;
             }
           }
         }
@@ -249,7 +243,7 @@
     }
 
     &__tags {
-      font-size: variable.$font__size-sm;
+      font-size: variable.$font__size-xs;
 
       &__tag {
         display: inline-block;

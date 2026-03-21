@@ -24,21 +24,15 @@ const PageLoader = () => {
 
   // ロード処理.
   useEffect(() => {
-    const timer = {
-      id: 0,
-    }
-    timer.id = setInterval(() => {
+    let timer = 0;
+    timer = setInterval(() => {
       setProgress(prevProgress => {
-        switch (prevProgress) {
-          case 100:
-            setFadeOn(() => false)
-            clearInterval(timer.id)
-            return 100
-          case 50:
-            return prevProgress + 1
-          default:
-            return prevProgress + 1
+        if (100 <= prevProgress) {
+          setFadeOn(() => false)
+          clearInterval(timer)
+          return 100
         }
+        return prevProgress + 1
       })
     }, 3)
   }, [])
