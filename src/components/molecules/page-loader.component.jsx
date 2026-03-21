@@ -24,7 +24,7 @@ const PageLoader = () => {
 
   // ロード処理.
   useEffect(() => {
-    let timer = 0;
+    let timer = 0
     timer = setInterval(() => {
       setProgress(prevProgress => {
         if (100 <= prevProgress) {
