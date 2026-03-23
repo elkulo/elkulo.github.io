@@ -1,4 +1,3 @@
-import React from 'react'
 import avatarSrc from '@/assets/images/avatar.png?url'
 import { baseUrl } from '@/utils/url'
 

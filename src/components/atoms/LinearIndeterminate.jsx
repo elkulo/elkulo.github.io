@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from '@emotion/styled'
 import { Box, LinearProgress } from '@mui/material'
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import MainNavigation from '@/components/molecules/main-navigation.component'
 import NavigationDrawer from '@/components/molecules/navigation-drawer.component'
 import OpenIcon from '@mui/icons-material/Notes'

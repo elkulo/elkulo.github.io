@@ -1,4 +1,4 @@
-import React from 'react'
+import { useRef } from 'react'
 import { NodeIcon, ReactIcon, GitHubIcon } from '@/assets/images/image'
 import {
   TransitionGroup,
@@ -20,7 +20,7 @@ let getTransitionStyles = {}
  * @return {JSX.Element}
  */
 const Footer = ({ location, position }) => {
-  const nodeRef = React.useRef(null)
+  const nodeRef = useRef(null)
   let footerStyled
 
   if (position === 'content') {
