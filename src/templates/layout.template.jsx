@@ -1,4 +1,4 @@
-import React from 'react'
+import { useRef } from 'react'
 import HomeLoader from '@/components/molecules/home-loader.component'
 import PageLoader from '@/components/molecules/page-loader.component'
 import Header from '@/components/organisms/site-header.component'
@@ -58,53 +58,58 @@ const transitionStyles = {
 }
 
 /**
- * レイアウト
+ * ホーム専用のレイアウト
  *
  * @param  {{location: object, children: object, isPageType: string}} props
- * @return {JSX.Element}
+ * @returns
  */
-const Layout = ({ location, children, isPageType }) => {
-  const isHome = isPageType === 'Home' ? true : false
-  const nodeRef = React.useRef(null)
+const HomeLayout = ({ location, children }) => {
+  const nodeRef = useRef(null)
 
-  // Homeの場合.
-  if (isHome) {
-    return (
-      <div className={`${styles.site} ${styles.pageHome}`}>
-        <HomeLoader />
-        <TransitionGroup>
-          <ReactTransition
-            nodeRef={nodeRef}
-            key={location.pathname}
-            appear={true}
-            timeout={{
-              enter: motion.timeout,
-              exit: motion.timeout,
-            }}
-          >
-            {status => (
-              <div
-                style={{
-                  ...transitionStyles.fade[status],
-                }}
-              >
-                <div className={styles.site__sidebar}>
-                  <Header location={location} position="sidebar" />
-                </div>
-                <div className={styles.site__content}>
-                  <div className={styles.site__content__in}>
-                    <main>{children}</main>
-                  </div>
+  return (
+    <div className={`${styles.site} ${styles.pageHome}`}>
+      <HomeLoader />
+      <TransitionGroup>
+        <ReactTransition
+          nodeRef={nodeRef}
+          key={location.pathname}
+          appear={true}
+          timeout={{
+            enter: motion.timeout,
+            exit: motion.timeout,
+          }}
+        >
+          {status => (
+            <div
+              style={{
+                ...transitionStyles.fade[status],
+              }}
+            >
+              <div className={styles.site__sidebar}>
+                <Header location={location} position="sidebar" />
+              </div>
+              <div className={styles.site__content}>
+                <div className={styles.site__content__in}>
+                  <main>{children}</main>
                 </div>
               </div>
-            )}
-          </ReactTransition>
-        </TransitionGroup>
-      </div>
-    )
-  }
+            </div>
+          )}
+        </ReactTransition>
+      </TransitionGroup>
+    </div>
+  )
+}
 
-  // Home以外の場合.
+/**
+ * 個別ページレイアウト
+ *
+ * @param  {{location: object, children: object, isPageType: string}} props
+ * @returns
+ */
+const PageLayout = ({ location, children }) => {
+  const nodeRef = useRef(null)
+
   return (
     <div className={styles.site}>
       <PageLoader />
@@ -135,6 +140,21 @@ const Layout = ({ location, children, isPageType }) => {
         </div>
       </div>
     </div>
+  )
+}
+
+/**
+ * レイアウト
+ *
+ * @param  {{location: object, children: object, isPageType: string}} props
+ * @return {JSX.Element}
+ */
+const Layout = props => {
+  // Homeの場合分岐.
+  return props?.isPageType === 'Home' ? (
+    <HomeLayout {...props} />
+  ) : (
+    <PageLayout {...props} />
   )
 }
 

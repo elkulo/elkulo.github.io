@@ -1,4 +1,4 @@
-import React from 'react'
+import App from '@/app'
 import Footer from '@/components/organisms/site-footer.component'
 import NavigationDrawer from '@/components/molecules/navigation-drawer.component'
 import Video from '@/components/atoms/Video'
@@ -14,80 +14,83 @@ import { baseUrl } from '@/utils/url'
 /**
  * ホームのテンプレート
  *
- * @param  {object} date
- * @param  {object} location
  * @return {JSX.Element}
  */
-const HomeTemplate = ({ location }) => {
+const HomeTemplate = () => {
   const base = baseUrl()
   const siteTitle = 'el.kulo'
 
+  const location =
+    typeof window !== 'undefined' ? window.location : { pathname: '/' }
+
   return (
-    <div className="home">
-      <article className={styles.splitLayout}>
-        <div className={styles.splitLayout__left}>
-          <div className={styles.splitLayout__left__in}>
-            <header className={styles.header}>
-              <div className={styles.header__drawer}>
-                <NavigationDrawer visibility="toggle">
-                  <OpenIcon />
-                </NavigationDrawer>
-              </div>
-              <div className={styles.header__branding}>
-                <div className={styles.header__branding__title}>
-                  <img src={LogoWhite} alt={siteTitle} />
+    <App isPageType="Home">
+      <div className="home">
+        <article className={styles.splitLayout}>
+          <div className={styles.splitLayout__left}>
+            <div className={styles.splitLayout__left__in}>
+              <header className={styles.header}>
+                <div className={styles.header__drawer}>
+                  <NavigationDrawer visibility="toggle">
+                    <OpenIcon />
+                  </NavigationDrawer>
                 </div>
-              </div>
-              <nav className={styles.header__navi}>
-                <ul className={styles.header__navi__list}>
-                  <li className={styles.header__navi__list__item}>
-                    <a href={`${base}about`}>
-                      <span>ABOUT</span>
-                    </a>
-                  </li>
-                  <li className={styles.header__navi__list__item}>
-                    <a href={`${base}product`}>
-                      <span>PRODUCT</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-              <div className={styles.header__description}>
-                <p>
-                  <a href={`${base}contact`}>Contact us here</a>
-                </p>
-              </div>
-            </header>
-            <Footer location={location} position="sidebar" />
-          </div>
-        </div>
-        <div className={styles.splitLayout__right}>
-          <div className={styles.splitLayout__right__in}>
-            <section className={styles.content}>
-              <div className={styles.content__drawer}>
-                <NavigationDrawer visibility="toggle">
-                  <OpenIcon />
-                </NavigationDrawer>
-              </div>
-              <div className={styles.content__branding}>
-                <h1 className={styles.content__branding__title}>
-                  <img src={LogoWhite} alt={siteTitle} />
-                </h1>
-              </div>
-              <div className={styles.content__eyecatch}>
-                <div className={styles.content__eyecatch__header}>
-                  <h2 className={styles.content__eyecatch__header__title}>
-                    There is no time like the present
-                  </h2>
-                  <p>思い立ったが吉日</p>
+                <div className={styles.header__branding}>
+                  <div className={styles.header__branding__title}>
+                    <img src={LogoWhite} alt={siteTitle} />
+                  </div>
                 </div>
-                <Video src={MP4} thumbnail={thumbnail} alt="" />
-              </div>
-            </section>
+                <nav className={styles.header__navi}>
+                  <ul className={styles.header__navi__list}>
+                    <li className={styles.header__navi__list__item}>
+                      <a href={`${base}about`}>
+                        <span>ABOUT</span>
+                      </a>
+                    </li>
+                    <li className={styles.header__navi__list__item}>
+                      <a href={`${base}product`}>
+                        <span>PRODUCT</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+                <div className={styles.header__description}>
+                  <p>
+                    <a href={`${base}contact`}>Contact us here</a>
+                  </p>
+                </div>
+              </header>
+              <Footer location={location} position="sidebar" />
+            </div>
           </div>
-        </div>
-      </article>
-    </div>
+          <div className={styles.splitLayout__right}>
+            <div className={styles.splitLayout__right__in}>
+              <section className={styles.content}>
+                <div className={styles.content__drawer}>
+                  <NavigationDrawer visibility="toggle">
+                    <OpenIcon />
+                  </NavigationDrawer>
+                </div>
+                <div className={styles.content__branding}>
+                  <h1 className={styles.content__branding__title}>
+                    <img src={LogoWhite} alt={siteTitle} />
+                  </h1>
+                </div>
+                <div className={styles.content__eyecatch}>
+                  <div className={styles.content__eyecatch__header}>
+                    <h2 className={styles.content__eyecatch__header__title}>
+                      There is no time like the present
+                    </h2>
+                    <p>思い立ったが吉日</p>
+                  </div>
+                  <Video src={MP4} thumbnail={thumbnail} alt="" />
+                </div>
+              </section>
+            </div>
+          </div>
+        </article>
+      </div>
+    </App>
   )
 }
 export default HomeTemplate

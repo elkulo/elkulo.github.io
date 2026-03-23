@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import ProductPage from '@/components/pages/ProductPage'
+import ProductTemplate from '@/templates/product/product-index.template'
 import { fetchPosts } from '@/utils/api'
 
 export async function getStaticPaths() {
@@ -28,7 +28,7 @@ const { tagName, data } = Astro.props
 ---
 
 <Layout title={tagName}>
-  <ProductPage
+  <ProductTemplate
     client:only="react"
     data={data}
     title={tagName}

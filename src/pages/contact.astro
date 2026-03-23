@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import ContactPage from '@/components/pages/ContactPage'
+import ContactTemplate from '@/templates/contact/contact.template'
 import * as contactMd from '@/content/contact/index.md'
 
 const html = await contactMd.compiledContent()
@@ -13,5 +13,5 @@ const postContent = { title, description, date, attachedSrc }
 ---
 
 <Layout title={title} description={description}>
-  <ContactPage client:only="react" post={post} postContent={postContent} />
+  <ContactTemplate client:only="react" post={post} postContent={postContent} />
 </Layout>

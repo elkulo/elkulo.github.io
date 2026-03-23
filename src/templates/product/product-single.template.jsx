@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
+import App from '@/app'
 import LinkIcon from '@mui/icons-material/InsertLink'
 import styles from './product-single.module.scss'
 import Wrap from '@/components/atoms/Wrap'
@@ -104,145 +105,154 @@ class ProductSingleTemplate extends Component {
       this.state
 
     return (
-      <div className={styles.product}>
-        <Wrap>
-          <article id="___article" className={styles.product__entry}>
-            <div className={styles.product__entry__container}>
-              <div className={styles.product__entry__container__primary}>
-                <div className={styles.product__primary}>
-                  <div className={styles.product__primary__categories}>
-                    <div
-                      className={styles.product__primary__categories__return}
-                    >
-                      <a href={`${baseUrl()}product`} className="button">
-                        ← リストへ戻る
-                      </a>
+      <App isPageType="ProductSingle">
+        <div className={styles.product}>
+          <Wrap>
+            <article id="___article" className={styles.product__entry}>
+              <div className={styles.product__entry__container}>
+                <div className={styles.product__entry__container__primary}>
+                  <div className={styles.product__primary}>
+                    <div className={styles.product__primary__categories}>
+                      <div
+                        className={styles.product__primary__categories__return}
+                      >
+                        <a href={`${baseUrl()}product`} className="button">
+                          ← リストへ戻る
+                        </a>
+                      </div>
+
+                      {node.category.map((_cat_name, _cat_index) => {
+                        return (
+                          <div
+                            className={
+                              styles.product__primary__categories__category
+                            }
+                            key={_cat_index}
+                          >
+                            <a
+                              href={`${baseUrl()}product/category/${_cat_name}`}
+                            >
+                              {_cat_name}
+                            </a>
+                          </div>
+                        )
+                      })}
                     </div>
 
-                    {node.category.map((_cat_name, _cat_index) => {
-                      return (
-                        <div
-                          className={
-                            styles.product__primary__categories__category
-                          }
-                          key={_cat_index}
-                        >
-                          <a href={`${baseUrl()}product/category/${_cat_name}`}>
-                            {_cat_name}
-                          </a>
-                        </div>
-                      )
-                    })}
-                  </div>
-
-                  <header className={styles.product__primary__header}>
-                    <h1 className={styles.product__primary__header__title}>
-                      {!node.link && node.title}
-                      {node.link && (
-                        <a
-                          href={node.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={
-                            styles.product__primary__header__title__link
-                          }
-                        >
-                          {node.title}
-                          <LinkIcon />
-                        </a>
-                      )}
-                    </h1>
-                    <div className={styles.product__primary__header__date}>
-                      Updated: {node.date}
-                      {node.link && (
-                        <span
-                          className={
-                            styles.product__primary__header__date__preview
-                          }
-                        >
-                          Preview:
+                    <header className={styles.product__primary__header}>
+                      <h1 className={styles.product__primary__header__title}>
+                        {!node.link && node.title}
+                        {node.link && (
                           <a
                             href={node.link}
                             target="_blank"
                             rel="noopener noreferrer"
+                            className={
+                              styles.product__primary__header__title__link
+                            }
                           >
-                            {node.link}
+                            {node.title}
+                            <LinkIcon />
                           </a>
-                        </span>
+                        )}
+                      </h1>
+                      <div className={styles.product__primary__header__date}>
+                        Updated: {node.date}
+                        {node.link && (
+                          <span
+                            className={
+                              styles.product__primary__header__date__preview
+                            }
+                          >
+                            Preview:
+                            <a
+                              href={node.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {node.link}
+                            </a>
+                          </span>
+                        )}
+                      </div>
+                    </header>
+
+                    <div
+                      className={styles.product__primary__content}
+                      dangerouslySetInnerHTML={{ __html: node.content }}
+                    />
+
+                    {1 < node.attachment.length &&
+                      this.theAttachmentThumbnail()}
+
+                    <div className={styles.product__primary__tags}>
+                      {node.tag.map((_tag_name, _tag_index) => {
+                        return (
+                          <div
+                            className={styles.product__primary__tags__tag}
+                            key={_tag_index}
+                          >
+                            <a href={`${baseUrl()}product/tag/${_tag_name}`}>
+                              {_tag_name}
+                            </a>
+                          </div>
+                        )
+                      })}
+                    </div>
+
+                    <nav className={styles.product__primary__navi}>
+                      <ul className={styles.product__primary__navi__list}>
+                        <li
+                          className={styles.product__primary__navi__list__item}
+                        >
+                          {next && (
+                            <a
+                              href={`${baseUrl()}product/${next.fields.post_slug}`}
+                              rel="next"
+                            >
+                              ← {next.title}
+                            </a>
+                          )}
+                        </li>
+                        <li
+                          className={styles.product__primary__navi__list__item}
+                        >
+                          {previous && (
+                            <a
+                              href={`${baseUrl()}product/${previous.fields.post_slug}`}
+                              rel="prev"
+                            >
+                              {previous.title} →
+                            </a>
+                          )}
+                        </li>
+                      </ul>
+                    </nav>
+
+                    <footer className={styles.product__primary__footer}>
+                      <Bio />
+                    </footer>
+
+                    {1 < node.attachment.length &&
+                      this.theAttachmentThumbnail(true)}
+                  </div>
+                </div>
+                <div className={styles.product__entry__container__secondary}>
+                  <div className={styles.product__secondary}>
+                    <div className={styles.product__secondary__feature}>
+                      {isFeatureLoad ? (
+                        <DummySite />
+                      ) : (
+                        <Image src={feature} alt={node.title} />
                       )}
                     </div>
-                  </header>
-
-                  <div
-                    className={styles.product__primary__content}
-                    dangerouslySetInnerHTML={{ __html: node.content }}
-                  />
-
-                  {1 < node.attachment.length && this.theAttachmentThumbnail()}
-
-                  <div className={styles.product__primary__tags}>
-                    {node.tag.map((_tag_name, _tag_index) => {
-                      return (
-                        <div
-                          className={styles.product__primary__tags__tag}
-                          key={_tag_index}
-                        >
-                          <a href={`${baseUrl()}product/tag/${_tag_name}`}>
-                            {_tag_name}
-                          </a>
-                        </div>
-                      )
-                    })}
-                  </div>
-
-                  <nav className={styles.product__primary__navi}>
-                    <ul className={styles.product__primary__navi__list}>
-                      <li className={styles.product__primary__navi__list__item}>
-                        {next && (
-                          <a
-                            href={`${baseUrl()}product/${next.fields.post_slug}`}
-                            rel="next"
-                          >
-                            ← {next.title}
-                          </a>
-                        )}
-                      </li>
-                      <li className={styles.product__primary__navi__list__item}>
-                        {previous && (
-                          <a
-                            href={`${baseUrl()}product/${previous.fields.post_slug}`}
-                            rel="prev"
-                          >
-                            {previous.title} →
-                          </a>
-                        )}
-                      </li>
-                    </ul>
-                  </nav>
-
-                  <footer className={styles.product__primary__footer}>
-                    <Bio />
-                  </footer>
-
-                  {1 < node.attachment.length &&
-                    this.theAttachmentThumbnail(true)}
-                </div>
-              </div>
-              <div className={styles.product__entry__container__secondary}>
-                <div className={styles.product__secondary}>
-                  <div className={styles.product__secondary__feature}>
-                    {isFeatureLoad ? (
-                      <DummySite />
-                    ) : (
-                      <Image src={feature} alt={node.title} />
-                    )}
                   </div>
                 </div>
               </div>
-            </div>
-          </article>
-        </Wrap>
-      </div>
+            </article>
+          </Wrap>
+        </div>
+      </App>
     )
   }
 }

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useLoadedStory, LoadedContext } from '@/composables/useLoadedStory'
 import LayoutTemplate from '@/templates/layout.template'
 

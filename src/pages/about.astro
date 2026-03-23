@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import AboutPage from '@/components/pages/AboutPage'
+import AboutTemplate from '@/templates/about/about.template'
 import * as aboutMd from '@/content/about/index.md'
 
 const html = await aboutMd.compiledContent()
@@ -13,5 +13,5 @@ const postContent = { title, description, date, attachedSrc }
 ---
 
 <Layout title={title} description={description}>
-  <AboutPage client:only="react" post={post} postContent={postContent} />
+  <AboutTemplate client:only="react" post={post} postContent={postContent} />
 </Layout>

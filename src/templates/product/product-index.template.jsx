@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
+import App from '@/app'
 import PreviewIcon from '@mui/icons-material/Panorama'
 import styles from './product-index.module.scss'
 import Wrap from '@/components/atoms/Wrap'
@@ -104,126 +105,132 @@ class ProductTemplate extends Component {
     }
 
     return (
-      <div className={styles.product}>
-        <Wrap>
-          <ul className={styles.product__categories}>
-            <li
-              className={`${styles.product__categories__category} ${current}`}
-              key="ALL"
-            >
-              <a href={`${baseUrl()}product`}>ALL</a>
-            </li>
-            {categories.map((_cat_name, _cat_index) => {
-              current =
-                pageTitle === _cat_name
-                  ? styles.product__categories__category__current
-                  : ''
-              return (
-                <li
-                  className={`${styles.product__categories__category} ${current}`}
-                  key={_cat_index}
-                >
-                  <a href={`${baseUrl()}product/category/${_cat_name}`}>
-                    {_cat_name}
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
-
-          {isProductType === 'tag' && (
-            <div className={styles.product__tag}>
-              <h2 className={styles.product__tag__title}>{pageTitle}</h2>
-            </div>
-          )}
-
-          <Masonry
-            breakpointCols={{ default: 3, 1024: 2, 640: 1 }}
-            className={styles.product__entries}
-            columnClassName={styles.product__entries__column}
-          >
-            {nodes.map(({ node }, i) => {
-              const title = node.title || 'No title'
-
-              // ページ分割
-              if (i >= posts_per_page * paged) {
-                return null
-              }
-
-              return (
-                <section
-                  className={styles.product__entries__entry}
-                  key={node.id}
-                >
-                  <div
-                    className={styles.product__entries__entry__motion}
-                    style={addMotion(i - posts_per_page * (paged - 1))}
+      <App isPageType="Product">
+        <div className={styles.product}>
+          <Wrap>
+            <ul className={styles.product__categories}>
+              <li
+                className={`${styles.product__categories__category} ${current}`}
+                key="ALL"
+              >
+                <a href={`${baseUrl()}product`}>ALL</a>
+              </li>
+              {categories.map((_cat_name, _cat_index) => {
+                current =
+                  pageTitle === _cat_name
+                    ? styles.product__categories__category__current
+                    : ''
+                return (
+                  <li
+                    className={`${styles.product__categories__category} ${current}`}
+                    key={_cat_index}
                   >
-                    <div className={styles.product__entries__entry__feature}>
-                      <a
-                        href={`${baseUrl()}product/${node.fields.post_slug}`}
-                        className={styles.featureLink}
-                      >
-                        <Image src={node.attachment[0]} alt={title} />
-                        <span className={styles.featureLink__cover}>
-                          <span className={styles.featureLink__cover__inner}>
-                            <PreviewIcon />
-                            Permalink
-                          </span>
-                        </span>
-                      </a>
-                    </div>
-                    <header className={styles.product__entries__entry__header}>
-                      <h3
-                        className={
-                          styles.product__entries__entry__header__title
-                        }
-                      >
+                    <a href={`${baseUrl()}product/category/${_cat_name}`}>
+                      {_cat_name}
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+
+            {isProductType === 'tag' && (
+              <div className={styles.product__tag}>
+                <h2 className={styles.product__tag__title}>{pageTitle}</h2>
+              </div>
+            )}
+
+            <Masonry
+              breakpointCols={{ default: 3, 1024: 2, 640: 1 }}
+              className={styles.product__entries}
+              columnClassName={styles.product__entries__column}
+            >
+              {nodes.map(({ node }, i) => {
+                const title = node.title || 'No title'
+
+                // ページ分割
+                if (i >= posts_per_page * paged) {
+                  return null
+                }
+
+                return (
+                  <section
+                    className={styles.product__entries__entry}
+                    key={node.id}
+                  >
+                    <div
+                      className={styles.product__entries__entry__motion}
+                      style={addMotion(i - posts_per_page * (paged - 1))}
+                    >
+                      <div className={styles.product__entries__entry__feature}>
                         <a
                           href={`${baseUrl()}product/${node.fields.post_slug}`}
+                          className={styles.featureLink}
                         >
-                          {title}
-                        </a>
-                      </h3>
-                      <div
-                        className={styles.product__entries__entry__header__date}
-                      >
-                        Updated: {node.date}
-                      </div>
-                    </header>
-                    <div className={styles.product__entries__entry__tags}>
-                      {node.tag.map((_tag_name, _tag_index) => {
-                        return (
-                          <span
-                            className={
-                              styles.product__entries__entry__tags__tag
-                            }
-                            key={_tag_index}
-                          >
-                            <a href={`${baseUrl()}product/tag/${_tag_name}`}>
-                              {_tag_name}
-                            </a>
+                          <Image src={node.attachment[0]} alt={title} />
+                          <span className={styles.featureLink__cover}>
+                            <span className={styles.featureLink__cover__inner}>
+                              <PreviewIcon />
+                              Permalink
+                            </span>
                           </span>
-                        )
-                      })}
+                        </a>
+                      </div>
+                      <header
+                        className={styles.product__entries__entry__header}
+                      >
+                        <h3
+                          className={
+                            styles.product__entries__entry__header__title
+                          }
+                        >
+                          <a
+                            href={`${baseUrl()}product/${node.fields.post_slug}`}
+                          >
+                            {title}
+                          </a>
+                        </h3>
+                        <div
+                          className={
+                            styles.product__entries__entry__header__date
+                          }
+                        >
+                          Updated: {node.date}
+                        </div>
+                      </header>
+                      <div className={styles.product__entries__entry__tags}>
+                        {node.tag.map((_tag_name, _tag_index) => {
+                          return (
+                            <span
+                              className={
+                                styles.product__entries__entry__tags__tag
+                              }
+                              key={_tag_index}
+                            >
+                              <a href={`${baseUrl()}product/tag/${_tag_name}`}>
+                                {_tag_name}
+                              </a>
+                            </span>
+                          )
+                        })}
+                      </div>
                     </div>
-                  </div>
-                </section>
-              )
-            })}
-          </Masonry>
-          {has_more && (
-            <div className={styles.product__more}>
-              <button
-                onClick={this.onMorePostsClick}
-                className={`${styles.product__more__button} button`}
-              >
-                もっと見る
-              </button>
-            </div>
-          )}
-        </Wrap>
-      </div>
+                  </section>
+                )
+              })}
+            </Masonry>
+            {has_more && (
+              <div className={styles.product__more}>
+                <button
+                  onClick={this.onMorePostsClick}
+                  className={`${styles.product__more__button} button`}
+                >
+                  もっと見る
+                </button>
+              </div>
+            )}
+          </Wrap>
+        </div>
+      </App>
     )
   }
 }

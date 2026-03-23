@@ -1,8 +1,8 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import HomePage from '@/components/pages/HomePage'
+import HomeTemplate from '@/templates/home/home.template'
 ---
 
 <Layout>
-  <HomePage client:only="react" />
+  <HomeTemplate client:only="react" />
 </Layout>

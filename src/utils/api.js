@@ -27,7 +27,7 @@ export function getApiUrl(API_URL, API_KEY, API_SALT) {
 /**
  * API から投稿データを取得し、Astro 用に変換する
  *
- * @returns {Promise<{allPost: {edges: Array}, allCategory: {distinct: Array}}>}
+ * @returns {Promise<{allPost: {edges: Array}, allCategory: {distinct: Array}, posts: Array}>}
  */
 export async function fetchPosts() {
   const API_URL = import.meta.env.API_URL || 'http://localhost:3000/api'
